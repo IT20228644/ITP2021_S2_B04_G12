@@ -40,7 +40,7 @@ public class Customer {
         this.password = password;
     }
 
-    public Customer(int customerId, String email, String name, String address, String contactNumber) {
+    public  Customer(int customerId, String email, String name, String address, String contactNumber) {
         this.customerId = customerId;
         this.email = email;
         this.name = name;
