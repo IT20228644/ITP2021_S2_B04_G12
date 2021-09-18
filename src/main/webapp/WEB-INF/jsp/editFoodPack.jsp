@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="javax.swing.*" %>
 <html lang="en">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -228,5 +232,33 @@
         </div>
     </footer>
 </div>
+<!-- jQuery -->
+<script src="../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../../build/js/custom.min.js"></script>
+
+<!-- Datatables -->
+<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<!--%--Responsive Table--%-->
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+
+<script>
+
+    var selectedRow = null;
+    $("#datatable-buttons2 tbody").on('click', 'tr', function () {
+        selectedRow = $(this);
+        $("#packId").val($(this).find("td:first-child").text());
+        $("#packName").val($(this).find("td:nth-child(2)").text());
+        $("#packCat").val($(this).find("td:nth-child(3)").text());
+        $("#unitPrice").val($(this).find("td:nth-child(4)").text());
+        $("#src").val($(this).find("td:nth-child(5)").text());
+        selectedRow.addClass('row-selected');
+    });
+</script>
 </body>
 </html>
