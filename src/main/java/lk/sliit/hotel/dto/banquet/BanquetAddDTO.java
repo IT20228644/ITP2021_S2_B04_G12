@@ -8,45 +8,19 @@ public class BanquetAddDTO {
     private String email;
     private String name;
     private String address;
-    private String contactNumber;
-    private java.sql.Date date;
+    private String contactNo;
+    private Date date;
     private String hallId;
     private String orderState;
     private int noOfPlates;
     private String submittedBy;
     private int menuId;
-    private int banquetBillId;
+    private int billId;
     private double advanceFee;
     private double foodPrice;
     private double otherPrice;
     private double total;
     private double unitPrise;
-
-    public BanquetAddDTO(int orderId, Date date, String hallId, int noOfPlates, int menuId) {
-        this.orderId = orderId;
-        this.date = date;
-        this.hallId =hallId;
-        this.noOfPlates = noOfPlates;
-        this.menuId = menuId;
-
-    }
-
-    public BanquetAddDTO(int orderId, String name, Date date, int billId, double advancePayment, double foodPrice,
-                        double otherPrices, double total, double unitPrice, int noOfPlates) {
-        this.orderId= orderId;
-        this.name= name;
-        this.date = date;
-        this.banquetBillId= billId;
-        this.advanceFee = advancePayment;
-        this.foodPrice = foodPrice;
-        this.noOfPlates = noOfPlates;
-        this.unitPrise =unitPrice;
-        this.total = total;
-        this.otherPrice = otherPrices;
-
-
-
-    }
 
     public int getOrderId() {
         return orderId;
@@ -55,6 +29,16 @@ public class BanquetAddDTO {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+
+//    public int getCustomerId() {
+//        return customerId;
+//    }
+
+
+//    public void setCustomerId(int customerId) {
+//        this.customerId = customerId;
+//    }
+
 
     public int getCustomerId() {
         return customerId;
@@ -88,15 +72,15 @@ public class BanquetAddDTO {
         this.address = address;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getContactNo() {
+        return contactNo;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 
-    public java.sql.Date getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -144,12 +128,12 @@ public class BanquetAddDTO {
         this.menuId = menuId;
     }
 
-    public int getBanquetBillId() {
-        return banquetBillId;
+    public int getBillId() {
+        return billId;
     }
 
-    public void setBanquetBillId(int banquetBillId) {
-        this.banquetBillId = banquetBillId;
+    public void setBillId(int billId) {
+        this.billId = billId;
     }
 
     public double getAdvanceFee() {
@@ -200,14 +184,14 @@ public class BanquetAddDTO {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
+                ", contactNumber='" + contactNo + '\'' +
                 ", date=" + date +
                 ", hallId='" + hallId + '\'' +
                 ", orderState='" + orderState + '\'' +
                 ", noOfPlates=" + noOfPlates +
                 ", submittedBy='" + submittedBy + '\'' +
                 ", menuId=" + menuId +
-                ", banquetBillId=" + banquetBillId +
+                ", banquetBillId=" + billId +
                 ", advanceFee=" + advanceFee +
                 ", foodPrice=" + foodPrice +
                 ", otherPrice=" + otherPrice +

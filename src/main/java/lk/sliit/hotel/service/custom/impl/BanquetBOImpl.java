@@ -1,6 +1,5 @@
 package lk.sliit.hotel.service.custom.impl;
 
-import lk.sliit.hotel.controller.banquetController.BanquetBill;
 import lk.sliit.hotel.dao.banquetDAO.BanquetBillDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetCustomerDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetOrderDAO;
@@ -9,6 +8,7 @@ import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
 import lk.sliit.hotel.dto.banquet.BanquetBillDTO;
 import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
 import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
+import lk.sliit.hotel.entity.banquet.BanquetBill;
 import lk.sliit.hotel.entity.banquet.BanquetCustomer;
 import lk.sliit.hotel.entity.banquet.BanquetOrder;
 import lk.sliit.hotel.service.custom.BanquetBO;
@@ -46,6 +46,14 @@ public class BanquetBOImpl implements BanquetBO {
         );
     }
 
+//    @Override
+//    public BanquetCustomerDTO findTopbCustomerId() {
+//        BanquetCustomer banquetCustomer = banquetCustomerDAO.findTopByOrderBybCustomerIdDesc();
+//        return new BanquetCustomerDTO(
+//                banquetCustomer.getbCustomerId()
+//        );
+//    }
+
     @Override
     public BanquetCustomerDTO findTopCustomerId() {
         BanquetCustomer banquetCustomer = banquetCustomerDAO.findTopByOrderByCustomerIdDesc();
@@ -54,8 +62,19 @@ public class BanquetBOImpl implements BanquetBO {
         );
     }
 
+
+
     @Override
     public void saveBanquet(BanquetAddDTO banquetAddDTO) {
+
+        banquetCustomerDAO.save(new BanquetCustomer(
+                banquetAddDTO.getCustomerId(),
+                banquetAddDTO.getEmail(),
+                banquetAddDTO.getName(),
+                banquetAddDTO.getAddress(),
+                banquetAddDTO.getContactNo()
+        ));
+
 
         String status= "Pending";
         banquetAddDTO.setOrderState(status);
@@ -72,16 +91,8 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetAddDTO.getSubmittedBy(),
                 banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
                 menuDAO.findOne(banquetAddDTO.getMenuId()),
-                banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId())
+                banquetBillDAO.findOne(banquetAddDTO.getBillId())
 
-        ));
-
-        banquetCustomerDAO.save(new BanquetCustomer(
-                banquetAddDTO.getCustomerId(),
-                banquetAddDTO.getEmail(),
-                banquetAddDTO.getName(),
-                banquetAddDTO.getAddress(),
-                banquetAddDTO.getContactNumber()
         ));
 
     }
@@ -109,27 +120,31 @@ public class BanquetBOImpl implements BanquetBO {
     }
 
     @Override
-    public List<BanquetAddDTO> findBanquetBill() {
-        Iterable<BanquetOrder> all = banquetOrderDAO.findAll();
-        List<BanquetAddDTO> dtos = new ArrayList<>();
-        for ( BanquetOrder a: all){
-            dtos.add(new BanquetAddDTO(
-                    a.getOrderId(),
-                    a.getCustomer().getName(),
-                    a.getDate(),
-                    a.getBanquetBill().getBillId(),
-                    a.getBanquetBill().getAdvancePayment(),
-                    a.getBanquetBill().getFoodPrice(),
-                    a.getBanquetBill().getOtherPrices(),
-                    a.getBanquetBill().getTotal(),
-                    a.getMenu().getUnitPrice(),
-                    a.getNoOfPlates()
+    @Transactional(readOnly = false)
+    public List<BanquetCustomerDTO> findAllCustomers() {
+        Iterable<BanquetCustomer> all = banquetCustomerDAO.findAll();
+        List<BanquetCustomerDTO> dtos = new ArrayList<>();
+        for(BanquetCustomer a:all){
+            dtos.add(new BanquetCustomerDTO(
+                    a.getCustomerId(),
+                    a.getName(),
+                    a.getAddress(),
+                    a.getContactNo(),
+                    a.getEmail()
             ));
+
         }
+
         return dtos;
     }
 
+    @Override
+    public BanquetBillDTO findTopBiiId() {
+        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBillIdDesc();
+        return new BanquetBillDTO(
+                banquetBill.getBanquetBillId()
+        );
+    }
+
+
 }
-
-
-
