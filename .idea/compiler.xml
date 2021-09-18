@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ITP2021_S2_B04_G12" />
+        <module name="Project" />
         <module name="Hotel_Sapphire_Marriott" />
       </profile>
     </annotationProcessing>
