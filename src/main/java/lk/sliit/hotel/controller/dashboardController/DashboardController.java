@@ -34,7 +34,7 @@ public class DashboardController {
         List<NoticeDTO> p = noticeBO.findNoticeOneWeek();
         model.addAttribute("loadNoticeTable", p);
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-        return "dashboard";
+        return "/dashboard";
     }
     @GetMapping("/findAllNotice")
     public String findAllNotice(Model model)

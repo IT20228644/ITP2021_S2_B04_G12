@@ -38,7 +38,7 @@ public class IndexController { //index.jsp Page Controller
         return "index";
     }
 
-    @RequestMapping("Dashboard") // Load dashboard.jsp Page If Id And password is mach
+    @RequestMapping("dashboard") // Load dashboard.jsp Page If Id And password is mach
     public String registerUser(@ModelAttribute EmployeeDTO employee, Model model) {
         //True If Id and password is match
         if (indexLoginBO.findByIdNoAndPassword(employee.getUserId(), employee.getPassword()) != null) {
@@ -51,7 +51,7 @@ public class IndexController { //index.jsp Page Controller
             model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo((SuperController.idNo)));
             List<NoticeDTO> p = noticeBO.findAll();
             model.addAttribute("loadNoticeTable", p);
-            return "dashboard";
+            return "/dashboard";
         } else {//If User name And Password is not match
             return "redirect:/login";
         }
