@@ -14,6 +14,14 @@ public class BanquetCustomerDTO {
         this.customerId = customerId;
     }
 
+    public BanquetCustomerDTO(int customerId, String name, String address, String contactNo, String email) {
+        this.customerId = customerId;
+        this.name =name;
+        this.address = address;
+        this.contactNo = contactNo;
+        this.email =email;
+    }
+
     public int getCustomerId() {
         return customerId;
     }
