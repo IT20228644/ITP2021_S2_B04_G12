@@ -6,15 +6,17 @@ import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
 import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
 
 import lk.sliit.hotel.service.SuperBO;
+import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
 
+@Service
 public interface BanquetBO extends SuperBO {
 
     BanquetOrderDTO findTopBanquetId();
 
-    BanquetCustomerDTO findTopCustomerId();
+//    BanquetCustomerDTO findTopbCustomerId();
 
     void saveBanquet(BanquetAddDTO banquetAddDTO);
 
@@ -25,5 +27,10 @@ public interface BanquetBO extends SuperBO {
 
     int checkHallTwoAvailabilityCheck(Date date);
 
-    List<BanquetAddDTO> findBanquetBill();
+    BanquetCustomerDTO findTopCustomerId();
+
+    List<BanquetCustomerDTO> findAllCustomers();
+
+    BanquetBillDTO findTopBiiId();
 }
+

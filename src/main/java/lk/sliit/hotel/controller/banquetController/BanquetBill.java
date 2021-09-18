@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+@Controller
 public class BanquetBill {
     @Autowired
     IndexLoginBO indexLoginBO;
@@ -21,14 +22,20 @@ public class BanquetBill {
     BanquetBO banquetBO;
 
     @GetMapping("/banquetBill")
-    public ModelAndView loginPage(Model model){
+    public ModelAndView loginPage(Model model) {
         ModelAndView mv = new ModelAndView("banquetBill");
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
-        List<BanquetAddDTO> list = banquetBO.findBanquetBill();
-        mv.addObject("loadTable",list);
+//        List<BanquetAddDTO> list = banquetBO.findBanquetBill();
+//        mv.addObject("loadTable", list);
 
         return mv;
     }
 
-    }
+//    @PostMapping("updateBill")
+//    public String updateBill(@ModelAttribute BanquetAddDTO banquetAddDTO) {
+//        banquetBO.updateBill(banquetAddDTO);
+//        return "redirect:/banquetBill";
+//    }
+
+}

@@ -6,14 +6,14 @@ import javax.persistence.Id;
 @Entity
 public class BanquetBill {
     @Id
-    int billId;
+    int banquetBillId;
     double advancePayment;
     double foodPrice;
     double otherPrice;
     double total;
 
-    public BanquetBill(int billId, double advancePayment, double foodPrice, double otherPrice, double total) {
-        this.billId = billId;
+    public BanquetBill(int banquetBillId, double advancePayment, double foodPrice, double otherPrice, double total) {
+        this.banquetBillId = banquetBillId;
         this.advancePayment = advancePayment;
         this.foodPrice = foodPrice;
         this.otherPrice = otherPrice;
@@ -24,12 +24,12 @@ public class BanquetBill {
 
     }
 
-    public int getBillId() {
-        return billId;
+    public int getBanquetBillId() {
+        return banquetBillId;
     }
 
-    public void setBillId(int billId) {
-        this.billId = billId;
+    public void setBanquetBillId(int banquetBillId) {
+        this.banquetBillId = banquetBillId;
     }
 
     public double getAdvancePayment() {
@@ -62,10 +62,6 @@ public class BanquetBill {
 
     public void setTotal(double total) {
         this.total = total;
-    }
-
-    public double getOtherPrices() {
-        return otherPrice;
     }
 }
 
