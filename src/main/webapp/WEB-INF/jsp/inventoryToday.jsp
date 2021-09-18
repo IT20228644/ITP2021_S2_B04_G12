@@ -220,7 +220,7 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                            <a style=" font-family: Georgia;
                              background-color:#8c6f60; color: #ffffff;font-weight: bolder"
                                href="manageSupplier" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
@@ -231,7 +231,7 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                            <a style=" font-family: Georgia;
                              background-color:#8c6f60; color: #ffffff;font-weight: bolder"
                                href="barStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
@@ -242,7 +242,7 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                            <a style=" font-family: Georgia;
                              background-color:#8c6f60; color: #ffffff;font-weight: bolder"
                                href="barStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
@@ -253,7 +253,7 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                            <a style=" font-family: Georgia;
                              background-color:#8c6f60; color: #ffffff;font-weight: bolder"
                                href="restaurantStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
