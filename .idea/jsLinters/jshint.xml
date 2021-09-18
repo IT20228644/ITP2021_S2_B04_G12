@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="JSHintConfiguration" version="2.13.0" use-config-file="true" use-custom-config-file="true" custom-config-file-path="$PROJECT_DIR$/src/main/webapp/vendors/jquery/src/.jshintrc">
+=======
+  <component name="JSHintConfiguration" version="2.12.0" use-config-file="true" use-custom-config-file="true" custom-config-file-path="$PROJECT_DIR$/src/main/webapp/vendors/Chart.js/config.jshintrc">
+>>>>>>> d7b3b83079f6e580c7f8dc4e4a007ec885590378
     <option bitwise="true" />
     <option browser="true" />
     <option curly="true" />

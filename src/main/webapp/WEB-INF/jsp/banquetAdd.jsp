@@ -337,8 +337,8 @@
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
                                 <label for="orderId">Mobile No</label>
                                 <input type="tel" class="form-control"
-                                       pattern="[0-9]{10}" required name="contactNumber"
-                                       id="contactNumber" placeholder="Mobile No"/></div>
+                                       pattern="[0-9]{10}" required name="contactNo"
+                                       id="contactNo" placeholder="Mobile No"/></div>
                         </div>
 
                         <div class="form-group">
@@ -444,7 +444,7 @@
                                                         <td>${a.customerId}</td>
                                                         <td>${a.name}</td>
                                                         <td>${a.address}</td>
-                                                        <td>${a.contactNumber}</td>
+                                                        <td>${a.contactNo}</td>
                                                         <td>${a.email}</td>
                                                     </tr>
                                                 </c:forEach>

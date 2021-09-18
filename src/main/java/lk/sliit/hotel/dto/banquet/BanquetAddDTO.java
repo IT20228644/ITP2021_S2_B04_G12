@@ -8,8 +8,8 @@ public class BanquetAddDTO {
     private String email;
     private String name;
     private String address;
-    private String contactNumber;
-    private java.sql.Date date;
+    private String contactNo;
+    private Date date;
     private String hallId;
     private String orderState;
     private int noOfPlates;
@@ -25,27 +25,9 @@ public class BanquetAddDTO {
     public BanquetAddDTO(int orderId, Date date, String hallId, int noOfPlates, int menuId) {
         this.orderId = orderId;
         this.date = date;
-        this.hallId =hallId;
+        this.hallId = hallId;
         this.noOfPlates = noOfPlates;
         this.menuId = menuId;
-
-    }
-
-    public BanquetAddDTO(int orderId, String name, Date date, int billId, double advancePayment, double foodPrice,
-                        double otherPrices, double total, double unitPrice, int noOfPlates) {
-        this.orderId= orderId;
-        this.name= name;
-        this.date = date;
-        this.banquetBillId= billId;
-        this.advanceFee = advancePayment;
-        this.foodPrice = foodPrice;
-        this.noOfPlates = noOfPlates;
-        this.unitPrise =unitPrice;
-        this.total = total;
-        this.otherPrice = otherPrices;
-
-
-
     }
 
     public int getOrderId() {
@@ -55,6 +37,63 @@ public class BanquetAddDTO {
     public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
+
+//    public int getCustomerId() {
+//        return customerId;
+//    }
+
+
+//    public void setCustomerId(int customerId) {
+//        this.customerId = customerId;
+//    }
+
+
+    public BanquetAddDTO() {
+
+    }
+
+    public BanquetAddDTO(int orderId, int customerId, String email, String name, String address, String contactNo,
+                         Date date, String hallId, String orderState, int noOfPlates, String submittedBy,
+                         int menuId, int banquetBillId, double advanceFee, double foodPrice, double otherPrice,
+                         double total, double unitPrise) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.email = email;
+        this.name = name;
+        this.address = address;
+        this.contactNo = contactNo;
+        this.date = date;
+        this.hallId = hallId;
+        this.orderState = orderState;
+        this.noOfPlates = noOfPlates;
+        this.submittedBy = submittedBy;
+        this.menuId = menuId;
+        this.banquetBillId = banquetBillId;
+        this.advanceFee = advanceFee;
+        this.foodPrice = foodPrice;
+        this.otherPrice = otherPrice;
+        this.total = total;
+        this.unitPrise = unitPrise;
+    }
+
+
+    public BanquetAddDTO(int orderId, String name, Date date, int billId,
+                         double advancePayment, double foodPrice, double otherPrices,
+                         double total, double unitPrice, int noOfPlates) {
+        this.orderId= orderId;
+        this.name = name;
+        this.date =date;
+        this.banquetBillId = billId;
+        this.advanceFee =advancePayment;
+        this.foodPrice =foodPrice;
+        this.otherPrice = otherPrices;
+        this.total =total;
+        this.unitPrise = unitPrice;
+        this.noOfPlates = noOfPlates;
+    }
+
+
+
 
     public int getCustomerId() {
         return customerId;
@@ -88,15 +127,15 @@ public class BanquetAddDTO {
         this.address = address;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getContactNo() {
+        return contactNo;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 
-    public java.sql.Date getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -200,7 +239,7 @@ public class BanquetAddDTO {
                 ", email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
+                ", contactNumber='" + contactNo + '\'' +
                 ", date=" + date +
                 ", hallId='" + hallId + '\'' +
                 ", orderState='" + orderState + '\'' +

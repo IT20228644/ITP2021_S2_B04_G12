@@ -6,7 +6,6 @@ import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
 import lk.sliit.hotel.dto.banquet.BanquetBillDTO;
 import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
 import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
-import lk.sliit.hotel.dto.reservation.CustomerDTO;
 import lk.sliit.hotel.service.custom.BanquetBO;
 import lk.sliit.hotel.service.custom.IndexLoginBO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,7 @@ public class BanquetAdd {
 
 
     @GetMapping("banquetAdd")
-    public String loginPage (Model model){
+    public ModelAndView loginPage (Model model){
         ModelAndView mv = new ModelAndView("banquetAdd"); //display banquetAdd page
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
@@ -51,16 +50,62 @@ public class BanquetAdd {
             model.addAttribute("topBanquetCustomerId",1);
         }
 
-        return "banquetAdd";
+        try{
+            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
+            int topBillId= (banquetBillDTO.getBillId())+1;
+            model.addAttribute("topBanquetBillId",topBillId);
+        }catch (NullPointerException e){
+            model.addAttribute("topBanquetBillId",1);
+        }
+
+        List<BanquetCustomerDTO> list = banquetBO.findAllCustomers();
+        mv.addObject("loadTable",list);
+
+        return mv;
     }
 
     @RequestMapping("saveBanquet")
     public ModelAndView saveForm(@ModelAttribute BanquetAddDTO banquetAddDTO , HttpServletRequest request, Model model){
         //  ModelAndView mv = new ModelAndView("saveBanquet");
 
-        banquetBO.saveBanquet(banquetAddDTO);
+//       banquetBO.saveBanquet(banquetAddDTO);
 
-        ModelAndView mv = new ModelAndView("banquetAdd"); //display banquetAdd page
+        try {
+            int count = banquetBO.checkAvailability(banquetAddDTO.getDate());
+            if(count<2) {
+                if (banquetAddDTO.getHallId().equals("No 1")){
+                    int count1=banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
+                    if(count1<1) {
+                        banquetBO.saveBanquet(banquetAddDTO);
+                        request.setAttribute("successfulMsg","added successfully");
+                    }
+                    else{
+                        request.setAttribute("errorMsg2","can not enter");
+                    }
+                }
+                if (banquetAddDTO.getHallId().equals("No 2")){
+                    int count2=banquetBO.checkHallTwoAvailabilityCheck(banquetAddDTO.getDate());
+                    if(count2 < 1) {
+                        banquetBO.saveBanquet(banquetAddDTO);
+                        request.setAttribute("successfulMsg","added successfully");
+                    }
+                    else{
+                        request.setAttribute("errorMsg3","can not enter");
+                    }
+                }
+            }
+            else{
+                request.setAttribute("errorMsg1","can not enter");
+            }
+
+
+        }catch (Exception e){
+
+        }
+
+
+        //Display the banquet add page
+        ModelAndView mv = new ModelAndView("banquetAdd");
 
         try{
             BanquetOrderDTO banquetOrderDTO = banquetBO.findTopBanquetId();
@@ -78,8 +123,19 @@ public class BanquetAdd {
             model.addAttribute("topBanquetCustomerId",1);
         }
 
+        try{
+            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
+            int topBillId= (banquetBillDTO.getBillId())+1;
+            model.addAttribute("topBanquetBillId",topBillId);
+        }catch (NullPointerException e){
+            model.addAttribute("topBanquetBillId",1);
+        }
+
+        List<BanquetCustomerDTO> list = banquetBO.findAllCustomers();
+        mv.addObject("loadTable",list);
 
         return mv;
+
 
 
     }

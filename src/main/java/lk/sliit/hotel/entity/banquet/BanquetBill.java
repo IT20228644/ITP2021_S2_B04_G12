@@ -9,14 +9,14 @@ public class BanquetBill {
     int billId;
     double advancePayment;
     double foodPrice;
-    double otherPrice;
+    double otherPrices;
     double total;
 
-    public BanquetBill(int billId, double advancePayment, double foodPrice, double otherPrice, double total) {
-        this.billId = billId;
+    public BanquetBill(int banquetBillId, double advancePayment, double foodPrice, double otherPrice, double total) {
+        this.billId = banquetBillId;
         this.advancePayment = advancePayment;
         this.foodPrice = foodPrice;
-        this.otherPrice = otherPrice;
+        this.otherPrices = otherPrice;
         this.total = total;
     }
 
@@ -48,12 +48,12 @@ public class BanquetBill {
         this.foodPrice = foodPrice;
     }
 
-    public double getOtherPrice() {
-        return otherPrice;
+    public double getOtherPrices() {
+        return otherPrices;
     }
 
-    public void setOtherPrice(double otherPrice) {
-        this.otherPrice = otherPrice;
+    public void setOtherPrices(double otherPrices) {
+        this.otherPrices = otherPrices;
     }
 
     public double getTotal() {
@@ -62,10 +62,6 @@ public class BanquetBill {
 
     public void setTotal(double total) {
         this.total = total;
-    }
-
-    public double getOtherPrices() {
-        return otherPrice;
     }
 }
 
