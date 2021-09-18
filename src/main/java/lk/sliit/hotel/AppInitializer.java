@@ -31,7 +31,7 @@ public class AppInitializer {
             List<String> names = Arrays.asList ( "1");
             names.forEach ( name -> manageDAO.save ( new Employee(
                             1,
-                            "Janani Madushika",
+                            "ABC",
                             "0223123456",
                             "someOne@gmail.com",
                             "Colombo",

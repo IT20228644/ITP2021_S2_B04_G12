@@ -76,6 +76,16 @@ public class BanquetBOImpl implements BanquetBO {
         ));
 
 
+        banquetBillDAO.save(new BanquetBill(
+                banquetAddDTO.getBanquetBillId(),
+                banquetAddDTO.getAdvanceFee(),
+                banquetAddDTO.getFoodPrice(),
+                banquetAddDTO.getOtherPrice(),
+                banquetAddDTO.getTotal()
+
+        ));
+
+
         String status= "Pending";
         banquetAddDTO.setOrderState(status);
 
@@ -91,7 +101,7 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetAddDTO.getSubmittedBy(),
                 banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
                 menuDAO.findOne(banquetAddDTO.getMenuId()),
-                banquetBillDAO.findOne(banquetAddDTO.getBillId())
+                banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId())
 
         ));
 
@@ -142,8 +152,29 @@ public class BanquetBOImpl implements BanquetBO {
     public BanquetBillDTO findTopBiiId() {
         BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBanquetBillIdDesc();
         return new BanquetBillDTO(
-                banquetBill.getBanquetBillId()
+                banquetBill.getBillId()
         );
+    }
+
+    @Override
+    public List<BanquetAddDTO> findBanquetBill() {
+        Iterable<BanquetOrder> all = banquetOrderDAO.findAll();
+        List<BanquetAddDTO> billList= new ArrayList<>();
+        for ( BanquetOrder a: all){
+            billList.add(new BanquetAddDTO(
+                    a.getOrderId(),
+                    a.getBanquetCustomer().getName(),
+                    a.getDate(),
+                    a.getBanquetBill().getBillId(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getBanquetBill().getFoodPrice(),
+                    a.getBanquetBill().getOtherPrices(),
+                    a.getBanquetBill().getTotal(),
+                    a.getMenu().getUnitPrice(),
+                    a.getNoOfPlates()
+            ));
+        }
+        return billList;
     }
 
 

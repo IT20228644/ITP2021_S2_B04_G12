@@ -1,11 +1,5 @@
-<%@ page import="java.util.Date" %><%--
-  Created by IntelliJ IDEA.
-  User: USER
-  Date: 15/9/2021
-  Time: 8:06 AM
-  To change this template use File | Settings | File Templates.
---%>
-@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
@@ -101,9 +95,10 @@
 
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Check Availability
+                    <h3>Check Availability<br>
                         <small>Welcome To Sapphire Marriott</small>
                     </h3>
+
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                             <a href="/banquet">
@@ -222,7 +217,7 @@
                     <div class="form-group">
 
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> <br>
-                            <h1>${checkDate}  ${answer1}</h1>
+                            <h2>${checkDate}  ${answer1}</h2>
                             <br>
 
                             <h2>Hall No 1: ${answer2}</h2>
@@ -239,15 +234,62 @@
     </div>
     <!-- /page content -->
 
+    <!--footer-->
+    <jsp:include page="footer.jsp"></jsp:include>
+    <!--/footer-->
+
 
 </div>
+
+
+<%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+
+
 </div>
 
 
-<!--footer-->
-<jsp:include page="footer.jsp"></jsp:include>
-<!--/footer-->
+<!-- jQuery -->
+<script src="../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Datatables -->
+<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<%--Show Print Buttons--%>
+<script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<%--Responsive Table--%>
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<%--<script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>--%>
+<%--Print--%>
+<script src="../../vendors/jszip/dist/jszip.min.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../../build/js/custom.min.js"></script>
 
+    <script>
+        var dateController = {
+        currentDate : null
+    }
+
+        $(document).on( "change", "#date",function( event, ui ) {
+        var now = new Date();
+        var selectedDate = new Date($(this).val());
+
+        if(selectedDate <= now) {
+        $(this).val("");
+        alert("Invalid date... Please enter future date... Can't enter today and old dates");
+
+    } else {
+        dateController.currentDate = $(this).val();
+    }
+    });
+</script>
 
 
 

@@ -26,16 +26,12 @@ public class BanquetBill {
         ModelAndView mv = new ModelAndView("banquetBill");
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
-//        List<BanquetAddDTO> list = banquetBO.findBanquetBill();
-//        mv.addObject("loadTable", list);
+        List<BanquetAddDTO> list = banquetBO.findBanquetBill();
+        mv.addObject("loadTable", list);
 
         return mv;
     }
 
-//    @PostMapping("updateBill")
-//    public String updateBill(@ModelAttribute BanquetAddDTO banquetAddDTO) {
-//        banquetBO.updateBill(banquetAddDTO);
-//        return "redirect:/banquetBill";
-//    }
+
 
 }
