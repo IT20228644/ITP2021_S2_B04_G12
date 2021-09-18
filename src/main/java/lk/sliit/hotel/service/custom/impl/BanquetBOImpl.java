@@ -62,6 +62,23 @@ public class BanquetBOImpl implements BanquetBO {
         );
     }
 
+    //find top bill id
+//    @Override
+//    public BanquetBillDTO findTopBiiId() {
+//        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBillIdDesc();
+//        return new BanquetBillDTO(
+//                banquetBill.getBillId()
+//        );
+//    }
+
+    @Override
+    public BanquetBillDTO findTopBanquetBillId() {
+        BanquetBill banquetBill =banquetBillDAO.findTopByOrderByBillIdDesc();
+        return new BanquetBillDTO(
+                banquetBill.getBillId()
+        );
+    }
+
 
 
     @Override
@@ -150,14 +167,6 @@ public class BanquetBOImpl implements BanquetBO {
         return dtos;
     }
 
-    //find top bill id
-    @Override
-    public BanquetBillDTO findTopBiiId() {
-        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBillIdDesc();
-        return new BanquetBillDTO(
-                banquetBill.getBillId()
-        );
-    }
 
 
     @Override

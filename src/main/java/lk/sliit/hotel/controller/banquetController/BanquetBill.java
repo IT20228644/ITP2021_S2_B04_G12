@@ -22,14 +22,14 @@ public class BanquetBill {
     BanquetBO banquetBO;
 
     @GetMapping("/banquetBill")
-    public ModelAndView loginPage(Model model) {
+    public String  loginPage(Model model) {
         ModelAndView mv = new ModelAndView("banquetBill");
-        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
         List<BanquetAddDTO> list = banquetBO.findBanquetBill();
         mv.addObject("loadTable", list);
 
-        return mv;
+        return "banquetBill";
     }
 
 

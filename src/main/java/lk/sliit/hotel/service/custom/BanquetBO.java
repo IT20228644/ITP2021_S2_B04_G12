@@ -31,8 +31,10 @@ public interface BanquetBO extends SuperBO {
 
     List<BanquetCustomerDTO> findAllCustomers();
 
-    BanquetBillDTO findTopBiiId();
+//    BanquetBillDTO findTopBiiId();
 
     List<BanquetAddDTO> findBanquetBill();
+
+    BanquetBillDTO findTopBanquetBillId();
 }
 
