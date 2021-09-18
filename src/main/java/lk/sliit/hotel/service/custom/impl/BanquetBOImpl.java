@@ -140,7 +140,7 @@ public class BanquetBOImpl implements BanquetBO {
 
     @Override
     public BanquetBillDTO findTopBiiId() {
-        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBillIdDesc();
+        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBanquetBillIdDesc();
         return new BanquetBillDTO(
                 banquetBill.getBanquetBillId()
         );
