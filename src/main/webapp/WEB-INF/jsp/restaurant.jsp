@@ -245,27 +245,33 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
 
-                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2">
                         <a href="restaurantOrder">
                             <button type="button" class="btnq">Order</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2">
                         <a href="restaurantTableIndex">
                             <button type="button"  class="btnq">Table</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2">
                         <a href="onlineDashboard">
                             <button type="button" class="btnq">Online</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-sm-12 col-md-2 col-lg-3 col-xl-3">
                         <a href="restaurantManage">
-                        <button type="button" class="btnq">Manage Online Orders And Table Reservations</button>
+                        <button type="button" class="btnq">Manage Online Orders</button>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-12 col-md-2 col-lg-3 col-xl-3">
+                        <a href="/RestaurantReport">
+                            <button type="button" class="btnq">Table Reservation Report</button>
                         </a>
                     </div>
 

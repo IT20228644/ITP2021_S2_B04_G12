@@ -35,6 +35,18 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
+    <style>
+        .btn_back {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 30px;
+            font-size: medium;
+            border-radius: 3px;
+
+        }
+    </style>
 
 </head>
 <body class="nav-md" style="cursor: pointer">
@@ -309,15 +321,14 @@
                                     <div class="row no-print">
                                         <div class=" ">
 
-                                            <form action="/kitchen"
+                                            <form action="/restaurant"
                                                   name="printReport">
                                                 <input style="display: none" type="text" id="itemPay" name="SalaryId">
                                                 <ul class="nav navbar-right panel_toolbox">
                                                     <button type="submit" value="Register"
                                                             style="font-weight: bold;color: white" ; id="name"
                                                             onclick="window.print();"
-                                                            class="btn btn-success "> Submit Report <i
-                                                            class="fa fa-file-image-o"></i>
+                                                            class="btn_back"> Submit Report 
                                                     </button>
                                                 </ul>
 

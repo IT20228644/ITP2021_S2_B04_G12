@@ -207,7 +207,7 @@
                                                                     alt=""></figure>
 
 
-                                                            <h5 style="font-size: 20px;margin-top: 100px; background-color: #630000;
+                                                            <h5 style="font-size: 20px;margin-top: 100px; background-color:#8c6f60;
                                                             color: white" onclick="myFunction(${e.tableId})" ><span
                                                                     id="selectedTableId"> &nbsp; ${e.place} </span><a
                                                                     class="button1x"></a></h5>

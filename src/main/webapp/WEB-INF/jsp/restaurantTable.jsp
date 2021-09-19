@@ -70,6 +70,23 @@
         .large-btn:hover {
             color: #0f0f0f;
         }
+
+        .btn_back {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 30px;
+            font-size: medium;
+            border-radius: 3px;
+
+        }
+        .btn_reset{
+            border: 1px solid #8c6f60;
+            border-width: 2px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="nav-md" style="cursor: pointer">
@@ -183,7 +200,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                         <a href="/restaurantTableIndex">
-                            <button type="button" class=" btn btn-dark"><i class="fa fa-mail-reply"> Back</i>
+                            <button type="button" class=" btn_back"><i class="fa fa-mail-reply"> Back</i>
                             </button>
                         </a>
 
@@ -246,10 +263,10 @@
 
                                             <div class=" form-group">
                                                 <div class=" ">
-                                                    <button class="btn btn-dark" type="submit" value="Register">+Add /
+                                                    <button class="btn_back" type="submit" value="Register">+Add /
                                                         Update
                                                     </button>
-                                                    <button class="btn btn-outline-dark" type="reset">Reset</button>
+                                                    <button class="btn_reset" type="reset">Reset</button>
 
                                                 </div>
                                             </div>
