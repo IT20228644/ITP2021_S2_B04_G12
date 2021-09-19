@@ -90,6 +90,25 @@
             }
         }
     </script>
+    <style>
+
+        .btn_back {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 30px;
+            font-size: medium;
+            border-radius: 3px;
+
+        }
+        .btn_reset{
+            border: 1px solid #8c6f60;
+            border-width: 2px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
 
 
 </head>
@@ -117,7 +136,7 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                 <a href="restaurant">
-                                    <button type="button" class="large-btn btn btn-dark"><i class="fa fa-mail-reply">
+                                    <button type="button" class="btn_back"><i class="fa fa-mail-reply">
                                         Back</i>
                                     </button>
                                 </a>
@@ -183,12 +202,12 @@
                                        id="customerId" placeholder="Customer ID"/>
 
 
-                            <button type='button' class="btn btn-primary" style="width: 50%" id="btnAdd"
+                            <button type='button' class="btn_back" style="width: 50%" id="btnAdd"
                                     value="Register">
                                 Add
                             </button>
                             <button onclick="document.getElementsByClassName('form-control').value = ''" type='reset'
-                                    class="btn btn-outline-success" value="">Reset
+                                    class="btn_reset" value="">Reset
                             </button>
 
                         </form>
@@ -218,7 +237,7 @@
 
                                             <table style="text-align: center" id="dataTablesButton1"
                                                    class="table table-hover table-striped">
-                                                <thead class="thead-dark">
+                                                <thead class="thead-light">
                                                 <tr>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Id</th>
@@ -263,7 +282,7 @@
                                         </li>
                                         <button type="submit" value="Register"
                                                 style="font-weight: bold;color: white" ; onclick="getValue()"
-                                                class="btn btn-success "> Pay <i class="fa fa-file-image-o"></i>
+                                                class="btn_back"> Pay
                                         </button>
                                     </ul>
                                 </form>
@@ -276,7 +295,7 @@
                                         <div class="card-box table-responsive">
                                             <table style="text-align: center"
                                                    class="table table-striped jambo_table bulk_action table-bordered">
-                                                <thead class="thead-dark">
+                                                <thead class="thead-light">
                                                 <tr>
                                                     <th>ItemId</th>
                                                     <th>Name</th>
