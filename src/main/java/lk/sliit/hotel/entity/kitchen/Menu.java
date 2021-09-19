@@ -1,5 +1,7 @@
 package lk.sliit.hotel.entity.kitchen;
 
+import lk.sliit.hotel.entity.banquet.BanquetOrder;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,8 +17,8 @@ public class Menu {
     private String type;
     private String picture;
     private double unitPrice;
-//    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
-//    private List<BanquetOrder> banquetOrders = new ArrayList<>();
+    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    private List<BanquetOrder> banquetOrders = new ArrayList<>();
     @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     private List<MenuDetails> orderDetails = new ArrayList<>();
 
@@ -72,13 +74,13 @@ public class Menu {
         this.unitPrice = unitPrice;
     }
 
-//    public List<BanquetOrder> getBanquetOrders() {
-//        return banquetOrders;
-//    }
-//
-//    public void setBanquetOrders(List<BanquetOrder> banquetOrders) {
-//        this.banquetOrders = banquetOrders;
-//    }
+    public List<BanquetOrder> getBanquetOrders() {
+        return banquetOrders;
+    }
+
+    public void setBanquetOrders(List<BanquetOrder> banquetOrders) {
+        this.banquetOrders = banquetOrders;
+    }
 
     public List<MenuDetails> getOrderDetails() {
         return orderDetails;

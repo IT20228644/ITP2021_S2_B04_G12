@@ -292,9 +292,9 @@
                                                         <td>${e.name}</td>
                                                         <td>${e.date}</td>
                                                         <td>${e.advanceFee}</td>
-                                                        <td>${e.noOfPlates * e.unitPrise}</td>
+                                                        <td>${e.noOfPlates * e.unitPrice}</td>
                                                         <td>${e.otherPrice}</td>
-                                                        <td>${(e.noOfPlates * e.unitPrise)+e.otherPrice}</td>
+                                                        <td>${(e.noOfPlates * e.unitPrice)+e.otherPrice}</td>
                                                         <td><a href="/banquetInvoice?billId=${e.banquetBillId}">
                                                             <button value="" id="billBtn" name="billBtn" class="btn btn-outline-danger" style="font-size: 13px;">PrintBill</button>
                                                         </a></td>
