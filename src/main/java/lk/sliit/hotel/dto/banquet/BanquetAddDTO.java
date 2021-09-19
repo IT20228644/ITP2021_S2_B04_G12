@@ -20,7 +20,7 @@ public class BanquetAddDTO {
     private double foodPrice;
     private double otherPrice;
     private double total;
-    private double unitPrise;
+    private double unitPrice;
 
     public BanquetAddDTO(int orderId, Date date, String hallId, int noOfPlates, int menuId) {
         this.orderId = orderId;
@@ -28,6 +28,19 @@ public class BanquetAddDTO {
         this.hallId = hallId;
         this.noOfPlates = noOfPlates;
         this.menuId = menuId;
+    }
+
+    public BanquetAddDTO(int orderId, String name, Date date, int billId, double advancePayment,
+                         double foodPrice, double otherPrices, double total, int noOfPlates) {
+        this.orderId =orderId;
+        this.name =name;
+        this.date =date;
+        this.noOfPlates= noOfPlates;
+        this.banquetBillId =billId;
+        this.total =total;
+        this.foodPrice = foodPrice;
+        this.otherPrice = otherPrices;
+        this.advanceFee = advancePayment;
     }
 
     public int getOrderId() {
@@ -55,7 +68,7 @@ public class BanquetAddDTO {
     public BanquetAddDTO(int orderId, int customerId, String email, String name, String address, String contactNo,
                          Date date, String hallId, String orderState, int noOfPlates, String submittedBy,
                          int menuId, int banquetBillId, double advanceFee, double foodPrice, double otherPrice,
-                         double total, double unitPrise) {
+                         double total, double unitPrice) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.email = email;
@@ -73,7 +86,7 @@ public class BanquetAddDTO {
         this.foodPrice = foodPrice;
         this.otherPrice = otherPrice;
         this.total = total;
-        this.unitPrise = unitPrise;
+        this.unitPrice = unitPrice;
     }
 
 
@@ -88,7 +101,7 @@ public class BanquetAddDTO {
         this.foodPrice =foodPrice;
         this.otherPrice = otherPrices;
         this.total =total;
-        this.unitPrise = unitPrice;
+        this.unitPrice = unitPrice;
         this.noOfPlates = noOfPlates;
     }
 
@@ -223,12 +236,12 @@ public class BanquetAddDTO {
         this.total = total;
     }
 
-    public double getUnitPrise() {
-        return unitPrise;
+    public double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnitPrise(double unitPrise) {
-        this.unitPrise = unitPrise;
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     @Override
@@ -251,7 +264,7 @@ public class BanquetAddDTO {
                 ", foodPrice=" + foodPrice +
                 ", otherPrice=" + otherPrice +
                 ", total=" + total +
-                ", unitPrise=" + unitPrise +
+//                ", unitPrice=" + unitPrice +
                 '}';
     }
 

@@ -296,7 +296,7 @@
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                               href="banquetBill" class="btnq"><h2
+                               href="/banquetBill" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Banquet Bill</h2></a>
                         </div>
@@ -358,7 +358,7 @@
                                             <tr>
                                                 <td>${e.orderId}</td>
                                                 <td>${e.name}</td>
-                                                <td>${e.contactNumber}</td>
+                                                <td>${e.contactNo}</td>
                                                 <td>${e.date}</td>
                                                 <td>${e.hallId}</td>
                                                 <td>${e.noOfPlates}</td>
@@ -432,7 +432,7 @@
                                                 <td>${e.advanceFee}</td>
                                                 <td>${e.orderState}</td>
                                                 <td><a href="/updateBanquetStatus?orderId=${e.orderId}">
-                                                    <button value="" id="confirmBtn" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">confirmed</button>
+                                                    <button value="" id="confirmBtn2" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">confirmed</button>
                                                 </a></td>
                                             </tr>
                                         </c:forEach>
@@ -498,7 +498,7 @@
                                                 <td>${e.advanceFee}</td>
                                                 <td>${e.orderState}</td>
                                                 <td><a href="/updateBanquetStatus?orderId=${e.orderId}">
-                                                    <button value="" id="confirmBtn" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">confirmed</button>
+                                                    <button value="" id="confirmBtn3" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">confirmed</button>
                                                 </a></td>
                                             </tr>
                                         </c:forEach>
