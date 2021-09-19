@@ -62,6 +62,23 @@ public class BanquetBOImpl implements BanquetBO {
         );
     }
 
+    //find top bill id
+//    @Override
+//    public BanquetBillDTO findTopBiiId() {
+//        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBillIdDesc();
+//        return new BanquetBillDTO(
+//                banquetBill.getBillId()
+//        );
+//    }
+
+    @Override
+    public BanquetBillDTO findTopBanquetBillId() {
+        BanquetBill banquetBill =banquetBillDAO.findTopByOrderByBillIdDesc();
+        return new BanquetBillDTO(
+                banquetBill.getBillId()
+        );
+    }
+
 
 
     @Override
@@ -108,13 +125,14 @@ public class BanquetBOImpl implements BanquetBO {
     }
 
 
-
+    //Check Date Availability
     @Override
     public int checkAvailability(Date date) {
         int count = banquetOrderDAO.countBanquetOrderByDateEquals(date);
         return count;
     }
 
+    //Check hall01 Availability
     @Override
     public int checkHallOneAvailability(Date date) {
         String hallNo ="No 1";
@@ -122,6 +140,7 @@ public class BanquetBOImpl implements BanquetBO {
         return count1;
     }
 
+    //Check Hall02 Availability
     @Override
     public int checkHallTwoAvailabilityCheck(Date date) {
         String hallNo ="No 2";
@@ -148,13 +167,7 @@ public class BanquetBOImpl implements BanquetBO {
         return dtos;
     }
 
-    @Override
-    public BanquetBillDTO findTopBiiId() {
-        BanquetBill banquetBill = banquetBillDAO.findTopByOrderByBanquetBillIdDesc();
-        return new BanquetBillDTO(
-                banquetBill.getBillId()
-        );
-    }
+
 
     @Override
     public List<BanquetAddDTO> findBanquetBill() {

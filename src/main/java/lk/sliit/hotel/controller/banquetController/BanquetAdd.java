@@ -50,12 +50,22 @@ public class BanquetAdd {
             model.addAttribute("topBanquetCustomerId",1);
         }
 
-        try{
-            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
-            int topBillId= (banquetBillDTO.getBillId())+1;
-            model.addAttribute("topBanquetBillId",topBillId);
-        }catch (NullPointerException e){
-            model.addAttribute("topBanquetBillId",1);
+//        try{
+////            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
+//            BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
+//            int topBillId= (banquetBillDTO.getBillId())+1;
+//            model.addAttribute("topBanquetBillId",topBillId);
+//        }catch (NullPointerException e){
+//            model.addAttribute("topBanquetBillId",1);
+//        }
+
+
+        try {
+            BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
+            int topBill = (banquetBillDTO.getBillId()) + 1;
+            model.addAttribute("topBanquetBillId", topBill);
+        } catch (NullPointerException e){
+            model.addAttribute("topBanquetBillId", 1);
         }
 
         List<BanquetCustomerDTO> list = banquetBO.findAllCustomers();
@@ -123,12 +133,22 @@ public class BanquetAdd {
             model.addAttribute("topBanquetCustomerId",1);
         }
 
-        try{
-            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
-            int topBillId= (banquetBillDTO.getBillId())+1;
-            model.addAttribute("topBanquetBillId",topBillId);
-        }catch (NullPointerException e){
-            model.addAttribute("topBanquetBillId",1);
+//        try{
+////            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
+//            BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
+//            int topBillId= (banquetBillDTO.getBillId())+1;
+//            model.addAttribute("topBanquetBillId",topBillId);
+//        }catch (NullPointerException e){
+//            model.addAttribute("topBanquetBillId",1);
+//        }
+
+
+        try {
+            BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
+            int topBill = (banquetBillDTO.getBillId()) + 1;
+            model.addAttribute("topBanquetBillId", topBill);
+        } catch (NullPointerException e){
+            model.addAttribute("topBanquetBillId", 1);
         }
 
         List<BanquetCustomerDTO> list = banquetBO.findAllCustomers();

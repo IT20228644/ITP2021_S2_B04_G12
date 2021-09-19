@@ -83,5 +83,4 @@ public class BarOrderDetails implements SuperEntity {
         this.order = order;
     }
 
-
 }

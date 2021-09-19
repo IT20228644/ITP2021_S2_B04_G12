@@ -18,9 +18,13 @@ public class BanquetOrder {
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name="menu",referencedColumnName = "menuId")
     private Menu menu;
+//    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+//    @JoinColumn(name = "BanquetBillId", referencedColumnName = "billId")
+//    private BanquetBill banquetBill;
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
-    @JoinColumn(name = "BanquetBillId", referencedColumnName = "billId")
+    @JoinColumn(name = "banquetBill", referencedColumnName = "billId")
     private BanquetBill banquetBill;
+
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     @JoinColumn(name = "BanquetCustomer", referencedColumnName = "customerId")
     private BanquetCustomer banquetCustomer;
@@ -42,7 +46,7 @@ public class BanquetOrder {
         this.submittedBy = submittedBy;
         this.banquetCustomer = banquetCustomer;
         this.menu = menu;
-//        this.banquetBill = banquetBill;
+        this.banquetBill = banquetBill;
     }
 
     public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date,

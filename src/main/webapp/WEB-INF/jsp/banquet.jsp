@@ -296,7 +296,7 @@
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                               href="/banquetBill" class="btnq"><h2
+                               href="banquetBill" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Banquet Bill</h2></a>
                         </div>

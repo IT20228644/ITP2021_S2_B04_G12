@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Lahiru Jayasinghe
-  Date: 10-Sep-21
-  Time: 2:10 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -29,13 +22,6 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
-    <c:if test="${not empty todayInventoryLoginError}">
-        <script>
-            window.addEventListener("load", function () {
-                alert("${todayInventoryLoginError}");
-            })
-        </script>
-    </c:if>
     <style>
         .large-btn {
             height: 90px;
@@ -143,7 +129,6 @@
                                         +New</i>
                                     </button>
                                 </a>
-
                             </div>
                         </div>
                     </div>
@@ -234,8 +219,8 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Georgia;
-                             background-color:#8c6f60; color: #ffffff;font-weight: bolder"
+                            <a style=" font-family:  Georgia;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
                                href="manageSupplier" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Supplier Manage</h2></a>
@@ -245,9 +230,9 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family: Georgia;
-                             background-color:#8c6f60; color: #ffffff;font-weight: bolder"
-                               href="kitchenStock" class="btnq"><h2
+                            <a style=" font-family:  Georgia;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                               href="barStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Kitchen Stock</h2></a>
                         </div>
@@ -256,11 +241,11 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
-                            <a style=" font-family:  Georgia;
-                             background-color:#8c6f60; color: #ffffff;font-weight: bolder"
-                               href="beverageStock" class="btnq"><h2
+                            <a style=" font-family: Georgia;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                               href="barStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Beverage Stock</h2></a>
+                                     margin-top: 30px">F&B Stock</h2></a>
                         </div>
                         <br>
                     </div>
@@ -268,10 +253,10 @@
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
                             <a style=" font-family: Georgia;
-                             background-color:#8c6f60; color: #ffffff;font-weight: bolder"
-                               href="inventoryMainReport" class="btnq"><h2
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                               href="restaurantStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Reports</h2></a>
+                                     margin-top: 30px">All Inventory</h2></a>
                         </div>
                         <br>
                     </div>
@@ -282,51 +267,49 @@
 
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2> Inventory Notice
-                                <small>Day After Tomorrow</small>
-
+                            <h2>Inventory Notice
+                                <small>Tomorrow</small>
                             </h2>
                             <ul class="nav navbar-right panel_toolbox">
 
                                 <li>
                                     <a type='submit' class="img__wrap" href="/addInventoryType" value="Register">
-                                        <i style="font-size: 18px"  class="fa fa-gear img__img"><label class="img__description" style=" font-size: 15px"> &nbsp;&nbsp;Settings</label> </i>
+                                        <i  style="font-size: 18px" class="fa fa-gear img__img"><label class="img__description" style=" font-size: 15px"> &nbsp;&nbsp;Settings</label> </i>
                                     </a>
 
                                 </li>
                             </ul>
-
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
                             <div class="row">
-
-                                <a href="inventoryToday">
-                                    <button style="float: left;font-weight: bolder" class="btn btn-dark">
-                                        Today
-                                    </button>
-                                </a>
-                                <a href="inventoryTomorrow">
-                                    <button style="float: left;font-weight: bolder" class="btn btn-dark">
-                                        Tomorrow
-                                    </button>
-                                </a>
-                                <a href="inventory">
-                                    <button style="float: left;font-weight: bolder"
-                                            class=" active btn btn-dark">Day After Tomorrow
-                                    </button>
-                                </a>
-                                <a style="right: 55px; position:absolute !important;" href="allInventoryNotice" class="img__wrap">
-                                    <i style="  font-weight: bolder"
-                                       class="active fa fa-list img__img">
-
-                                        <label style=" font-size: 15px" class="img__description">&nbsp;All&nbsp;Notice </label>
-                                    </i>
-                                </a>
-
                                 <div class="col-sm-12">
                                     <div class="card-box table-responsive">
-                                        <table  style="text-align: center" id="datatable-buttons" class="table table-striped table-bordered">
+                                        <a href="inventoryToday">
+                                            <button style="float: left;font-weight: bolder" class=" btn btn-dark">
+                                                Today
+                                            </button>
+                                        </a>
+                                        <a href="inventoryTomorrow">
+                                            <button style="float: left;font-weight: bolder"
+                                                    class=" active btn btn-dark">Tomorrow
+                                            </button>
+                                        </a>
+                                        <a href="inventory">
+                                            <button style="float: left;font-weight: bolder" class=" btn btn-dark">Day
+                                                After Tomorrow
+                                            </button>
+                                        </a>
+                                        <a style="right: 60px; position:absolute !important;" href="allInventoryNotice" class="img__wrap">
+                                            <i style="  font-weight: bolder"
+                                               class="active fa fa-list img__img">
+
+                                                <label style=" font-size: 15px" class="img__description">&nbsp;All&nbsp;Notice </label>
+                                            </i>
+                                        </a>
+
+                                        <table style="text-align: center" id="datatable-buttons"
+                                               class="table table-striped table-bordered">
                                             <thead class="thead-light">
                                             <tr>
 
@@ -343,25 +326,24 @@
                                                 <th>State</th>
                                             </tr>
 
+
                                             </thead>
                                             <tbody>
-                                            <c:forEach items="${findDayAfterTomorrowNotice}" var="e">
+                                            <c:forEach items="${findTodayNotice}" var="e">
                                                 <tr>
-
                                                     <td>${e.inventoryId}</td>
                                                     <td>${e.text}</td>
                                                     <td>${e.department}</td>
                                                     <td>${e.orderQty}</td>
                                                     <td>${e.qtyOnHand}</td>
-                                                    <td> ${Double.parseDouble(e.requiredQty > 0.0 ? e.requiredQty : 0.0) }</td>
+                                                    <td>${ Double.parseDouble(e.requiredQty > 0.0 ? e.requiredQty : 0.0) }
+                                                    </td>
                                                     <td>${e.date}</td>
                                                     <td>${e.expDate}</td>
                                                     <td>${e.orderHolder}</td>
                                                     <td style="width: 20%" >
                                                         <form action="updateQty" method="post">
                                                             <div class="input-group" >
-                                                                <input style="display: none" value="${e.noticeId}" type="text" class="form-control" name="inventoryId">
-                                                                <input style="display: none" value="${Double.parseDouble(e.requiredQty > 0.0 ? e.requiredQty : 0.0) }" type="text" class="form-control" name="currentQty">
                                                                 <input style="display: none" value="${e.inventoryId}" type="text" class="form-control" name="inventoryId">
                                                                 <input style="display: none" value="${e.noticeId}" type="text" class="form-control" name="noticeId">
                                                                 <input style="display: none" value="${e.requiredQty}" type="text" class="form-control" name="checkComplete">
@@ -382,17 +364,20 @@
                                                         </form>
                                                     </td>
                                                     <td>
-                                                            <%--  <c:url value="/inventory" var="url">
-                                                                  <c:param name="state" value="${e.state}"/>
-                                                              </c:url> <a href="updateStateDayAfterTomorrow/${e.noticeId }"
-                                                                          class="checkbox">--%>
-                                                            ${1.0 > e.requiredQty ? "Complete" : "InComplete"}
+                                                     <%--   <c:url value="/inventoryTomorrow" var="url">
+                                                            <c:param name="state" value="${e.state}"/>
+                                                        </c:url> <a href="updateStateTomorrow/${e.noticeId }"
+                                                                    class="checkbox">--%>
+                                                             ${1.0 > e.requiredQty ? "Complete" : "InComplete"}
+
                                                     </td>
                                                 </tr>
+
+
                                             </c:forEach>
+
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
