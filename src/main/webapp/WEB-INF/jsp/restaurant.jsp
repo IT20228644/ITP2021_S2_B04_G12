@@ -75,6 +75,55 @@
             background: #ddd;
             color: black;
         }
+
+        .btnq {
+            text-decoration: none;
+            border: 5px solid rgb(190, 175, 166);
+            position: relative;
+            overflow: hidden;
+            height: 90px;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 5px 5px;
+
+            font-family: Playfair Display, Georgia, Times New Roman, serif;
+            background-color: #a98e77;
+            color: #ffffff;
+            font-size: 19px;
+
+
+        }
+        .btnq:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -00%;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(64, 45, 34, 0.4),
+                    transparent
+            );
+            transition: all .8s;
+        }
+
+        .btnq:hover:before {
+            left: 100%;
+        }
+
+        .btn_backDashboard {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 39px;
+            font-size: medium;
+            border-radius: 3px;
+        }
     </style>
 </head>
 
@@ -102,8 +151,8 @@
                         </h3>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                <a href="/foodAndBeverage">
-                                    <button type="button" class=" btn btn-dark"><i class="fa fa-mail-reply"> Back to Dashboard</i>
+                                <a href="/Dashboard">
+                                    <button type="button" class=" btn_backDashboard"><i class="fa fa-mail-reply"> Back to Dashboard</i>
                                     </button>
                                 </a>
 
@@ -198,25 +247,25 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <a href="restaurantOrder">
-                            <button type="button" class="large-btn btn btn-dark">Order</button>
+                            <button type="button" class="btnq">Order</button>
                         </a>
                     </div>
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <a href="restaurantTableIndex">
-                            <button type="button" class="large-btn btn btn-dark">Table</button>
+                            <button type="button"  class="btnq">Table</button>
                         </a>
                     </div>
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <a href="onlineDashboard">
-                            <button type="button" class="large-btn btn btn-dark">Online</button>
+                            <button type="button" class="btnq">Online</button>
                         </a>
                     </div>
 
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <a href="restaurantManage">
-                        <button type="button" class="large-btn btn btn-dark">Manage Online Orders And Table Reservations</button>
+                        <button type="button" class="btnq">Manage Online Orders And Table Reservations</button>
                         </a>
                     </div>
 
