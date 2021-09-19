@@ -141,7 +141,7 @@
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
                                         <button type="submit" value="Register" disabled="true"
-                                                style="font-weight: bold;color: #c6d4d3" ; id="name"
+                                                style="font-weight: bold;color: #c6d4d3; " id="name"
                                                 class="btn btn-success "> Pay <i class="fa fa-file-image-o"></i>
                                         </button>
                                         <a href="/hr">

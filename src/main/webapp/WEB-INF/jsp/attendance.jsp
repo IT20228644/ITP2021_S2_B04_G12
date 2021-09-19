@@ -274,7 +274,7 @@
                                 <div class="input-group mb-3" style="float: right">
 
                                     <button type='submit' class="btn btn-dark" style="width: 30%" value="Register">Submit</button>
-                                    <button type='reset' class="btn btn-outline-primary" style="border: 2px solid #4c2a18;  background-color: #8c6f60;"value="">Reset</button>
+                                    <button type='reset' class="btn btn-outline-primary" style="width: 30%" value="">Reset</button>
 
                                 </div>
                             </div>
