@@ -1,6 +1,8 @@
 package lk.sliit.hotel.controller.RestaurantController;
 
+import lk.sliit.hotel.controller.SuperController;
 import lk.sliit.hotel.dto.kitchen.FoodItemDTO;
+import lk.sliit.hotel.service.custom.IndexLoginBO;
 import lk.sliit.hotel.service.custom.KitchenBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,12 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-//controller
+
 @Controller
 public class RestaurantOnlineOrder {
 
     @Autowired
     KitchenBO kitchenBO;
+
+    @Autowired
+    IndexLoginBO indexLoginBO;
+
+    @GetMapping("/home")
+    public String loginPage1(Model model) {
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        return "home";
+    }
+
 
     @GetMapping("/onlineOrder")//Load Online Order Page
     public String loadForm_validationSaveMode(Model model, HttpSession session, HttpServletRequest request) {

@@ -328,7 +328,7 @@
                                                     <button type="submit" value="Register"
                                                             style="font-weight: bold;color: white" ; id="name"
                                                             onclick="window.print();"
-                                                            class="btn_back"> Submit Report 
+                                                            class="btn_back"> Submit Report
                                                     </button>
                                                 </ul>
 
