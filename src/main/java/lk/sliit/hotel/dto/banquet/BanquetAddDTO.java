@@ -43,6 +43,37 @@ public class BanquetAddDTO {
         this.advanceFee = advancePayment;
     }
 
+    public BanquetAddDTO(int orderId, int billId, Date date, String name, String address, String hallId,
+                         int menuId, int noOfPlates, double advancePayment,
+                         double total, String orderState) {
+
+        this.orderId = orderId;
+        this.banquetBillId =billId;
+        this.date =date;
+        this.name =name;
+        this.address = address;
+        this.hallId = hallId;
+        this.menuId =menuId;
+        this.noOfPlates =noOfPlates;
+        this.advanceFee =advancePayment;
+        this.total =total;
+        this.orderState = orderState;
+    }
+
+    public BanquetAddDTO(int orderId, int billId, Date date, String name, String address, String hallId,
+                         int noOfPlates, double advancePayment, double total, String orderState) {
+        this.orderId = orderId;
+        this.banquetBillId =billId;
+        this.date =date;
+        this.name =name;
+        this.address = address;
+        this.hallId = hallId;
+        this.noOfPlates =noOfPlates;
+        this.advanceFee =advancePayment;
+        this.total =total;
+        this.orderState = orderState;
+    }
+
     public int getOrderId() {
         return orderId;
     }

@@ -81,6 +81,7 @@ public class BanquetBOImpl implements BanquetBO {
 
 
 
+
     @Override
     public void saveBanquet(BanquetAddDTO banquetAddDTO) {
 
@@ -188,6 +189,30 @@ public class BanquetBOImpl implements BanquetBO {
             ));
         }
         return billList;
+    }
+
+    @Override
+    public List<BanquetAddDTO> findAllBanquet() {
+        Iterable<BanquetOrder> all = banquetOrderDAO.findAll();
+        List<BanquetAddDTO>banquetOrderList = new ArrayList<>();
+        for(BanquetOrder b:all){
+            banquetOrderList.add(new BanquetAddDTO(
+                    b.getOrderId(),
+                    b.getBanquetBill().getBillId(),
+                    b.getDate(),
+                    b.getBanquetCustomer().getName(),
+                    b.getBanquetCustomer().getAddress(),
+                    b.getHallId(),
+                   // b.getMenu().getMenuId(),
+                    b.getNoOfPlates(),
+                    b.getBanquetBill().getAdvancePayment(),
+                    b.getBanquetBill().getTotal(),
+                    b.getOrderState()
+            ));
+
+        }
+        return banquetOrderList;
+
     }
 
 
