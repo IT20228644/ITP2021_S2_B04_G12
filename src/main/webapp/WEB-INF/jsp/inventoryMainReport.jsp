@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -10,8 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href=""/>
-    <title>Kitchen Report </title>
+    <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
 
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,22 +24,20 @@
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
     <%
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
+        String date = sdf.format ( new Date ( ) );
     %>
 </head>
 
 <body class="nav-md" style="cursor: pointer">
 <div class="container body">
     <div class="main_container">
-
-
         <!-- Side header -->
-        <jsp:include page="sideHeader.jsp"/>
+        <jsp:include page="sideHeader.jsp" />
         <!-- /Side header -->
 
         <!-- Top header -->
-        <jsp:include page="topHeader.jsp"/>
+        <jsp:include page="topHeader.jsp" />
         <!-- /Top header -->
 
         <!-- page content -->
@@ -47,10 +45,20 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Kitchen Report
-                            <small>Daily restaurant food order report.</small>
+                        <h3>Report
+                            <small>Rooms Income</small>
+                            <a href="/inventory">
+                                <button style=" border: 5px #4c2a18;background-color: #8c6f60;
+                                    color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
+                                    back</i>
+                                </button>
+                            </a>
                         </h3>
-                    </div>
+
+
+
+
+                           </div>
 
                     <div class="title_right">
                         <script>
@@ -131,27 +139,45 @@
 
                         </form>
 
-                        <!--////////////////////////-->
-
-                        <!--//////////////////////////-->
                     </div>
+
                 </div>
+                <form action="/inventoryMainReport" method="post">
+                    <div class="form-group">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3"> <br>
+                            <label for="date">Date from</label>
+                            <input type="date" class="form-control"
+                                   required="required" name="dateIn"
+                                   id="date" placeholder="Date from"/></div>
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3"> <br>
+                            <label for="date">Date to </label>
+                            <input type="date" class="form-control"
+                                   required="required" name="dateOut"
+                                   id="date1" placeholder="Date to"/>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3"> <br>
+                            <label for="date">Check Report </label>
+                            <input type='submit'  class="form-control btn-dark" style="width: 50%; " value="Check">
+                        </div>
+                        <br>
+                    </div>
+
+                </form>
 
                 <div class="clearfix"></div>
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
-                            <a href="/kitchen">
-                                <button type="button" class="large-btn btn btn-dark"><i class="fa fa-mail-reply">
-                                    Back</i>
-                                </button>
-                            </a>
-                        </div>
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Kitchen report Print
-                                    <small>Daliy restaurant food order report.</small>
+                                <h2>Invoice Print
+                                    <small>Employee invoice</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -176,7 +202,7 @@
                                     <div class="row">
                                         <div class="  invoice-header">
                                             <h1>
-                                                <i class="fa fa-globe"></i> Daily restaurant food order report.
+                                                <i class="fa fa-globe"></i> Invoice.
                                                 <small><%=date%>
                                                 </small>
                                             </h1>
@@ -184,32 +210,14 @@
                                     </div>
                                     <!-- info row -->
                                     <div class="row invoice-info">
-                                        <div class="col-sm-4 invoice-col">
-                                            From
-                                            <address>
-                                                <strong>${loggerName.name}</strong>
-                                                <br>${loggerName.address}
-                                                <br>${loggerName.email}
-                                            </address>
-                                        </div>
+
+                                        <!-- /.col -->
+
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
-                                            To
-                                            <address>
-                                                <strong>Restaurant Manager</strong>
-                                                <br>Hotel Sapphire Marriott
-                                                <br>Suriyaarachchi
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0778799940
-                                                <br>Email: it20300814@my.sliit.lk
-                                            </address>
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-sm-4 invoice-col">
-                                            <b>Invoice #007612</b>
-                                            <br>
-                                            <br>
-                                            <b>Order ID:</b> 4F3S8J
+                                            <b>Invoice</b>
+
+                                            <b>Orders</b>
                                             <br>
                                             <b>Payment Due:</b><%=date%>
                                             <br>
@@ -222,97 +230,51 @@
                                     <!-- Table row -->
                                     <div class="row">
                                         <div class="  table">
-                                            <table id="saq" class="table table-striped">
+                                            <table id="saq" class="table table-striped" style="text-align: center">
                                                 <thead>
 
                                                 <tr>
-
-                                                    <th>Food Id</th>
-                                                    <th>Name</th>
-                                                    <th>Unite Price</th>
-                                                    <th>Total</th>
-
+                                                    <th>OrderId</th>
+                                                    <th>Item</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Supplier</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
 
-                                                <c:forEach items="${table}" var="e">
+                                                <c:forEach items="${loadInventoryBills}" var="e">
                                                     <tr>
-
-                                                        <td>${e.foodItemId}</td>
-                                                        <td>${e.foodName}</td>
-                                                        <td>${e.quantity}</td>
-                                                        <td>${e.price}</td>
-                                                        <td>${e.totalPrice}</td>
-                                                        <td>${e.sellingRateOnline}</td>
-                                                        <td>${e.sellingRateCounter}</td>
+                                                        <td> OD${e.orderId}</td>
+                                                        <td>${e.inventory}</td>
+                                                        <td>Rs: ${e.price}</td>
+                                                        <td> ${e.quantity}</td>
+                                                        <td>${e.supplier}</td>
 
                                                     </tr>
-                                                    <script>
-                                                        var aa = aa
-                                                        document.getElementById("demo").innerHTML = 11;
-                                                    </script>
                                                 </c:forEach>
-
                                                 </tbody>
                                             </table>
                                         </div>
                                         <!-- /.col -->
                                     </div>
-                                    <!-- /.row -->
 
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-                                            <p class="lead">Report Summary of <%=date%></p>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <th>Total sels:</th>
-
-                                                        <td>${totalItemsSold}<span id="val7"></span></td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="width:50%">Tot Resturant Counter Income:</th>
-                                                        <td><span id="val2">${totalCounter}</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="width:50%">Tot restaurant Online Income:</th>
-                                                        <td><span id="val3">${totalCounterIncome}</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Tot num of Banquet income:</th>
-                                                        <td><span id="val4">${totalOnline}</span></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
-                                    <!-- /.row -->
 
                                     <!-- this row will not appear when printing -->
                                     <div class="row no-print">
                                         <div class=" ">
 
-                                            <form action="/kitchen"
-                                                  name="printReport">
-                                                <input style="display: none" type="text" id="itemPay" name="SalaryId">
-                                                <ul class="nav navbar-right panel_toolbox">
-                                                    <button type="submit" value="Register"
-                                                            style="font-weight: bold;color: white" ; id="name"
-                                                            onclick="window.print();"
-                                                            class="btn btn-success "> Submit Report <i
-                                                            class="fa fa-file-image-o"></i>
-                                                    </button>
-                                                </ul>
 
 
-                                            </form>
-                                        </div>
+                                            <ul class="nav navbar-right panel_toolbox">
+                                                <button type="submit" value="Register"
+                                                        style="font-weight: bold;color: white" ; id="name" onclick="window.print();"
+                                                        class="btn btn-dark "> Print Report <i class="fa fa-file-image-o"></i>
+                                                </button>
+                                            </ul>
+
+
+                                            
                                     </div>
                                 </section>
                             </div>
@@ -321,14 +283,15 @@
                 </div>
             </div>
         </div>
+        <!-- /page content -->
 
-        <footer>
-            <div class="pull-right">
-                Copyright © Kitchen Management 2021.<a href="">Created by ITP2021_S2_B04_G12</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
+
+
+
+        <!-- footer content -->
+        <jsp:include page="footer.jsp" />
         <!-- /footer content -->
+
     </div>
 </div>
 
@@ -339,17 +302,17 @@
     var rowCount = document.getElementById('saq').rows.length;
     var table = document.getElementById("saq"), sumVal2 = 0.0, sumVal3 = 0.0, sumVal4 = 0.0, sumVal5 = 0.0;
     var sumVal = 0.0;
-    var avgTax = 0.0;
-    var str = '';
+    var avgTax = 0.0;    var str = '';
 
 
     for (var i = 1; i < table.rows.length; i++) {
-        str = str + (table.rows[i].cells[0].innerHTML) + " ";
-        sumVal = sumVal + parseFloat(table.rows[i].cells[4].innerHTML);
-        sumVal2 = sumVal2 + parseFloat(table.rows[i].cells[2].innerHTML);
-        sumVal3 = sumVal3 + parseFloat(table.rows[i].cells[3].innerHTML);
-
-
+        str = str+ (table.rows[i].cells[0].innerHTML)+" ";
+        sumVal = sumVal + parseFloat(table.rows[i].cells[7].innerHTML);
+        sumVal2 = sumVal2 + parseFloat(table.rows[i].cells[3].innerHTML);
+        sumVal3 = sumVal3 + parseFloat(table.rows[i].cells[6].innerHTML);
+        sumVal5 = sumVal5 + parseFloat(table.rows[i].cells[5].innerHTML);
+        sumVal4 = sumVal4 + parseFloat(table.rows[i].cells[4].innerHTML);
+        avgTax = sumVal3 / i;
     }
 
 

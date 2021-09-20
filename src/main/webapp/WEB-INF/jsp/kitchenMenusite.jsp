@@ -1,71 +1,13 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<html lang="en">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
-    <!-- Bootstrap -->
-    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Custom Theme Style -->
-    <link href="../../build/css/custom.min.css" rel="stylesheet">
-    <%
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(new Date());
-    %>
-    <%--Chrat--%>
-
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <%--/Pie Chrat--%>
-
-    <!-- Datatables -->
-    <link href="../../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="../../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="../../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="../../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .large-btn {
-            height: 40px;
-            width: 100%;
-            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-            font-weight: bolder;
-
-        }
-
-        .large-btn:hover {
-            color: #0f0f0f;
-        }
-
-        #chartdiv {
-            position: relative;
-            top: 40px;
-            width: 100%;
-            height: 500px;
-        }
-
-        #chartdiv1 {
-            position: relative;
-            top: 40px;
-            width: 100%;
-            height: 500px;
-        }
-    </style>
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
 </head>
-
 <body class="nav-md" style="cursor: pointer">
 <div class="container body">
     <div class="main_container">
@@ -86,20 +28,15 @@
                     <h3>Edit Menu</h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
-                            <a href="/kitchen">
+                            <a href="/manageMenu">
                                 <button type="button" class="large-btn btn btn-dark"><i class="fa fa-mail-reply">
                                     Back</i>
                                 </button>
                             </a>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                            <a href="/manageFoodPacks">
-                                <button type="button" class="large-btn btn btn-dark">Manage Packages</button>
-                            </a>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-6">
-                            <a href="/kitchenMenusite">
-                                <button type="button" class="large-btn btn btn-dark">Manage Menu site Packages</button>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <a href="/kitchenMenusiteShow">
+                                <button type="button" class="large-btn btn btn-dark">Show Menu Details</button>
                             </a>
                         </div>
                     </div>
@@ -169,7 +106,7 @@
                                 <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
                                     <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"
                                            class="clock2" type="text" name="sivam" size="12"><br>
-                                    <p><%=date%>
+                                    <p>
                                     </p>
                                 </h6>
 
@@ -202,7 +139,7 @@
                         <div class="col-md-12 col-sm-12 ">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Add/Update Food Item...</h2>
+                                    <h2>Add/Update Menu in to the Site...</h2>
                                     <ul class="nav navbar-right panel_toolbox">
                                         <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                         </li>
@@ -218,29 +155,50 @@
                                 <div class="x_content">
                                     <br/>
 
-                                    <form:form action="saveFoodItem" method="post" modelAttribute="foodItemDTO">
-                                        <input class="form-control" name="itemId" value="0" id="itemId" type="hidden" >
+                                    <form:form action="kitchenMenusiteShow" method="post" modelAttribute="menusiteDTO">
+                                        <input class="form-control" name="menusId" value="0" id="menusId" type="hidden" >
 
 
                                         <div class=" form-group">
                                             <label class=" label-align"
-                                                   for="itemName">Item Name:
+                                                   for="menuname">Menu Name:
                                                 <span class="required">*  &nbsp;</span>
                                             </label>
                                             <div class=" ">
-                                                <input class="form-control" name="itemName" id="itemName"
+                                                <input class="form-control" name="menuname" id="menuname"
                                                        required="required" type="text">
                                             </div>
                                         </div>
                                         <div class=" form-group">
-                                            <label class="label-align">Category: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
+                                            <label class="label-align">Type Of Menu: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
                                             </label>
-                                            <select class="form-control" required="required" name="itemCategory"
-                                                    id="itemCat" data-placeholder="Select Category">
+                                            <select class="form-control" required="required" name="menutype"
+                                                    id="menutype" onchange="menuin(this.id,'menutype')">
+                                                <option value="">--Choose Menu Type--</option>
+                                                <option value="super">Super Menu</option>
+                                                <option value="breakfast">Breakfast Menu</option>
+                                                <option value="lunch">Lunchen Menu</option>
+                                                <option value="dinner">Dinner Menu</option>
+                                                <option value="afternoon">Afternoon and High Tea Menu</option>
+                                                <option value="room">Room service Menu</option>
 
-                                                <c:forEach items="${foodItemCategories}" var="item">
-                                                    <option>${item}</option>
-                                                </c:forEach>
+                                            </select>
+                                        </div>
+                                        <div class=" form-group">
+                                            <label class="label-align">Type Of Menu Item: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
+                                            </label>
+                                            <div class=" ">
+                                                <input class="form-control" name="typeitem" id="typeitem"
+                                                       required="required" type="text">
+                                            </div>
+
+                                        </div>
+
+                                        <div class=" form-group">
+                                            <label class="label-align">Description: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
+                                            </label>
+                                            <textarea class="form-control" name="descrip" id="descrip"
+                                                      required="required" type="textarea"></textarea>
 
                                             </select>
                                         </div>
@@ -249,7 +207,7 @@
                                                    for="unitPrice">Unit Price: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
                                             </label>
                                             <div class="">
-                                                <input class="form-control" id="unitPrice" name="unitePrice"
+                                                <input class="form-control" id="unitPrice" name="unitPrice"
                                                        required="required" type="number">
                                             </div>
                                         </div>
@@ -260,12 +218,12 @@
                                                     <label for="img-preview">Image</label>
                                                     <div class="img-upload-card ">
                                                         <c:choose>
-                                                            <c:when test="${empty foodItemDTO.src}">
+                                                            <c:when test="${empty foodItemDTO.mpicture}">
                                                                 <img src="../../images/icons/food.jpg" id="img-preview"
                                                                      style="width: 100%; height: 40px"/>
                                                             </c:when>
                                                             <c:otherwise>
-                                                                <img src="${foodItemDTO.src}" id="img-preview"
+                                                                <img src="${foodItemDTO.mpicture}" id="img-preview"
                                                                      style="width: 100%;height: 40px"/>
                                                             </c:otherwise>
                                                         </c:choose>
@@ -280,7 +238,7 @@
                                             <br>
                                             <br>
                                         </div>
-                                        <form:hidden id="imgUrl" path="src" value="../../images/icons/food.jpg"/>
+                                        <form:hidden id="imgUrl" path="mpicture" value="../../images/icons/food.jpg"/>
                                         <div class=" form-group">
                                             <div class=" ">
                                                 <button class="btn btn-dark" type="submit" value="Register">+Add /
@@ -298,79 +256,13 @@
 
                     <!--/Order items form------------------------------------------------------------------->
 
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="row">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Find Food Items
-                                        <small>list</small>
-                                    </h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"
-                                               href="#"
-                                               role="button"><i class="fa fa-wrench"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="card-box table-responsive">
-                                                <table class="table table-striped table-bordered" id="datatable-buttons"
-                                                       style="text-align: center">
-                                                    <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Item Name</th>
-                                                        <th>img</th>
-                                                        <th>Category</th>
-                                                        <th>Unit Price</th>
-                                                        <th></th>
 
-                                                    </tr>
 
-                                                    </thead>
-                                                    <tbody>
-                                                    <c:forEach items="${loadFoodItemTable}" var="item">
-                                                        <tr>
-                                                            <td>${item.itemId}</td>
-                                                            <td>${item.itemName}</td>
-                                                            <td><img src="${item.src}"
-                                                                     class="avatar" alt="Avatar"></td>
-                                                            <td>${item.itemCategory}</td>
-                                                            <td>${item.unitePrice}</td>
-                                                            <td><a href="deleteFoodItem/${item.itemId}">
-                                                                <i class="fa fa-trash"></i>
-                                                            </a></td>
-                                                        </tr>
-                                                    </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!--/Content/////////////////////////////////////////////////////////////////-->
+
                 </div>
 
             </div>
-
-        </div>
-        <!--/Ordered Food Item list table--------------------------------------------------------------->
-
-        <!--/Content/////////////////////////////////////////////////////////////////-->
-
-    </div>
-
-</div>
 
 <jsp:include page="footer.jsp"/>
 
@@ -404,10 +296,12 @@
     var selectedRow = null;
     $("#datatable-buttons tbody").on('click', 'tr', function () {
         selectedRow = $(this);
-        $("#itemId").val($(this).find("td:first-child").text());
-        $("#itemName").val($(this).find("td:nth-child(2)").text());
-        $("#itemCat").val($(this).find("td:nth-child(4)").text());
-        $("#unitPrice").val($(this).find("td:nth-child(5)").text());
+        $("#menusId").val($(this).find("td:first-child").text());
+        $("#menuname").val($(this).find("td:nth-child(2)").text());
+        $("#menutype").val($(this).find("td:nth-child(3)").text());
+        $("#typeitem").val($(this).find("td:nth-child(4)").text());
+        $("#descrip").val($(this).find("td:nth-child(5)").text());
+        $("#unitPrice").val($(this).find("td:nth-child(6)").text());
         selectedRow.addClass('row-selected');
     });
 

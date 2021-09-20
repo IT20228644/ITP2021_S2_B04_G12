@@ -68,7 +68,7 @@
 
         .btnq {
             text-decoration: none;
-            border: 5px solid rgb(174, 182, 203);
+            border: 5px solid rgb(190, 175, 166);
             position: relative;
             overflow: hidden;
             height: 90px;
@@ -89,7 +89,7 @@
             background: linear-gradient(
                     120deg,
                     transparent,
-                    rgba(135, 141, 156, 0.4),
+                    rgba(64, 45, 34, 0.4),
                     transparent
             );
             transition: all .8s;
@@ -127,13 +127,13 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <a href="barDashboard">
-                                    <button type="button" style=" border: 5px solid rgb(174, 182, 203);background-color: #45526e;
+                                    <button type="button" style=" border:  5px solid rgb(190, 175, 166);background-color: #a98e77;
                                     color: #c6d4d3;font-weight: bolder" class="btnq2 btn">
                                         <i class="fa fa-mail-reply"> Back to Dashboard</i>
                                     </button>
                                 </a>
                                 <a href="barSettings">
-                                    <button style="color: #3b465e !important;" type="button"
+                                    <button style="color: #8c6f60 !important;" type="button"
                                             class="btnq3 btn"><i style="font-size: 185%;" class="fa fa-gear"></i>
                                     </button>
                                 </a>
@@ -232,7 +232,7 @@
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
-                             background-color: #3d495f; color: #ffffff;font-weight: bolder"
+                             background-color: #a98e77; color: #ffffff;font-weight: bolder"
                                href="barOrder" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Order</h2></a>
@@ -244,7 +244,7 @@
 
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
-                             background-color:#3d495f; color: #ffffff;font-weight: bolder"
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
                                href="barStock" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Stock</h2></a>
@@ -255,7 +255,7 @@
                     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
-                             background-color:#3d495f; color: #ffffff;font-weight: bolder"
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
                                href="/barBill" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Bills</h2></a>
@@ -268,7 +268,7 @@
 
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
-                             background-color:#3d495f; color: #ffffff;font-weight: bolder"
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
                            href="barStock" class="btnq"><h2
                                 style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Income</h2></a>

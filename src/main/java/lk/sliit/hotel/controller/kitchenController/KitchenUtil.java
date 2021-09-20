@@ -48,4 +48,15 @@ public class KitchenUtil {
             "Restaurant"
     };
 
+    public static String [] menuSiteMenuType ={
+            "Super Menu",
+            "Breakfast Menu",
+            "Lunchen Menu",
+            "Dinner Menu",
+            "Afternoon and High Tea Menu",
+            "Room service Menu"
+
+
+    };
+
 }
