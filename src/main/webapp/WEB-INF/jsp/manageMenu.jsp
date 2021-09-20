@@ -410,8 +410,8 @@
     let imgPreview = document.getElementById('img-preview');
     let fileUpload = document.getElementById('file-upload');
     let imgUrl = document.getElementById("imgUrl");
-    let CLOUDINARY_API_URL = 'https://api.cloudinary.com/v1_1/dwdv5hhga/upload';
-    let CLOUDINARY_UPLOAD_PRESET = 'sqdn7zkx';
+    let CLOUDINARY_API_URL = '	https://api.cloudinary.com/v1_1/dojpfi7m0/upload';
+    let CLOUDINARY_UPLOAD_PRESET = 'hq9n0d3k';
 
     fileUpload.addEventListener('change', function (event) {
 
