@@ -329,5 +329,19 @@ public class BanquetBOImpl implements BanquetBO {
         return dtos;
     }
 
+    @Override
+    public void updateBill(BanquetAddDTO banquetAddDTO) {
+        double total = banquetAddDTO.getFoodPrice()+ banquetAddDTO.getOtherPrice();
+        banquetBillDAO.updateFullBanquetBillTable(
+                banquetAddDTO.getAdvanceFee(),
+                banquetAddDTO.getFoodPrice(),
+                banquetAddDTO.getOtherPrice(),
+                total,
+                banquetAddDTO.getBanquetBillId()
+        );
+
+
+    }
+
 
 }
