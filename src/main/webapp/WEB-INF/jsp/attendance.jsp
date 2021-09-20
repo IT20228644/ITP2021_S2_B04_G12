@@ -216,7 +216,7 @@
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
                                        required name="employeeID"
-                                       id="itemCode" placeholder="ID" readonly/>
+                                       id="itemCode" placeholder="ID"/>
                             </div>
 
                             <div class="form-group">
