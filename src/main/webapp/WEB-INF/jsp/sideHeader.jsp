@@ -22,7 +22,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="dashboard" class="site_title"> <img style="margin-top: 20px; width: 162px;height: 102px"
+            <a href="Dashboard" class="site_title"> <img style="margin-top: 20px; width: 162px;height: 102px"
                                                          src="../../images/logonewe.png">
                    </a>
         </div>
@@ -56,7 +56,7 @@
                     <li><a><i class="fa fa-coffee"></i> Bar<span
                             class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="foodAndBeverage"> Bar Manage </a></li>
+                            <li><a href="barDashboard"> Bar Manage </a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-life-buoy"></i> House Keeping <span
