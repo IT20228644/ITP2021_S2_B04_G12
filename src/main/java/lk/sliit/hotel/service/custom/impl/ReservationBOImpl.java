@@ -229,7 +229,18 @@ public class ReservationBOImpl implements ReservationBO {
 
         }
     }
+    @Override
+    public List<ReservationDTO> findAllRooms() {
+        Iterable<Reservation> li = reservationDAO.findAll();
+        List<ReservationDTO> customerDTOS = new ArrayList<>();
+        for (Reservation c : li) {
+            customerDTOS.add(new ReservationDTO(
+                    c.getReservationId(), c.getNoOfRooms(), c.getCustomer().getName(), c.getCustomer().getEmail()
 
+            ));
+        }
+        return customerDTOS;
+    }
     @Override
     public CustomerDTO findCustomerByEmail(String email) {
         email = email.trim();

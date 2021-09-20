@@ -10,7 +10,10 @@ public class Reservation {
     private int reservationId;
     private String type;
     private Date date;
+    private String name;
+    private String email;
     private int noOfRooms;
+
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name="customerId",referencedColumnName = "customerId")
     private Customer customer;
@@ -29,7 +32,12 @@ public class Reservation {
         this.customer = customer;
     }
 
-
+    public Reservation(int reservationId, int noOfRooms, String name, String email) {
+        this.reservationId=reservationId;
+        this.noOfRooms=noOfRooms;
+        this.name=name;
+        this.email=email;
+    }
 
     public Collection<ReservationDetails> getReservationDetails() {
         return reservationDetails;
@@ -46,6 +54,11 @@ public class Reservation {
     public void setReservationDetails(Collection<ReservationDetails> reservationDetails) {
         this.reservationDetails = reservationDetails;
     }
+    public void setName(String cusName){this.name=cusName;}
+    public String getName(){return name;}
+
+    public void setEmail(String cusEmail){this.email=cusEmail;}
+    public String getEmail(){return email;}
 
     public int getReservationId() {
         return reservationId;

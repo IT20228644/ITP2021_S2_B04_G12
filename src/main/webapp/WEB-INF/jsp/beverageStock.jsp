@@ -94,15 +94,22 @@
                         <h3>Beverage Stock
                             <small>Welcome To Hotel Sapphire Mariott</small>
                         </h3>
+
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <a href="/inventory">
-                                    <button style=" border: 3px #4c2a18;background-color: #8c6f60;
-                                    color: #ffffff;font-weight: bolder" type="button" class="btnq2 btn"><i
-                                            class="fa fa-reply">
-                                        Back</i>
+                                <a href="barDashboard">
+                                    <button type="button" style=" border:  5px solid rgb(190, 175, 166);background-color: #a98e77;
+                                    color: #c6d4d3;font-weight: bolder" class="btnq2 btn">
+                                        <i class="fa fa-mail-reply"> Back to Dashboard</i>
                                     </button>
                                 </a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
                                 <a href="/inventory">
                                     <button style=" border: 3px #4c2a18;background-color: #8c6f60;
                                     color: #ffffff;font-weight: bolder" type="button" class="btnq2 btn"><i

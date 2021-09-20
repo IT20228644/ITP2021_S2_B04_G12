@@ -11,6 +11,8 @@ public class ReservationDTO {
     private int reservationId;
     private String type;
     private Date date;
+    private String name;
+    private String email;
     private int noOfRooms;
     private int customer;
     private String details;
@@ -33,7 +35,12 @@ public class ReservationDTO {
         this.noOfRooms = noOfRooms;
         this.customer = customer;
     }
-
+    public ReservationDTO(int reservationId,String name, int noOfRooms, String email) {
+        this.reservationId = reservationId;
+        this.email = email;
+        this.name=name;
+        this.noOfRooms = noOfRooms;
+    }
     public ReservationDTO(int reservationId, String type, Date date, int noOfRooms, int customer, String details) {
         this.reservationId = reservationId;
         this.type = type;
@@ -46,7 +53,8 @@ public class ReservationDTO {
     public ReservationDTO() {
     }
 
-    public ReservationDTO(int reservationId) {
+    public ReservationDTO(int reservationId)
+    {
         this.reservationId = reservationId;
     }
 
@@ -56,6 +64,13 @@ public class ReservationDTO {
         this.details2 = details2;
         this.checkIn = date;
         this.noOfRooms = noOfRooms;
+    }
+
+    public ReservationDTO(int reservationId, int noOfRooms, String name, String email) {
+        this.reservationId=reservationId;
+        this.noOfRooms=noOfRooms;
+        this.name=name;
+        this.email=email;
     }
 
     public Collection<ReservationDetails> getDetails2() {
@@ -85,6 +100,14 @@ public class ReservationDTO {
     public String getDetails() {
         return details;
     }
+
+    public void setName(String cusName){this.name=cusName;}
+
+    public String getName(){return name;}
+
+    public void setEmail(String cusEmail){this.email=cusEmail;}
+
+    public String getEmail(){return email;}
 
     public void setDetails(String details) {
         this.details = details;
