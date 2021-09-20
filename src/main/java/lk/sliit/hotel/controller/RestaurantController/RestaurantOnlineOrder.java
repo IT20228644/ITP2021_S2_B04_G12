@@ -23,11 +23,11 @@ public class RestaurantOnlineOrder {
     @Autowired
     IndexLoginBO indexLoginBO;
 
-    @GetMapping("/home")
-    public String loginPage1(Model model) {
-        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-        return "home";
-    }
+//    @GetMapping("/home")
+//    public String loginPage1(Model model) {
+//        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//        return "home";
+//    }
 
 
     @GetMapping("/onlineOrder")//Load Online Order Page
