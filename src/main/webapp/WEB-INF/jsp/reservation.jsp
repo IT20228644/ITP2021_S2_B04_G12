@@ -290,23 +290,18 @@
                                             <tr>
                                                 <th>Reservation ID</th>
                                                 <th>Customer Name</th>
-                                                <th>Mobile</th>
                                                 <th>Email</th>
                                                 <th>No of Rooms</th>
 
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <c:forEach items="${loadTable1}" var="e">
+                                            <c:forEach items="${loadAllTable}" var="r">
                                                 <tr>
-                                                    <td>${e.orderId}</td>
-                                                    <td>${e.name}</td>
-                                                    <td>${e.contactNumber}</td>
-                                                    <td>${e.date}</td>
-                                                    <td>${e.hallId}</td>
-                                                    <td>${e.noOfPlates}</td>
-                                                    <td>${e.advanceFee}</td>
-                                                    <td>${e.orderState}</td>
+                                                    <td>${r.reservationId}</td>
+                                                    <td>${r.name}</td>
+                                                    <td>${r.email}</td>
+                                                    <td>${r.noOfRooms}</td>
                                                     <td><a href="/updateBanquetStatus?orderId=${e.orderId}">
                                                         <button value="" id="billBtn" name="billBtn" class="btn btn-outline-success" style="font-size: 12px;">confirmed</button>
                                                     </a></td>
