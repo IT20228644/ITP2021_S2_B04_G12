@@ -6,7 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface BanquetAddDAO extends CrudRepository<BanquetOrder,Integer>{
 
 
-    BanquetOrder findTopByOrderByOrderIdDesc();
-
 }
 

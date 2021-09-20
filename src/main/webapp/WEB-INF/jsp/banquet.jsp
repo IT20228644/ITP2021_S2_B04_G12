@@ -354,7 +354,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${loadTable1}" var="e">
+                                        <c:forEach items="${todayBanquetsTable}" var="e">
                                             <tr>
                                                 <td>${e.orderId}</td>
                                                 <td>${e.name}</td>
@@ -421,11 +421,11 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${loadTable2}" var="e">
+                                        <c:forEach items="${nextBanquetsTable}" var="e">
                                             <tr>
                                                 <td>${e.orderId}</td>
                                                 <td>${e.name}</td>
-                                                <td>${e.contactNumber}</td>
+                                                <td>${e.contactNo}</td>
                                                 <td>${e.date}</td>
                                                 <td>${e.hallId}</td>
                                                 <td>${e.noOfPlates}</td>
@@ -491,7 +491,7 @@
                                             <tr>
                                                 <td>${e.orderId}</td>
                                                 <td>${e.name}</td>
-                                                <td>${e.contactNumber}</td>
+                                                <td>${e.contactNo}</td>
                                                 <td>${e.date}</td>
                                                 <td>${e.hallId}</td>
                                                 <td>${e.noOfPlates}</td>

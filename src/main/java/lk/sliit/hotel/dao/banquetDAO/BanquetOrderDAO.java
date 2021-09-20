@@ -12,4 +12,8 @@ public interface BanquetOrderDAO extends CrudRepository<BanquetOrder, Integer> {
     int countBanquetOrderByDateEquals(Date date);
 
     int countBanquetOrderByDateEqualsAndHallIdEquals(Date date, String hallNo);
+
+    Iterable<BanquetOrder> findBanquetOrdersByDate(java.util.Date todayDate);
+
+    Iterable<BanquetOrder> findBanquetOrdersByDateBetween(java.util.Date afterOneDays, java.util.Date afterThreeDays);
 }
