@@ -89,4 +89,5 @@ public class Menu {
     public void setOrderDetails(List<MenuDetails> orderDetails) {
         this.orderDetails = orderDetails;
     }
+
 }

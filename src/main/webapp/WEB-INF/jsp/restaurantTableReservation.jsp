@@ -75,6 +75,17 @@
             background: #ddd;
             color: black;
         }
+
+        .btn_back {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 30px;
+            font-size: medium;
+            border-radius: 3px;
+
+        }
     </style>
 </head>
 
@@ -103,7 +114,7 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                 <a href="restaurantTableIndex">
-                                    <button type="button" class=" btn btn-dark"><i class="fa fa-mail-reply"> Back </i>
+                                    <button type="button" class="btn_back"><i class="fa fa-mail-reply"> Back </i>
                                     </button>
                                 </a>
 

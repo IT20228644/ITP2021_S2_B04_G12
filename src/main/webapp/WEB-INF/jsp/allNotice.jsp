@@ -43,7 +43,7 @@
                     <div class="title_left">
                         <h3>Manage Notice <small>Hotel Sapphire Marroitt</small></h3>
                         <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                            <a href="/dashboard">
+                            <a href="/Dashboard">
                                 <button type="button" class="large-btn btn btn-dark"><i class="fa fa-mail-reply"> Back</i>
                                 </button>
                             </a>

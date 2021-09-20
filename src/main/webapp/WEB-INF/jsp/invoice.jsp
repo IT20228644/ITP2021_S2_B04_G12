@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
-    <title>Employee Management </title>
+    <title>Invoice </title>
 
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,19 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
+
+    <style>
+        .btn_back {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 30px;
+            font-size: medium;
+            border-radius: 3px;
+
+        }
+    </style>
 </head>
 
 <body class="nav-md" style="cursor: pointer">
@@ -261,10 +274,7 @@
                                             <img src="../../images/american-express.png" alt="American Express">
                                             <img src="../../images/paypal.png" alt="Paypal">
                                             <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-                                                atque corporis culpa cupiditate dolore doloremque, dolores eaque eos
-                                                ipsam itaque laborum maiores porro quis recusandae, sapiente sequi
-                                                suscipit ullam ut!
+                                                Thank you for payment with Hotel Sapphire Marriott
                                             </p>
                                         </div>
                                         <!-- /.col -->
@@ -312,8 +322,8 @@
                                                     <button type="submit" value="Register"
                                                             style="font-weight: bold;color: white" ; id="name"
                                                             onclick="window.print();"
-                                                            class="btn btn-success "> Submit Payment <i
-                                                            class="fa fa-file-image-o"></i>
+                                                            class="btn_back"> Submit Payment
+
                                                     </button>
                                                 </ul>
 

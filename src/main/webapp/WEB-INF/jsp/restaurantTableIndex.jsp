@@ -75,6 +75,56 @@
             background: #ddd;
             color: black;
         }
+
+        .btnq {
+            text-decoration: none;
+            border: 5px solid rgb(190, 175, 166);
+            position: relative;
+            overflow: hidden;
+            height: 90px;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 5px 5px;
+
+            font-family: Playfair Display, Georgia, Times New Roman, serif;
+            background-color: #a98e77;
+            color: #ffffff;
+            font-size: 19px;
+
+
+        }
+        .btnq:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -00%;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(64, 45, 34, 0.4),
+                    transparent
+            );
+            transition: all .8s;
+        }
+
+        .btnq:hover:before {
+            left: 100%;
+        }
+
+        .btn_backDashboard {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 39px;
+            width: 210px;
+            font-size: medium;
+            border-radius: 3px;
+        }
     </style>
 </head>
 
@@ -103,7 +153,7 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                 <a href="/restaurant">
-                                    <button type="button" class=" btn btn-dark"><i class="fa fa-mail-reply"> Back to Dashboard</i>
+                                    <button type="button" class="btn_backDashboard"><i class="fa fa-mail-reply"> Back to Restaurant Dashboard</i>
                                     </button>
                                 </a>
 
@@ -196,21 +246,21 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
 
-                    <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6">
+                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
                         <a href="restaurantTableReservation">
-                            <button type="button" class="large-btn btn btn-dark">+ new Table Reservation</button>
+                            <button type="button" class="btnq">+ new Table Reservation</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6">
+                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
                         <a href="restaurantTable">
-                            <button type="button" class="large-btn btn btn-dark">+ new Restaurant Table</button>
+                            <button type="button" class="btnq">+ new Restaurant Table</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-3 col-lg-6 col-xl-6">
+                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
                         <a href="tableManage">
-                            <button type="button" class="large-btn btn btn-dark">Table Manage</button>
+                            <button type="button" class="btnq">Table Manage</button>
                         </a>
                     </div>
 

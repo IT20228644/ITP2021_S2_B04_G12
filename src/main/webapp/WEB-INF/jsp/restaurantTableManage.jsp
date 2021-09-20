@@ -39,6 +39,16 @@
         .large-btn:hover {
             color: #0f0f0f;
         }
+        .btn_backDashboard {
+            color: #E9EDEF;
+            background-color: #8c6f60;
+            border-color: #775e51;
+            border-width: 2px;
+            height: 39px;
+            width: 210px;
+            font-size: medium;
+            border-radius: 3px;
+        }
     </style>
 
     <!--Alert box-->
@@ -77,7 +87,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Restaurant Food Order List</h3>
+                        <h3>Restaurant Table Reservation List</h3>
                     </div>
                 </div>
             </div>
@@ -86,9 +96,9 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2">
                     <a href="/restaurant">
-                        <button type="button" class="large-btn btn btn-dark" style="height: 50px"><i
+                        <button type="button" class="btn_backDashboard" style="height: 50px"><i
                                 class="fa fa-mail-reply">
-                            Back to Dashboard</i>
+                            Back to Restaurant Dashboard</i>
                         </button>
                     </a>
                 </div>
@@ -101,8 +111,8 @@
                     <div class="row">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Restaurant Food Order List<b>(Restaurant)</b><br>
-                                    <small>Total pending orders: ${pendingCounter}</small></h2>
+                                <h2>Restaurant Table Reservation List<b>(Restaurant)</b><br>
+                                    <small>Total reserved tables: ${pendingCounter}</small></h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"></a>
                                     </li>

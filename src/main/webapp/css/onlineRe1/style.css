@@ -213,7 +213,7 @@ ul{
 */
 
 .cl-effect-10 a::before, .cl-effect-10 a.active::before {
-    background: #ff4157;
+    background: #a98e77;
     color: #fff;
     content: attr(data-hover);
     height: 100%;
