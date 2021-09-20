@@ -21,18 +21,18 @@
 
 
     <style>
-        /*.large-btn {*/
-        /*    height: 90px;*/
-        /*    width: 100%;*/
-        /*    font-family: "Playfair Display", Georgia, "Times New Roman", serif;*/
-        /*    font-weight: bolder;*/
-        /*    font-size: 27px;*/
+        .large-btn {
+            height: 90px;
+            width: 100%;
+            font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+            font-weight: bolder;
+            font-size: 27px;
 
-        /*}*/
+        }
 
-        /*.large-btn:hover {*/
-        /*    color: #0f0f0f;*/
-        /*}*/
+        .large-btn:hover {
+            color: #0f0f0f;
+        }
     </style>
 
     <!--Alert box-->
@@ -272,18 +272,18 @@
 
 
 <!-- jQuery -->
-<%--<script src="../../vendors/jquery/dist/jquery.min.js"></script>--%>
-<%--<!-- Bootstrap -->--%>
-<%--<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>--%>
-<%--<!-- Custom Theme Scripts -->--%>
-<%--<script src="../../build/js/custom.min.js"></script>--%>
+<script src="../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Theme Scripts -->
+<script src="../../build/js/custom.min.js"></script>
 
-<%--<!-- Datatables -->--%>
-<%--<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>--%>
-<%--<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>--%>
+<!-- Datatables -->
+<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
-<%--<!--%--Responsive Table--%-->--%>
-<%--<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>--%>
-<%--<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>--%>
+<!--%--Responsive Table--%-->
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 </body>
 </html>
