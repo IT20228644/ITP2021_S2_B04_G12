@@ -14,6 +14,7 @@ public class GeneralBill {
     private Date date;
     private String status;
     private String reservationId;
+
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name="customerId",referencedColumnName = "customerId")
     private Customer customer;
