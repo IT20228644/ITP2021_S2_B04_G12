@@ -31,13 +31,13 @@ public class Reservation {
         this.noOfRooms = noOfRooms;
         this.customer = customer;
     }
-    public Reservation(int reservationId,String name, int noOfRooms, String email) {
-        this.reservationId = reservationId;
-        this.email = email;
-        this.name=name;
-        this.noOfRooms = noOfRooms;
-    }
 
+    public Reservation(int reservationId, int noOfRooms, String name, String email) {
+        this.reservationId=reservationId;
+        this.noOfRooms=noOfRooms;
+        this.name=name;
+        this.email=email;
+    }
 
     public Collection<ReservationDetails> getReservationDetails() {
         return reservationDetails;

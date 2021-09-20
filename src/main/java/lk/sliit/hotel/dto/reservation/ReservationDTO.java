@@ -66,6 +66,13 @@ public class ReservationDTO {
         this.noOfRooms = noOfRooms;
     }
 
+    public ReservationDTO(int reservationId, int noOfRooms, String name, String email) {
+        this.reservationId=reservationId;
+        this.noOfRooms=noOfRooms;
+        this.name=name;
+        this.email=email;
+    }
+
     public Collection<ReservationDetails> getDetails2() {
         return details2;
     }
