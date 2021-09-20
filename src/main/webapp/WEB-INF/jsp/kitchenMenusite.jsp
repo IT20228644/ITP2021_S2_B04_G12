@@ -28,14 +28,14 @@
                     <h3>Edit Menu</h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
-                            <a href="/kitchen">
+                            <a href="/manageMenu">
                                 <button type="button" class="large-btn btn btn-dark"><i class="fa fa-mail-reply">
                                     Back</i>
                                 </button>
                             </a>
                         </div>
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <a href="/manageFoodPacks">
+                            <a href="/kitchenMenusiteShow">
                                 <button type="button" class="large-btn btn btn-dark">Show Menu Details</button>
                             </a>
                         </div>

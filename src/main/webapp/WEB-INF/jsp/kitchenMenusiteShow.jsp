@@ -41,7 +41,7 @@
             outline:0;
             box-shadow:none;
             border:0!important;
-            background: #5c6664;
+            background: #8c6f60;
             background-image: none;
             flex: 1;
             padding: 0 .5em;
@@ -59,7 +59,7 @@
             width: 20em;
             height: 3em;
             line-height: 3;
-            background: #5c6664;
+            background: #8c6f60;
             overflow: hidden;
             border-radius: .25em;
         }
@@ -69,7 +69,7 @@
             top: 0;
             right: 0;
             padding: 0 1em;
-            background: #2b2e2e;
+            background: #4c2a18;
             cursor:pointer;
             pointer-events:none;
             transition:.25s all ease;
