@@ -1,6 +1,5 @@
 package lk.sliit.hotel.dto.banquet;
 
-
 import java.util.Date;
 
 public class BanquetOrderDTO {

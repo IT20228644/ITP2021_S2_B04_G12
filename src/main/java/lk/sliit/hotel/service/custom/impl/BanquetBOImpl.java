@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 @Service
@@ -237,5 +238,53 @@ public class BanquetBOImpl implements BanquetBO {
 
     }
 
+    @Override
+    public List<BanquetAddDTO> findNextBanquets() {
+
+        Calendar cal1 = Calendar.getInstance();
+        Calendar cal2 = Calendar.getInstance();
+
+        cal1.add(Calendar.DATE, 3);
+        java.util.Date afterThreeDays = cal1.getTime();
+
+        cal2.add(Calendar.DATE, 1);
+        java.util.Date afterOneDays = cal2.getTime();
+
+        Iterable <BanquetOrder> banquetOrders = banquetOrderDAO.findBanquetOrdersByDateBetween (afterOneDays ,afterThreeDays);
+        List <BanquetAddDTO>  nextList = new ArrayList<>();
+        for ( BanquetOrder a: banquetOrders){
+            nextList.add(new BanquetAddDTO(
+                    a.getOrderId(),
+                    a.getBanquetCustomer().getName(),
+                    a.getBanquetCustomer().getContactNo(),
+                    a.getDate(),
+                    a.getHallId(),
+                    a.getNoOfPlates(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getOrderState()
+            ));
+        }
+        return nextList;
+    }
+
+    @Override
+    public List<BanquetAddDTO> findTodayBanquets() {
+        java.util.Date todayDate = new java.util.Date();
+        Iterable <BanquetOrder> banquetOrders = banquetOrderDAO.findBanquetOrdersByDate(todayDate);
+        List <BanquetAddDTO> todayList = new ArrayList<>();
+        for ( BanquetOrder a: banquetOrders){
+            todayList.add(new BanquetAddDTO(
+                    a.getOrderId(),
+                    a.getBanquetCustomer().getName(),
+                    a.getBanquetCustomer().getContactNo(),
+                    a.getDate(),
+                    a.getHallId(),
+                    a.getNoOfPlates(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getOrderState()
+            ));
+        }
+        return todayList;
+    }
 
 }
