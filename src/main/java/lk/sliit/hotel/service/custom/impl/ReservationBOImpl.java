@@ -235,7 +235,7 @@ public class ReservationBOImpl implements ReservationBO {
         List<ReservationDTO> customerDTOS = new ArrayList<>();
         for (Reservation c : li) {
             customerDTOS.add(new ReservationDTO(
-                    c.getReservationId(), c.getNoOfRooms(), c.getCustomer().getName(), c.getCustomer().getEmail()
+                    c.getReservationId(), c.getCustomer().getName(),c.getNoOfRooms(), c.getCustomer().getEmail()
 
             ));
         }

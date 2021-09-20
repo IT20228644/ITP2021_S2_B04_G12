@@ -37,9 +37,9 @@ public class ReservationDTO {
     }
     public ReservationDTO(int reservationId,String name, int noOfRooms, String email) {
         this.reservationId = reservationId;
-        this.email = email;
         this.name=name;
         this.noOfRooms = noOfRooms;
+        this.email = email;
     }
     public ReservationDTO(int reservationId, String type, Date date, int noOfRooms, int customer, String details) {
         this.reservationId = reservationId;
