@@ -113,7 +113,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Kitchen Management Dashboard
-                            <small>Welcome To Hotel Hareesha</small>
+                            <small>Hotel Shapphire Marriott</small>
                         </h3>
                     </div>
                 </div>
