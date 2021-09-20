@@ -42,5 +42,10 @@ public interface BanquetBO extends SuperBO {
     List<BanquetAddDTO> findNextBanquets();
 
     List<BanquetAddDTO> findTodayBanquets();
+
+
+    List<BanquetAddDTO> findConfirmedBanquet();
+
+    List<BanquetAddDTO> findUnconfirmedBanquet();
 }
 

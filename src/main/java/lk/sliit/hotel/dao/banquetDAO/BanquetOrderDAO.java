@@ -16,4 +16,7 @@ public interface BanquetOrderDAO extends CrudRepository<BanquetOrder, Integer> {
     Iterable<BanquetOrder> findBanquetOrdersByDate(java.util.Date todayDate);
 
     Iterable<BanquetOrder> findBanquetOrdersByDateBetween(java.util.Date afterOneDays, java.util.Date afterThreeDays);
+
+
+    Iterable<BanquetOrder> findAllByOrderStateEquals(String statusConfirmed);
 }
