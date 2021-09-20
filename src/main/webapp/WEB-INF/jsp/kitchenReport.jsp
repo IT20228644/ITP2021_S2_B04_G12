@@ -324,7 +324,7 @@
 
         <footer>
             <div class="pull-right">
-                Copyright © Kitchen Management 2021.<a href="">Created by Suchintha Suriyaarachchi</a>
+                Copyright © Kitchen Management 2021.<a href="">Created by ITP2021_S2_B04_G12</a>
             </div>
             <div class="clearfix"></div>
         </footer>
