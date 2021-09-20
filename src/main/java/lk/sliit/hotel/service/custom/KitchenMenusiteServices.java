@@ -1,6 +1,7 @@
 package lk.sliit.hotel.service.custom;
 
-import com.sliit.KitchenMenuHotel.dto.kitchenDTO.MenusiteDTO;
+
+import lk.sliit.hotel.dto.kitchen.MenusiteDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,6 +1,7 @@
 package lk.sliit.hotel.dao.kitchenDAO;
 
-import com.sliit.KitchenMenuHotel.entity.MenuSiteItem;
+
+import lk.sliit.hotel.entity.kitchen.MenuSiteItem;
 import org.springframework.data.repository.CrudRepository;
 
 

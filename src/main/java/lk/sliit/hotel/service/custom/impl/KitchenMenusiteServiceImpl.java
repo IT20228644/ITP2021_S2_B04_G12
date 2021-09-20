@@ -1,9 +1,10 @@
 package lk.sliit.hotel.service.custom.impl;
 
-import com.sliit.KitchenMenuHotel.dao.kitchen.KtchensiteReposatary;
-import com.sliit.KitchenMenuHotel.dto.kitchenDTO.MenusiteDTO;
-import com.sliit.KitchenMenuHotel.entity.MenuSiteItem;
-import com.sliit.KitchenMenuHotel.services.KitchenMenusiteServices;
+
+import lk.sliit.hotel.dao.kitchenDAO.KtchensiteReposatary;
+import lk.sliit.hotel.dto.kitchen.MenusiteDTO;
+import lk.sliit.hotel.entity.kitchen.MenuSiteItem;
+import lk.sliit.hotel.service.custom.KitchenMenusiteServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
