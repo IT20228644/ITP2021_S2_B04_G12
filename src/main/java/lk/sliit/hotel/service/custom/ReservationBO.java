@@ -16,7 +16,7 @@ public interface ReservationBO extends SuperBO {
 
     void deleteCustomer(int customerId);
 
-
+    List<ReservationDTO> findAllRooms();
     List<HotelRoomDTO> findAvilability(FindAvailabilityDTO findAvailabilityDTO);
 
 
