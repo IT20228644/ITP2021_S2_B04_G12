@@ -25,7 +25,7 @@ public class BanquetBill {
      model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
         List<BanquetAddDTO> list = banquetBO.findBanquetBill();
-        mv.addObject("loadTable", list);
+        mv.addObject("loadTable7", list);
 
         return mv;
     }

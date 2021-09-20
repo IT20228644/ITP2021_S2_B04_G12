@@ -29,7 +29,7 @@
         String date = sdf.format(new Date());
     %>
     <%
-        if(request.getAttribute("myp1") != null){
+        if(request.getAttribute("errorMsg1") != null){
     %>
     <script>alert("Date is Unavailable... Please check availability.")</script>
     <%
@@ -37,7 +37,7 @@
     %>
 
     <%
-        if(request.getAttribute("myp2") != null){
+        if(request.getAttribute("errorMsg2") != null){
     %>
     <script>alert("Hall 01 is Unavailable... Please check availability.")</script>
     <%
@@ -45,7 +45,7 @@
     %>
 
     <%
-        if(request.getAttribute("myp3") != null){
+        if(request.getAttribute("errorMsg3") != null){
     %>
     <script>alert("Hall 02 is Unavailable... Please check availability.")</script>
     <%

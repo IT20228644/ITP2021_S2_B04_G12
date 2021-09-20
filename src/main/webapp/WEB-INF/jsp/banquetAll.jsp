@@ -239,7 +239,7 @@
                                                     </thead>
 
                                                     <tbody>
-                                                    <c:forEach items="${loadTable2}" var="e">
+                                                    <c:forEach items="${loadBanquetAllTable}" var="e">
                                                         <tr>
                                                             <td>${e.orderId}</td>
                                                             <td>${e.banquetBillId}</td>
