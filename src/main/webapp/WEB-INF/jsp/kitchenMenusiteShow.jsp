@@ -264,7 +264,7 @@
                                                             <td><img src="${e.mpicture}"
                                                                      class="pic" alt="Adam" style="width: 50px;height: 50px"></td>
 
-                                                            <td><a href="/delete${e.menusId}">
+                                                            <td><a href="kitchenMenusiteShow/${e.menusId}">
                                                                 <i class="fa fa-trash"></i>
                                                             </a></td>
                                                         </tr>
