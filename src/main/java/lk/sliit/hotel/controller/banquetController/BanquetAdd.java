@@ -151,13 +151,11 @@ public class BanquetAdd {
             model.addAttribute("topBanquetBillId", 1);
         }
 
+        //Display banquet booking customer details
         List<BanquetCustomerDTO> list = banquetBO.findAllCustomers();
         mv.addObject("loadTable",list);
 
         return mv;
-
-
-
     }
 }
 

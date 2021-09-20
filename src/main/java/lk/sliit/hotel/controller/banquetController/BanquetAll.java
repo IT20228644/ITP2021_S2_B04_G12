@@ -28,7 +28,7 @@ public class BanquetAll {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
 
-
+        //Display all Banquets order
         List<BanquetAddDTO> list = banquetBO.findAllBanquet();
         mv.addObject("loadBanquetAllTable",list);
 

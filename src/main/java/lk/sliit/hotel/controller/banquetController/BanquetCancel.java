@@ -34,7 +34,9 @@ public class BanquetCancel {
         List<BanquetAddDTO> list2 = banquetBO.findUnconfirmedBanquet();
         mv.addObject("loadTable2",list2);
 
-
         return mv;
     }
+
+
+
 }
