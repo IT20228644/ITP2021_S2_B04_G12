@@ -173,7 +173,7 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                         <a href="housekeeping">
-                            <button style=" border: 5px solid rgb(174, 182, 203);background-color: #45526e;
+                            <button style=" border: 2px solid #775e51;background-color: #8c6f60;
                                     color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
                                 Back</i>
                             </button>
