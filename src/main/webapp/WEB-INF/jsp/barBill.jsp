@@ -48,7 +48,21 @@
                         <h3>Invoice
                             <small>Submit Payment And Print Bill</small>
                         </h3>
+
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+
+                            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                <a href="bar">
+                                    <button type="button" class="btn btn-dark"><i class="fa fa-reply"></i>&nbsp;Back</button>
+                                </a>
+                            </div>
+
+                        </div>
+
                     </div>
+
+
 
                     <div class="title_right">
                         <script>
