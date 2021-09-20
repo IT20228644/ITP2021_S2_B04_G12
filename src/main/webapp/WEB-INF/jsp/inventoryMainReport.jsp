@@ -46,7 +46,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Report
-                            <small>Rooms Income</small>
+                            <small>Rooms Item Income</small>
                             <a href="/inventory">
                                 <button style=" border: 5px #4c2a18;background-color: #8c6f60;
                                     color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
@@ -275,6 +275,7 @@
 
 
                                             
+                                    </div>
                                     </div>
                                 </section>
                             </div>

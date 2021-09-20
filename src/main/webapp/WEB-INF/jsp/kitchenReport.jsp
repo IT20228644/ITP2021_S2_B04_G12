@@ -275,16 +275,25 @@
 
                                                     </tr>
                                                     <tr>
-                                                        <th style="width:50%">Tot Resturant Counter Income:</th>
+                                                        <th style="width:50%">Tot Counter sels:</th>
                                                         <td><span id="val2">${totalCounter}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width:50%">Tot restaurant Online Income:</th>
+                                                        <th style="width:50%">Tot Counter Income:</th>
                                                         <td><span id="val3">${totalCounterIncome}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Tot num of Banquet income:</th>
+                                                        <th>Tot Online sels:</th>
                                                         <td><span id="val4">${totalOnline}</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Tot Online Income:</th>
+                                                        <td><span id="val5">${totalOnlineIncome}</span></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th>Total Income:</th>
+                                                        <td><span id="val6">${totalIncome}</span></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
