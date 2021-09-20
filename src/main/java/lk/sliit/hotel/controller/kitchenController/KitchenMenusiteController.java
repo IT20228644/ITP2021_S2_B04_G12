@@ -85,7 +85,7 @@ public class KitchenMenusiteController {
 //        kitchenMenusiteServices.deleteMenusiteItem(menusId);
 //    }
 
-    @GetMapping("/delete/{menusId}")
+    @GetMapping("kitchenMenusiteShow/{menusId}")
     public String deleteProduct(@PathVariable(name = "menusId") int menusId) {
         kitchenMenusiteServices.deleteMenuSiteItem(menusId);
         return "redirect:/kitchenMenusiteShow";
