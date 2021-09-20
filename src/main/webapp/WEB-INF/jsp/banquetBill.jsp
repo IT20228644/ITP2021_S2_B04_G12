@@ -98,7 +98,7 @@
             <div class="page-title">
                 <div class="title_left">
                     <h3>Generate Banquet Bill
-                        <small>Welcome To Sapphire Marriott</small>
+                        <small>Welcome To Hotel Hareesha</small>
                     </h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -286,7 +286,7 @@
 
                                                 </thead>
                                                 <tbody>
-                                                <c:forEach items="${loadTable}" var="e">
+                                                <c:forEach items="${loadTable7}" var="e">
                                                     <tr>
                                                         <td>${e.banquetBillId}</td>
                                                         <td>${e.name}</td>
@@ -296,7 +296,8 @@
                                                         <td>${e.otherPrice}</td>
                                                         <td>${(e.noOfPlates * e.unitPrise)+e.otherPrice}</td>
                                                         <td><a href="/banquetInvoice?billId=${e.banquetBillId}">
-                                                            <button value="" id="billBtn" name="billBtn" class="btn btn-outline-danger" style="font-size: 13px;">PrintBill</button>
+                                                            <button value="" id="billBtn" name="billBtn"
+                                                                    class="btn btn-outline-danger" style="font-size: 13px;">PrintBill</button>
                                                         </a></td>
                                                     </tr>
                                                 </c:forEach>

@@ -170,6 +170,27 @@ public class BanquetBOImpl implements BanquetBO {
 
 
 
+//    @Override
+//    public List<BanquetAddDTO> findBanquetBill() {
+//        Iterable<BanquetOrder> all = banquetOrderDAO.findAll();
+//        List<BanquetAddDTO> billList= new ArrayList<>();
+//        for ( BanquetOrder a: all){
+//            billList.add(new BanquetAddDTO(
+//                    a.getOrderId(),
+//                    a.getBanquetCustomer().getName(),
+//                    a.getDate(),
+//                    a.getBanquetBill().getBillId(),
+//                    a.getBanquetBill().getAdvancePayment(),
+//                    a.getBanquetBill().getFoodPrice(),
+//                    a.getMenu().getUnitPrice(),
+//                    a.getBanquetBill().getOtherPrices(),
+//                    a.getBanquetBill().getTotal(),
+//                    a.getNoOfPlates()
+//            ));
+//        }
+//        return billList;
+//    }
+
     @Override
     public List<BanquetAddDTO> findBanquetBill() {
         Iterable<BanquetOrder> all = banquetOrderDAO.findAll();
@@ -182,14 +203,15 @@ public class BanquetBOImpl implements BanquetBO {
                     a.getBanquetBill().getBillId(),
                     a.getBanquetBill().getAdvancePayment(),
                     a.getBanquetBill().getFoodPrice(),
-                  //  a.getMenu().getUnitPrice(),
                     a.getBanquetBill().getOtherPrices(),
                     a.getBanquetBill().getTotal(),
+                    a.getMenu().getUnitPrice(),
                     a.getNoOfPlates()
             ));
         }
         return billList;
     }
+
 
     @Override
     public List<BanquetAddDTO> findAllBanquet() {
@@ -203,7 +225,7 @@ public class BanquetBOImpl implements BanquetBO {
                     b.getBanquetCustomer().getName(),
                     b.getBanquetCustomer().getAddress(),
                     b.getHallId(),
-                   // b.getMenu().getMenuId(),
+                    b.getMenu().getMenuId(),
                     b.getNoOfPlates(),
                     b.getBanquetBill().getAdvancePayment(),
                     b.getBanquetBill().getTotal(),

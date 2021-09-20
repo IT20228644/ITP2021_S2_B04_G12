@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: USER
-  Date: 9/9/2021
-  Time: 9:27 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -28,39 +22,23 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
-    <%
-        if(request.getAttribute("errorMsg1") != null){
-    %>
-    <script>alert("Date is Unavailable... Please check availability.")</script>
-    <%
-        }
-    %>
 
-    <%
-        if(request.getAttribute("errorMsg2") != null){
-    %>
-    <script>alert("Hall 01 is Unavailable... Please check availability.")</script>
-    <%
-        }
-    %>
+    <c:if test="${not empty loginError}">
+        <script>
+            window.addEventListener("load",function(){
+                alert("${loginError}");
+            });
+        </script>
+    </c:if>
+    <%--Chrat--%>
 
-    <%
-        if(request.getAttribute("errorMsg3") != null){
-    %>
-    <script>alert("Hall 02 is Unavailable... Please check availability.")</script>
-    <%
-        }
-    %>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <%--/Pie Chrat--%>
 
-    <%
-        if(request.getAttribute("successfulMsg") != null){
-    %>
-    <script>alert("Added Successfully")</script>
-    <%
-        }
-    %>
-
-    <!-- Datatables -->
+       <!-- Datatables -->
     <link href="../../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="../../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
     <link href="../../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
@@ -137,7 +115,7 @@
 
         .btnq {
             text-decoration: none;
-            border: 5px solid rgb(190, 175, 166);
+            border: 5px solid rgb(174, 182, 203);
             position: relative;
             overflow: hidden;
             height: 90px;
@@ -145,7 +123,6 @@
             font-size: 1.5rem;
             text-align: center;
             border-radius: 5px 5px;
-            /*background-color: #a98e77;*/
         }
 
         .btnq:before {
@@ -190,18 +167,19 @@
         <div class="right_col" role="main">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Add Banquet<h4>Welcome to Sapphire Marriott</h4>
+                    <h3>Manage Rooms
+                        <small>Hotel Sapphire Marriot</small>
                     </h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                            <a href="/banquet">
-                                <button style=" border: 3px solid #4c2a18;  background-color: #8c6f60;
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <a href="housekeeping">
+                            <button style=" border: 2px solid #775e51;background-color: #8c6f60;
                                     color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
-                                    Back</i>
-                                </button>
-                            </a>
+                                Back</i>
+                            </button>
+                        </a>
 
-                        </div>
+                    </div>
 
                     </div>
                 </div>
@@ -288,123 +266,87 @@
                     </form>
                 </div>
             </div>
-            <%--/Time--%>
 
-            <%--Input Feilds--%>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                    <form method="POST"  action="saveBanquet" name="saveBanquet">
 
-                        <div class="form-group">
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <label >Banquet Id</label>
-                                <input type="number" value="${topBanquetId}" class="form-control"
-                                       required="required" name="orderId"
-                                       id="orderId" placeholder="Banquet Id" readonly/></div>
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <label for="orderId">Customer Id</label>
-                                <input type="number" value="${topBanquetCustomerId}" class="form-control"
-                                       required="required" name="customerId"
-                                       id="customerId" placeholder="Customer Id" readonly/></div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="row">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Accepted Orders
+                                <small></small>
+                            </h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Settings 1</a>
+                                    </div>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
                         </div>
+                        <div class="x_content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card-box table-responsive">
+                                        <table id="datatable-buttons" class="table table-striped table-bordered">
+                                            <thead class="thead-light">
+                                            <tr>
+                                                <th>Customer Id</th>
+                                                <th>Customer Name</th>
+                                                <th>Pieces</th>
+                                                <th>Expected Date</th>
+                                                <th>Date</th>
+                                                <th>Order Holder</th>
+                                                <th>Change State</th>
+                                                <th></th>
 
-                        <div class="form-group">
+                                            </tr>
 
+                                            </thead>
+                                            <tbody>
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Customer Name</label>
-                                <input type="text" class="form-control"
-                                       required="required" name="name"
-                                       id="name" placeholder="Customer Name"/></div>
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Address</label>
-                                <input type="text" class="form-control"
-                                       required="required" name="address"
-                                       id="address" placeholder="Address"/></div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Email</label>
-                                <input type="email" class="form-control"
-                                       required="required" name="email"
-                                       id="email" placeholder="Email"/></div>
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Mobile No</label>
-                                <input type="tel" class="form-control"
-                                       pattern="[0-9]{10}" required name="contactNo"
-                                       id="contactNo" placeholder="Mobile No"/></div>
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Date</label>
-                                <input type="date" class="form-control"
-                                       required="required" name="date"
-                                       id="date" placeholder="Date"/></div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Hall No</label>
-                                <select class="form-control"required="required" name="hallId"
-                                        id="hallId">
-                                    <option value="No 1">Choose Hall No</option>
-                                    <option value="No 1">No 1</option>
-                                    <option value="No 2">No 2</option>
-                                </select>
-
+                                            <c:forEach items="${viewAcceptedOrders}" var="e">
+                                                <tr>
+                                                    <td>${e.customerId}</td>
+                                                    <td>${e.customerName}</td>
+                                                    <td>${e.pieces}</td>
+                                                    <td>${e.expectedDate}</td>
+                                                    <td>${e.date}</td>
+                                                    <td scope="row">${e.orderHolder}</td>
+                                                    <td>
+                                                        <a href="processLaundryOrder2/${e.laundryId}" onclick="return confirm('Are you sure you want to Process?')"
+                                                           class="btn btn-xs">
+                                                            <i class="fa fa-pencil"></i></a></td>
+                                                    <td>
+                                                        <a href="deleteLaundryOrder2/${e.laundryId}" onclick="return confirm('Are you sure you want to delete?')"
+                                                           class="btn btn-xs">
+                                                            <i class="fa fa-trash-o"></i></a></td>
+                                                </tr>
+                                            </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <br>
                         </div>
-                        <div class="form-group">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Num Of Plates</label>
-                                <input type="number" size="6" min="10" max="1000" class="form-control"
-                                       required="required" name="noOfPlates"
-                                       id="noOfPlates" placeholder="Num Of Plates"/></div>
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <label for="orderId">Package</label>
-                                <select class="form-control"required="required" name="menuId"
-                                        id="menuId">
-                                    <option value="1">Choose Package</option>
-                                    <option value="1">Bronze</option>
-                                    <option value="2">Silver</option>
-                                    <option value="3">Gold</option>
-                                    <option value="4">Platinum</option>
-                                </select>
-
-                            </div>
-
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                                <input type="hidden" required="required" name="banquetBillId"
-                                       id="billId" value="${topBanquetBillId}">
-                                <label for="orderId">Advance Payment</label>
-                                <input type="number" class="form-control"
-                                       required="required" name="advanceFee"
-                                       id="advancePayment" placeholder="Advance Payment"/></div>
-
-                        </div>
-
-                        <button type='submit' class="btn btn-primary" style="width: 50%; top: 20px; position: relative" value="Register">
-                            Submit
-                        </button>
-                        <button type='reset' class="btn btn-outline-success" style="top: 20px; position: relative" value="">Reset</button>
-
-                    </form>
+                    </div>
                 </div>
-                <%--/Input Feilds--%>
-                <%--Table--%>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+            </div>
+            <%--Table--%>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="row">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Registered Customers
-                                    <small>Find customers</small>
+                                <h2>Processing Orders
+                                    <small>Processing</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -425,27 +367,33 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="card-box table-responsive">
-                                            <table id="datatable-buttons" class="table table-striped table-bordered">
-                                                <thead class="thead-light">
+                                            <table style="text-align: center"
+                                                   class="table table-striped jambo_table bulk_action table-bordered">
+                                                <thead class="thead-dark">
                                                 <tr>
                                                     <th>Customer Id</th>
-                                                    <th>Name</th>
-                                                    <th>Address</th>
-                                                    <th>MobileNo</th>
-                                                    <th>Email</th>
-
+                                                    <th>Pieces</th>
+                                                    <th>Expected Date</th>
+                                                    <th>Date</th>
+                                                    <th>Order Holder</th>
+                                                    <th></th>
 
                                                 </tr>
-
                                                 </thead>
-                                                <tbody>
-                                                <c:forEach items="${loadTable}" var="a">
+
+                                                <tbody id="tblOrder">
+                                                <c:forEach items="${viewProcessing}" var="e">
                                                     <tr>
-                                                        <td>${a.customerId}</td>
-                                                        <td>${a.name}</td>
-                                                        <td>${a.address}</td>
-                                                        <td>${a.contactNo}</td>
-                                                        <td>${a.email}</td>
+                                                        <td>${e.customerId}</td>
+                                                        <td>${e.pieces}</td>
+                                                        <td>${e.expectedDate}</td>
+                                                        <td>${e.date}</td>
+                                                        <td scope="row">${e.orderHolder}</td>
+                                                        <td>
+                                                            <a href="changeFinished/${e.laundryId}" onclick="return confirm('Are you sure you want to Process?')"
+                                                               class="btn btn-xs">
+                                                                <i class="fa fa-pencil"></i></a></td>
+
                                                     </tr>
                                                 </c:forEach>
                                                 </tbody>
@@ -457,19 +405,22 @@
                         </div>
                     </div>
                 </div>
-                <%--/Table--%>
-
-                <%--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
-
-
-            </div>
         </div>
-        <!-- /page content -->
+            <%--///////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
 
-        <!-- footer content -->
-        <jsp:include page="footer.jsp"/>
-        <!-- /footer content -->
+
+
+            <%--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
+
+
+        </div>
     </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <jsp:include page="footer.jsp"/>
+    <!-- /footer content -->
+</div>
 </div>
 
 
@@ -499,40 +450,32 @@
 <script src="../../build/js/custom.min.js"></script>
 <%--Pie Chart 1--%>
 
+<%--/Pie Chart 1--%>
+
+<%--Pie Chart 2--%>
+
+
 <script>
 
-    var selectedRow = null;
-    $("#datatable-buttons tbody").on('click', 'tr', function () {
-        selectedRow = $(this);
-        $("#customerId").val($(this).find("td:nth-child(1)").text());
-        $("#name").val($(this).find("td:nth-child(2)").text());
-        $("#address").val($(this).find("td:nth-child(3)").text());
-        $("#contactNumber").val($(this).find("td:nth-child(4)").text());
-        $("#email").val($(this).find("td:nth-child(5)").text());
-        selectedRow.addClass('row-selected');
-    });
-</script>
-<script>
-    var dateController = {
-        currentDate : null
-    }
-
-    $(document).on( "change", "#date",function( event, ui ) {
-        var now = new Date();
-        var selectedDate = new Date($(this).val());
-
-        if(selectedDate <= now) {
-            $(this).val("");
-            alert("Invalid date... Please enter future date... Can't enter today and old dates");
-
-        } else {
-            dateController.currentDate = $(this).val();
-        }
-    });
+        var selectedRow = null;
+        $("#datatable-buttons tbody").on('click', 'tr', function () {
+            selectedRow = $(this);
+            $("#userId").val($(this).find("td:nth-child(1)").text());
+            $("#userName").val($(this).find("td:nth-child(2)").text());
+            $("#position").val($(this).find("td:nth-child(3)").text());
+            $("#mobileNo").val($(this).find("td:nth-child(4)").text());
+            $("#pic").val($(this).find("td:nth-child(5)").text());
+            $("#salary").val($(this).find("td:nth-child(6)").text());
+            $("#address").val($(this).find("td:nth-child(7)").text());
+            $("#email").val($(this).find("td:nth-child(8)").text());
+            $("#password").val($(this).find("td:nth-child(9)").text());
+            $("#gender").val($(this).find("td:nth-child(10)").text());
+            $("#date").val($(this).find("td:nth-child(11)").text());
+            $("#dateOfBirth").val($(this).find("td:nth-child(12)").text());
+            selectedRow.addClass('row-selected');
+        });
 </script>
 
-
-
-
+<%--/Pie Chart 2--%>
 </body>
 </html>

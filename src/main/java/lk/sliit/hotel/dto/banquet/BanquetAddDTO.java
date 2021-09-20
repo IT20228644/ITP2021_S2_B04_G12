@@ -304,7 +304,7 @@ public class BanquetAddDTO {
                 ", foodPrice=" + foodPrice +
                 ", otherPrice=" + otherPrice +
                 ", total=" + total +
-//                ", unitPrise=" + unitPrise +
+                ", unitPrise=" + unitPrise +
                 '}';
     }
 
