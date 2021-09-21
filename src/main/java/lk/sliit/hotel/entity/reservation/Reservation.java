@@ -32,10 +32,10 @@ public class Reservation {
         this.customer = customer;
     }
 
-    public Reservation(int reservationId, int noOfRooms, String name, String email) {
+    public Reservation(int reservationId, String name,int noOfRooms, String email) {
         this.reservationId=reservationId;
-        this.noOfRooms=noOfRooms;
         this.name=name;
+        this.noOfRooms=noOfRooms;
         this.email=email;
     }
 

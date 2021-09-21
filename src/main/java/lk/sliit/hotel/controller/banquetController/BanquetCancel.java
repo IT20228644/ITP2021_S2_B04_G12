@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -34,7 +36,22 @@ public class BanquetCancel {
         List<BanquetAddDTO> list2 = banquetBO.findUnconfirmedBanquet();
         mv.addObject("loadTable2",list2);
 
-
         return mv;
     }
+
+    //update banquet status to cancel
+    @RequestMapping("UpdateBanquetStatusToCancel  ")
+    public String updateDeleteStatus(@RequestParam int orderId){
+       banquetBO.updateBanquetStatusToCancel(orderId);
+       return "redirect:banquetDelete";
+    }
+
+    //Delete banquet
+    @RequestMapping("deleteBanquet")
+    public String deleteBanquet(@RequestParam int orderId) {
+        banquetBO.deleteBanquet(orderId);
+        return "redirect:/banquetDelete";
+    }
+
+
 }

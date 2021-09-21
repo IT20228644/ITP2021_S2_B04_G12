@@ -14,6 +14,10 @@ public class BanquetCustomer{
    String name;
    String email;
    String address;
+   String contactNo;
+   String password;
+   @OneToMany(mappedBy = "banquetCustomer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+   private List<BanquetOrder> banquetOrders = new ArrayList<>();
 
    public BanquetCustomer(int customerId, String email, String name, String address,String contactNumber) {
       this.customerId = customerId;
@@ -75,11 +79,7 @@ public class BanquetCustomer{
       this.banquetOrders = banquetOrders;
    }
 
-   String contactNo;
-//   String userName;
-   String password;
-   @OneToMany(mappedBy = "banquetCustomer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
-   private List<BanquetOrder> banquetOrders = new ArrayList<>();
+
 
 
    public int getCustomerId() {

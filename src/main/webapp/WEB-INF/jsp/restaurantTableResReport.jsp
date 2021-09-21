@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
-    <title>Kitchen Report </title>
+    <title>Restaurant Table Report </title>
 
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,8 +67,8 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Kitchen Report
-                            <small>Daily restaurant food order report.</small>
+                        <h3>Restaurant Report
+                            <small>Daily restaurant table reservation report.</small>
                         </h3>
                     </div>
 
@@ -163,8 +163,8 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Kitchen report Print
-                                    <small>Daliy restaurant food order report.</small>
+                                <h2>Restaurant report Print
+                                    <small>Daliy restaurant table reservation report.</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -189,7 +189,7 @@
                                     <div class="row">
                                         <div class="  invoice-header">
                                             <h1>
-                                                <i class="fa fa-globe"></i> Daily restaurant food order report.
+                                                <i class="fa fa-globe"></i> Daily restaurant table reservation report.
                                                 <small><%=date%>
                                                 </small>
                                             </h1>
@@ -210,7 +210,7 @@
                                             To
                                             <address>
                                                 <strong>Restaurant Manager</strong>
-                                                <br>Hotel Harisha
+                                                <br>Hotel Sapphire Marroitte
                                                 <br>Yakkalamulla
                                                 <br>Galle, Sri Lanka
                                                 <br>Phone: 0778799940
@@ -241,11 +241,11 @@
                                                 <tr>
 
                                                     <th>Table Id</th>
-                                                    <th>Sold Quantity</th>
-                                                    <th>Unite Price</th>
+                                                    <th>No of tables</th>
+                                                    <th>Reservation Price</th>
                                                     <th>Total</th>
-                                                    <th>Online selling rate</th>
-                                                    <th>Counter selling rate</th>
+                                                    <th>Online  rate</th>
+                                                    <th>Counter  rate</th>
 
                                                 </tr>
                                                 </thead>
@@ -283,13 +283,13 @@
                                                 <table class="table">
                                                     <tbody>
                                                     <tr>
-                                                        <th>Total sels:</th>
+                                                        <th>Total reservations:</th>
 
                                                         <td>${totaltableItemsSold}<span id="val7"></span></td>
 
                                                     </tr>
                                                     <tr>
-                                                        <th style="width:50%">Tot Counter sels:</th>
+                                                        <th style="width:50%">Tot Counter reservations:</th>
                                                         <td><span id="val2">${totaltableCounter}</span></td>
                                                     </tr>
                                                     <tr>
@@ -297,7 +297,7 @@
                                                         <td><span id="val3">${totalCountertableIncome}</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Tot Online sels:</th>
+                                                        <th>Tot Online reservations:</th>
                                                         <td><span id="val4">${totaltableOnline}</span></td>
                                                     </tr>
                                                     <tr>

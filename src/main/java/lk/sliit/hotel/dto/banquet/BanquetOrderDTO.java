@@ -1,6 +1,6 @@
 package lk.sliit.hotel.dto.banquet;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class BanquetOrderDTO {
 

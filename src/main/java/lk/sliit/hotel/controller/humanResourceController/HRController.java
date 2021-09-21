@@ -33,7 +33,7 @@ public class HRController { //HR controller class
     @Autowired
     HumanResourceBO humanResourceBO;
 
-    // map with HTTP GET request to load HR
+    // map with HTTP  request to load HR
     @GetMapping("/hr")
     public String loginPage(Model model) {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
@@ -191,6 +191,7 @@ public class HRController { //HR controller class
     public void deleteEmployee(@PathVariable("accountId") int accountId, HttpServletRequest request, HttpServletResponse response) throws IOException, IOException {
         humanResourceBO.deleteAccount(accountId);
         response.sendRedirect("/accounts");
+
     }
 
     @PostMapping("/saveAccount")
