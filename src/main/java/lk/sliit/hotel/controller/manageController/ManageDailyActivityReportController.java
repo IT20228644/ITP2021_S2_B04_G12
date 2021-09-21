@@ -21,13 +21,19 @@ public class ManageDailyActivityReportController {
     InventoryBO inventoryBO;
     @Autowired
     HouseKeepingBO houseKeepingBO;
-    @GetMapping("/manageDailyActivityReport")
+    @GetMapping("/reservationDetails")
     public String loginPage(Model model){
+
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-
-
         List<ReservationDTO> hotelRoomDTOList  =  houseKeepingBO.findAllTodayBill();//Find reservation Details
         model.addAttribute("loadHotelRoomTable", hotelRoomDTOList);
+
+        return "reservationDetails";
+    }
+    @GetMapping("/manageDailyActivityReport")
+    public String loginPage1(Model model){
+
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
         List<InventoryOrderDTO> inventoryBill  =  inventoryBO.findInventoryBillToday();
         model.addAttribute("loadInventoryBills", inventoryBill);
         return "manageDailyActivityReport";

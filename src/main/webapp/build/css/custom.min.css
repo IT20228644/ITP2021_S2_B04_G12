@@ -3646,7 +3646,7 @@ a.btn-success, a.btn-primary, a.btn-warning, a.btn-danger {
     color: #E9EDEF;
     background-color: #8c6f60;
     border-color: #775e51;
-    border-width: 2px;
+    border-width: 3px;
 }
 
 .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open .dropdown-toggle.btn-dark {

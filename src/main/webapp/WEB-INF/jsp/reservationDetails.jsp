@@ -174,75 +174,75 @@
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-<%--                                   <h3>Reservation Income</h3>--%>
-<%--                                    <div class="row">--%>
-<%--                                        <div class="  table">--%>
-<%--                                            <table id="saq" class="table table-striped" style="text-align: center">--%>
-<%--                                                <thead class="btn-dark">--%>
+                                   <h3>Reservation Details</h3>
+                                    <div class="row">
+                                        <div class="  table">
+                                            <table id="saq" class="table table-striped" style="text-align: center">
+                                                <thead class="btn-dark">
 
-<%--                                                <tr>--%>
-<%--                                                    <th>Id</th>--%>
-<%--                                                    <th>Customer Id</th>--%>
-<%--                                                    <th>N Rooms</th>--%>
-<%--                                                    <th>Date</th>--%>
-<%--                                                </tr>--%>
-<%--                                                </thead>--%>
-<%--                                                <tbody>--%>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Customer Id</th>
+                                                    <th>N Rooms</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
 
-<%--                                                <c:forEach items="${loadHotelRoomTable}" var="e">--%>
-<%--                                                    <tr>--%>
-<%--                                                        <td>${e.reservationId}</td>--%>
-<%--                                                        <td>${e.customer}</td>--%>
-<%--                                                        <td>${e.noOfRooms}</td>--%>
-<%--                                                        <td>${e.checkIn}</td>--%>
-
-<%--                                                    </tr>--%>
-<%--                                                </c:forEach>--%>
-<%--                                                </tbody>--%>
-<%--                                            </table>--%>
-<%--                                        </div>--%>
-<%--                                        <!-- /.col -->--%>
-<%--                                    </div>--%>
-<%--                                    <!-- /--%>
-<%--                                    .row -->--%>
-<%--                                    </div>--%>
-<%--                                    <div></div>--%>
-                                    <!-- /.row -->
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                        <h3>Inventory Orders</h3>
-                                        <div class="row">
-                                            <div class="  table">
-                                                <table id="saq1" class="table table-striped">
-                                                    <thead>
-
+                                                <c:forEach items="${loadHotelRoomTable}" var="e">
                                                     <tr>
-                                                        <th>OrderId</th>
-                                                        <th>Item</th>
-                                                        <th>Price</th>
-                                                        <th>Quantity</th>
-                                                        <th>Supplier</th>
+                                                        <td>${e.reservationId}</td>
+                                                        <td>${e.customer}</td>
+                                                        <td>${e.noOfRooms}</td>
+                                                        <td>${e.checkIn}</td>
+
                                                     </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                    <c:forEach items="${loadInventoryBills}" var="e">
-                                                        <tr>
-                                                            <td> OD${e.orderId}</td>
-                                                            <td>${e.inventory}</td>
-                                                            <td>Rs: ${e.price}</td>
-                                                            <td> ${e.quantity}</td>
-                                                            <td>${e.supplier}</td>
-
-                                                        </tr>
-                                                    </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!-- /.col -->
+                                                </c:forEach>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <!-- /.row -->
+                                        <!-- /.col -->
                                     </div>
+                                    <!-- /
+                                    .row -->
                                     </div>
+                                    <div></div>
+                                    <!-- /.row -->
+<%--                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">--%>
+<%--                                        <h3>Inventory Orders</h3>--%>
+<%--                                        <div class="row">--%>
+<%--                                            <div class="  table">--%>
+<%--                                                <table id="saq1" class="table table-striped">--%>
+<%--                                                    <thead>--%>
+
+<%--                                                    <tr>--%>
+<%--                                                        <th>OrderId</th>--%>
+<%--                                                        <th>Item</th>--%>
+<%--                                                        <th>Price</th>--%>
+<%--                                                        <th>Quantity</th>--%>
+<%--                                                        <th>Supplier</th>--%>
+<%--                                                    </tr>--%>
+<%--                                                    </thead>--%>
+<%--                                                    <tbody>--%>
+
+<%--                                                    <c:forEach items="${loadInventoryBills}" var="e">--%>
+<%--                                                        <tr>--%>
+<%--                                                            <td> OD${e.orderId}</td>--%>
+<%--                                                            <td>${e.inventory}</td>--%>
+<%--                                                            <td>Rs: ${e.price}</td>--%>
+<%--                                                            <td> ${e.quantity}</td>--%>
+<%--                                                            <td>${e.supplier}</td>--%>
+
+<%--                                                        </tr>--%>
+<%--                                                    </c:forEach>--%>
+<%--                                                    </tbody>--%>
+<%--                                                </table>--%>
+<%--                                            </div>--%>
+<%--                                            <!-- /.col -->--%>
+<%--                                        </div>--%>
+<%--                                        <!-- /.row -->--%>
+<%--                                    </div>--%>
+<%--                                    </div>--%>
                                     <!-- this row will not appear when printing -->
                                     <div class="row no-print">
                                         <div class=" ">
@@ -252,7 +252,7 @@
                                                 <ul class="nav navbar-right panel_toolbox">
                                                     <button type="submit" value="Register"
                                                             style="font-weight: bold;color: white" ; id="name" onclick="window.print();"
-                                                            class="btn btn-success "> Submit Payment <i class="fa fa-file-image-o"></i>
+                                                            class="btn btn-success "> Print <i class="fa fa-file-image-o"></i>
                                                     </button>
                                                 </ul>
 
