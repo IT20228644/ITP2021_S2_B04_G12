@@ -46,7 +46,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Pricing
-                            <small>Welcome To Hotel Sapphire Marroitt</small>
+                            <small>Welcome To Hotel Sapphire Marriott</small>
                         </h3>
                     </div>
 

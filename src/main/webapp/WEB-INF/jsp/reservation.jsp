@@ -303,7 +303,7 @@
                                                     <td>${r.name}</td>
                                                     <td>${r.email}</td>
                                                     <td>${r.noOfRooms}</td>
-                                                    <td><a href="/updateBanquetStatus?orderId=${e.orderId}">
+                                                    <td><a href="/reservation">
                                                         <button value="" id="billBtn" name="billBtn" class="btn btn-outline-success" style="font-size: 12px;">confirmed</button>
                                                     </a></td>
                                                 </tr>

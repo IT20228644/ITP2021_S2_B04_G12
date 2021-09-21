@@ -343,5 +343,18 @@ public class BanquetBOImpl implements BanquetBO {
 
     }
 
+    //update status pending to confirm
+    @Override
+    public void updateBanquetStatus(int orderId) {
+        String status="confirmed";
+        banquetOrderDAO.updateBanquetStatus(status,orderId);
+    }
+
+   //update status confirm to finish
+   @Override
+   public void updateBanquetStatusAsFinished(int orderId) {
+       String status ="finished";
+       banquetOrderDAO.updateBanquetStatus(status,orderId);
+   }
 
 }

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -81,7 +80,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>HR Department
-                            <small>Welcome To Hotel Sapphire Marroitt</small>
+                            <small>Welcome To Hotel Sapphire Marriott</small>
                         </h3>
                     </div>
 

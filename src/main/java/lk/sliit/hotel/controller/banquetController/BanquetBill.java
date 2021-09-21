@@ -36,7 +36,7 @@ public class BanquetBill {
     @PostMapping("updateBill")
     public String updateBill(@ModelAttribute BanquetAddDTO banquetAddDTO){
         banquetBO.updateBill(banquetAddDTO);
-        return"redirect:banquet";
+        return"redirect:banquetBill";
 
     }
 

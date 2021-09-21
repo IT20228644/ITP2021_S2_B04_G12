@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <a href="/hr">
-                        <button style=" border: 2px solid #775e51;  background-color: #8c6f60; width:8%; height:5%
+                        <button style=" border: 2px solid #775e51;  background-color: #8c6f60; width:8%; height:5%;
                         color: #E9EDEF;font-weight: bolder" type="button"  class="btn btn-secondary"><i class="fa fa-reply">
                             Back</i>
                     </button>
