@@ -1,6 +1,7 @@
 package lk.sliit.hotel.controller.banquetController;
 
 import lk.sliit.hotel.controller.SuperController;
+import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
 import lk.sliit.hotel.service.custom.BanquetBO;
 import lk.sliit.hotel.service.custom.IndexLoginBO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Date;
+import java.util.List;
 
 @Controller
 public class BanquetCheckAvailability {
@@ -65,6 +67,13 @@ public class BanquetCheckAvailability {
         else
             answer3 ="Available";
         model.addAttribute("answer3",answer3);
+
+
+
+//        List<BanquetAddDTO> list = banquetBO.findCheckDateBanquets(date);
+//        model.addAttribute("loadTable",list);
+        List<BanquetAddDTO> list = banquetBO.findCheckDateBanquets(date);
+        model.addAttribute("banquetList",list);
 
         return "banquetCheckAvailability";
 

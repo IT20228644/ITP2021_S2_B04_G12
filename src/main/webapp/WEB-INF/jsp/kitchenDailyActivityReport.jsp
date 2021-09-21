@@ -180,8 +180,8 @@
                                             <address>
                                                 <strong>Chanuka Dulanjaya</strong>
                                                 <br>Ambalangoda
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0767188591
+                                                <br>Colombo, Sri Lanka
+                                                <br>Phone: 0767187591
                                                 <br>Email: it20228644@my.sliit.lk
                                             </address>
                                         </div>
@@ -191,7 +191,7 @@
                                             <address>
                                                 <strong>Lahiru Jayasinghe</strong>
                                                 <br>Kurunagala
-                                                <br>Galle, Sri Lanka
+                                                <br>Colombo, Sri Lanka
                                                 <br>Phone: 0778799940
                                                 <br>Email: it20241650@my.sliit.lk
                                             </address>

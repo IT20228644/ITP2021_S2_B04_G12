@@ -193,22 +193,22 @@
                                         <div class="col-sm-4 invoice-col">
                                             From
                                             <address>
-                                                <strong>Chanuka Mullevidana</strong>
-                                                <br>Ambalangoda
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0767188591
-                                                <br>Email: it19166070@my.sliit.lk
+                                                <strong>............</strong>
+                                                <br>............
+                                                <br>.............
+                                                <br>..............
+                                                <br>Email: it20233976@my.sliit.lk
                                             </address>
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
                                             To
                                             <address>
-                                                <strong>Rivindu Wijayarathna</strong>
-                                                <br>Yakkalamulla
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0778799940
-                                                <br>Email: it18141948@my.sliit.lk
+                                                <strong>...............</strong>
+                                                <br>..............
+                                                <br>...............
+                                                <br>...............
+                                                <br>...........
                                             </address>
                                         </div>
                                         <!-- /.col -->
@@ -301,7 +301,7 @@
 
                                                     <tr>
                                                         <th>Total:</th>
-                                                        <td><span id="vallll"></span><br><span id="val"></span></td>
+                                                        <td><br><span id="val"></span></td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -364,12 +364,12 @@
     for (var i = 1; i < table.rows.length; i++) {
         str = str + (table.rows[i].cells[0].innerHTML) + " ";
         sumVal = sumVal + parseFloat(table.rows[i].cells[4].innerHTML);
-        if (sumVal>5000) {
-
-            document.getElementById("vallll").innerHTML = "Reached the discount level";
-            sumVal = sumVal - 500;
-        }
-        else {}
+        // if (sumVal>5000) {
+        //
+        //     document.getElementById("vallll").innerHTML = "Reached the discount level";
+        //     sumVal = sumVal - 500;
+        // }
+        // else {}
 
         sumVal2 = sumVal2 + parseFloat(table.rows[i].cells[2].innerHTML);
         sumVal3 = sumVal3 + parseFloat(table.rows[i].cells[3].innerHTML);

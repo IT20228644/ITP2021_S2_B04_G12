@@ -258,7 +258,7 @@
                     </div>
 
                     <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2">
-                        <a href="home">
+                        <a href="">
                             <button type="button" class="btnq">Online</button>
                         </a>
                     </div>

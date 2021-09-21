@@ -104,6 +104,19 @@ public class BanquetAddDTO {
 
     }
 
+    public BanquetAddDTO(int orderId, String name, String contactNo, java.util.Date date,
+                         String hallId, int noOfPlates, double advancePayment, String orderState) {
+        this.orderId = orderId;
+        this.name = name;
+        this.contactNo = contactNo;
+        this.date = (Date) date;
+        this.hallId = hallId;
+        this.noOfPlates =noOfPlates;
+        this.advanceFee =advancePayment;
+
+    }
+
+
     public int getOrderId() {
         return orderId;
     }

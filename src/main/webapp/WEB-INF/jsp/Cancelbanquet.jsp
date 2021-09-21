@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: USER
+  Date: 18/09/2021
+  Time: 1:22 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -9,7 +16,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
     <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -70,23 +76,6 @@
         .large-btn:hover {
             color: #0f0f0f;
         }
-
-        .btn_back {
-            color: #E9EDEF;
-            background-color: #8c6f60;
-            border-color: #775e51;
-            border-width: 2px;
-            height: 30px;
-            font-size: medium;
-            border-radius: 3px;
-
-        }
-        .btn_reset{
-            border: 1px solid #8c6f60;
-            border-width: 2px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body class="nav-md" style="cursor: pointer">
@@ -103,15 +92,26 @@
         <!-- /Top header -->
 
 
-
         <!-- page content -->
         <div class="right_col" role="main">
-            <div class="">
+
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Restaurant Table Manage
-                            <small>Welcome To Hotel Sapphire Marriott</small>
+                        <h3>Cancel Banquet
+                            <small>Welcome To Hotel Shapphire Marriott</small>
                         </h3>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                <a href="/activityReports">
+                                    <button style=" border: 3px solid #4c2a18;  background-color: #8c6f60;
+                                    color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
+                                        Back</i>
+                                    </button>
+                                </a>
+
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="title_right">
@@ -194,139 +194,63 @@
                         </form>
                     </div>
                 </div>
-                <%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+            <div class="clearfix">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="float: right; position: relative;display: inline-block">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Cancel Confirmed Banquets
+                                <small> - Customer can't get an advance fee
+                                </small>
+                            </h2>
 
 
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                        <a href="/restaurantTableIndex">
-                            <button type="button" class=" btn_back"><i class="fa fa-mail-reply"> Back</i>
-                            </button>
-                        </a>
+                                <!--href="/invoice"-->
+                                <div class="clearfix"></div>
 
-                    </div>
-                </div>
 
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-
-                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                        <!--Add tables form-------------------------------------------------------------------->
-
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 ">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Add/Update Table...</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
-                                                   data-toggle="dropdown"
-                                                   href="#" role="button"><i
-                                                        class="fa fa-wrench"></i></a>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <br/>
-                                        <form action="saveTable" method="POST" class="form-horizontal form-label-left"
-                                              data-parsley-validate id="demo-form3">
-                                            <input class="form-control" name="tableId" id="tableId" type="hidden" value="0" >
-
-                                            <div class=" form-group">
-                                                <label class="label-align">Type: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
-                                                </label>
-                                                <select class="form-control" required="required" name="type"
-                                                        id="type" data-placeholder="Select Type">
-                                                    <option>2 person</option>
-                                                    <option>4 person</option>
-                                                    <option>8 person</option>
-                                                    <option>12 person</option>
-                                                </select>
-                                            </div>
-
-                                            <div>
-                                                <label id="place" name="place" class="label-align"
-                                                >Place: <span class="required">* &nbsp; &nbsp; &nbsp;</span>
-                                                </label><br>
-                                                <div style="word-spacing: 18px;">
-                                                    <input class="radio"
-                                                           type="radio" name="place" value="Indoor"checked><label>Indoor</label>
-
-                                                    <input class="radio"
-                                                           type="radio" name="place" value="Outdoor"><label>Outdoor</label>
-                                                </div>
-                                            </div>
-                                            <br>
-
-                                            <div class=" form-group">
-                                                <div class=" ">
-                                                    <button class="btn_back" type="submit" value="Register">+Add /
-                                                        Update
-                                                    </button>
-                                                    <button class="btn_reset" type="reset">Reset</button>
-
-                                                </div>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <%--                    /////////////////////////////////////////////////////--%>
-                <!--////////////////////////////////////////////-->
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="row">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Find Tables
-                                        <small>list</small>
-                                    </h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"
-                                               href="#"
-                                               role="button"><i class="fa fa-wrench"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
                                 <div class="x_content">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="card-box table-responsive">
-                                                <table class="table table-striped table-bordered" id="datatable-buttons"
-                                                       style="text-align: center">
-                                                    <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Type</th>
-                                                        <th>place</th>
-                                                        <th></th>
 
+                                    <div class="row">
+
+                                        <div class="col-sm-12">
+
+                                            <div class="card-box table-responsive">
+
+                                                <table id="datatable-buttons"
+                                                       class="table table-striped jambo_table bulk_action table-bordered">
+                                                    <thead class="thead-light">
+
+                                                    <tr>
+                                                        <th>Banquet Id</th>
+                                                        <th>Name</th>
+                                                        <th>Address</th>
+                                                        <th>Date</th>
+                                                        <th>Hall</th>
+                                                        <th>Plates</th>
+                                                        <th>Package</th>
+                                                        <th>Advance Payment</th>
+                                                        <th>Bill Id</th>
+                                                        <th>Cancel</th>
 
                                                     </tr>
-
                                                     </thead>
+
                                                     <tbody>
-                                                    <c:forEach items="${loadAllTablesTable}" var="item">
+                                                    <c:forEach items="${loadTable1}" var="e">
                                                         <tr>
-                                                            <td>${item.tableId}</td>
-                                                            <td>${item.type}</td>
-                                                            <td>${item.place}</td>
-                                                            <td><a href="deleteTable/${item.tableId}">
-                                                                <i class="fa fa-trash"></i>
+
+                                                            <td>${e.orderId}</td>
+                                                            <td>${e.name}</td>
+                                                            <td>${e.address}</td>
+                                                            <td>${e.date}</td>
+                                                            <td>${e.hallId}</td>
+                                                            <td>${e.noOfPlates}</td>
+                                                            <td>${e.menuId}</td>
+                                                            <td>${e.advanceFee}</td>
+                                                            <td>${e.banquetBillId}</td>
+                                                            <td><a href="/updateBanquetStatusToCancel?orderId=${e.orderId}">
+                                                                <button value="" id="billBtn" name="billBtn" class="btn btn-outline-danger" style="font-size: 13px;">Cancel</button>
                                                             </a></td>
-                                                        </tr>
                                                     </c:forEach>
                                                     </tbody>
                                                 </table>
@@ -334,47 +258,118 @@
                                         </div>
                                     </div>
                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Delete Pending Banquets
+                            <small> - Customer can get an advance fee
+                            </small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Settings 1</a>
+                                    <a class="dropdown-item" href="#">Settings 2</a>
+                                </div>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+
+                                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Banquet Id</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Date</th>
+                                            <th>Hall</th>
+                                            <th>Plates</th>
+                                            <th>Package</th>
+                                            <th>Advance Payment</th>
+                                            <th>Bill Id</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach items="${loadTable2}" var="e">
+                                            <tr>
+                                                <td>${e.orderId}</td>
+                                                <td>${e.name}</td>
+                                                <td>${e.address}</td>
+                                                <td>${e.date}</td>
+                                                <td>${e.hallId}</td>
+                                                <td>${e.noOfPlates}</td>
+                                                <td>${e.menuId}</td>
+                                                <td>${e.advanceFee}</td>
+                                                <td>${e.banquetBillId}</td>
+                                                <td><a href="/deleteBanquet?idNo=${e.orderId}"><span
+                                                        class="glyphicon glyphicon-trash"></span></a></td>
+                                            </tr>
+                                        </c:forEach>
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+
+
+
+                                <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
+                        </div>
+                    </div>
+                    <!-- /page content -->
+
+
+
+                    <!-- footer content -->
+                    <jsp:include page="footer.jsp" />
+                    <!-- /footer content -->
 
                 </div>
 
-                <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
-            </div>
-        </div>
-        <!-- /page content -->
 
-        <!-- footer content -->
-        <jsp:include page="footer.jsp" />
-        <!-- /footer content -->
-    </div>
+                <%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+
+
 </div>
 
+
 <!-- jQuery -->
 <script src="../../vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- FastClick -->
-<script src="../../vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="../../vendors/nprogress/nprogress.js"></script>
-<!-- iCheck -->
-<script src="../../vendors/iCheck/icheck.min.js"></script>
-<!-- jQuery -->
-<script src="../../vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- FastClick -->
-<script src="../../vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="../../vendors/nprogress/nprogress.js"></script>
-<!-- iCheck -->
-<script src="../../vendors/iCheck/icheck.min.js"></script>
-<!-- Bootstrap -->
+<!-- Datatables -->
 <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<%--Show Print Buttons--%>
 <script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
@@ -382,26 +377,14 @@
 <script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
 <script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<%--Responsive Table--%>
 <script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<%--<script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>--%>
+<%--Print--%>
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
-<script src="../../vendors/iCheck/icheck.min.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="../../build/js/custom.min.js"></script>
-
-<script>
-
-    var selectedRow = null;
-    $("#datatable-buttons tbody").on('click', 'tr', function () {
-        selectedRow = $(this);
-        $("#tableId").val($(this).find("td:first-child").text());
-        $("#type").val($(this).find("td:nth-child(2)").text());
-        $("#unitPrice").val($(this).find("td:nth-child(3)").text());
-        selectedRow.addClass('row-selected');
-    });
-</script>
-
 
 </body>
 </html>
