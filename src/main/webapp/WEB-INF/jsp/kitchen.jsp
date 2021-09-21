@@ -49,6 +49,7 @@
             font-size: 1.5rem;
             text-align: center;
             border-radius: 5px 5px;
+            border: 5px solid rgb(190, 175, 166);
 
         }
 
@@ -123,24 +124,31 @@
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <a href="manageMenu">
-                        <button type="button" class="large-btn btn btn-dark">Menu Management</button>
-                    </a>
+
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                           href="manageMenu" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">Menu Management</h2></a>
+                    </div>
+                    <br>
                 </div>
 
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <a href="banquetFoodOrder">
-                        <button type="button" class="large-btn btn btn-dark">Banquet Orders</button>
-                    </a>
+
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                           href="banquetFoodOrder" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">Banquet Orders</h2></a>
+                    </div>
+                    <br>
                 </div>
 
-                <%--                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">--%>
-                <%--                    <a href="restaurantOrders">--%>
-                <%--                        <button type="button" class="large-btn btn btn-dark">Restaurant Orders</button>--%>
-                <%--                    </a>--%>
-                <%--                </div>--%>
+
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
                     <div class="containerx" >
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -154,9 +162,15 @@
 
 
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <a href="/kitchenReport">
-                        <button type="button" class="large-btn btn btn-dark">Daily Food Order Report</button>
-                    </a>
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                           href="kitchenReport" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">Daily Food Order Report</h2></a>
+                    </div>
+                    <br>
+
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <hr>

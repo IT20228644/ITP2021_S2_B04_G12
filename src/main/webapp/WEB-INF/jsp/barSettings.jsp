@@ -55,9 +55,7 @@
 
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Beverage
-                                <small>Settings</small>
-                            </h2>
+                            <h2> Items Descriptions </h2>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-3">
                                     <a href="bar">
@@ -66,16 +64,24 @@
                                     </a>
 
                                 </div>
+
+
                             </div>
+
                             <ul class="nav navbar-right panel_toolbox">
 
                             </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
+
+
                             <div class="row">
                                 <div class="col-sm-12">
+
                                     <div class="card-box table-responsive">
+
+                                        <p>Click below for download reports</p>
 
                                         <table style="text-align: center" id="datatable-buttons"
                                                class="table table-striped table-bordered">

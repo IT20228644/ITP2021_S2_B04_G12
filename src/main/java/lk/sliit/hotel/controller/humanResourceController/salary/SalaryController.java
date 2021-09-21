@@ -97,6 +97,18 @@ public class SalaryController {
        return "salaryPayment";
     }
 
+//    @GetMapping("restaurantPayment") // load payment invoice page
+//    public String loadresInvoicePage(@ModelAttribute SalaryPayDTO salaryDTO, Model model) throws IOException {
+//        ModelAndView mav = new ModelAndView("salaryPayment");
+//        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//        try {
+//            List<SalaryPayDTO> salaryDTOS = humanResourceBO.getSalaryPayment(salaryDTO.getSource());
+//            model.addAttribute("getSalaryData", salaryDTOS);
+//
+//        } catch (Exception e) { }
+//        return "restaurantDailyActivityReport";
+//    }
+
     @GetMapping("/salarySettings") // load salary settings page
     public String salarySettings(Model model){
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));

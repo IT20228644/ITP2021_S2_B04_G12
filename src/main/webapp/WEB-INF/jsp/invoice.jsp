@@ -193,22 +193,22 @@
                                         <div class="col-sm-4 invoice-col">
                                             From
                                             <address>
-                                                <strong>Chanuka Mullevidana</strong>
-                                                <br>Ambalangoda
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0767188591
-                                                <br>Email: it19166070@my.sliit.lk
+                                                <strong>............</strong>
+                                                <br>............
+                                                <br>.............
+                                                <br>..............
+                                                <br>Email: it20233976@my.sliit.lk
                                             </address>
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
                                             To
                                             <address>
-                                                <strong>Rivindu Wijayarathna</strong>
-                                                <br>Yakkalamulla
-                                                <br>Galle, Sri Lanka
-                                                <br>Phone: 0778799940
-                                                <br>Email: it18141948@my.sliit.lk
+                                                <strong>...............</strong>
+                                                <br>..............
+                                                <br>...............
+                                                <br>...............
+                                                <br>...........
                                             </address>
                                         </div>
                                         <!-- /.col -->

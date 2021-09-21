@@ -68,10 +68,6 @@ public class KitchenMenusiteController {
     }
 
 
-
-
-
-
 //    //update MenuSiteItem
 //    @RequestMapping(method = RequestMethod.PUT, value = "/menusiteItems/{menusId}")
 //    public void updateMenusiteItem(@PathVariable int menusId,@RequestBody MenuSiteItem menuSiteItem)
@@ -90,10 +86,6 @@ public class KitchenMenusiteController {
         kitchenMenusiteServices.deleteMenuSiteItem(menusId);
         return "redirect:/kitchenMenusiteShow";
     }
-
-
-
-
 
 
 //    //create MenusiteItems
