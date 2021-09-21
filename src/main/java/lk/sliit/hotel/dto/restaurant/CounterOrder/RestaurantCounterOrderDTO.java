@@ -28,7 +28,7 @@ public class RestaurantCounterOrderDTO {
     }
 
     public RestaurantCounterOrderDTO(int orderId, String orderState,
-                                     double quantity, Date date, String dataValue,
+                                      Date date, String dataValue,
                                      int customerId) {
         this.orderId = orderId;
         this.orderState = orderState;
@@ -38,7 +38,7 @@ public class RestaurantCounterOrderDTO {
         this.customerId = customerId;
     }
 
-    public RestaurantCounterOrderDTO(int orderId, String orderState, double quantity, Date date, String dataValue,
+    public RestaurantCounterOrderDTO(int orderId, String orderState, Date date, String dataValue,
                                      int customerId, int orderHolder, List<RestaurantCounterOrderDetailDTO> orderDetails) {
         this.orderId = orderId;
         this.orderState = orderState;
@@ -53,7 +53,7 @@ public class RestaurantCounterOrderDTO {
     public RestaurantCounterOrderDTO() {
     }
 
-    public RestaurantCounterOrderDTO(int orderId, String orderState, String foodName, double quantity, Date date,
+    public RestaurantCounterOrderDTO(int orderId, String orderState, String foodName,  Date date,
                                      String dataValue, int customerId, int orderHolder, List<RestaurantCounterOrderDetailDTO> orderDetails) {
         this.orderId = orderId;
         this.orderState = orderState;
