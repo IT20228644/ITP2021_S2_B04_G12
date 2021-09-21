@@ -122,9 +122,9 @@ public class RestaurantBOImpl implements RestaurantBO {
         restaurantCounterOrderDAO.save(new RestaurantCounterOrder(//Save Data in restaurantCounterOrderDAO table
                 restaurantCounterOrderDTO.getOrderId(),
                 restaurantCounterOrderDTO.getOrderState(),
-                restaurantCounterOrderDTO.getQuantity(),
+               // restaurantCounterOrderDTO.getQuantity(),
                 restaurantCounterOrderDTO.getDate(),
-                restaurantCounterOrderDTO.getOrderHolder()));
+                1));
 
         for (RestaurantCounterOrderDetailDTO orderDetail : list) {//Save Data in restaurantCounterOrderDetail table
             restaurantCounterOrderDetail.save(new RestaurantCounterOrderDetail(
@@ -136,7 +136,7 @@ public class RestaurantBOImpl implements RestaurantBO {
         }
     }
 
-//get all food items
+    //get all food items
     @Override
     public List<FoodItemDTO> findAllFoodItems(String restaurant) {
         Iterable<FoodItem> all = foodItem.findAllByCategoryEquals(restaurant);
