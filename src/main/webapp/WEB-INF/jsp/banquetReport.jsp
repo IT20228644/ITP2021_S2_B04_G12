@@ -1,8 +1,14 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: USER
+  Date: 21/9/2021
+  Time: 1:27 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,7 +17,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../../images/icons/gdfgd.png"/>
-    <title>Invoice </title>
 
     <!-- Bootstrap -->
     <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,35 +29,20 @@
     <link href="../../build/css/custom.min.css" rel="stylesheet">
 
     <%
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        String date = sdf.format(new Date());
+        SimpleDateFormat sdf = new SimpleDateFormat ( "dd-MM-yyyy" );
+        String date = sdf.format ( new Date ( ) );
     %>
-
-    <style>
-        .btn_back {
-            color: #E9EDEF;
-            background-color: #8c6f60;
-            border-color: #775e51;
-            border-width: 2px;
-            height: 30px;
-            font-size: medium;
-            border-radius: 3px;
-
-        }
-    </style>
 </head>
 
 <body class="nav-md" style="cursor: pointer">
 <div class="container body">
     <div class="main_container">
-
-
         <!-- Side header -->
-        <jsp:include page="sideHeader.jsp"/>
+        <jsp:include page="sideHeader.jsp" />
         <!-- /Side header -->
 
         <!-- Top header -->
-        <jsp:include page="topHeader.jsp"/>
+        <jsp:include page="topHeader.jsp" />
         <!-- /Top header -->
 
         <!-- page content -->
@@ -60,8 +50,8 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Invoice
-                            <small>Submit Payment And Print Bill</small>
+                        <h3>Banquet Report
+                            <small>weekly report</small>
                         </h3>
                     </div>
 
@@ -156,8 +146,8 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Invoice Print
-                                    <small>Employee invoice</small>
+                                <h2>Report Print
+                                    <small>Banquet Weekly Report</small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -182,7 +172,7 @@
                                     <div class="row">
                                         <div class="  invoice-header">
                                             <h1>
-                                                <i class="fa fa-globe"></i> Invoice.
+                                                <i class="fa fa-globe"></i> Banquet Report.
                                                 <small><%=date%>
                                                 </small>
                                             </h1>
@@ -191,36 +181,22 @@
                                     <!-- info row -->
                                     <div class="row invoice-info">
                                         <div class="col-sm-4 invoice-col">
-                                            From
+                                            Address:
                                             <address>
-                                                <strong>............</strong>
-                                                <br>............
-                                                <br>.............
-                                                <br>..............
-                                                <br>Email: it20233976@my.sliit.lk
+                                                <strong>Hotel Shapphire Marriott </strong>
+                                                <br>Galle, Sri Lanka
+                                                <br>Phone: 0767188591
+                                                <br>Email: hotelShapphire@gmail.lk
                                             </address>
                                         </div>
-                                        <!-- /.col -->
+
                                         <div class="col-sm-4 invoice-col">
-                                            To
-                                            <address>
-                                                <strong>...............</strong>
-                                                <br>..............
-                                                <br>...............
-                                                <br>...............
-                                                <br>...........
-                                            </address>
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-sm-4 invoice-col">
-                                            <b>Invoice #007612</b>
+                                            <b>Last 7 day Report</b>
                                             <br>
+                                            <b>Department:</b> Banquet Department
                                             <br>
-                                            <b>Order ID:</b> 4F3S8J
+                                            <b>Generate Date:</b><%=date%>
                                             <br>
-                                            <b>Payment Due:</b><%=date%>
-                                            <br>
-                                            <b>Account:</b> 968-34567
                                         </div>
                                         <!-- /.col -->
                                     </div>
@@ -231,31 +207,36 @@
                                         <div class="  table">
                                             <table id="saq" class="table table-striped">
                                                 <thead>
-
                                                 <tr>
-
-                                                    <th>Food Id</th>
-                                                    <th>Name</th>
-                                                    <th>Order Quantity</th>
-                                                    <th>Unit Price</th>
-                                                    <th>Total</th>
+                                                    <th>Banquet Id</th>
+                                                    <th>Bill Id</th>
+                                                    <th>Date</th>
+                                                    <th>Cus Name</th>
+                                                    <th>Mobile</th>
+                                                    <th>Hall No</th>
+                                                    <th>Package</th>
+                                                    <th>plates</th>
+                                                    <th>Advance Fee</th>
+                                                    <th>Total Pay</th>
+                                                    <th>Status</th>
                                                 </tr>
                                                 </thead>
+
                                                 <tbody>
-                                                <c:forEach items="${listCounterOrderDetails}" var="e">
+                                                <c:forEach items="${reportTable}" var="e">
                                                     <tr>
-
-                                                        <td>${e.foodItem}</td>
+                                                        <td>${e.orderId}</td>
+                                                        <td>${e.banquetBillId}</td>
+                                                        <td>${e.date}</td>
                                                         <td>${e.name}</td>
-                                                        <td>${e.quantity}</td>
-                                                        <td>${e.unitePrice}</td>
-                                                        <td>${e.unitePrice * e.quantity}</td>
-
+                                                        <td>${e.contactNo}</td>
+                                                        <td>${e.hallId}</td>
+                                                        <td>${e.menuId}</td>
+                                                        <td>${e.noOfPlates}</td>
+                                                        <td>${e.advanceFee}</td>
+                                                        <td>${e.total}</td>
+                                                        <td>${e.orderState}</td>
                                                     </tr>
-                                                    <script>
-                                                        var aa = aa
-                                                        document.getElementById("demo").innerHTML = 11;
-                                                    </script>
                                                 </c:forEach>
 
                                                 </tbody>
@@ -268,135 +249,110 @@
                                     <div class="row">
                                         <!-- accepted payments column -->
                                         <div class="col-md-6">
+                                            <p class="lead">Weekly Profit <%=date%> </p>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th style="width:50%">Basic Total:</th>
+                                                        <!--<td><span id="val2"></span></td>-->
+                                                        <td>${fullTotal}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Tax (4%): </th>
+                                                        <small style="font-weight: bold"><span id="val9"></span>
+                                                        </small>
+                                                        </th>
+                                                        <!--<td><span id="val3"></span></td>-->
+                                                        <td>${fullTax}</tr>
+                                                    <tr>
+                                                        <th>weekly profit</th>
+                                                        <!--<td><span id="val"></span></td>-->
+                                                        <td>${fullProfit}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-6">
+
                                             <p class="lead">Payment Methods:</p>
                                             <img src="../../images/visa.png" alt="Visa">
                                             <img src="../../images/mastercard.png" alt="Mastercard">
                                             <img src="../../images/american-express.png" alt="American Express">
                                             <img src="../../images/paypal.png" alt="Paypal">
                                             <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                                                Thank you for payment with Hotel Sapphire Marriott
+                                                Hotel Shapphire Marriott is a guest house grade A hotel Which is situated in Galle.
+                                                Over the years they have come a long way in winning the hearts of local as well as foreign tourists.
+
                                             </p>
                                         </div>
-                                        <!-- /.col -->
-                                        <div class="col-md-6">
-                                            <p class="lead">Amount Due <%=date%></p>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <tbody>
-                                                    <tr>
-                                                        <th>Bill Id:</th>
-                                                        <td>${listCounterOrders}<span id="val4"></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="width:50%">Tot Qty:</th>
-                                                        <td><span id="val2"></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Unit Price:
-                                                            <small style="font-weight: bold"><span id="val9"></span>
-                                                            </small>
-                                                        </th>
-                                                        <td><span id="val3"></span></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th>Total:</th>
-                                                        <td><br><span id="val"></span></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- /.col -->
                                     </div>
-                                    <!-- /.row -->
 
-                                    <!-- this row will not appear when printing -->
-                                    <div class="row no-print">
-                                        <div class=" ">
+                                    <!-- /.col -->
 
-                                            <form method="POST" action=""
-                                                  name="deleteInvoiceSalary">
-                                                <input style="display: none" type="text" id="itemPay" name="SalaryId">
-                                                <ul class="nav navbar-right panel_toolbox">
-                                                    <button type="submit" value="Register"
-                                                            style="font-weight: bold;color: white" ; id="name"
-                                                            onclick="window.print();"
-                                                            class="btn_back"> Submit Payment
-
-                                                    </button>
-                                                </ul>
-
-                                            </form>
-
-                                        </div>
-                                    </div>
                                 </section>
+                                <!-- /.col -->
+
                             </div>
+                            <!-- /.row -->
+
+                            <!-- this row will not appear when printing -->
+                            <div class="row no-print">
+                                <div class=" ">
+
+                                    <form>
+                                        <input style="display: none" type="text" id="itemPay" name="SalaryId">
+                                        <ul class="nav navbar-right panel_toolbox">
+                                            <button type="submit" value="Register"
+                                                    style="font-weight: bold;color: white" ; id="name" onclick="window.print();"
+                                                    class="btn btn-success "> Print Report <i class="fa fa-file-image-o"></i>
+                                            </button>
+                                        </ul>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Chanuka
-                Mullevidana</a>
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
     </div>
+    <!-- /page content -->
+
+
+
+
+    <!-- footer content -->
+    <jsp:include page="footer.jsp" />
+    <!-- /footer content -->
+
+</div>
 </div>
 
 <!-- jQuery -->
 <script src="../../vendors/jquery/dist/jquery.min.js"></script>
 
-<script>
-    var rowCount = document.getElementById('saq').rows.length;
-    var table = document.getElementById("saq"), sumVal2 = 0.0, sumVal3 = 0.0, sumVal4 = 0.0, sumVal5 = 0.0;
-    var sumVal = 0.0;
-    var avgTax = 0.0;
-    var str = '';
-
-
-    for (var i = 1; i < table.rows.length; i++) {
-        str = str + (table.rows[i].cells[0].innerHTML) + " ";
-        sumVal = sumVal + parseFloat(table.rows[i].cells[4].innerHTML);
-        // if (sumVal>5000) {
-        //
-        //     document.getElementById("vallll").innerHTML = "Reached the discount level";
-        //     sumVal = sumVal - 500;
-        // }
-        // else {}
-
-        sumVal2 = sumVal2 + parseFloat(table.rows[i].cells[2].innerHTML);
-        sumVal3 = sumVal3 + parseFloat(table.rows[i].cells[3].innerHTML);
-
-
-    }
-
-
-    document.getElementById("val").innerHTML = "Rs: " + sumVal;
-    document.getElementById("val2").innerHTML =  sumVal2;
-    document.getElementById("val3").innerHTML = "Rs: " + sumVal3;
-    document.getElementById("val5").innerHTML = "Rs: " + sumVal5;
-    document.getElementById("val4").innerHTML = "Rs: " + sumVal4;
-    document.getElementById("val9").innerHTML = "(avg)" + avgTax + "%";
-
-
-</script>
-
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- FastClick -->
-<script src="../../vendors/fastclick/lib/fastclick.js"></script>
+<script src="../vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="../../vendors/nprogress/nprogress.js"></script>
+<script src="../vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="../vendors/Chart.js/dist/Chart.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="../../build/js/custom.min.js"></script>
+<script src="../build/js/custom.min.js"></script>
 
 </body>
 </html>

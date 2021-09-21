@@ -109,7 +109,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Restaurant Manage
-                            <small>Welcome To Hotel Hareesha</small>
+                            <small>Welcome To Hotel Sapphire Marriott</small>
                         </h3>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">

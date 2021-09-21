@@ -95,7 +95,7 @@
             background: linear-gradient(
                     120deg,
                     transparent,
-                    rgba(135, 141, 156, 0.4),
+                    rgba(64, 45, 34, 0.4),
                     transparent
             );
             transition: all .8s;
