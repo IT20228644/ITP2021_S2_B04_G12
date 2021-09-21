@@ -48,8 +48,8 @@ public class BanquetCancel {
 
     //Delete banquet
     @RequestMapping("deleteBanquet")
-    public String deleteBanquet(@RequestParam int orderId) {
-        banquetBO.deleteBanquet(orderId);
+    public String deleteBanquet(@RequestParam int idNo) {
+        banquetBO.deleteBanquet(idNo);
         return "redirect:/banquetDelete";
     }
 
