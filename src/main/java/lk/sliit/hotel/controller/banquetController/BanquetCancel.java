@@ -40,10 +40,17 @@ public class BanquetCancel {
     }
 
     //update banquet status to cancel
-    @RequestMapping("UpdatoBanquetStatustoCancel  ")
+    @RequestMapping("UpdateBanquetStatusToCancel  ")
     public String updateDeleteStatus(@RequestParam int orderId){
        banquetBO.updateBanquetStatusToCancel(orderId);
        return "redirect:banquetDelete";
+    }
+
+    //Delete banquet
+    @RequestMapping("deleteBanquet")
+    public String deleteBanquet(@RequestParam int orderId) {
+        banquetBO.deleteBanquet(orderId);
+        return "redirect:/banquetDelete";
     }
 
 
