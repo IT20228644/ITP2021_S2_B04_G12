@@ -110,7 +110,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Restaurant Table Manage
-                            <small>Welcome To Hotel Hareesha</small>
+                            <small>Welcome To Hotel Sapphire Marriott</small>
                         </h3>
                     </div>
 
