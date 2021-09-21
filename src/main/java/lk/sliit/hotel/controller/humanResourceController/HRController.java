@@ -191,6 +191,7 @@ public class HRController { //HR controller class
     public void deleteEmployee(@PathVariable("accountId") int accountId, HttpServletRequest request, HttpServletResponse response) throws IOException, IOException {
         humanResourceBO.deleteAccount(accountId);
         response.sendRedirect("/accounts");
+
     }
 
     @PostMapping("/saveAccount")
