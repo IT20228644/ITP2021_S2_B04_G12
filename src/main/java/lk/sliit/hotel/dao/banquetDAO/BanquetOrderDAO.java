@@ -1,5 +1,6 @@
 package lk.sliit.hotel.dao.banquetDAO;
 
+import lk.sliit.hotel.entity.banquet.BanquetBill;
 import lk.sliit.hotel.entity.banquet.BanquetOrder;
 import lk.sliit.hotel.entity.kitchen.Menu;
 import org.springframework.data.jpa.repository.Modifying;
@@ -43,4 +44,6 @@ public interface BanquetOrderDAO extends CrudRepository<BanquetOrder, Integer> {
     void updateBanquetTable(String hallId, int noOfPlates, java.sql.Date date, Menu one, int orderId);
 
     Iterable<BanquetOrder> findLastBanquetOrdersByDateBetween(java.util.Date afterWeek, java.util.Date todayDate);
+
+    BanquetOrder findBanquetOrderByBanquetBillEquals(BanquetBill banquetBill);
 }
