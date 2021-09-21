@@ -28,7 +28,7 @@ public class BanquetBill {
      model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
         List<BanquetAddDTO> list = banquetBO.findBanquetBill();
-        mv.addObject("loadTable7", list);
+        mv.addObject("loadTable",list);
 
         return mv;
     }
@@ -39,6 +39,8 @@ public class BanquetBill {
         return"redirect:banquetBill";
 
     }
+
+
 
 
 }

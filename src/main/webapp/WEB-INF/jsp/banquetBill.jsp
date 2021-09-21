@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: USER
-  Date: 10/9/2021
-  Time: 11:14 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -98,7 +91,7 @@
             <div class="page-title">
                 <div class="title_left">
                     <h3>Generate Banquet Bill
-                        <small>Welcome To Hotel Hareesha</small>
+                        <small>Welcome To Hotel Shapphire Marriott</small>
                     </h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -286,7 +279,7 @@
 
                                                 </thead>
                                                 <tbody>
-                                                <c:forEach items="${loadTable7}" var="e">
+                                                <c:forEach items="${loadTable}" var="e">
                                                     <tr>
                                                         <td>${e.banquetBillId}</td>
                                                         <td>${e.name}</td>
@@ -296,9 +289,8 @@
                                                         <td>${e.otherPrice}</td>
                                                         <td>${(e.noOfPlates * e.unitPrise)+e.otherPrice}</td>
                                                         <td><a href="/banquetInvoice?billId=${e.banquetBillId}">
-                                                            <button value="" id="billBtn" name="billBtn"
-                                                                    class="btn btn-outline-danger" style="font-size: 13px;">PrintBill</button>
-                                                        </a></td>
+                                                            <button value="" id="billBtn" name="billBtn" class="btn btn-outline-danger" style="font-size: 13px;">PrintBill</button>
+                                                   </a></td>
                                                     </tr>
                                                 </c:forEach>
                                                 </tbody>
