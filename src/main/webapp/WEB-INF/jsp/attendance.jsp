@@ -193,13 +193,6 @@
                     <div class="clearfix"></div>
                     <!--////////////////////////////////////////////////////////////////////////////-->
 
-              <%-- <form  method="POST" action="/tablesAdd" name="errorLog">
-                    <script>
-                        window.addEventListener("load",function(){
-                            alert("${errorLog}");
-                        })
-                    </script>
-                    </form>--%>
                     <form  method="POST" action="tablesAdd" name="tablesAdd">
                         <div style="display: none"><input id="attendanceId" name="attendanceId" value="0"></div>
 
@@ -216,7 +209,7 @@
                                 <label for="itemCode">Employee Id</label>
                                 <input type="text" class="form-control"
                                        required name="employeeID"
-                                       id="itemCode" placeholder="ID"/>
+                                       id="itemCode" placeholder="ID" readonly/>
                             </div>
 
                             <div class="form-group">

@@ -211,7 +211,7 @@
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
                            href="bar" class="btnq"><h2
                                 style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Beverage</h2></a>
+                                     margin-top: 30px">Bar</h2></a>
                     </div>
                     <br>
                 </div>

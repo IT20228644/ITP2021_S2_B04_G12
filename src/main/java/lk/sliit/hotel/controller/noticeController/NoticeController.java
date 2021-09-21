@@ -78,20 +78,6 @@ public class NoticeController { //notice.jsp For All Notice
         }
     }
 
-/*
-  //OR You can Use @RequestParam Annotation. If You Used It
-  //Jsp href =  <a href="/delete/?noticeId=${a.noticeId}"> Delete </a>
-
-    @RequestMapping("delete")
-    public String deleteNotice(@RequestParam String noticeId) {
-        try {
-            noticeBO.deleteNotice ( noticeId );
-        }catch (Exception e){
-            System.out.println ("Notice Id =" +noticeId+" Not Found" );
-        }
-        return "redirect:/notice";
-    }
-    * */
 }//End Class
 
 
