@@ -174,39 +174,39 @@
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                   <h3>Reservation Income</h3>
-                                    <div class="row">
-                                        <div class="  table">
-                                            <table id="saq" class="table table-striped" style="text-align: center">
-                                                <thead class="btn-dark">
+<%--                                   <h3>Reservation Income</h3>--%>
+<%--                                    <div class="row">--%>
+<%--                                        <div class="  table">--%>
+<%--                                            <table id="saq" class="table table-striped" style="text-align: center">--%>
+<%--                                                <thead class="btn-dark">--%>
 
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Customer Id</th>
-                                                    <th>N Rooms</th>
-                                                    <th>Date</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
+<%--                                                <tr>--%>
+<%--                                                    <th>Id</th>--%>
+<%--                                                    <th>Customer Id</th>--%>
+<%--                                                    <th>N Rooms</th>--%>
+<%--                                                    <th>Date</th>--%>
+<%--                                                </tr>--%>
+<%--                                                </thead>--%>
+<%--                                                <tbody>--%>
 
-                                                <c:forEach items="${loadHotelRoomTable}" var="e">
-                                                    <tr>
-                                                        <td>${e.reservationId}</td>
-                                                        <td>${e.customer}</td>
-                                                        <td>${e.noOfRooms}</td>
-                                                        <td>${e.checkIn}</td>
+<%--                                                <c:forEach items="${loadHotelRoomTable}" var="e">--%>
+<%--                                                    <tr>--%>
+<%--                                                        <td>${e.reservationId}</td>--%>
+<%--                                                        <td>${e.customer}</td>--%>
+<%--                                                        <td>${e.noOfRooms}</td>--%>
+<%--                                                        <td>${e.checkIn}</td>--%>
 
-                                                    </tr>
-                                                </c:forEach>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
-                                    <!-- /
-                                    .row -->
-                                    </div>
-                                    <div></div>
+<%--                                                    </tr>--%>
+<%--                                                </c:forEach>--%>
+<%--                                                </tbody>--%>
+<%--                                            </table>--%>
+<%--                                        </div>--%>
+<%--                                        <!-- /.col -->--%>
+<%--                                    </div>--%>
+<%--                                    <!-- /--%>
+<%--                                    .row -->--%>
+<%--                                    </div>--%>
+<%--                                    <div></div>--%>
                                     <!-- /.row -->
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                         <h3>Inventory Orders</h3>
