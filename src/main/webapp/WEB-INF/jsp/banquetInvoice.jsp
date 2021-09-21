@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: USER
-  Date: 20/9/2021
-  Time: 10:01 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.Date" %>
@@ -187,7 +180,7 @@
                                         <div class="col-sm-4 invoice-col">
                                             Address:
                                             <address>
-                                                <strong>Hotel Shapphire Marriott </strong>
+                                                <strong>Hotel Sapphire Marriott</strong>
                                                 <br>Galle, Sri Lanka
                                                 <br>Phone: 0767188591
                                                 <br>Email: hotelShapphireMarriott@gmail.lk
@@ -210,9 +203,9 @@
                                     <!-- Table row -->
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <div class="  table">
-                                                <table id="saq" class="table table-striped">
-                                                    <tbody>
+                                        <div class="  table">
+                                            <table id="saq" class="table table-striped">
+                                                <tbody>
 
                                                     <tr>
                                                         <th >Banquet Bill Id</th>
@@ -262,9 +255,9 @@
 
 
 
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-md-7">
@@ -338,10 +331,7 @@
         </div>
 
         <footer>
-            <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Chanuka
-                Mullevidana</a>
-            </div>
+            <jsp:include page="footer.jsp"></jsp:include>
             <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
@@ -362,5 +352,4 @@
 <script src="../../build/js/custom.min.js"></script>
 
 </body>
-
 </html>

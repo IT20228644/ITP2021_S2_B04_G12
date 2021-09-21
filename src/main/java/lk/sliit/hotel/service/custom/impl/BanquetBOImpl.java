@@ -332,7 +332,7 @@ public class BanquetBOImpl implements BanquetBO {
 
     @Override
     public void updateBill(BanquetAddDTO banquetAddDTO) {
-        double total = banquetAddDTO.getFoodPrice()+ banquetAddDTO.getOtherPrice();
+        double total = banquetAddDTO.getFoodPrice()+banquetAddDTO.getOtherPrice();
         banquetBillDAO.updateFullBanquetBillTable(
                 banquetAddDTO.getAdvanceFee(),
                 banquetAddDTO.getFoodPrice(),
@@ -340,9 +340,8 @@ public class BanquetBOImpl implements BanquetBO {
                 total,
                 banquetAddDTO.getBanquetBillId()
         );
-
-
     }
+
 
     //update status pending to confirm
     @Override
@@ -520,5 +519,25 @@ public class BanquetBOImpl implements BanquetBO {
         banquetOrderDAO.delete(idNo);
     }
 
+    @Override
+    public BanquetAddDTO findBanquetBillById(int billId) {
+        BanquetBill banquetBill = banquetBillDAO.findOne(billId);
+        BanquetOrder banquetOrder =banquetOrderDAO.findBanquetOrderByBanquetBillEquals(banquetBill);
+        return new BanquetAddDTO(
+                banquetOrder.getOrderId(),
+                banquetOrder.getCustomer().getName(),
+                banquetOrder.getCustomer().getAddress(),
+                banquetOrder.getCustomer().getContactNo(),
+                banquetOrder.getDate(),
+                banquetOrder.getHallId(),
+                banquetOrder.getNoOfPlates(),
+                banquetOrder.getBanquetBill().getAdvancePayment(),
+                banquetOrder.getBanquetBill().getFoodPrice(),
+                banquetOrder.getBanquetBill().getOtherPrices(),
+                banquetOrder.getBanquetBill().getBillId(),
+                banquetOrder.getOrderState(),
+                banquetOrder.getBanquetBill().getTotal()
+        );
+    }
 
 }

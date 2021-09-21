@@ -70,7 +70,13 @@
             color: #0f0f0f;
         }
     </style>
-    <title>Check Orders </title>
+    <c:if test="${not empty loginError}">
+        <script>
+            window.addEventListener("load", function () {
+                alert("${loginError}");
+            })
+        </script>
+    </c:if>
 </head>
 <body class="nav-md" style="cursor: pointer">
 
@@ -91,22 +97,9 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Check Bar Orders
-                            <small> Hotel Sapphire Mariott</small>
+                        <h3>Bar Stock Manage
+                            <small>Hotel Sapphire Mariott</small>
                         </h3>
-
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <a href="barDashboard">
-                                    <button type="button" style=" border:  5px solid rgb(190, 175, 166);background-color: #a98e77;
-                                    color: #c6d4d3;font-weight: bolder" class="btnq2 btn">
-                                        <i class="fa fa-mail-reply"> Back to Dashboard</i>
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-
-
                     </div>
 
                     <div class="title_right">
@@ -189,132 +182,71 @@
                         </form>
                     </div>
                 </div>
-
-                    <%--                /////////////////////////////////// Table--%>
-                    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
-
-                        <div class="x_panel">
-                            <div class="x_title">
-                                <h2>Outside Orders</h2>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="x_content">
-
-                                <div class="row">
-
-                                    <div class="col-sm-12">
-
-                                        <div class="card-box table-responsive">
-
-                                            <p>Click below for download reports</p>
-
-                                            <table id="datatable-buttons"
-                                                   class="table table-striped jambo_table bulk_action table-bordered">
-                                                <thead class="thead-dark">
-
-                                                <tr>
-                                                    <th>Item</th>
-                                                    <th>Supplier</th>
-                                                    <th>price</th>
-                                                    <th>Qty</th>
-                                                    <th>Date</th>
-                                                </tr>
-                                                </thead>
-
-                                                <tbody>
-                                                <c:forEach items="${listTodayOrders}" var="e">
-                                                    <tr>
-                                                    <tr>
-                                                        <td>${e.inventory}</td>
-                                                        <td>${e.supplier}</td>
-                                                        <td>${e.price}</td>
-                                                        <td>${e.quantity}</td>
-                                                        <td>${e.date}</td>
+                <%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
 
-                                                    </tr>
-                                                    </tr>
-                                                </c:forEach>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <a href="bar">
+                            <button type="button" class="btn btn-dark"><i class="fa fa-reply"></i>&nbsp;Back</button>
+                        </a>
+                    </div>
 
                 </div>
-                <div class="col-md-12 col-sm-12" style="position: relative;display: inline-block">
+
+
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Beverage
-                                <small>Notices</small>
+                            <h2>Rest Items
+                                <small>
+                                </small>
                             </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Settings 1</a>
-                                        <a class="dropdown-item" href="#">Settings 2</a>
-                                    </div>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
+
+                            <!--href="/invoice"-->
                             <div class="clearfix"></div>
                         </div>
+
                         <div class="x_content">
+
                             <div class="row">
+
                                 <div class="col-sm-12">
+                                    <p>Click below for download reports</p>
+
                                     <div class="card-box table-responsive">
-                                        <p class="text-muted font-13 m-b-30">
 
-                                        </p>
-
-                                        <table id="datatable-responsive1"
-                                               class="table table-striped table-bordered dt-responsive nowrap"
-                                               cellspacing="0" width="100%">
+                                        <table id="datatable-buttons"
+                                               class="table table-striped jambo_table bulk_action table-bordered">
                                             <thead class="thead-dark">
-                                            <tr>
-                                                <th> ItemName</th>
-                                                <th> OrderQty</th>
-                                                <th> ExpectedDate</th>
-                                                <th> Date</th>
-                                                <th> OrderHolder</th>
 
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Price</th>
+                                                <th>Available Qty</th>
+                                                <th>Order Limit</th>
                                             </tr>
                                             </thead>
+
                                             <tbody>
-                                            <c:forEach items="${listBeverageNotice}" var="e">
+                                            <c:forEach items="${loadInventoryBar}" var="e">
                                                 <tr>
-                                                <tr>
+                                                    <td>${e.inventoryId}</td>
                                                     <td>${e.text}</td>
+                                                    <td>${e.getPrice}</td>
                                                     <td>${e.orderQty}</td>
-                                                    <td>${e.expDate}</td>
-                                                    <td>${e.date}</td>
-                                                    <td>${e.orderHolder}</td>
+                                                    <td>${e.orderLimit}</td>
 
-
-                                                </tr>
                                                 </tr>
                                             </c:forEach>
                                             </tbody>
-
                                         </table>
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
                 <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
             </div>
         </div>
@@ -367,6 +299,17 @@
 <script src="../../vendors/jszip/dist/jszip.min.js"></script>
 <script src="../../vendors/iCheck/icheck.min.js"></script>
 <!-- Custom Theme Scripts -->
+
+<script>
+    var selectedRow = null;
+    $("#datatable-buttons tbody").on('click', 'tr', function () {
+        selectedRow = $(this);
+        $("#itemId").val($(this).find("td:nth-child(1)").text());
+        $("#itemName").val($(this).find("td:nth-child(2)").text());
+        $("#datatable-buttons tbody tr").removeClass('row-selected');
+        selectedRow.addClass('row-selected');
+    });
+</script>
 <script src="../../build/js/custom.min.js"></script>
 
 

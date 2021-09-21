@@ -1,5 +1,6 @@
 package lk.sliit.hotel.controller.barController;
 
+import lk.sliit.hotel.dto.inventory.InventoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import lk.sliit.hotel.service.custom.KitchenBO;
 import lk.sliit.hotel.service.custom.impl.BarBOImpl;
 
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -43,5 +45,17 @@ public class barDashboard {
     public String restaurantReport(Model model) {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
         return "restaurantDailyActivityReport";
+    }
+
+    @GetMapping("/barRestItems")//Load Bar Stock Page
+    public String loginPage(Model model, HttpServletRequest request) {
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        List<InventoryDTO> p1 = barBO.findAllBeverageItems("Beverage");
+        if(p1.isEmpty()){
+            request.setAttribute("loginError","Not Any Item Fond Under Beverage " +
+                    "Type Please Add Data Under Beverage Type" );
+        }
+        model.addAttribute("loadInventoryBar", p1);
+        return "barRestItems";
     }
 }
