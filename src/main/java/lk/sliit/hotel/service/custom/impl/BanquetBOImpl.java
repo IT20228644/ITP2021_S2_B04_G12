@@ -445,5 +445,80 @@ public class BanquetBOImpl implements BanquetBO {
         return dateBanquet;
     }
 
+//    @Override
+//    public List<BanquetAddDTO> findLastWeekBanquets() {
+//        java.util.Date todayDate = new java.util.Date();
+////        Calendar cal1 = Calendar.getInstance();
+////        cal1.add(Calendar.DATE, 3);
+////        java.util.Date afterWeek = cal1.getTime();
+//
+////        Iterable <BanquetOrder> banquetOrders = banquetOrderDAO.findBanquetOrdersByDateBetween(afterWeek ,todayDate);
+//        Calendar cal6 = Calendar.getInstance();
+//        Calendar cal4 = Calendar.getInstance();
+//        cal6.add(Calendar.DATE, 3);
+//        java.util.Date afterThreeDays = cal6.getTime();
+//        cal4.add(Calendar.DATE, 1);
+//        java.util.Date afterOneDays = cal4.getTime();
+//        Iterable <BanquetOrder> banquetOrders = banquetOrderDAO.findBanquetOrdersByDateBetween(afterOneDays ,afterThreeDays);
+//
+//
+//        List <BanquetAddDTO> dtos = new ArrayList<>();
+//        for ( BanquetOrder a: banquetOrders){
+//            dtos.add(new BanquetAddDTO(
+//                    a.getOrderId(),
+//                    a.getBanquetBill().getBillId(),
+//                    a.getDate(),
+//                    a.getCustomer().getName(),
+//                    a.getCustomer().getContactNo(),
+//                    a.getHallId(),
+//                    a.getMenu().getMenuId(),
+//                    a.getNoOfPlates(),
+//                    a.getBanquetBill().getAdvancePayment(),
+//                    a.getBanquetBill().getTotal(),
+//                    a.getOrderState()
+//            ));
+//        }
+//        return dtos;
+//    }
+
+
+    //get last week banquets
+    @Override
+    public List<BanquetAddDTO> findLastWeekBanquets() {
+
+        java.util.Date todayDate = new java.util.Date();
+        Calendar cal1 = Calendar.getInstance();
+        cal1.add(Calendar.DATE,3);
+        java.util.Date afterWeek = cal1.getTime();
+
+        Iterable<BanquetOrder> lastBanquetOrders = banquetOrderDAO.findLastBanquetOrdersByDateBetween(afterWeek,todayDate);
+        List<BanquetAddDTO> weekBanquet = new ArrayList<>();
+        for (BanquetOrder a : lastBanquetOrders) {
+            weekBanquet.add(new BanquetAddDTO(
+                    a.getOrderId(),
+                    a.getBanquetBill().getBillId(),
+                    a.getDate(),
+                    a.getBanquetCustomer().getName(),
+                    a.getBanquetCustomer().getContactNo(),
+                    a.getHallId(),
+                    a.getMenu().getMenuId(),
+                    a.getNoOfPlates(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getBanquetBill().getTotal(),
+                    a.getOrderState()
+
+            ));
+
+        }
+
+        return weekBanquet;
+    }
+
+    //Delete Banquet Order
+    @Override
+    public void deleteBanquet(int idNo) {
+        banquetOrderDAO.delete(idNo);
+    }
+
 
 }
