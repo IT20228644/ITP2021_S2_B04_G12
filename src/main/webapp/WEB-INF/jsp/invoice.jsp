@@ -341,8 +341,8 @@
 
         <footer>
             <div class="pull-right">
-                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">Created by Chanuka
-                Mullevidana</a>
+                Copyright © Employee Management 2020.<a href="https://rivinduchamath.github.io/pro/">
+                </a>
             </div>
             <div class="clearfix"></div>
         </footer>

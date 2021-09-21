@@ -31,7 +31,7 @@ public class RestaurantCounterOrder {
         this.orderHolder = orderHolder;
     }
 
-    public RestaurantCounterOrder(int orderId, String orderState, double quantity,
+    public RestaurantCounterOrder(int orderId, String orderState,
                                   Date date, int orderHolder, List<RestaurantCounterOrderDetail> orderDetails) {
         this.orderId = orderId;
         this.orderState = orderState;
