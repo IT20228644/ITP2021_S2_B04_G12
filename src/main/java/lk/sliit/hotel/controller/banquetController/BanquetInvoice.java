@@ -30,6 +30,8 @@ public class BanquetInvoice {
 
         return mv;
     }
+
+    //print banquet bill
     @RequestMapping("banquetInvoice")
     public String getInvoiceEmpty(Model model) {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
