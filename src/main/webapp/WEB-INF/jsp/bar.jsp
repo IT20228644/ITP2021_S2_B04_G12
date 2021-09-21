@@ -121,7 +121,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Baverage
+                        <h3>Bar
                             <small>Hotel Sapphire Mariott</small>
                         </h3>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -132,12 +132,6 @@
                                         <i class="fa fa-mail-reply"> Back to Dashboard</i>
                                     </button>
                                 </a>
-                                <a href="barSettings">
-                                    <button style="color: #8c6f60 !important;" type="button"
-                                            class="btnq3 btn"><i style="font-size: 185%;" class="fa fa-gear"></i>
-                                    </button>
-                                </a>
-
                             </div>
                         </div>
                     </div>
@@ -256,9 +250,9 @@
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                               href="/barBill" class="btnq"><h2
+                                href="/barRestItems" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Bills</h2></a>
+                                     margin-top: 30px">Rest Items</h2></a>
                         </div>
                         <br>
                     </div>
@@ -269,9 +263,9 @@
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                           href="barStock" class="btnq"><h2
+                           href="/barSettings" class="btnq"><h2
                                 style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Income</h2></a>
+                                     margin-top: 30px">Item Description</h2></a>
                     </div>
                     <br> </div>
                 </div>

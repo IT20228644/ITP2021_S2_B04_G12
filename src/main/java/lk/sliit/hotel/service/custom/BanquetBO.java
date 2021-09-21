@@ -64,5 +64,11 @@ public interface BanquetBO extends SuperBO {
 
 
     List<BanquetAddDTO> findCheckDateBanquets(Date date);
+
+    List<BanquetAddDTO> findLastWeekBanquets();
+
+    void deleteBanquet(int idNo);
+
+//    List<BanquetAddDTO> findLastWeekBanquets();
 }
 
