@@ -32,5 +32,7 @@ public class ReservationController {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
         return "activityReports";
     }
+
+
 }
 

@@ -241,9 +241,9 @@
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                               href="/kitchenDailyActivityReport" class="btnq"><h2
+                               href="/reservationDetails" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">Kitchen Report</h2></a>
+                                     margin-top: 30px">Reservation Report</h2></a>
                         </div>
                         <br>
                     </div>
@@ -254,7 +254,7 @@
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
                                href="/houseKeepingReport" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
-                                     margin-top: 30px">House Keeping Report</h2></a>
+                                     margin-top: 30px">Room income Report</h2></a>
                         </div>
                         <br>
                     </div>
@@ -263,7 +263,7 @@
                         <div class="containerx">
                             <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color:#a98e77; color: #ffffff;font-weight: bolder"
-                               href="/restaurantPayment" class="btnq"><h2
+                               href="/restaurantDailyActivityReport" class="btnq"><h2
                                     style="position: relative; letter-spacing: 1px;
                                      margin-top: 30px">Restaurant Report</h2></a>
                         </div>
