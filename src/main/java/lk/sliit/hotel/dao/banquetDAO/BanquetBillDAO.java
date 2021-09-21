@@ -20,4 +20,9 @@ public interface BanquetBillDAO extends CrudRepository<BanquetBill, Integer> {
             " total=?4 where billId=?5")
     void updateFullBanquetBillTable(double advanceFee, double foodPrice,
                                     double otherPrice, double total, int banquetBillId);
+
+    //banquet bill update after update the order
+    @Modifying
+    @Query(value = "Update BanquetBill set advancePayment = ?1 where billId=?2")
+    void updateBanquetBillTable(double advanceFee ,int banquetBillId);
 }

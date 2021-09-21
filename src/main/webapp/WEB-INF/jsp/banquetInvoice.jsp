@@ -187,10 +187,10 @@
                                         <div class="col-sm-4 invoice-col">
                                             Address:
                                             <address>
-                                                <strong>Hotel Hareesha </strong>
+                                                <strong>Hotel Shapphire Marriott </strong>
                                                 <br>Galle, Sri Lanka
                                                 <br>Phone: 0767188591
-                                                <br>Email: HotelHareesha@gmail.lk
+                                                <br>Email: hotelShapphireMarriott@gmail.lk
                                             </address>
                                         </div>
 

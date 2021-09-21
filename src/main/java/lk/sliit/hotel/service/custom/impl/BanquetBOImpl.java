@@ -1,5 +1,6 @@
 package lk.sliit.hotel.service.custom.impl;
 
+import lk.sliit.hotel.controller.banquetController.BanquetUtil;
 import lk.sliit.hotel.dao.banquetDAO.BanquetBillDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetCustomerDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetOrderDAO;
@@ -356,5 +357,93 @@ public class BanquetBOImpl implements BanquetBO {
        String status ="finished";
        banquetOrderDAO.updateBanquetStatus(status,orderId);
    }
+
+   //update banquet status to the cancel
+    @Override
+    public void updateBanquetStatusToCancel(int orderId) {
+        String status = BanquetUtil.banquetStateCancel;
+        banquetOrderDAO.updateBanquetStatus(status,orderId);
+    }
+
+    @Override
+    public int checkHallOneAvailabilityAndGetBanquetId(Date date) {
+
+        String hallNo= "No 1";
+        int banquetId;
+       try{
+           banquetId = banquetOrderDAO.getOrderIdByDateEqualsAndHallIdEquals(date,hallNo);
+       }catch(Exception e){
+           banquetId = -1;
+       }
+       return banquetId;
+    }
+
+//    @Override
+//    public void updateBanquetDetails(BanquetAddDTO banquetAddDTO) {
+//        banquetBillDAO.updateBanquetBillTable(
+//                banquetAddDTO.getAdvanceFee(),
+//                banquetAddDTO.getBanquetBillId()
+//        );
+//
+//        banquetOrderDAO.UpdateBanquetTable(
+//                banquetAddDTO.getHallId(),
+//                banquetAddDTO.getNoOfPlates(),
+//                banquetAddDTO.getDate(),
+//                menuDAO.findOne(banquetAddDTO.getMenuId()),
+//                banquetAddDTO.getOrderId()
+//
+//        );
+//
+//    }
+
+    @Override
+    public void updateBanquetDetails(BanquetAddDTO banquetAddDTO) {
+        banquetBillDAO.updateBanquetBillTable(
+                banquetAddDTO.getAdvanceFee(),
+                banquetAddDTO.getBanquetBillId()
+        );
+        banquetOrderDAO.updateBanquetTable(
+                banquetAddDTO.getHallId(),
+                banquetAddDTO.getNoOfPlates(),
+                banquetAddDTO.getDate(),
+                menuDAO.findOne(banquetAddDTO.getMenuId()),
+                banquetAddDTO.getOrderId()
+        );
+
+    }
+
+
+    @Override
+    public int checkHallTwoAvailabilityAndGetBanquetId(Date date) {
+        String hallNo ="No 2";
+        int banquetId;
+        try{
+            banquetId = banquetOrderDAO.getOrderIdByDateEqualsAndHallIdEquals(date, hallNo);
+        }catch(Exception e){
+            banquetId =- 1;
+        }
+        return banquetId;
+    }
+
+    @Override
+    public List<BanquetAddDTO> findCheckDateBanquets(Date date) {
+        Iterable<BanquetOrder> all = banquetOrderDAO.findBanquetOrderByDate(date);
+        List<BanquetAddDTO>dateBanquet = new ArrayList<>();
+        for (BanquetOrder a:all) {
+            dateBanquet.add (new BanquetAddDTO(
+
+                    a.getOrderId(),
+                    a.getBanquetCustomer().getName(),
+                    a.getBanquetCustomer().getContactNo(),
+                    a.getDate(),
+                    a.getHallId(),
+                    a.getNoOfPlates(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getOrderState()
+            ));
+        }
+        return dateBanquet;
+    }
+
 
 }
