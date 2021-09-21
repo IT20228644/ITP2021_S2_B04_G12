@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,6 +39,12 @@ public class BanquetCancel {
         return mv;
     }
 
+    //update banquet status to cancel
+    @RequestMapping("UpdatoBanquetStatustoCancel  ")
+    public String updateDeleteStatus(@RequestParam int orderId){
+       banquetBO.updateBanquetStatusToCancel(orderId);
+       return "redirect:banquetDelete";
+    }
 
 
 }

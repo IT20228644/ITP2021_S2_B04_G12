@@ -8,19 +8,19 @@ public class RestaurantCounterOrderDTO {
     private int orderId;
     private String orderState;
     private String foodName;
-    private double quantity;
+    //private double quantity;
     private Date date;
     private String dataValue;
     private int customerId;
     private int orderHolder;
     private List<RestaurantCounterOrderDetailDTO> orderDetails = new ArrayList<>();
 
-    public RestaurantCounterOrderDTO(int orderId, String orderState, double quantity,
+    public RestaurantCounterOrderDTO(int orderId, String orderState,
                                      Date date, String dataValue, int customerId,
                                      int orderHolder) {
         this.orderId = orderId;
         this.orderState = orderState;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.dataValue = dataValue;
         this.customerId = customerId;
@@ -32,7 +32,7 @@ public class RestaurantCounterOrderDTO {
                                      int customerId) {
         this.orderId = orderId;
         this.orderState = orderState;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.dataValue = dataValue;
         this.customerId = customerId;
@@ -42,7 +42,7 @@ public class RestaurantCounterOrderDTO {
                                      int customerId, int orderHolder, List<RestaurantCounterOrderDetailDTO> orderDetails) {
         this.orderId = orderId;
         this.orderState = orderState;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.dataValue = dataValue;
         this.customerId = customerId;
@@ -58,7 +58,7 @@ public class RestaurantCounterOrderDTO {
         this.orderId = orderId;
         this.orderState = orderState;
         this.foodName = foodName;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.dataValue = dataValue;
         this.customerId = customerId;
@@ -117,13 +117,13 @@ public class RestaurantCounterOrderDTO {
         this.orderState = orderState;
     }
 
-    public double getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
+//    public double getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(double quantity) {
+//        this.quantity = quantity;
+//    }
 
     public Date getDate() {
         return date;
@@ -146,7 +146,7 @@ public class RestaurantCounterOrderDTO {
         return "RestaurantCounterOrderDTO{" +
                 "orderId=" + orderId +
                 ", orderState='" + orderState + '\'' +
-                ", quantity=" + quantity +
+               // ", quantity=" + quantity +
                 ", date=" + date +
                 ", dataValue='" + dataValue + '\'' +
                 ", customerId=" + customerId +

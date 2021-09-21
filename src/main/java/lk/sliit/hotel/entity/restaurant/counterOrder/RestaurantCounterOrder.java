@@ -15,7 +15,7 @@ public class RestaurantCounterOrder {
     @Id
     private int orderId;
     private String orderState;
-    private double quantity;
+    //private double quantity;
     private Date date;
     private int orderHolder;
     @OneToMany(mappedBy = "restaurantCounterOrder", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
@@ -23,10 +23,10 @@ public class RestaurantCounterOrder {
 
 
     public RestaurantCounterOrder(int orderId, String orderState,
-                                  double quantity, Date date, int orderHolder) {
+                                  Date date, int orderHolder) {
         this.orderId = orderId;
         this.orderState = orderState;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.orderHolder = orderHolder;
     }
@@ -35,7 +35,7 @@ public class RestaurantCounterOrder {
                                   Date date, int orderHolder, List<RestaurantCounterOrderDetail> orderDetails) {
         this.orderId = orderId;
         this.orderState = orderState;
-        this.quantity = quantity;
+        //this.quantity = quantity;
         this.date = date;
         this.orderHolder = orderHolder;
         this.orderDetails = orderDetails;
@@ -60,13 +60,13 @@ public class RestaurantCounterOrder {
         this.orderState = orderState;
     }
 
-    public double getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
+//    public double getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(double quantity) {
+//        this.quantity = quantity;
+//    }
 
     public Date getDate() {
         return date;
