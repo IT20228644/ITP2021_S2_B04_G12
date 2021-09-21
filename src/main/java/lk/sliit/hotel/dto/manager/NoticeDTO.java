@@ -5,12 +5,11 @@ import java.sql.Date;
 
 //Class NoticeDTO
 public class NoticeDTO {
-    private int noticeId ;
+    private int noticeId;
     private String title;
     private String description;
     private Date date;
     private int department;
-
 
 
     public NoticeDTO() {
@@ -78,4 +77,6 @@ public class NoticeDTO {
                 ", department=" + department +
                 '}';
     }
+
+
 }//End DTO
