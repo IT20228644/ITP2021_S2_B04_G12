@@ -22,6 +22,7 @@ public class AppInitializer {
         SpringApplication.run(AppInitializer.class,args);
     }
 
+<<<<<<< HEAD
   String str="2020-05-11";
    Date date= Date.valueOf(str);
 
@@ -49,3 +50,32 @@ public class AppInitializer {
       };
    }
 }//End Class
+=======
+    String str="2020-05-11";
+    Date date= Date.valueOf(str);
+
+    @Bean //Add Demo System User To the System
+    CommandLineRunner init2(EmployeeDAO manageDAO) {
+        return args -> {
+            List<String> names = Arrays.asList ( "1");
+            names.forEach ( name -> manageDAO.save ( new Employee(
+                                    1,
+                                    "Sachini Perera",
+                                    "0223123456",
+                                    "someOne@gmail.com",
+                                    "Colombo",
+                                    "Admin",
+                                    "1",
+                                    date,
+                                    "Female",
+                                    2112122,
+                                    date,
+                                    "https://res.cloudinary.com/dwdv5hhga/image/upload/v1600203476/oyt7fspuxa2crzakssl5.jpg",
+                                    new Department(1,"Manage")
+                            )
+                    )
+            );
+        };
+    }
+}
+>>>>>>> decfd04a8d6784ac655059b84b73f1e59b05c07b

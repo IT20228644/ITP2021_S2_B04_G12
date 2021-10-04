@@ -702,9 +702,9 @@ public class KitchenBOImpl implements KitchenBO {
                         for (RestaurantOnlineOrderDetails detail : onlineOrderDetails) {
                             //set food items list
                             foodItemDTOS.add(new RestaurantFoodItemDTO(
-                                    detail.getFoodItem().getItemId(),
+                                    detail.getFoodItem().getMenusId(),
                                     item.getOrderId(),
-                                    detail.getFoodItem().getName(),
+                                    detail.getFoodItem().getTypeitem(),
                                     detail.getQuantity(),
                                     detail.getUnitePrice()
                             ));
@@ -881,9 +881,9 @@ public class KitchenBOImpl implements KitchenBO {
                     for (RestaurantOnlineOrderDetails detail : details) {
 
                         foodItemDTOS.add(new RestaurantFoodItemDTO(
-                                detail.getFoodItem().getItemId(),
+                                detail.getFoodItem().getMenusId(),
                                 item.getOrderId(),
-                                detail.getFoodItem().getName(),
+                                detail.getFoodItem().getTypeitem(),
                                 detail.getQuantity(),
                                 detail.getUnitePrice()
                         ));
