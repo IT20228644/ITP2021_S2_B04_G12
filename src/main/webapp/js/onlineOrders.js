@@ -1,12 +1,10 @@
-
-
 var selectedRow = null;
 $("#dataTablesButton1 tbody").on('click', 'tr', function () {
 
     selectedRow = $(this);
     $("#itemName").val($(this).find("td:nth-child(2)").text());
-    $("#itemCode").val($(this).find("td:nth-child(6)").text());
-    $("#price").val($(this).find("td:nth-child(7)").text());
+    $("#itemCode").val($(this).find("td:nth-child(5)").text());
+    $("#price").val($(this).find("td:nth-child(6)").text());
 
     $("#dataTablesButton1 tbody tr").removeClass('row-selected');
     selectedRow.addClass('row-selected');
@@ -139,3 +137,7 @@ function getValue() {
     $("#itemPay").val(stre);
 
 }
+
+$("#prospects_form").submit(function(e) {
+    e.preventDefault();
+});

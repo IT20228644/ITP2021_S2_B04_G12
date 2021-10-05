@@ -1,14 +1,19 @@
 package lk.sliit.hotel.entity.kitchen;
 
+import lk.sliit.hotel.entity.restaurant.onlineOrder.RestaurantOnlineOrderDetails;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 public class MenuSiteItem {
 
     @Id
-
     private int menusId;
 
 
@@ -23,6 +28,9 @@ public class MenuSiteItem {
     private double unitPrice;
 
     private String mpicture;
+
+    @OneToMany(mappedBy = "foodItem", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    private List<RestaurantOnlineOrderDetails> restaurantOnlineOrderDetails = new ArrayList<>();
 
 
     public MenuSiteItem(int menusId, String menuname, String menutype, String typeitem, String descrip, double unitPrice, String mpicture) {

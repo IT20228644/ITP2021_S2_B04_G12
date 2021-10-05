@@ -1,6 +1,7 @@
 package lk.sliit.hotel.entity.restaurant.onlineOrder;
 
 import lk.sliit.hotel.entity.kitchen.FoodItem;
+import lk.sliit.hotel.entity.kitchen.MenuSiteItem;
 
 import javax.persistence.*;
 
@@ -13,9 +14,12 @@ public class  RestaurantOnlineOrderDetails {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "restaurantOnlineOrder", referencedColumnName = "orderId", insertable = false, updatable = false)
     private RestaurantOnlineOrder restaurantOnlineOrder;
+//    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+//    @JoinColumn(name = "foodItemId", referencedColumnName = "itemId", insertable = false, updatable = false)
+//    private FoodItem foodItem;
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
-    @JoinColumn(name = "foodItemId", referencedColumnName = "itemId", insertable = false, updatable = false)
-    private FoodItem foodItem;
+    @JoinColumn(name = "foodItemId", referencedColumnName = "menusId", insertable = false, updatable = false)
+    private MenuSiteItem foodItem;
 
 
     public RestaurantOnlineOrderDetails(RestaurantOnlineOrderDetailsPK restaurantOnlineOrderDetailsPK, double quantity, double unitePrice) {
@@ -67,11 +71,11 @@ public class  RestaurantOnlineOrderDetails {
         this.restaurantOnlineOrder = restaurantOnlineOrder;
     }
 
-    public FoodItem getFoodItem() {
+    public MenuSiteItem getFoodItem() {
         return foodItem;
     }
 
-    public void setFoodItem(FoodItem foodItem) {
+    public void setFoodItem(MenuSiteItem foodItem) {
         this.foodItem = foodItem;
     }
 }
