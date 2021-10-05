@@ -43,7 +43,7 @@ a, a:hover, a:focus, button:hover, button:focus {
     text-decoration: none;
 }
 a:focus ,a:hover{
-    color: #ff4157;
+    color: #e2c285;
 }
 ul{
     margin: 0;
@@ -51,6 +51,7 @@ ul{
 }
 #page{
     overflow: hidden;
+
 }
 .remove-padd{
     padding-left: 0;
@@ -74,7 +75,7 @@ ul{
     text-align: center;
 }
 .social-grid li a:hover{
-    color: #ff4157;
+    color: #e2c285;
 }
 .social-grid li + li{
     margin-left: 25px;
@@ -143,7 +144,7 @@ ul{
     padding: 35px 0;
 }
 #logo > a {
-    color: #ff4157;
+    color: #e2c285;
     font-size: 32px;
     font-weight: 700;
     letter-spacing: -5px;
@@ -153,7 +154,7 @@ ul{
     font-size: 50px;
 }
 .book-now-btn {
-    background: #ff4157 none repeat scroll 0 0;
+    background: #e2c285 none repeat scroll 0 0;
     border: medium none;
     color: #fff;
     font-size: 16px;
@@ -163,7 +164,7 @@ ul{
     text-transform: uppercase;
 }
 .book-now-btn:hover, .vacation-offer-details .btn.btn-default:hover{
-    background: #162541;
+    background: #9e0e3c;
 }
 
 /*------------------------------------------------------------------
@@ -213,7 +214,7 @@ ul{
 */
 
 .cl-effect-10 a::before, .cl-effect-10 a.active::before {
-    background: #a98e77;
+    background:#e2c285;
     color: #fff;
     content: attr(data-hover);
     height: 100%;
@@ -389,7 +390,7 @@ ul{
     text-transform: uppercase;
 }
 .vacation-offer-details .btn.btn-default {
-    background: #ff4157 none repeat scroll 0 0;
+    background: #e2c285 none repeat scroll 0 0;
     border: medium none;
     border-radius: 0;
     color: #fff;
@@ -456,7 +457,7 @@ ul{
     border-radius: 0;
 }
 .links > a:hover, .event-blog-details a.btn-default:hover{
-    background: #ff4157;
+    background: #e2c285;
     border-color: #ff4157;
     color: #fff;
 }
@@ -489,7 +490,7 @@ ul{
 }
 /*footer*/
 footer {
-    background: #162541 none repeat scroll 0 0;
+    background: #0a0a0a none repeat scroll 0 0;
     color: #ddd !important;
     margin-top: 70px;
     padding: 50px 0 20px;
@@ -506,7 +507,7 @@ footer a{
     color: #fff;
 }
 .footer-contact-list i {
-    color: #ff4157;
+    color: #e2c285;
     float: left;
     margin-right: 10px;
 }
@@ -530,7 +531,7 @@ footer a{
     text-transform: capitalize;
 }
 .footer-links li.active a{
-    color: #ff4157;
+    color: #e2c285;
 }
 .footer-social-icon {
     margin-top: 40px;
@@ -569,7 +570,7 @@ footer a{
     border-radius: 0;
     border-style: solid solid solid none;
     border-width: 1px 1px 1px 0;
-    color: #ff4157;
+    color: #e2c285;
     background: #fff;
 }
 /*blog slider*/
@@ -608,7 +609,7 @@ footer a{
     padding-bottom: 10px;
 }
 .blog-view-box {
-    background: #ff4157 none repeat scroll 0 0;
+    background: #e2c285 none repeat scroll 0 0;
     border-radius: 15px;
     color: #fff;
     margin-top: -15px;
@@ -638,8 +639,8 @@ footer a{
     width: 140px;
 }
 #myCarousel2 .carousel-indicators .active {
-    background-color: #ff4157;
-    border-color: #ff4157;
+    background-color: #e2c285;
+    border-color: #e2c285;
     width: 140px;
 }
 #myCarousel2 .carousel-indicators {
@@ -655,12 +656,12 @@ footer a{
     opacity: 1;
 }
 #myCarousel1 .carousel-indicators .active{
-    background: #ff4157;
-    border-color: #ff4157;
+    background: #e2c285;
+    border-color: #e2c285;
 }
 /*back to top*/
 #back-to-top {
-    background: #ff4157;
+    background: #e2c285;
     bottom: 40px;
     color: #fff;
     padding: 10px;
@@ -685,7 +686,7 @@ footer a{
     margin-top: -36px;
 }
 .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-    background: #ff4157 !important;
+    background: #e2c285 !important;
 }
 .navbar-default .navbar-toggle .icon-bar{
     background-color: #fff;
@@ -698,7 +699,7 @@ footer a{
     text-align: center;
 }
 .copyright > a{
-    color: #ff4157;
+    color: #e2c285;
     font-weight: 600;
     font-size: 18px;
 }
@@ -745,7 +746,7 @@ footer a{
     left: 0;
     top: 0;
     font-family: 'fontawesome';
-    color: #ff4157;
+    color: #e2c285;
     font-weight: 600;
 }
 .about-right span {
@@ -765,7 +766,7 @@ footer a{
     text-transform: capitalize;
 }
 .contact-left-block > h3 > span, .contact-form > h3 > span{
-    color: #ff4157;
+    color:#e2c285;
 }
 .contact-left-block > p {
     color: #000;
@@ -775,7 +776,7 @@ footer a{
     margin-bottom: 15px;
 }
 .contact-left-block > p i {
-    background: #ff4157 none repeat scroll 0 0;
+    background: #e2c285 none repeat scroll 0 0;
     border-radius: 50%;
     color: #fff;
     height: 30px;
@@ -805,8 +806,8 @@ footer a{
     text-transform: uppercase;
 }
 .submit-btn:hover, .read-more-btn:hover{
-    background: #ff4157;
-    border-color: #ff4157;
+    background: #e2c285;
+    border-color: #e2c285;
     color: #fff;
 }
 .contact-form form textarea{
@@ -849,7 +850,7 @@ footer a{
     margin-bottom: 15px;
 }
 .user-info > a{
-    color: #ff4157;
+    color: #e2c285;
 }
 .user-info > a:hover{
     color: #333;
@@ -861,7 +862,7 @@ footer a{
     height: 140px;
 }
 .blog-list h4, .blog-list1 h4 {
-    border-bottom: 2px solid #ff4157;
+    border-bottom: 2px solid #e2c285;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
