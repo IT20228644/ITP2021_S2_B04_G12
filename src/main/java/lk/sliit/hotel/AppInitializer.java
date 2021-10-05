@@ -21,11 +21,7 @@ public class AppInitializer {
     public static void main(String[] args) {
         SpringApplication.run(AppInitializer.class,args);
     }
-<<<<<<< HEAD
 
-=======
-//
->>>>>>> ea02ece2be20461737ea354f9edaec1ac21c1645
 //    String str="2020-05-11";
 //    Date date= Date.valueOf(str);
 //
@@ -34,11 +30,7 @@ public class AppInitializer {
 //        return args -> {
 //            List<String> names = Arrays.asList ( "1");
 //            names.forEach ( name -> manageDAO.save ( new Employee(
-<<<<<<< HEAD
-//                            2,
-=======
-//                            1,
->>>>>>> ea02ece2be20461737ea354f9edaec1ac21c1645
+
 //                            "ABC",
 //                            "0223123456",
 //                            "someOne@gmail.com",
@@ -55,9 +47,5 @@ public class AppInitializer {
 //                    )
 //            );
 //        };
-<<<<<<< HEAD
-    //}
-=======
-//    }
->>>>>>> ea02ece2be20461737ea354f9edaec1ac21c1645
+
 }//End Class
