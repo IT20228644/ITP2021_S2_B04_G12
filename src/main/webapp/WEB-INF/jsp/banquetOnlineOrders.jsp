@@ -76,6 +76,45 @@
         .large-btn:hover {
             color: #0f0f0f;
         }
+
+        .containerx {
+            display: flex;
+
+        }
+
+        .btnq {
+            text-decoration: none;
+            border: 5px solid rgb(190, 175, 166);
+            position: relative;
+            overflow: hidden;
+            height: 65px;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align:center;
+            border-radius: 5px 5px;
+        }
+
+        .btnq:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -00%;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(64, 45, 34, 0.4),
+                    transparent
+            );
+            transition: all .8s;
+        }
+
+        .btnq:hover:before {
+            left: 100%;
+        }
+
     </style>
 </head>
 <body class="nav-md" style="cursor: pointer">
@@ -194,6 +233,24 @@
                     </form>
                 </div>
             </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
+
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color: #a98e77; color: #ffffff;font-weight: bolder"
+                           href="banquetOnlineAdd" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 20px">Online Banquet</h2></a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+
+
             <div class="clearfix">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="float: right; position: relative;display: inline-block">
                     <div class="x_panel">
@@ -222,8 +279,10 @@
                                                     <thead class="thead-light">
 
                                                     <tr>
-                                                        <th>Banquet Id</th>
+<%--                                                        <th>Banquet Id</th>--%>
+                                                        <th>Online No</th>
                                                         <th>Bill Id</th>
+                                                        <th>Order Date</th>
                                                         <th>Date</th>
                                                         <th>Cus Name</th>
                                                         <th>Address</th>
@@ -239,10 +298,12 @@
                                                     </thead>
 
                                                     <tbody>
-                                                    <c:forEach items="${loadBanquetAllTable}" var="e">
+                                                    <c:forEach items="${loadOnlineBanquetTable}" var="e">
                                                         <tr>
-                                                            <td>${e.orderId}</td>
+<%--                                                            <td>${e.orderId}</td>--%>
+                                                            <td>${e.onlineNo}</td>
                                                             <td>${e.banquetBillId}</td>
+                                                            <td>${e.orderDate}</td>
                                                             <td>${e.date}</td>
                                                             <td>${e.name}</td>
                                                             <td>${e.address}</td>
@@ -252,8 +313,6 @@
                                                             <td>${e.advanceFee}</td>
                                                             <td>${e.total}</td>
                                                             <td>${e.orderState}</td>
-
-
                                                         </tr>
                                                     </c:forEach>
                                                     </tbody>

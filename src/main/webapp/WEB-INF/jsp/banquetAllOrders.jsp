@@ -194,6 +194,7 @@
                     </form>
                 </div>
             </div>
+            <br>
             <div class="clearfix">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="float: right; position: relative;display: inline-block">
                     <div class="x_panel">

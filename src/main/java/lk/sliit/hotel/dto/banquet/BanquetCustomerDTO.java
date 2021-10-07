@@ -9,6 +9,7 @@ public class BanquetCustomerDTO {
     private String contactNo;
     private String userName;
     private String password;
+   // private int onlineNo;
 
     public BanquetCustomerDTO(int customerId) {
         this.customerId = customerId;
@@ -78,6 +79,13 @@ public class BanquetCustomerDTO {
         this.password = password;
     }
 
+//    public int getOnlineNo() {
+//        return onlineNo;
+//    }
+//
+//    public void setOnlineId(int onlineId) {
+//        this.onlineNo = onlineId;
+//    }
 
     @Override
     public String toString() {
@@ -91,4 +99,19 @@ public class BanquetCustomerDTO {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
+//    @Override
+//    public String toString() {
+//        return "BanquetCustomerDTO{" +
+//                "customerId=" + customerId +
+//                ", name='" + name + '\'' +
+//                ", email='" + email + '\'' +
+//                ", address='" + address + '\'' +
+//                ", contactNo='" + contactNo + '\'' +
+//                ", userName='" + userName + '\'' +
+//                ", password='" + password + '\'' +
+//                ", onlineNo=" + onlineNo +
+//                '}';
+//    }
 }

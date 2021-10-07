@@ -1,16 +1,16 @@
 package lk.sliit.hotel.service.custom.impl;
 
+import lk.sliit.hotel.controller.banquetController.BanquetOnlineOrders;
 import lk.sliit.hotel.controller.banquetController.BanquetUtil;
 import lk.sliit.hotel.dao.banquetDAO.BanquetBillDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetCustomerDAO;
+import lk.sliit.hotel.dao.banquetDAO.BanquetOnlineOrderDAO;
 import lk.sliit.hotel.dao.banquetDAO.BanquetOrderDAO;
 import lk.sliit.hotel.dao.kitchenDAO.MenuDAO;
-import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
-import lk.sliit.hotel.dto.banquet.BanquetBillDTO;
-import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
-import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
+import lk.sliit.hotel.dto.banquet.*;
 import lk.sliit.hotel.entity.banquet.BanquetBill;
 import lk.sliit.hotel.entity.banquet.BanquetCustomer;
+import lk.sliit.hotel.entity.banquet.BanquetOnlineOrder;
 import lk.sliit.hotel.entity.banquet.BanquetOrder;
 import lk.sliit.hotel.service.custom.BanquetBO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,15 +38,116 @@ public class BanquetBOImpl implements BanquetBO {
     @Autowired
     BanquetBillDAO banquetBillDAO;
 
+    @Autowired
+    BanquetOnlineOrderDAO banquetOnlineOrderDAO;
+
 
     @Override
     public BanquetOrderDTO findTopBanquetId() {
 
         BanquetOrder banquetOrder = banquetOrderDAO.findTopByOrderByOrderIdDesc();
+//        BanquetOnlineOrder banquetOnlineOrder = banquetOnlineOrderDAO.findTopByOrderByOnlineNoDesc();
+        return new BanquetOrderDTO(
+                banquetOrder.getOrderId()
+        );
+
+    }
+
+    @Override
+    public BanquetOrderDTO findTopBanquetId2() {
+      BanquetOrder banquetOrder = banquetOrderDAO.findTopByOrderByOrderIdDesc();
+        //BanquetOnlineOrder banquetOnlineOrder = banquetOnlineOrderDAO.findTopByOrderByOnlineNoDesc();
         return new BanquetOrderDTO(
                 banquetOrder.getOrderId()
         );
     }
+
+    @Override
+    public BanquetCustomerDTO findTopCustomerId2() {
+        BanquetCustomer banquetCustomer = banquetCustomerDAO.findTopByOrderByCustomerIdDesc();
+        return new BanquetCustomerDTO(
+                banquetCustomer.getCustomerId()
+        );
+    }
+
+    @Override
+    public BanquetOrderDTO findTopBanquetId3() {
+        BanquetOrder banquetOrder = banquetOrderDAO.findTopByOrderByOrderIdDesc();
+        return new BanquetOrderDTO(
+                banquetOrder.getOrderId()
+        );
+    }
+
+    @Override
+    public BanquetCustomerDTO findTopCustomerId3() {
+        BanquetCustomer banquetCustomer = banquetCustomerDAO.findTopByOrderByCustomerIdDesc();
+        return new BanquetCustomerDTO(
+                banquetCustomer.getCustomerId()
+        );
+    }
+
+    @Override
+    public List<BanquetAddDTO> findConfirmedOnlineBanquets() {
+
+        java.util.Date todayDate = new java.util.Date();
+        Calendar cal1 = Calendar.getInstance();
+//        Calendar cal1 = Calendar.getInstance();
+        cal1.add(Calendar.DATE, 4);
+        java.util.Date previousFourDays = cal1.getTime();
+
+
+        Iterable <BanquetOnlineOrder> banquetOnlineOrder = banquetOnlineOrderDAO.findLastOnlineBanquetOrdersByDateEquals(previousFourDays);
+        List <BanquetAddDTO> confirmedOnlineBanquet= new ArrayList<>();
+        for ( BanquetOnlineOrder a: banquetOnlineOrder){
+            confirmedOnlineBanquet.add(new BanquetAddDTO(
+                    //a.getOrderId(),
+                    a.getOnlineNo(),
+                    a.getBanquetBill().getBillId(),
+                    a.getOrderDate(),
+                    a.getDate(),
+                    a.getBanquetCustomer().getName(),
+                    a.getBanquetCustomer().getContactNo(),
+                    a.getHallId(),
+                    a.getMenu().getMenuId(),
+                    a.getNoOfPlates(),
+                    a.getBanquetBill().getAdvancePayment(),
+                    a.getBanquetBill().getTotal(),
+                    a.getOrderState()
+            ));
+        }
+        return confirmedOnlineBanquet;
+
+//        Calendar cal3 = Calendar.getInstance();
+//        Calendar cal2 = Calendar.getInstance();
+//
+//        cal3.add(Calendar.DATE, 3);
+//        java.util.Date afterThreeDays = cal3.getTime();
+//
+//        cal2.add(Calendar.DATE, 1);
+//        java.util.Date afterOneDays = cal2.getTime();
+//
+//        Iterable <BanquetOnlineOrder> banquetOnlineOrder = banquetOnlineOrderDAO.findBanquetOnlineOrdersByDateBetween (afterOneDays ,afterThreeDays);
+//        List <BanquetAddDTO>  nextList = new ArrayList<>();
+//        for ( BanquetOnlineOrder a: banquetOnlineOrder){
+//            nextList.add(new BanquetAddDTO(
+////                    a.getOrderId(),
+//                    a.getOnlineNo(),
+//                    a.getBanquetBill().getBillId(),
+//                    a.getOrderDate(),
+//                    a.getDate(),
+//                    a.getBanquetCustomer().getName(),
+//                    a.getBanquetCustomer().getContactNo(),
+//                    a.getHallId(),
+//                    a.getMenu().getMenuId(),
+//                    a.getNoOfPlates(),
+//                    a.getBanquetBill().getAdvancePayment(),
+//                    a.getBanquetBill().getTotal(),
+//                    a.getOrderState()
+//            ));
+//        }
+//        return nextList;
+    }
+
 
 //    @Override
 //    public BanquetCustomerDTO findTopbCustomerId() {
@@ -63,6 +164,16 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetCustomer.getCustomerId()
         );
     }
+
+
+    @Override
+    public BanquetOnlineOrderDTO findTopOnlineNo() {
+      BanquetOnlineOrder banquetOnlineOrder= banquetOnlineOrderDAO.findTopByOrderByOnlineNoDesc();
+        return new BanquetOnlineOrderDTO(
+                banquetOnlineOrder.getOnlineNo()
+        );
+    }
+
 
     //find top bill id
 //    @Override
@@ -92,7 +203,9 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetAddDTO.getEmail(),
                 banquetAddDTO.getName(),
                 banquetAddDTO.getAddress(),
-                banquetAddDTO.getContactNo()
+                banquetAddDTO.getContactNo(),
+                banquetAddDTO.getUserName(),
+                banquetAddDTO.getPassword()
         ));
 
 
@@ -125,6 +238,170 @@ public class BanquetBOImpl implements BanquetBO {
 
         ));
 
+//        banquetOnlineOrderDAO.save(new BanquetOnlineOrder(
+//                // banquetAddDTO.getOrderId(),
+//                banquetAddDTO.getOnlineNo(),
+//                banquetAddDTO.getDate(),
+//                banquetAddDTO.getHallId(),
+//                banquetAddDTO.getNoOfPlates(),
+//                banquetAddDTO.getOrderDate(),
+//                banquetAddDTO.getOrderState(),
+//                banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId()),
+//                banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
+//                banquetOrderDAO.findOne(banquetAddDTO.getOrderId()),
+//                menuDAO.findOne(banquetAddDTO.getMenuId())
+//
+//        ));
+
+    }
+
+
+    @Override
+    public void saveOnlineBanquet(BanquetAddDTO banquetAddDTO) {
+
+
+
+        banquetCustomerDAO.save(new BanquetCustomer(
+                banquetAddDTO.getCustomerId(),
+                banquetAddDTO.getEmail(),
+                banquetAddDTO.getName(),
+                banquetAddDTO.getAddress(),
+                banquetAddDTO.getContactNo(),
+                banquetAddDTO.getUserName(),
+                banquetAddDTO.getPassword()
+        ));
+
+
+        banquetBillDAO.save(new BanquetBill(
+                banquetAddDTO.getBanquetBillId(),
+                banquetAddDTO.getAdvanceFee(),
+                banquetAddDTO.getFoodPrice(),
+                banquetAddDTO.getOtherPrice(),
+                banquetAddDTO.getTotal()
+
+        ));
+
+        String status= "NotConfirmed";
+        banquetAddDTO.setOrderState(status);
+
+//        int orderId2 = banquetAddDTO.getOrderId() +1;
+//        banquetAddDTO.setOrderId(orderId2);
+
+        banquetOnlineOrderDAO.save(new BanquetOnlineOrder(
+               //banquetAddDTO.getOrderId(),
+                banquetAddDTO.getOnlineNo(),
+                banquetAddDTO.getDate(),
+                banquetAddDTO.getHallId(),
+                banquetAddDTO.getNoOfPlates(),
+                banquetAddDTO.getOrderDate(),
+                banquetAddDTO.getOrderState(),
+                banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId()),
+                banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
+                //banquetOrderDAO.findOne(banquetAddDTO.getOrderId()),
+                menuDAO.findOne(banquetAddDTO.getMenuId())
+
+        ));
+//
+//                int orderId2 = banquetAddDTO.getOrderId() +1;
+//                banquetAddDTO.setOrderId(orderId2);
+//
+//        banquetOrderDAO.save(new BanquetOrder(
+//                banquetAddDTO.getOrderId(),
+//               banquetAddDTO.getHallId(),
+//               banquetAddDTO.getOrderState(),
+//             banquetAddDTO.getNoOfPlates(),
+//               banquetAddDTO.getDate(),
+//               banquetAddDTO.getSubmittedBy(),
+//                banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
+//                menuDAO.findOne(banquetAddDTO.getMenuId()),
+//               banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId())
+
+//        ));
+
+    }
+
+
+    @Override
+    public void saveOnlineBanquet2(BanquetOnlineOrderDTO banquetOnlineOrderDTO) {
+
+
+        banquetCustomerDAO.save(new BanquetCustomer(
+                banquetOnlineOrderDTO.getCustomerId(),
+                banquetOnlineOrderDTO.getEmail(),
+                banquetOnlineOrderDTO.getName(),
+                banquetOnlineOrderDTO.getAddress(),
+                banquetOnlineOrderDTO.getContactNo(),
+                banquetOnlineOrderDTO.getUserName(),
+                banquetOnlineOrderDTO.getPassword()
+        ));
+
+
+        banquetBillDAO.save(new BanquetBill(
+                banquetOnlineOrderDTO.getBanquetBillId(),
+                banquetOnlineOrderDTO.getAdvanceFee(),
+                banquetOnlineOrderDTO.getFoodPrice(),
+                banquetOnlineOrderDTO.getOtherPrice(),
+                banquetOnlineOrderDTO.getTotal()
+
+        ));
+
+        String status= "NotConfirmed";
+        banquetOnlineOrderDTO.setOrderState(status);
+
+//        int orderId2 = banquetAddDTO.getOrderId() +1;
+//        banquetAddDTO.setOrderId(orderId2);
+
+        banquetOnlineOrderDAO.save(new BanquetOnlineOrder(
+                //banquetAddDTO.getOrderId(),
+                banquetOnlineOrderDTO.getOnlineNo(),
+                banquetOnlineOrderDTO.getDate(),
+                banquetOnlineOrderDTO.getHallId(),
+                banquetOnlineOrderDTO.getNoOfPlates(),
+                banquetOnlineOrderDTO.getOrderDate(),
+                banquetOnlineOrderDTO.getOrderState(),
+                banquetBillDAO.findOne( banquetOnlineOrderDTO.getBanquetBillId()),
+                banquetCustomerDAO.findOne( banquetOnlineOrderDTO.getCustomerId()),
+                //banquetOrderDAO.findOne(banquetAddDTO.getOrderId()),
+                menuDAO.findOne( banquetOnlineOrderDTO.getMenuId())
+
+        ));
+//
+//                int orderId2 = banquetAddDTO.getOrderId() +1;
+//                banquetAddDTO.setOrderId(orderId2);
+//
+//        banquetOrderDAO.save(new BanquetOrder(
+//                banquetAddDTO.getOrderId(),
+//               banquetAddDTO.getHallId(),
+//               banquetAddDTO.getOrderState(),
+//             banquetAddDTO.getNoOfPlates(),
+//               banquetAddDTO.getDate(),
+//               banquetAddDTO.getSubmittedBy(),
+//                banquetCustomerDAO.findOne(banquetAddDTO.getCustomerId()),
+//                menuDAO.findOne(banquetAddDTO.getMenuId()),
+//               banquetBillDAO.findOne(banquetAddDTO.getBanquetBillId())
+
+//        ));
+
+    }
+
+    @Override
+    public int checkHallOneAvailability2(Date date) {
+        String hallNo ="No 1";
+        int count1= banquetOnlineOrderDAO.countBanquetOrderByDateEqualsAndHallIdEquals(date,hallNo);
+        return count1;
+    }
+
+    @Override
+    public int checkHallTwoAvailability3(Date date) {
+        String hallNo ="No 2";
+        int count1= banquetOnlineOrderDAO.countBanquetOrderByDateEqualsAndHallIdEquals(date,hallNo);
+        return count1;
+    }
+
+    @Override
+    public int checkAvailability2(Date date) {
+        int count = banquetOnlineOrderDAO.countBanquetOrderByDateEquals(date);
+        return count;
     }
 
 
@@ -238,6 +515,40 @@ public class BanquetBOImpl implements BanquetBO {
         return banquetOrderList;
 
     }
+
+    @Override
+    public List<BanquetAddDTO> findOnlineBanquet() {
+        Iterable<BanquetOnlineOrder> all = banquetOnlineOrderDAO.findAll();
+        List<BanquetAddDTO> onlineList = new ArrayList<>();
+        for (BanquetOnlineOrder o:all){
+            onlineList.add(new BanquetAddDTO(
+//                    o.getOrderId(),
+                    o.getOnlineNo(),
+                    o.getBanquetBill().getBillId(),
+                    o.getOrderDate(),
+                    o.getDate(),
+                    o.getBanquetCustomer().getName(),
+                    o.getBanquetCustomer().getAddress(),
+                    o.getHallId(),
+                    o.getMenu().getMenuId(),
+                    o.getNoOfPlates(),
+                    o.getBanquetBill().getAdvancePayment(),
+                    o.getBanquetBill().getTotal(),
+                    o.getOrderState()
+            ));
+        }
+
+        return onlineList;
+    }
+
+    @Override
+    public BanquetOrderDTO findTopBanquetId1() {
+        BanquetOrder banquetOrder = banquetOrderDAO.findTopByOrderByOrderIdDesc();
+        return new BanquetOrderDTO(
+                banquetOrder.getOrderId()
+        );
+    }
+
 
     @Override
     public List<BanquetAddDTO> findNextBanquets() {
@@ -363,6 +674,25 @@ public class BanquetBOImpl implements BanquetBO {
         String status = BanquetUtil.banquetStateCancel;
         banquetOrderDAO.updateBanquetStatus(status,orderId);
     }
+
+
+
+    //update online banquet, not confirm to pending
+    @Override
+    public void updatePendingStatus(int onlineNo) {
+        String status1="Online pending";
+        //banquetOrderDAO.updateBanquetStatus(status,onlineNo);
+        banquetOnlineOrderDAO.updateBanquetStatus(status1,onlineNo);
+
+    }
+
+    @Override
+    public void deletePendingOnlineBanquet(int onlineNo) {
+        banquetOnlineOrderDAO.delete(onlineNo);
+    }
+
+
+
 
     @Override
     public int checkHallOneAvailabilityAndGetBanquetId(Date date) {
@@ -539,5 +869,7 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetOrder.getBanquetBill().getTotal()
         );
     }
+
+
 
 }

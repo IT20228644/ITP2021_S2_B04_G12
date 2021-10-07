@@ -30,12 +30,13 @@ public class BanquetOrder {
     String orderState;
 
 
-    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date, String submittedBy, BanquetCustomer one, Menu menuDAOOne, lk.sliit.hotel.controller.banquetController.BanquetBill banquetBillDAOOne) {
+//    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date, String submittedBy, BanquetCustomer one, Menu menuDAOOne, lk.sliit.hotel.controller.banquetController.BanquetBill banquetBillDAOOne) {
+//
+//    }
 
-    }
 
-
-    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date, String submittedBy,BanquetCustomer banquetCustomer, Menu menu, BanquetBill banquetBill) {
+    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date,
+                        String submittedBy,BanquetCustomer banquetCustomer, Menu menu, BanquetBill banquetBill) {
         this.orderId = orderId;
         this.hallId = hallId;
         this.orderState = orderState;
@@ -49,11 +50,23 @@ public class BanquetOrder {
 
     public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date,
                         String submittedBy, BanquetCustomer banquetCustomer, Menu menu) {
+        this.orderId = orderId;
+        this.hallId =hallId;
+        this.orderState = orderState;
+        this.noOfPlates = noOfPlates;
+        this.date = date;
+        this.submittedBy = submittedBy;
+        this.banquetCustomer = banquetCustomer;
+        this.menu = menu;
 
     }
 
     public BanquetOrder() {
 
+    }
+
+    public BanquetOrder(int orderId) {
+        this.orderId=orderId;
     }
 
     public int getOrderId() {
