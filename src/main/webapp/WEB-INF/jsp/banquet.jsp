@@ -475,10 +475,11 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
-                                            <th>Banquet Id</th>
+
+                                            <th>Online NO</th>
                                             <th>Customer Name</th>
-                                            <th>Mobile</th>
-                                            <th>Date</th>
+                                            <th>Order Date</th>
+                                            <th>Booking Date</th>
                                             <th>Hall No</th>
                                             <th>plates</th>
                                             <th>Advance Payment</th>
@@ -487,19 +488,21 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach items="${loadTable3}" var="e">
+                                        <c:forEach items="${confirmedOnlineBanquet}" var="e">
                                             <tr>
-                                                <td>${e.orderId}</td>
+                                                <td>${e.onlineNo}</td>
                                                 <td>${e.name}</td>
-                                                <td>${e.contactNo}</td>
                                                 <td>${e.date}</td>
+                                                <td>${e.orderDate}</td>
                                                 <td>${e.hallId}</td>
                                                 <td>${e.noOfPlates}</td>
                                                 <td>${e.advanceFee}</td>
                                                 <td>${e.orderState}</td>
-                                                <td><a href="/updateBanquetStatus?orderId=${e.orderId}">
-                                                    <button value="" id="confirmBtn3" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">confirmed</button>
+                                                <td><a href="/updatePendingStatus?onlineNo=${e.onlineNo}">
+                                                    <button value="" id="confirmBtn3" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">OnlinePending</button>
                                                 </a></td>
+                                                <td><a href="/deletePendingOnlineBanquet?onlineNo=${e.onlineNo}"><span
+                                                        class="glyphicon glyphicon-trash"></span></a></td>
                                             </tr>
                                         </c:forEach>
 

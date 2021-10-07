@@ -1,5 +1,7 @@
 package lk.sliit.hotel.dto.banquet;
 
+import lk.sliit.hotel.entity.banquet.BanquetOrder;
+
 import java.sql.Date;
 
 public class BanquetAddDTO {
@@ -21,6 +23,11 @@ public class BanquetAddDTO {
     private double otherPrice;
     private double total;
     private double unitPrise;
+    private String userName;
+    private String password;
+    private int onlineNo;
+    private Date orderDate;
+    private Date bookingDate;
 
     public BanquetAddDTO(int orderId, Date date, String hallId, int noOfPlates, int menuId) {
         this.orderId = orderId;
@@ -133,6 +140,112 @@ public class BanquetAddDTO {
         this.orderState = orderState;
         this.total =total;
     }
+
+    public BanquetAddDTO(int orderId, int billId, int onlineNo, Date date,
+                         Date orderDate, String name, String address, String hallId,
+                         int menuId, int noOfPlates, double advancePayment, double total, String orderState) {
+        this.orderId = orderId;
+        this.banquetBillId = billId;
+        this.onlineNo = onlineNo;
+        this.date = date;
+        this.orderDate = orderDate;
+        this.name = name;
+        this.address = address;
+        this.hallId = hallId;
+        this.menuId =menuId;
+        this.noOfPlates = noOfPlates;
+        this.advanceFee = advancePayment;
+        this.total = total;
+        this.orderState = orderState;
+    }
+//
+//    public BanquetAddDTO(int onlineNo, Date date, String hallId, int noOfPlates, Date orderDate, int orderId,
+//                         String orderState, int billId, String name, String address, int menuId,
+//                         double advancePayment, double total) {
+//        this.onlineNo = onlineNo;
+//        this.date = date;
+//        this.hallId = hallId;
+//        this.noOfPlates = noOfPlates;
+//        this.orderDate = orderDate;
+//        this.orderId = orderId;
+//        this.orderState = orderState;
+//        this.banquetBillId = billId;
+//        this.name = name;
+//        this.address = address;
+//        this.menuId =menuId;
+//        this.advanceFee = advancePayment;
+//        this.total = total;
+//
+//    }
+
+    public BanquetAddDTO(int onlineNo, Date date, String hallId, int noOfPlates,
+                         Date orderDate, int orderId, String orderState, int billId,
+                         String address, int menuId, double advancePayment, double total) {
+        this.onlineNo = onlineNo;
+        this.date = date;
+        this.hallId = hallId;
+        this.noOfPlates = noOfPlates;
+        this.orderDate = orderDate;
+        this.orderId = orderId;
+        this.orderState = orderState;
+        this.banquetBillId = billId;
+        this.address = address;
+        this.menuId =menuId;
+        this.advanceFee = advancePayment;
+        this.total = total;
+
+    }
+
+    public BanquetAddDTO(int orderId, int onlineNo, int billId, Date date, String name,
+                         String contactNo, String hallId, int menuId, int noOfPlates,
+                         double advancePayment, double total, String orderState) {
+        this.orderId = orderId;
+        this.onlineNo = onlineNo;
+        this.banquetBillId= billId;
+        this.date = date;
+        this.name  = name;
+        this.contactNo = contactNo;
+        this.hallId = hallId;
+        this.menuId = menuId;
+        this.noOfPlates = noOfPlates;
+        this.advanceFee = advancePayment;
+        this.total = total;
+        this.orderState = orderState;
+    }
+
+    public BanquetAddDTO(int onlineNo, int billId, Date orderDate, Date date, String name,
+                         String address, String hallId, int menuId, int noOfPlates,
+                         double advancePayment, double total, String orderState) {
+        this.onlineNo = onlineNo;
+        this.banquetBillId  = billId;
+        this.orderDate = orderDate;
+        this.date = date;
+        this.name = name;
+        this.address = address;
+        this.hallId = hallId;
+        this.menuId = menuId;
+        this.noOfPlates= noOfPlates;
+        this.advanceFee = advancePayment;
+        this.total = total;
+        this.orderState = orderState;
+    }
+
+//    public BanquetAddDTO(int onlineNo, int billId, Date orderDate, Date date,
+//                         String name, String contactNo, String hallId, int menuId, int noOfPlates, double advancePayment, double total, String orderState) {
+//
+//        this.onlineNo = onlineNo;
+//        this.banquetBillId= billId;
+//        this.orderDate = orderDate;
+//        this.date = date;
+//        this.name  = name;
+//        this.contactNo = contactNo;
+//        this.hallId = hallId;
+//        this.menuId = menuId;
+//        this.noOfPlates = noOfPlates;
+//        this.advanceFee = advancePayment;
+//        this.total = total;
+//        this.orderState = orderState;
+//    }
 
 
     public int getOrderId() {
@@ -328,6 +441,22 @@ public class BanquetAddDTO {
         this.total = total;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 //    public double getUnitPrice() {
 //        return unitPrice;
 //    }
@@ -337,12 +466,36 @@ public class BanquetAddDTO {
 //    }
 
 
+    public Date getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(Date bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
     public double getUnitPrise() {
         return unitPrise;
     }
 
     public void setUnitPrise(double unitPrise) {
         this.unitPrise = unitPrise;
+    }
+
+    public int getOnlineNo() {
+        return onlineNo;
+    }
+
+    public void setOnlineNo(int onlineNo) {
+        this.onlineNo = onlineNo;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 
     @Override

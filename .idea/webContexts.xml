@@ -4,23 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/banquet.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/banquetAll.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-<<<<<<< HEAD
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/banquetBill.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-=======
-<<<<<<< HEAD
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/barRestItems.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-=======
->>>>>>> 17f4badd1992ca9c88a7aad841ceaaf2faf5ae25
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/banquetReport.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
->>>>>>> a64f1748494a00e8346eb08ce81996fa2e03167e
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/checkAvailability.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/houseKeepingReport.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/housekeeping.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/kitchenMenusite.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/kitchenReport.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
-        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/laundryOrder.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/banquetOnlineAdd.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
       </map>
     </option>
   </component>

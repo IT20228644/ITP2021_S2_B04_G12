@@ -37,6 +37,10 @@ public class BanquetController {
         List <BanquetAddDTO> todayBanquets = banquetBO.findTodayBanquets();
         mv.addObject("todayBanquetsTable",todayBanquets);
 
+        //Display today should be confirmed online orders
+        List<BanquetAddDTO> confirmedOnlineBanquet = banquetBO.findConfirmedOnlineBanquets();
+        mv.addObject("confirmedOnlineBanquet",confirmedOnlineBanquet );
+
         return mv;
     }
 
@@ -52,7 +56,22 @@ public class BanquetController {
     @RequestMapping("/updateBanquetStatusAsFinished")
     public String updateBanquetStatusAsFinished(@RequestParam int orderId) {
         banquetBO.updateBanquetStatusAsFinished(orderId);
-        return "redirect:/banquets";
+        return "redirect:/banquet";
+    }
+
+
+    //update Online banquet not confirmed status to Pending
+    @RequestMapping("updatePendingStatus")
+    public String updatePendingStatus(@RequestParam int onlineNo){
+        banquetBO.updatePendingStatus(onlineNo);
+        return "redirect:/banquet";
+    }
+
+    //Delete banquet
+    @RequestMapping("deletePendingOnlineBanquet")
+    public String deletePendingOnlineBanquet(@RequestParam int onlineNo) {
+        banquetBO.deletePendingOnlineBanquet(onlineNo);
+        return "redirect:/banquet";
     }
 
 

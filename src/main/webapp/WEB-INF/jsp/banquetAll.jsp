@@ -64,6 +64,14 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
+
+    <!--Pie Chart -->
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/spiritedaway.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
     <style>
         .large-btn {
             height: 90px;
@@ -87,7 +95,7 @@
             border: 5px solid rgb(190, 175, 166);
             position: relative;
             overflow: hidden;
-            height: 90px;
+            height: 85px;
             width: 100%;
             font-size: 1.5rem;
             text-align: center;
@@ -116,11 +124,9 @@
         }
 
         #chartdiv {
-            width: 90%;
-            height: 300px;
+            width: 100%;
+            height: 380px;
         }
-
-
     </style>
 </head>
 <body class="nav-md" style="cursor: pointer">
@@ -241,9 +247,9 @@
             </div>
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
 
-
-                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color: #a98e77; color: #ffffff;font-weight: bolder"
@@ -254,7 +260,7 @@
                     <br>
                 </div>
 
-                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
 
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -266,7 +272,7 @@
                     <br>
                 </div>
 
-                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
 
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
@@ -356,6 +362,14 @@
                 <%--            </div>--%>
                 <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
 
+
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <P><h5>Banquet Orders</h5></P>
+                    <div id="chartdiv"></div>
+                    <br>
+
+                </div>
+
             </div>
 
         </div>
@@ -369,10 +383,49 @@
 
 
         <%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+        <!-- Chart code -->
+        <script>
+            am4core.ready(function() {
+
+// Themes begin
+                am4core.useTheme(am4themes_spiritedaway);
+                am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.PieChart);
+                var x=85;
+                var y = 25;
+
+// Add data
+                chart.data = [ {
+                    "country": "Online Orders",
+                    "litres": x
+                },
+                    {
+                    "country": "Place Orders",
+                    "litres": y
+                }
+                ];
+
+// Add and configure Series
+                var pieSeries = chart.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "litres";
+                pieSeries.dataFields.category = "country";
+                pieSeries.slices.template.stroke = am4core.color("#ffffff");
+                pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+                pieSeries.hiddenState.properties.opacity = 1;
+                pieSeries.hiddenState.properties.endAngle = -90;
+                pieSeries.hiddenState.properties.startAngle = -90;
+
+                chart.hiddenState.properties.radius = am4core.percent(0);
 
 
+            }); // end am4core.ready()
+        </script>
     </div>
-
 
     <!-- jQuery -->
     <script src="../../vendors/jquery/dist/jquery.min.js"></script>

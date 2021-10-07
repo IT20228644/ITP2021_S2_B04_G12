@@ -26,8 +26,8 @@ public class BanquetOnlineOrders {
         ModelAndView mv = new ModelAndView("banquetOnlineOrders");
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
-        List<BanquetAddDTO> list = banquetBO.findAllBanquet();
-        mv.addObject("loadBanquetAllTable",list);
+        List<BanquetAddDTO> onlineList = banquetBO.findOnlineBanquet();
+        mv.addObject("loadOnlineBanquetTable",onlineList);
 
         return mv;
     }
