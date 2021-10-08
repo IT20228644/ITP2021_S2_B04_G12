@@ -532,6 +532,26 @@
 </script>
 
 
+<%--<script>--%>
+<%--    function phonenumber(contactNo)--%>
+<%--    {--%>
+<%--        var phoneno = /^\d{10}$/;--%>
+<%--        $(document).on( "change", "#contactNo",function( event, ui ) {--%>
+<%--        if(contactNo.value.match(phoneno))--%>
+<%--        {--%>
+<%--            $(this).val("");--%>
+<%--            return true;--%>
+<%--        }--%>
+<%--        else--%>
+<%--        {--%>
+<%--            alert("Not a valid Phone Number");--%>
+<%--            return false;--%>
+<%--        }--%>
+<%--    }--%>
+
+<%--</script>--%>
+
+
 
 
 </body>

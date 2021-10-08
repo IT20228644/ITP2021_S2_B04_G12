@@ -44,7 +44,14 @@ public class BanquetCheckAvailability {
         //Date availability check
         int count = banquetBO.checkAvailability(date);
         int count6 = banquetBO.checkAvailability2(date);
-        if(count==1 && count6 == 1){
+
+        if(count == 2){
+            answer1 =":Date Not Available";
+        }
+        else if(count6 == 2){
+            answer1 =":Date not Available";
+        }
+        else if(count==1 && count6 == 1){
             answer1=":Date not Available";
         }
         else{
@@ -84,8 +91,8 @@ public class BanquetCheckAvailability {
 
         //Hall two availability check
         int count2 = banquetBO.checkHallTwoAvailabilityCheck(date);
-        int count5 = banquetBO.checkHallTwoAvailabilityCheck(date);
-        if(count2 == 1 || count5==1)
+        int count5 = banquetBO.checkHallTwoAvailabilityCheck2(date);
+        if(count2 == 1 || count5==1 )
             answer3 ="Unavailable";
         else
             answer3 ="Available";

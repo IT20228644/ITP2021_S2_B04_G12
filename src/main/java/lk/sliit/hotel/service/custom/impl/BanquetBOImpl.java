@@ -2,16 +2,10 @@ package lk.sliit.hotel.service.custom.impl;
 
 import lk.sliit.hotel.controller.banquetController.BanquetOnlineOrders;
 import lk.sliit.hotel.controller.banquetController.BanquetUtil;
-import lk.sliit.hotel.dao.banquetDAO.BanquetBillDAO;
-import lk.sliit.hotel.dao.banquetDAO.BanquetCustomerDAO;
-import lk.sliit.hotel.dao.banquetDAO.BanquetOnlineOrderDAO;
-import lk.sliit.hotel.dao.banquetDAO.BanquetOrderDAO;
+import lk.sliit.hotel.dao.banquetDAO.*;
 import lk.sliit.hotel.dao.kitchenDAO.MenuDAO;
 import lk.sliit.hotel.dto.banquet.*;
-import lk.sliit.hotel.entity.banquet.BanquetBill;
-import lk.sliit.hotel.entity.banquet.BanquetCustomer;
-import lk.sliit.hotel.entity.banquet.BanquetOnlineOrder;
-import lk.sliit.hotel.entity.banquet.BanquetOrder;
+import lk.sliit.hotel.entity.banquet.*;
 import lk.sliit.hotel.service.custom.BanquetBO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,6 +34,9 @@ public class BanquetBOImpl implements BanquetBO {
 
     @Autowired
     BanquetOnlineOrderDAO banquetOnlineOrderDAO;
+
+   @Autowired
+   BanquetOnlineCustomerDAO banquetOnlineCustomerDAO;
 
 
     @Override
@@ -384,6 +381,33 @@ public class BanquetBOImpl implements BanquetBO {
 
     }
 
+
+    @Override
+    public void saveBanquetOnlineCustomer(BanquetOnlineCustomerDTO banquetOnlineCustomerDTO) {
+        banquetOnlineCustomerDAO.save(new BanquetOnlineCustomer(
+                banquetOnlineCustomerDTO.getRegNo(),
+                banquetOnlineCustomerDTO.getName(),
+                banquetOnlineCustomerDTO.getEmail(),
+                banquetOnlineCustomerDTO.getAddress(),
+                banquetOnlineCustomerDTO.getPhoneNo(),
+                banquetOnlineCustomerDTO.getPassword()
+
+
+        ));
+
+    }
+
+    @Override
+    public BanquetOnlineCustomerDTO findByUserNameAndPassword(String email, String password) {
+       BanquetOnlineCustomer banquetOnlineCustomer = banquetOnlineCustomerDAO.findByEmailAndPassword(email, password);
+        return new BanquetOnlineCustomerDTO(
+                banquetOnlineCustomer.getRegNo(),
+                banquetOnlineCustomer.getName(),
+                banquetOnlineCustomer.getPassword()
+        );
+    }
+
+
     @Override
     public int checkHallOneAvailability2(Date date) {
         String hallNo ="No 1";
@@ -403,6 +427,43 @@ public class BanquetBOImpl implements BanquetBO {
         int count = banquetOnlineOrderDAO.countBanquetOrderByDateEquals(date);
         return count;
     }
+
+    @Override
+    public int checkHallTwoAvailabilityCheck2(Date date) {
+        String hallNo ="No 2";
+        int count2= banquetOnlineOrderDAO.countBanquetOrderByDateEqualsAndHallIdEquals(date,hallNo);
+        return count2;
+    }
+
+    @Override
+    public boolean findEmail(String email) {
+        email = email.trim();
+       BanquetOnlineCustomer banquetOnlineCustomer = null;
+        try {
+            banquetOnlineCustomer = banquetOnlineCustomerDAO.findCustomerByEmailEquals(email);
+
+        } catch (Exception e) {
+            return true;
+        }
+        if (banquetOnlineCustomer == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public BanquetOnlineCustomerDTO findHighestOnlineCustomerRegNo() {
+        BanquetOnlineCustomer orders = null;
+        try {
+            orders = banquetOnlineCustomerDAO.findTopByOrderByRegNoDesc();
+        } catch (Exception e) {
+
+        }
+        return new BanquetOnlineCustomerDTO(
+                orders.getRegNo()
+        );
+    }//End
 
 
     //Check Date Availability

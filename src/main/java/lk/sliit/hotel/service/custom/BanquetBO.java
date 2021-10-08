@@ -97,6 +97,16 @@ public interface BanquetBO extends SuperBO {
 
     int checkAvailability2(Date date);
 
+    int checkHallTwoAvailabilityCheck2(Date date);
+
+    boolean findEmail(String email);
+
+    BanquetOnlineCustomerDTO findHighestOnlineCustomerRegNo();
+
+    void saveBanquetOnlineCustomer(BanquetOnlineCustomerDTO banquetOnlineCustomerDTO);
+
+    BanquetOnlineCustomerDTO findByUserNameAndPassword(String id, String password);
+
 
 //    List<BanquetAddDTO> findLastWeekBanquets();
 }
