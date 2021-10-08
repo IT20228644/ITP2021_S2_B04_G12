@@ -901,14 +901,14 @@ footer a{
     position: relative;
 }
 .inner-wrapper {
-    color: #fff;
+    color: #e8c621;
     left: 70%;
     position: relative;
     text-align: right;
     text-transform: uppercase;
     top: 50%;
     transform: translate(-70%, -70%);
-    width: 60%;
+    width: 18%;
 }
 .inner-wrapper h1{
     font-family: "exotc350_dmbd_btdemi-bold";
