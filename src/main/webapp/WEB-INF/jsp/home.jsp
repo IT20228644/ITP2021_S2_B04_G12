@@ -486,7 +486,7 @@
             </div>
 
             <div class="copyright">
-                &copy; 2020 All right reserved. Designed by <a href="https://github.com/rivinduchamath/Hello-Hotel" target="_blank">Team Reliance</a>
+                &copy; 2020 All right reserved. Designed by <a href="" target="_blank">Team Reliance</a>
             </div>
 
         </div>
