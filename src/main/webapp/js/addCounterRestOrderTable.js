@@ -19,7 +19,7 @@ $("#btnAdd").click(function () {
         return;
     }
     if (buyAmount == "") {
-        alert("Buy Amount is Empty");
+        alert("Quantity is Empty");
         return;
     }
     if (itemPrice == "") {
