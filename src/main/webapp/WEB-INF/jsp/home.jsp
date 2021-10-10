@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: prabo
+  Date: 10/10/2021
+  Time: 8:52 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
-    <title>Luxury Hotel in Galle | Hotel Sapphire Marriot</title>
+    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
@@ -52,9 +60,7 @@
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
                             <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-                            <a href="home"><img style="margin-top:-30px; width: 150px;height: 95px"
-                                                src="../../images/logonewe.png">
-                            </a>
+                            <a href="home"><img style="margin-top:-30px; width: 150px;height: 95px" src="../../images/logonewe.png"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
@@ -76,8 +82,8 @@
                                     <li><a  data-hover="Home" class="active"><span>Home</span></a></li>
                                     <li><a data-hover="About"  href="about"><span>About</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Restaurant"  href="rooms"><span>Restaurant</span></a></li>
-                                    <li><a data-hover="Banquet"  href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -85,9 +91,9 @@
                             </div>
                         </nav>
                     </div>
-<%--                    <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">--%>
-<%--                        <div class="text-right"><a href="customerLogin" > <button type="button" class="book-now-btn">Log In</button></a></div>--%>
-<%--                    </div>--%>
+                    <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
+                        <div class="text-right"><a href="customerLogin" > <button type="button" class="book-now-btn">Log In</button></a></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,17 +110,17 @@
             <li data-target="#myCarousel1" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="item active"> <img src="../../images/reservation/banner.png" style="width:100%; height: 500px" alt="First slide">
+            <div class="item active"> <img src="../../images/reservation/h1.png" style="width:100%; height: 500px" alt="First slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>
             </div>
-            <div class="item"> <img src="../../images/reservation/banner2.png" style="width:100%; height: 500px" alt="Second slide">
+            <div class="item"> <img src="../../images/reservation/h2.png" style="width:100%; height: 500px" alt="Second slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>
             </div>
-            <div class="item"> <img src="../../images/reservation/banner3.png" style="width:100%; height: 500px" alt="Third slide">
+            <div class="item"> <img src="../../images/reservation/h3.png" style="width:100%; height: 500px" alt="Third slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>
@@ -465,12 +471,12 @@
                     <div class="footer-details">
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
-                            <li class="active"><a>Home</a></li>
-                            <li><a href="about">About</a></li>
+                            <li><a href="home">Home</a></li>
+                            <li class="active"><a>About</a></li>
                             <li><a href="rooms">Rooms</a></li>
+                            <li><a href="rooms">Banquet</a></li>
+                            <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
-                            <li><a href="dinning">Dinning</a></li>
-                            <li> <a href="news">News</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>
@@ -488,7 +494,7 @@
             </div>
 
             <div class="copyright">
-                &copy; 2020 All right reserved. Designed by <a href="https://github.com/rivinduchamath/Hello-Hotel" target="_blank">Team Reliance</a>
+                &copy; 2020 All right reserved. Designed by <a href="" target="_blank">Team Reliance</a>
             </div>
 
         </div>

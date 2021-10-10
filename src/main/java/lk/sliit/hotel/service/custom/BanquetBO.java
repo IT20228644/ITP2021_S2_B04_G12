@@ -1,9 +1,6 @@
 package lk.sliit.hotel.service.custom;
 
-import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
-import lk.sliit.hotel.dto.banquet.BanquetBillDTO;
-import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
-import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
+import lk.sliit.hotel.dto.banquet.*;
 
 import lk.sliit.hotel.service.SuperBO;
 import org.springframework.stereotype.Service;
@@ -70,6 +67,46 @@ public interface BanquetBO extends SuperBO {
     void deleteBanquet(int idNo);
 
     BanquetAddDTO findBanquetBillById(int billId);
+
+    BanquetOnlineOrderDTO findTopOnlineNo();
+
+    void saveOnlineBanquet(BanquetAddDTO banquetAddDTO);
+
+    List<BanquetAddDTO> findOnlineBanquet();
+
+    BanquetOrderDTO findTopBanquetId1();
+    BanquetOrderDTO findTopBanquetId2();
+
+    BanquetCustomerDTO findTopCustomerId2();
+
+    BanquetOrderDTO findTopBanquetId3();
+
+    BanquetCustomerDTO findTopCustomerId3();
+
+    List<BanquetAddDTO> findConfirmedOnlineBanquets();
+
+    void updatePendingStatus(int orderId);
+
+    void deletePendingOnlineBanquet(int onlineNo);
+
+    void saveOnlineBanquet2(BanquetOnlineOrderDTO banquetOnlineOrderDTO);
+
+    int checkHallOneAvailability2(Date date);
+
+    int checkHallTwoAvailability3(Date date);
+
+    int checkAvailability2(Date date);
+
+    int checkHallTwoAvailabilityCheck2(Date date);
+
+    boolean findEmail(String email);
+
+    BanquetOnlineCustomerDTO findHighestOnlineCustomerRegNo();
+
+    void saveBanquetOnlineCustomer(BanquetOnlineCustomerDTO banquetOnlineCustomerDTO);
+
+    BanquetOnlineCustomerDTO findByUserNameAndPassword(String id, String password);
+
 
 //    List<BanquetAddDTO> findLastWeekBanquets();
 }

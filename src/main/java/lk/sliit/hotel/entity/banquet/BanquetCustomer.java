@@ -15,16 +15,22 @@ public class BanquetCustomer{
    String email;
    String address;
    String contactNo;
+   String username;
    String password;
    @OneToMany(mappedBy = "banquetCustomer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
    private List<BanquetOrder> banquetOrders = new ArrayList<>();
+//   @OneToMany(mappedBy = "banquetCustomer", cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+//   private List<BanquetOnlineOrder> banquetOnlineOrders = new ArrayList<>();
 
-   public BanquetCustomer(int customerId, String email, String name, String address,String contactNumber) {
+   public BanquetCustomer(int customerId, String email, String name, String address,String contactNumber,
+                          String username,String password) {
       this.customerId = customerId;
       this.email = email;
       this.name =name;
       this.address = address;
       this.contactNo = contactNumber;
+      this.username= username;
+      this.password= password;
    }
 
    public BanquetCustomer() {
@@ -63,6 +69,14 @@ public class BanquetCustomer{
       this.contactNo = contactNo;
    }
 
+   public String getUsername() {
+      return username;
+   }
+
+   public void setUsername(String username) {
+      this.username = username;
+   }
+
    public String getPassword() {
       return password;
    }
@@ -89,4 +103,5 @@ public class BanquetCustomer{
    public void setCustomerId(int customerId) {
       this.customerId = customerId;
    }
+
 }

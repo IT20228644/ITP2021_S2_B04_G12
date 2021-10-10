@@ -64,6 +64,14 @@
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String date = sdf.format(new Date());
     %>
+
+    <!--Pie Chart -->
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/spiritedaway.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
     <style>
         .large-btn {
             height: 90px;
@@ -75,6 +83,49 @@
 
         .large-btn:hover {
             color: #0f0f0f;
+        }
+
+        .containerx {
+            display: flex;
+
+        }
+
+        .btnq {
+            text-decoration: none;
+            border: 5px solid rgb(190, 175, 166);
+            position: relative;
+            overflow: hidden;
+            height: 85px;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            border-radius: 5px 5px;
+        }
+
+        .btnq:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -00%;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(64, 45, 34, 0.4),
+                    transparent
+            );
+            transition: all .8s;
+        }
+
+        .btnq:hover:before {
+            left: 100%;
+        }
+
+        #chartdiv {
+            width: 100%;
+            height: 380px;
         }
     </style>
 </head>
@@ -98,7 +149,7 @@
             <div class="page-title">
                 <div class="title_left">
                     <h3>All Banquets
-                        <small>Welcome To Hotel Shapphire Marriott</small>
+                        <small>Welcome To Hotel Hareesha</small>
                     </h3>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -194,123 +245,213 @@
                     </form>
                 </div>
             </div>
-            <div class="clearfix">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="float: right; position: relative;display: inline-block">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>All Banquets
-                                <small>show banquet details
-                                </small>
-                            </h2>
-                            <form method="POST" action="/invoice" name="invoice">
 
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <br>
 
-                                <!--href="/invoice"-->
-                                <div class="clearfix"></div>
-
-
-                                <div class="x_content">
-
-                                    <div class="row">
-
-                                        <div class="col-sm-12">
-
-                                            <div class="card-box table-responsive">
-
-                                                <table id="datatable-buttons"
-                                                       class="table table-striped jambo_table bulk_action table-bordered">
-                                                    <thead class="thead-light">
-
-                                                    <tr>
-                                                        <th>Banquet Id</th>
-                                                        <th>Bill Id</th>
-                                                        <th>Date</th>
-                                                        <th>Cus Name</th>
-                                                        <th>Address</th>
-                                                        <th>Hall No</th>
-                                                        <th>Package</th>
-                                                        <th>plates</th>
-                                                        <th>Advance Fee</th>
-                                                        <th>Total Pay</th>
-                                                        <th>Status</th>
-
-
-                                                    </tr>
-                                                    </thead>
-
-                                                    <tbody>
-                                                    <c:forEach items="${loadBanquetAllTable}" var="e">
-                                                        <tr>
-                                                            <td>${e.orderId}</td>
-                                                            <td>${e.banquetBillId}</td>
-                                                            <td>${e.date}</td>
-                                                            <td>${e.name}</td>
-                                                            <td>${e.address}</td>
-                                                            <td>${e.hallId}</td>
-                                                            <td>${e.menuId}</td>
-                                                            <td>${e.noOfPlates}</td>
-                                                            <td>${e.advanceFee}</td>
-                                                            <td>${e.total}</td>
-                                                            <td>${e.orderState}</td>
-
-
-                                                        </tr>
-                                                    </c:forEach>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color: #a98e77; color: #ffffff;font-weight: bolder"
+                           href="banquetPlaceOrders" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">Place Order</h2></a>
                     </div>
+                    <br>
                 </div>
+
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
+
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                           href="banquetOnlineOrders" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">Online Order</h2></a>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-4">
+
+                    <div class="containerx">
+                        <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
+                             background-color:#a98e77; color: #ffffff;font-weight: bolder"
+                           href="banquetAllOrders" class="btnq"><h2
+                                style="position: relative; letter-spacing: 1px;
+                                     margin-top: 30px">All Order</h2></a>
+                    </div>
+                    <br>
+                </div>
+
+
+
+
+                <%--            <div class="clearfix">--%>
+                <%--                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="float: right; position: relative;display: inline-block">--%>
+                <%--                    <div class="x_panel">--%>
+                <%--                        <div class="x_title">--%>
+                <%--                            <h2>All Banquets--%>
+                <%--                                <small>show banquet details--%>
+                <%--                                </small>--%>
+                <%--                            </h2>--%>
+                <%--                            <form method="POST" action="/invoice" name="invoice">--%>
+
+
+                <%--                                <!--href="/invoice"-->--%>
+                <%--                                <div class="clearfix"></div>--%>
+
+
+                <%--                                <div class="x_content">--%>
+
+                <%--                                    <div class="row">--%>
+
+                <%--                                        <div class="col-sm-12">--%>
+
+                <%--                                            <div class="card-box table-responsive">--%>
+
+                <%--                                                <table id="datatable-buttons"--%>
+                <%--                                                       class="table table-striped jambo_table bulk_action table-bordered">--%>
+                <%--                                                    <thead class="thead-dark">--%>
+
+                <%--                                                    <tr>--%>
+                <%--                                                        <th>Banquet Id</th>--%>
+                <%--                                                        <th>Bill Id</th>--%>
+                <%--                                                        <th>Date</th>--%>
+                <%--                                                        <th>Cus Name</th>--%>
+                <%--                                                        <th>Address</th>--%>
+                <%--                                                        <th>Hall No</th>--%>
+                <%--                                                        <th>Package</th>--%>
+                <%--                                                        <th>plates</th>--%>
+                <%--                                                        <th>Advance Fee</th>--%>
+                <%--                                                        <th>Total Pay</th>--%>
+                <%--                                                        <th>Status</th>--%>
+
+
+                <%--                                                    </tr>--%>
+                <%--                                                    </thead>--%>
+
+                <%--                                                    <tbody>--%>
+                <%--                                                    <c:forEach items="${loadBanquetAllTable}" var="e">--%>
+                <%--                                                        <tr>--%>
+                <%--                                                            <td>${e.orderId}</td>--%>
+                <%--                                                            <td>${e.banquetBillId}</td>--%>
+                <%--                                                            <td>${e.date}</td>--%>
+                <%--                                                            <td>${e.name}</td>--%>
+                <%--                                                            <td>${e.address}</td>--%>
+                <%--                                                            <td>${e.hallId}</td>--%>
+                <%--                                                            <td>${e.menuId}</td>--%>
+                <%--                                                            <td>${e.noOfPlates}</td>--%>
+                <%--                                                            <td>${e.advanceFee}</td>--%>
+                <%--                                                            <td>${e.total}</td>--%>
+                <%--                                                            <td>${e.orderState}</td>--%>
+
+
+                <%--                                                        </tr>--%>
+                <%--                                                    </c:forEach>--%>
+                <%--                                                    </tbody>--%>
+                <%--                                                </table>--%>
+                <%--                                            </div>--%>
+                <%--                                        </div>--%>
+                <%--                                    </div>--%>
+                <%--                                </div>--%>
+                <%--                            </form>--%>
+                <%--                        </div>--%>
+                <%--                    </div>--%>
+                <%--                </div>--%>
+                <%--            </div>--%>
+                <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
+
+
+                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <P><h5>Banquet Orders</h5></P>
+                    <div id="chartdiv"></div>
+                    <br>
+
+                </div>
+
             </div>
 
-            <%--/////////////////////////////////////////////    /////////////////////////////////////////////--%>
         </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <jsp:include page="footer.jsp" />
+        <!-- /footer content -->
+
+        <%--</div>--%>
+
+
+        <%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
+        <!-- Chart code -->
+        <script>
+            am4core.ready(function() {
+
+// Themes begin
+                am4core.useTheme(am4themes_spiritedaway);
+                am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.PieChart);
+                var x=85;
+                var y = 25;
+
+// Add data
+                chart.data = [ {
+                    "country": "Online Orders",
+                    "litres": x
+                },
+                    {
+                    "country": "Place Orders",
+                    "litres": y
+                }
+                ];
+
+// Add and configure Series
+                var pieSeries = chart.series.push(new am4charts.PieSeries());
+                pieSeries.dataFields.value = "litres";
+                pieSeries.dataFields.category = "country";
+                pieSeries.slices.template.stroke = am4core.color("#ffffff");
+                pieSeries.slices.template.strokeOpacity = 1;
+
+// This creates initial animation
+                pieSeries.hiddenState.properties.opacity = 1;
+                pieSeries.hiddenState.properties.endAngle = -90;
+                pieSeries.hiddenState.properties.startAngle = -90;
+
+                chart.hiddenState.properties.radius = am4core.percent(0);
+
+
+            }); // end am4core.ready()
+        </script>
     </div>
-    <!-- /page content -->
 
+    <!-- jQuery -->
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Datatables -->
+    <script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <%--Show Print Buttons--%>
+    <script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <%--Responsive Table--%>
+    <script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <%--<script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>--%>
+    <%--Print--%>
+    <script src="../../vendors/jszip/dist/jszip.min.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../../build/js/custom.min.js"></script>
 
-
-    <!-- footer content -->
-    <jsp:include page="footer.jsp" />
-    <!-- /footer content -->
-
-</div>
-
-
-<%--//////////////////////////////////////////////////////////////////////////////////////////////////--%>
-
-
-</div>
-
-
-<!-- jQuery -->
-<script src="../../vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Datatables -->
-<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<%--Show Print Buttons--%>
-<script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-<script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<%--Responsive Table--%>
-<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<%--<script src="../../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>--%>
-<%--Print--%>
-<script src="../../vendors/jszip/dist/jszip.min.js"></script>
-<!-- Custom Theme Scripts -->
-<script src="../../build/js/custom.min.js"></script>
+    <%--<div id="chartdiv"></div>--%>
 
 
 

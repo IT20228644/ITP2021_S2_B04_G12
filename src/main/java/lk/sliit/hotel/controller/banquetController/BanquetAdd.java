@@ -2,10 +2,7 @@ package lk.sliit.hotel.controller.banquetController;
 
 
 import lk.sliit.hotel.controller.SuperController;
-import lk.sliit.hotel.dto.banquet.BanquetAddDTO;
-import lk.sliit.hotel.dto.banquet.BanquetBillDTO;
-import lk.sliit.hotel.dto.banquet.BanquetCustomerDTO;
-import lk.sliit.hotel.dto.banquet.BanquetOrderDTO;
+import lk.sliit.hotel.dto.banquet.*;
 import lk.sliit.hotel.service.custom.BanquetBO;
 import lk.sliit.hotel.service.custom.IndexLoginBO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,15 +47,6 @@ public class BanquetAdd {
             model.addAttribute("topBanquetCustomerId",1);
         }
 
-//        try{
-////            BanquetBillDTO banquetBillDTO = banquetBO.findTopBiiId();
-//            BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
-//            int topBillId= (banquetBillDTO.getBillId())+1;
-//            model.addAttribute("topBanquetBillId",topBillId);
-//        }catch (NullPointerException e){
-//            model.addAttribute("topBanquetBillId",1);
-//        }
-
 
         try {
             BanquetBillDTO banquetBillDTO = banquetBO.findTopBanquetBillId();
@@ -75,35 +63,60 @@ public class BanquetAdd {
     }
 
     @RequestMapping("saveBanquet")
-    public ModelAndView saveForm(@ModelAttribute BanquetAddDTO banquetAddDTO , HttpServletRequest request, Model model){
-        //  ModelAndView mv = new ModelAndView("saveBanquet");
-
-//       banquetBO.saveBanquet(banquetAddDTO);
+    public ModelAndView saveForm(@ModelAttribute BanquetAddDTO banquetAddDTO , BanquetOnlineOrderDTO banquetOnlineOrderDTO, HttpServletRequest request, Model model) {
 
         try {
             int count = banquetBO.checkAvailability(banquetAddDTO.getDate());
-            if(count<2) {
-                if (banquetAddDTO.getHallId().equals("No 1")){
-                    int count1=banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
-                    if(count1<1) {
+            int count6 = banquetBO.checkAvailability(banquetOnlineOrderDTO.getDate());
+            if (count < 2 || count6 < 2) {
+                if (banquetAddDTO.getHallId().equals("No 1")) {
+                    int count1 = banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
+                    int count4=banquetBO.checkHallOneAvailability2(banquetOnlineOrderDTO.getDate());
+                    if (count1 < 1 && count4<1) {
                         banquetBO.saveBanquet(banquetAddDTO);
-                        request.setAttribute("successfulMsg","added successfully");
-                    }
-                    else{
-                        request.setAttribute("errorMsg2","can not enter");
+                        request.setAttribute("successfulMsg", "added successfully");
+                    } else {
+                        request.setAttribute("errorMsg2", "can not enter");
                     }
                 }
-                if (banquetAddDTO.getHallId().equals("No 2")){
-                    int count2=banquetBO.checkHallTwoAvailabilityCheck(banquetAddDTO.getDate());
-                    if(count2 < 1) {
+
+//          else  if (count6 < 2) {
+            //    else if (banquetOnlineOrderDTO.getHallId().equals("No1")) {
+//                    //  int count1=banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
+//                    int count4 = banquetBO.checkHallOneAvailability2(banquetOnlineOrderDTO.getDate());
+//                    if (count4 < 1) {
+//                        banquetBO.saveOnlineBanquet(banquetAddDTO);
+//                        request.setAttribute("successfulMsg", "added successfully");
+//                    } else {
+//                        request.setAttribute("errorMsg2", "can not enter");
+//                    }
+//
+//                }
+                if (banquetAddDTO.getHallId().equals("No 2")) {
+                    int count2 = banquetBO.checkHallTwoAvailabilityCheck(banquetAddDTO.getDate());
+                    int count5=banquetBO.checkHallOneAvailability2(banquetOnlineOrderDTO.getDate());
+                    if (count2 < 1 || count5<1) {
                         banquetBO.saveBanquet(banquetAddDTO);
-                        request.setAttribute("successfulMsg","added successfully");
-                    }
-                    else{
-                        request.setAttribute("errorMsg3","can not enter");
+                        request.setAttribute("successfulMsg", "added successfully");
+                    } else {
+                        request.setAttribute("errorMsg3", "can not enter");
                     }
                 }
+//                else if (banquetOnlineOrderDTO.getHallId().equals("No2")) {
+//                    //  int count1=banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
+//                    int count5 = banquetBO.checkHallTwoAvailabilityCheck(banquetOnlineOrderDTO.getDate());
+//                    if (count5 < 1) {
+//                        banquetBO.saveOnlineBanquet(banquetAddDTO);
+//                        request.setAttribute("successfulMsg", "added successfully");
+//                    } else {
+//                        request.setAttribute("errorMsg2", "can not enter");
+//                    }
+//
+//                }
+
             }
+//        }
+
             else{
                 request.setAttribute("errorMsg1","can not enter");
             }
