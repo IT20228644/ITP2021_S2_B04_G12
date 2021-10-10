@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: prabo
-  Date: 10/7/2021
-  Time: 4:05 PM
+  Date: 10/10/2021
+  Time: 8:50 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -56,8 +56,8 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
-                            <!--<a href="index.html"><img src="images/logonew.png" alt="logo"></a>-->
-                            <a href="home"><img style="margin-top:-30px; width: 150px;height: 95px" src="../../images/logonewe.png"></a>
+                            <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
+                            <a href="home"><span>Ha</span>reesha</a>
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
@@ -79,8 +79,8 @@
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -172,8 +172,6 @@
                             <li><a href="rooms">Banquet</a></li>
                             <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
-                            <li><a href="#">Dinning</a></li>
-                            <li> <a href="news">News</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>
@@ -206,4 +204,3 @@
 </div>
 </body>
 </html>
-

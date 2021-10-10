@@ -24,8 +24,6 @@ public class AppInitializer {
         SpringApplication.run(AppInitializer.class,args);
     }
 
-<<<<<<< HEAD
-=======
 
 //    String str="2020-05-11";
 //    Date date= Date.valueOf(str);
@@ -145,7 +143,7 @@ public class AppInitializer {
 //   }
 //}//End Class
 
->>>>>>> 7b2f9e2a57a924e7996dd612b2ae9e6645e27df7
+
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
@@ -172,12 +170,11 @@ public class AppInitializer {
             );
         };
     }
-<<<<<<< HEAD
-}//End Class
-=======
 
 }//End Class
 
 
 
->>>>>>> 7b2f9e2a57a924e7996dd612b2ae9e6645e27df7
+
+
+
