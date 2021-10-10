@@ -112,17 +112,17 @@
         <div class="carousel-inner">
             <div class="item active"> <img src="../../images/reservation/h1.png" style="width:100%; height: 500px" alt="First slide">
                 <div class="carousel-caption">
-                    <h1>Hotel<br> Hareesha</h1>
+                    <h1>Sapphire Marriott</h1>
                 </div>
             </div>
             <div class="item"> <img src="../../images/reservation/h2.png" style="width:100%; height: 500px" alt="Second slide">
                 <div class="carousel-caption">
-                    <h1>Hotel<br> Hareesha</h1>
+                    <h1>Sapphire Marriott</h1>
                 </div>
             </div>
             <div class="item"> <img src="../../images/reservation/h3.png" style="width:100%; height: 500px" alt="Third slide">
                 <div class="carousel-caption">
-                    <h1>Hotel<br> Hareesha</h1>
+                    <h1>Sapphire Marriott</h1>
                 </div>
             </div>
 
@@ -268,7 +268,7 @@
                     <div class="side-B">
                         <div class="product-desc-side">
                             <h3><a>Restaurant</a></h3>
-                            <p>Hotel Hareesha, offers an enthralling culinary journey across its restaurant & bar. Inspirational cuisine by our award-winning chefs is matched with vibrant atmospheres, cutting-edge concepts to create memorable experiences.</p>
+                            <p>Sapphire Marriott, offers an enthralling culinary journey across its restaurant & bar. Inspirational cuisine by our award-winning chefs is matched with vibrant atmospheres, cutting-edge concepts to create memorable experiences.</p>
                             <div class="links"><a href="onlineDashboard">Have a look</a></div>
                         </div>
                     </div>
@@ -296,7 +296,7 @@
                     <div class="side-A">
                         <div class="product-desc-side">
                             <h3><a>Tasty Foods</a></h3>
-                            <p>At Hotel Hareesha, we believe in the magic of great taste. Taste you turn to every day, taste you count on as part of your life. We make taste that does more than merely satisfying your taste buds, it actually gives you less to worry about and more to look forward to.</p>
+                            <p>At Sapphire Marriott, we believe in the magic of great taste. Taste you turn to every day, taste you count on as part of your life. We make taste that does more than merely satisfying your taste buds, it actually gives you less to worry about and more to look forward to.</p>
                             <div class="links"><a href="#">Read more</a></div>
                         </div>
                     </div>
@@ -346,7 +346,7 @@
                         </div>
                         <div class="item">
                             <div class="blog-box">
-                                <p>Hareesha Holiday Resort is located in Yakkalamulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
+                                <p>Sapphire Marriott Holiday Resort is located in Yakkalamulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
                             </div>
                             <div class="blog-view-box">
                                 <div class="media">
@@ -441,7 +441,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. </p>
+                                <p>22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>
@@ -449,7 +449,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">

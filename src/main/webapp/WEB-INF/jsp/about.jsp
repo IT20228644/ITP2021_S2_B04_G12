@@ -109,16 +109,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 about-left">
-                    <p>Hotel <label>Hareesha</label></p>
+                    <p>Sapphire<label> Marriott</label></p>
                 </div>
                 <div class="col-md-7 about-right">
                     <h3>A new level of luxury hospitality in Sri Lanka</h3>
                     <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
                     <ul class="list-unstyled list-inline">
-                        <li>Hotel Hareesha, Galle is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
+                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
                         <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
                         <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Hotel Hareesha, Galle, looks forward to welcoming you soon.</span>
+                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
                     </ul>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. </p>
+                                <p> 22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>
@@ -144,7 +144,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
