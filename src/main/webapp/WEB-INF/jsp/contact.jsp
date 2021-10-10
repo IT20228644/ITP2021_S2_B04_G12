@@ -97,7 +97,7 @@
 
 
     <!--end-->
-    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/contact3.png');">
+    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/contact1.png');">
         <div class="inner-wrapper">
             <h1>Contact Us</h1>
         </div>

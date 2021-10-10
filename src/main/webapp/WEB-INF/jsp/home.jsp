@@ -60,7 +60,7 @@
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
                             <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-                            <a href="home"><span>Ha</span>reesha</a>
+                            <a href="home"><img style="margin-top:-30px; width: 150px;height: 95px" src="../../images/logonewe.png"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
@@ -110,17 +110,17 @@
             <li data-target="#myCarousel1" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="item active"> <img src="../../images/reservation/banner.png" style="width:100%; height: 500px" alt="First slide">
+            <div class="item active"> <img src="../../images/reservation/h1.png" style="width:100%; height: 500px" alt="First slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>
             </div>
-            <div class="item"> <img src="../../images/reservation/banner2.png" style="width:100%; height: 500px" alt="Second slide">
+            <div class="item"> <img src="../../images/reservation/h2.png" style="width:100%; height: 500px" alt="Second slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>
             </div>
-            <div class="item"> <img src="../../images/reservation/banner3.png" style="width:100%; height: 500px" alt="Third slide">
+            <div class="item"> <img src="../../images/reservation/h3.png" style="width:100%; height: 500px" alt="Third slide">
                 <div class="carousel-caption">
                     <h1>Hotel<br> Hareesha</h1>
                 </div>

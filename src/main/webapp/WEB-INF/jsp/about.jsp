@@ -57,7 +57,7 @@
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
                             <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-                            <a href="home"><span>Ha</span>reesha</a>
+                            <a href="home"><img style="margin-top:-30px; width: 150px;height: 95px" src="../../images/logonewe.png"></a>
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
