@@ -243,7 +243,7 @@
                                         Time Out:
                                         <input type="time" placeholder="Out Time" name="vEndT" id="message">                                    </label>
 
-                                    <input class="sendButton" type="submit" name="Submit" value="Check">
+                                        <input class="sendButton" type="submit" name="Submit" value="Check" onclick='checkDate()'>
                                     </form>
                                 </div>
                             </div>
@@ -461,7 +461,47 @@
 
     }); // end am4core.ready()
 </script>
+<script>
+    // function isFutureDate(){
+    //     var idate=document.getElementById("vDate");
+    //     var today = new Date().getTime(),
+    //         idate = idate.split("/");
+    //
+    //     idate = new Date(idate[2], idate[1] - 1, idate[0]).getTime();
+    //     return (today - idate) < 0;
+    // }
+    function isFutureDate(idate){
+        var today = new Date().getTime(),
+            idate = idate.split("/");
 
+        idate = new Date(idate[2], idate[1] - 1, idate[0]).getTime();
+        return (today - idate) < 0;
+    }
+
+    function checkDate(){
+        var idate = document.getElementById("vDate");
+            //resultDiv = document.getElementById("datewarn"),
+            //dateReg = /(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/]201[4-9]|20[2-9][0-9]/;
+
+        //if(!dateReg.test(idate.value)){
+            // resultDiv.innerHTML = "Invalid date!";
+            // resultDiv.style.color = "red";
+            //alert("Please Select Item In Table");
+           // return;
+        //}
+
+        if(isFutureDate(idate.value)){
+            // resultDiv.innerHTML = "Entered date is a future date";
+            // resultDiv.style.color = "red"
+            return ;
+        } else {
+            // resultDiv.innerHTML = "It's a valid date";
+            // resultDiv.style.color = "green";
+            alert("Entered date is not a future date or current date");
+            return false;
+        }
+    }
+</script>
 
 </body>
 </html>

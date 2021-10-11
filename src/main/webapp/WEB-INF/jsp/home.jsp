@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: prabo
+  Date: 10/10/2021
+  Time: 8:52 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,11 +79,19 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
+<<<<<<< HEAD
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
                                     <li><a data-hover="Banquet" href="homeBanquet"><span>Banquet</span></a></li>
                                     <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
+=======
+                                    <li><a  data-hover="Home" class="active"><span>Home</span></a></li>
+                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Rooms</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
+>>>>>>> 53f1c70902c26563334cf69f3ab6c2f7b18bd4e1
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -260,7 +276,7 @@
                     <div class="side-B">
                         <div class="product-desc-side">
                             <h3><a>Restaurant</a></h3>
-                            <p>Hotel Hareesha, offers an enthralling culinary journey across its restaurant & bar. Inspirational cuisine by our award-winning chefs is matched with vibrant atmospheres, cutting-edge concepts to create memorable experiences.</p>
+                            <p>Sapphire Marriott, offers an enthralling culinary journey across its restaurant & bar. Inspirational cuisine by our award-winning chefs is matched with vibrant atmospheres, cutting-edge concepts to create memorable experiences.</p>
                             <div class="links"><a href="onlineDashboard">Have a look</a></div>
                         </div>
                     </div>
@@ -288,7 +304,7 @@
                     <div class="side-A">
                         <div class="product-desc-side">
                             <h3><a>Tasty Foods</a></h3>
-                            <p>At Hotel Hareesha, we believe in the magic of great taste. Taste you turn to every day, taste you count on as part of your life. We make taste that does more than merely satisfying your taste buds, it actually gives you less to worry about and more to look forward to.</p>
+                            <p>At Sapphire Marriott, we believe in the magic of great taste. Taste you turn to every day, taste you count on as part of your life. We make taste that does more than merely satisfying your taste buds, it actually gives you less to worry about and more to look forward to.</p>
                             <div class="links"><a href="#">Read more</a></div>
                         </div>
                     </div>
@@ -338,7 +354,7 @@
                         </div>
                         <div class="item">
                             <div class="blog-box">
-                                <p>Hareesha Holiday Resort is located in Yakkalamulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
+                                <p>Sapphire Marriott Holiday Resort is located in Yakkalamulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
                             </div>
                             <div class="blog-view-box">
                                 <div class="media">
@@ -433,7 +449,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. </p>
+                                <p>22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>
@@ -441,7 +457,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
@@ -463,12 +479,12 @@
                     <div class="footer-details">
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
-                            <li class="active"><a>Home</a></li>
-                            <li><a href="about">About</a></li>
+                            <li><a href="home">Home</a></li>
+                            <li class="active"><a>About</a></li>
                             <li><a href="rooms">Rooms</a></li>
+                            <li><a href="rooms">Banquet</a></li>
+                            <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
-                            <li><a href="dinning">Dinning</a></li>
-                            <li> <a href="news">News</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>

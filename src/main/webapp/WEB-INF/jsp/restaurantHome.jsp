@@ -51,7 +51,7 @@
                 <a href="feature.html" class="nav-item nav-link">Feature</a>
                 <a href="team.html" class="nav-item nav-link">Chef</a>
                 <a href="menu" class="nav-item nav-link">Menu</a>
-                <a href="booking.html" class="nav-item nav-link">Booking</a>
+                <a href="onlineTable" class="nav-item nav-link">Booking</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu">

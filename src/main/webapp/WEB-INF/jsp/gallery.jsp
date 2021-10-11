@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: prabo
-  Date: 10/10/2021
-  Time: 8:50 AM
+  Date: 10/11/2021
+  Time: 1:03 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -25,9 +25,34 @@
     <link href="../../css/onlineRe1/responsive.css" rel="stylesheet">
     <script src="../../js/onlineRe1/jquery.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/onlineRe1/jquery.imagesloaded.js"></script>
+    <script src="../../js/onlineRe1/masonry.pkgd.min.js"></script>
     <script src="../../js/onlineRe1/lightbox-plus-jquery.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/instafeed.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/custom.js" type="text/javascript"></script>
+    <style>
+        .grid {
+            background: rgba(0,0,0,0);
+        }
+        /* clear fix */
+        .grid:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        /* ---- .grid-item ---- */
+        .grid-sizer,
+        .grid-item {
+            width: 33.34%;
+        }
+        .grid-item {
+            float: left;
+        }
+        .grid-item img {
+            display: block;
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
 <div id="page">
@@ -76,12 +101,12 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a data-hover="Home" href="home"><span>Home</span></a></li>
-                                    <li><a data-hover="About"  class="active"><span>About</span></a></li>
+                                    <li><a  data-hover="Home" href="home"><span>Home</span></a></li>
+                                    <li><a data-hover="About" href="about"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
-                                    <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
+                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Gallery" class="active"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
                             </div>
@@ -97,32 +122,44 @@
 
 
     <!--end-->
-    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner3.jpg');">
+    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/inner-banner.png');">
         <div class="inner-wrapper">
-            <h1>About us</h1>
+            <h1>Gallery</h1>
         </div>
     </section>
     <div class="clearfix"></div>
 
-
-    <section class="about-block">
+    <section class="gallery-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 about-left">
-                    <p>Sapphire<label> Marriott</label></p>
-                </div>
-                <div class="col-md-7 about-right">
-                    <h3>A new level of luxury hospitality in Sri Lanka</h3>
-                    <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
-                    <ul class="list-unstyled list-inline">
-                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
-                        <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
-                        <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
-                    </ul>
+                <div class="grid hover-effect">
+                    <div class="grid-sizer"></div>
+                    <div class="grid-item percent37 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery1-1.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery1.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent25 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery2-2.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery2.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent37 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery3-3.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery3.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent25 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery4-4.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery4.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent37 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery5-5.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery5.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent20 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery6-6.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery6.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent20 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery7-7.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery7.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
+                    <div class="grid-item percent20 gallery-image">
+                        <a class="example-image-link img-responsive" href="../../images/reservation/gallery8-8.jpg" data-lightbox="example-1"><img src="../../images/reservation/gallery8.png" class="img-responsive" alt="gallery1"></a>
+                    </div>
                 </div>
             </div>
-            <div class="clearfix"> </div>
         </div>
     </section>
 
@@ -167,16 +204,16 @@
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
                             <li><a href="home">Home</a></li>
-                            <li class="active"><a>About</a></li>
+                            <li><a href="about">About</a></li>
                             <li><a href="rooms">Rooms</a></li>
                             <li><a href="rooms">Banquet</a></li>
                             <li><a href="rooms">Restaurant</a></li>
-                            <li><a href="gallery">Gallery</a></li>
+                            <li class="active"><a href="gallery">Gallery</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="footer-details">
                         <h4>Now On Instagram</h4>
                         <div class="row">
@@ -202,5 +239,20 @@
     </a>
 
 </div>
+<script>
+    var grid = document.querySelector('.grid');
+
+    var msnry = new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+    });
+
+    imagesLoaded(grid).on('progress', function () {
+        // layout Masonry after each image loads
+        msnry.layout();
+    });
+</script>
 </body>
 </html>
+

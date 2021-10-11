@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: prabo
-  Date: 10/10/2021
-  Time: 8:50 AM
+  Date: 10/8/2021
+  Time: 11:44 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -79,8 +79,8 @@
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -97,32 +97,96 @@
 
 
     <!--end-->
-    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner3.jpg');">
+    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner.jpg');">
         <div class="inner-wrapper">
-            <h1>About us</h1>
+            <h1>Rooms</h1>
         </div>
     </section>
     <div class="clearfix"></div>
 
-
-    <section class="about-block">
+    <!--gallery block--->
+    <section class="gallery-block gallery-front">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 about-left">
-                    <p>Sapphire<label> Marriott</label></p>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="gallery-image">
+                        <img class="img-responsive" src="../../images/reservation/room1.png">
+                        <div class="overlay">
+                            <a class="info pop example-image-link img-responsive" href="../../images/reservation/room1.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <p><a>Single Room</a></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-7 about-right">
-                    <h3>A new level of luxury hospitality in Sri Lanka</h3>
-                    <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
-                    <ul class="list-unstyled list-inline">
-                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
-                        <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
-                        <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
-                    </ul>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="gallery-image">
+                        <img class="img-responsive" src="../../images/reservation/room2.png">
+                        <div class="overlay">
+                            <a class="info pop example-image-link img-responsive" href="../../images/reservation/room2.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <p><a>Double Room</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="gallery-image">
+                        <img class="img-responsive" src="../../images/reservation/room3.png">
+                        <div class="overlay">
+                            <a class="info pop example-image-link img-responsive" href="../../images/reservation/room3.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <p><a>Quad Room</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="gallery-image">
+                        <img class="img-responsive" src="../../images/reservation/room4.png">
+                        <div class="overlay">
+                            <a class="info pop example-image-link img-responsive" href="../../images/reservation/room4.png" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            <p><a>Queen Room</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clearfix"> </div>
+        </div>
+    </section>
+
+    <!--service block--->
+    <section class="service-block">
+        <div class="bg-set-col">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="../../images/reservation/icons/wifi.png">
+                            </div>
+                            <h4><a>free wifi</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="../../images/reservation/icons/key.png">
+                            </div>
+                            <h4><a>room service</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="../../images/reservation/icons/car.png">
+                            </div>
+                            <h4><a>free parking</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="../../images/reservation/icons/user.png">
+                            </div>
+                            <h4><a>customer support</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -144,7 +208,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com">sapphiremarriott@gmail.com </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
@@ -167,16 +231,16 @@
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
                             <li><a href="home">Home</a></li>
-                            <li class="active"><a>About</a></li>
-                            <li><a href="rooms">Rooms</a></li>
-                            <li><a href="rooms">Banquet</a></li>
-                            <li><a href="rooms">Restaurant</a></li>
+                            <li><a href="about">About</a></li>
+                            <li class="active"><a>Rooms</a></li>
                             <li><a href="gallery">Gallery</a></li>
+                            <li><a href="dinning">Dinning</a></li>
+                            <li> <a href="news">News</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="footer-details">
                         <h4>Now On Instagram</h4>
                         <div class="row">
@@ -204,3 +268,4 @@
 </div>
 </body>
 </html>
+

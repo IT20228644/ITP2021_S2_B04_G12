@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: prabo
-  Date: 10/10/2021
-  Time: 8:50 AM
+  Date: 10/8/2021
+  Time: 11:42 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -79,8 +79,8 @@
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -97,35 +97,44 @@
 
 
     <!--end-->
-    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner3.jpg');">
+    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/contact1.png');">
         <div class="inner-wrapper">
-            <h1>About us</h1>
+            <h1>Contact Us</h1>
         </div>
     </section>
     <div class="clearfix"></div>
 
 
-    <section class="about-block">
+    <section class="contact-block">
         <div class="container">
-            <div class="row">
-                <div class="col-md-5 about-left">
-                    <p>Sapphire<label> Marriott</label></p>
-                </div>
-                <div class="col-md-7 about-right">
-                    <h3>A new level of luxury hospitality in Sri Lanka</h3>
-                    <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
-                    <ul class="list-unstyled list-inline">
-                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
-                        <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
-                        <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
-                    </ul>
-                </div>
+            <div class="col-md-6 contact-left-block">
+                <h3><span>Contact </span>Us</h3>
+                <p class="text-left">We are here to help and answer any question you might have. We look forward to hearing from you.</p>
+                <p class="text-right"> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. <i class="fa fa-map-marker fa-lg"></i></p>
+                <p class="text-right"><a href="tel:+94-76-673-7320"> +94-76-6737320 <i class="fa fa-phone fa-lg"></i></a></p>
+                <p class="text-right"><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com <i class="fa fa-envelope"></i></a></p>
             </div>
-            <div class="clearfix"> </div>
+            <div class="col-md-6 contact-form">
+                <h3>Send a <span>Message</span></h3>
+                <form action="" method="post">
+                    <input type="text" class="form-control" name="Name" placeholder="Name" required="">
+                    <input type="email" class="form-control" name="Email" placeholder="Email" required="">
+                    <textarea class="form-control" name="Message" placeholder="Message Here...." required=""></textarea>
+                    <input type="submit" class="submit-btn" value="Submit">
+                </form>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </section>
 
+    <!---map--->
+    <section class="offspace-70">
+        <div class="map">
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.20565399622!2d80.34800041448402!3d6.102984795580811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae16ed962653407%3A0xd1d0b4fa994c5691!2sHareesha%20Holiday%20Resort!5e0!3m2!1sen!2slk!4v1603281326668!5m2!1sen!2slk" frameborder="0" style="border:0; width: 100%; height: 400px" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
     <!---footer--->
     <footer>
         <div class="container">
@@ -167,16 +176,16 @@
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
                             <li><a href="home">Home</a></li>
-                            <li class="active"><a>About</a></li>
+                            <li><a href="about">About</a></li>
                             <li><a href="rooms">Rooms</a></li>
-                            <li><a href="rooms">Banquet</a></li>
-                            <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
-                            <li> <a href="contact">Contact</a></li>
+                            <li><a href="dinning">Dinning</a></li>
+                            <li> <a href="news">News</a></li>
+                            <li class="active"> <a href="contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="footer-details">
                         <h4>Now On Instagram</h4>
                         <div class="row">

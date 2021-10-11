@@ -80,6 +80,9 @@
     $('#time').datetimepicker({
         format: 'LT'
     });
+    $('#timee').datetimepicker({
+        format: 'LT'
+    });
 
 
     // Testimonials carousel

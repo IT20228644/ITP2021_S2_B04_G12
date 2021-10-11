@@ -11,6 +11,8 @@ import lk.sliit.hotel.dao.retaurantDAO.counterTableReservationDAO.CounterTableRe
 import lk.sliit.hotel.dao.retaurantDAO.counterTableReservationDAO.CounterTableReservationDetailsDAO;
 import lk.sliit.hotel.dao.retaurantDAO.onlineOrderDAO.RestaurantOnlineOrderDAO;
 import lk.sliit.hotel.dao.retaurantDAO.onlineOrderDAO.RestaurantOnlineOrderDetailsDAO;
+import lk.sliit.hotel.dao.retaurantDAO.onlineTableReservationDAO.OnlineTableReservationDAO;
+import lk.sliit.hotel.dao.retaurantDAO.onlineTableReservationDAO.OnlineTableReservationDetailsDAO;
 import lk.sliit.hotel.dto.kitchen.FoodItemDTO;
 import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDTO;
 import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDetailDTO;
@@ -21,6 +23,8 @@ import lk.sliit.hotel.dto.restaurant.ResTableReservationDTO;
 import lk.sliit.hotel.dto.restaurant.RestaurantTableDTO;
 import lk.sliit.hotel.dto.restaurant.restaurantOnlineOrder.RestaurantOnlineOrderDTO;
 import lk.sliit.hotel.dto.restaurant.restaurantOnlineOrder.RestaurantOnlineOrderDetailsDTO;
+import lk.sliit.hotel.dto.restaurant.restaurantOnlineTable.OnlineTableReservationDTO;
+import lk.sliit.hotel.dto.restaurant.restaurantOnlineTable.OnlineTableReservationDetailsDTO;
 import lk.sliit.hotel.entity.kitchen.FoodItem;
 import lk.sliit.hotel.entity.restaurant.RestaurantTable;
 import lk.sliit.hotel.entity.restaurant.counterOrder.RestaurantCounterOrder;
@@ -29,6 +33,8 @@ import lk.sliit.hotel.entity.restaurant.counterTableReservation.CounterTableRese
 import lk.sliit.hotel.entity.restaurant.counterTableReservation.CounterTableReservationDetails;
 import lk.sliit.hotel.entity.restaurant.onlineOrder.RestaurantOnlineOrder;
 import lk.sliit.hotel.entity.restaurant.onlineOrder.RestaurantOnlineOrderDetails;
+import lk.sliit.hotel.entity.restaurant.onlineTableReservation.OnlineTableReservation;
+import lk.sliit.hotel.entity.restaurant.onlineTableReservation.OnlineTableReservationDetails;
 import lk.sliit.hotel.service.custom.RestaurantBO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,10 +74,10 @@ public class RestaurantBOImpl implements RestaurantBO {
     @Autowired
     CounterTableReservationDetailsDAO counterTableReservationDetailsDAO;
 
-//    @Autowired
-//    OnlineTableReservationDetailsDAO onlineTableReservationDetailsDAO;
-//    @Autowired
-//    OnlineTableReservationDAO onlineTableReservationDAO;
+    @Autowired
+    OnlineTableReservationDetailsDAO onlineTableReservationDetailsDAO;
+    @Autowired
+    OnlineTableReservationDAO onlineTableReservationDAO;
 
 /*------------------------------------------------------------counter order------------------------------------------------*/
     //find highest id to save
@@ -650,7 +656,82 @@ public class RestaurantBOImpl implements RestaurantBO {
         }
         return returnlist;
     }
+    /*-----------------------------------online table---------------------------------------------*/
 
+    @Override
+    public OnlineTableReservationDTO findHighestOnlineTableId() {
+        OnlineTableReservation lastItem = null;
+        try {
+            lastItem = onlineTableReservationDAO.findTopByOrderByOnlineTableReservationIdDesc();
+        } catch (Exception e) {
+
+        }
+        return new OnlineTableReservationDTO(lastItem.getOnlineTableReservationId());
+    }
+
+    //save reservation
+    @Override
+    public void saveOnlineTableId(OnlineTableReservationDTO onlineTableReservationDTO) {
+        java.util.List<OnlineTableReservationDetailsDTO> list = new ArrayList<>();
+        String arr = onlineTableReservationDTO.getOrderData();
+
+        String yo[] = arr.split(" ");// Add booked table String to array
+        int count = 0;
+        OnlineTableReservationDetailsDTO itm = new OnlineTableReservationDetailsDTO();
+        for (String str : yo) {//read array
+            if (count == 0) {
+                itm = new OnlineTableReservationDetailsDTO();
+                itm.setTableId(Integer.parseInt(str));
+                list.add(itm);
+                count = 0;
+
+            }
+        }
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, 0);
+        java.util.Date today = cal.getTime();
+        onlineTableReservationDTO.setDate(today);
+        onlineTableReservationDAO.save(new OnlineTableReservation(
+                onlineTableReservationDTO.getOnlineTableReservationId(),
+                java.sql.Date.valueOf(onlineTableReservationDTO.getvDate()),//convert string to date
+                onlineTableReservationDTO.getDate(),
+                Time.valueOf(onlineTableReservationDTO.getvStatT()),//convert string to time,
+                Time.valueOf(onlineTableReservationDTO.getvEndT()),
+                list.size(),
+                onlineCustomerDAO.findOne(onlineTableReservationDTO.getCustomer())));//Save In counter table
+
+
+
+        for (OnlineTableReservationDetailsDTO orderDetail : list) {//Save Table Details
+            onlineTableReservationDetailsDAO.save(new OnlineTableReservationDetails(
+                    orderDetail.getTableId(),
+                    onlineTableReservationDTO.getOnlineTableReservationId(),list.size(),500
+            ));
+
+        }
+
+
+    }
+ //get all the resevations online
+    @Override
+    public List<OnlineTableReservationDTO> findTablesOnline() {
+        java.util.Date todaydate = new java.util.Date();
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -1);
+        java.util.Date dt = cal.getTime();
+        //Find all Date Between(before 1 month)
+        Iterable<OnlineTableReservation> all4 = onlineTableReservationDAO.findAllByReservedDateBetween(dt, todaydate);
+        List<OnlineTableReservationDTO> tableDTOList = new ArrayList<>();
+        for (OnlineTableReservation item : all4) {
+            tableDTOList.add(new OnlineTableReservationDTO(
+                    item.getOnlineTableReservationId(),
+                    item.getDate(),
+                    item.getStartTime(),
+                    item.getEndTime()
+            ));
+        }
+        return tableDTOList;
+    }
 }
 
 

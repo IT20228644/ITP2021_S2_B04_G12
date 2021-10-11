@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: prabo
-  Date: 10/10/2021
-  Time: 8:50 AM
+  Date: 10/11/2021
+  Time: 10:37 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
-    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
+    <title>Luxury Hotel in Negombo | Hotel Sapphire</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
@@ -22,13 +22,46 @@
     <link href="../../css/onlineRe1/style.css" rel="stylesheet">
     <link href="../../fonts/antonio-exotic/stylesheet.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/onlineRe1/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/availableRooms/styles.css" media="all" />
+
     <link href="../../css/onlineRe1/responsive.css" rel="stylesheet">
     <script src="../../js/onlineRe1/jquery.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/onlineRe1/jquery.imagesloaded.js"></script>
+    <script src="../../js/onlineRe1/masonry.pkgd.min.js"></script>
     <script src="../../js/onlineRe1/lightbox-plus-jquery.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/instafeed.min.js" type="text/javascript"></script>
     <script src="../../js/onlineRe1/custom.js" type="text/javascript"></script>
-</head>
+
+
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href=http://www.freshdesignweb.com/wp-content/themes/fv24/images/icon.ico />
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
+        <title>Hareesha</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
+        <link href="../../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Custom styles for this template -->
+        <link href="../../css/onlineRe1/style.css" rel="stylesheet">
+        <link href="../../fonts/antonio-exotic/stylesheet.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/onlineRe1/lightbox.min.css">
+        <link href="../../css/onlineRe1/responsive.css" rel="stylesheet">
+        <script src="../../js/onlineRe1/jquery.min.js" type="text/javascript"></script>
+        <script src="../../js/onlineRe1/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../js/onlineRe1/lightbox-plus-jquery.min.js" type="text/javascript"></script>
+        <script src="../../js/onlineRe1/instafeed.min.js" type="text/javascript"></script>
+        <script src="../../js/onlineRe1/custom.js" type="text/javascript"></script>
+    </head>
 <body>
 <div id="page">
     <!---header top---->
@@ -61,7 +94,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 visible-sm">
-                        <div class="text-right"><a href="customerLogin" > <button type="button" class="book-now-btn">Log In</button></a></div>
+                        <div class="text-right"><button type="button" class="book-now-btn">Book Now</button></div>
                     </div>
                     <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                         <nav class="navbar navbar-default">
@@ -76,9 +109,9 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a data-hover="Home" href="home"><span>Home</span></a></li>
-                                    <li><a data-hover="About"  class="active"><span>About</span></a></li>
-                                    <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
+                                    <li><a  data-hover="Home" href="home"><span>Home</span></a></li>
+                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>
+                                    <li><a data-hover="Rooms"  class="active"><span>Rooms</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
@@ -88,7 +121,7 @@
                         </nav>
                     </div>
                     <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-                        <div class="text-right"><a href="customerLogin" > <button type="button" class="book-now-btn">Log In</button></a></div>
+                        <div class="text-right"><a href="onlineReservation" > <button type="button" class="book-now-btn">Book Now</button></a></div>
                     </div>
                 </div>
             </div>
@@ -97,35 +130,95 @@
 
 
     <!--end-->
-    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner3.jpg');">
+
+    <section class="image-head-wrapper" style="background-image: url('../../images/reservation/banner.jpg');">
         <div class="inner-wrapper">
-            <h1>About us</h1>
+            <h1>Room Selection</h1>
         </div>
     </section>
     <div class="clearfix"></div>
 
+    <div class="container">
+        <header>
+            <div id="fdw-pricing-table">
+                <div class="plan plan1">
+                    <div class="header">Single</div>
+                    <div class="price">LKR 2000</div>
+                    <div class="monthly">per night</div>
+                    <ul>
+                        <li><b>60 Square Meter</b> Room Size</li>
+                        <li><b>1 GB</b> Free Wi-Fi</li>
+                        <li>Tea/Coffee maker</li>
+                        <li>Air conditioning</li>
+                        <li>Tile/Marble floor</li>
+                        <li>Soundproof</li>
+                        <li>Ironing facilities</li>
+                        <li>Electric kettle</li>
 
-    <section class="about-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 about-left">
-                    <p>Sapphire<label> Marriott</label></p>
-                </div>
-                <div class="col-md-7 about-right">
-                    <h3>A new level of luxury hospitality in Sri Lanka</h3>
-                    <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
-                    <ul class="list-unstyled list-inline">
-                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
-                        <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
-                        <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
                     </ul>
+                    <!--
+                    <a href="#" > <button type="button" class="book-now-btn">Book Now</button></a>
+                    -->
+                </div>
+                <div class="plan plan2"> <!-- plan 2 popular-plan -->
+                    <div class="header">Double</div>
+                    <div class="price">LKR 3500</div>
+                    <div class="monthly">per night</div>
+                    <ul>
+                        <li><b>90 Square Meter</b> Room Size</li>
+                        <li><b>2 GB</b> Free Wi-Fi</li>
+                        <li>Tea/Coffee maker</li>
+                        <li>Air conditioning</li>
+                        <li>Tile/Marble floor</li>
+                        <li>Soundproof</li>
+                        <li>Ironing facilities</li>
+                        <li>Electric kettle</li>
+                    </ul>
+                    <!--
+                    <a href="#" > <button type="button" class="book-now-btn">Book Now</button></a>
+                    -->
+
+                </div>
+                <div class="plan plan3">
+                    <div class="header">Quad</div>
+                    <div class="price">LKR 5000</div>
+                    <div class="monthly">per night</div>
+                    <ul>
+                        <li><b>108 Square Meter</b> Room Size</li>
+                        <li><b>3 GB</b> Free Wi-Fi</li>
+                        <li>Tea/Coffee maker</li>
+                        <li>Air conditioning</li>
+                        <li>Tile/Marble floor</li>
+                        <li>Soundproof</li>
+                        <li>Ironing facilities</li>
+                        <li>Electric kettle</li>
+                    </ul>
+                    <!--
+                    <a href="#" > <button type="button" class="book-now-btn">Book Now</button></a>
+                    -->
+                </div>
+                <div class="plan plan4">
+                    <div class="header">Premium</div>
+                    <div class="price">LKR 7500</div>
+                    <div class="monthly">per night</div>
+                    <ul>
+                        <li><b>130 Square Meter</b> Room Size</li>
+                        <li><b>5 GB</b> Free Wi-Fi</li>
+                        <li>Tea/Coffee maker</li>
+                        <li>Air conditioning</li>
+                        <li>Tile/Marble floor</li>
+                        <li>Soundproof</li>
+                        <li>Ironing facilities</li>
+                        <li>Electric kettle</li>
+                    </ul>
+                    <!--
+                    <a href="#" > <button type="button" class="book-now-btn">Book Now</button></a>
+                    -->
                 </div>
             </div>
-            <div class="clearfix"> </div>
-        </div>
-    </section>
+        </header><!-- end header -->
 
+    </div>
     <!---footer--->
     <footer>
         <div class="container">
@@ -144,7 +237,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com</a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
@@ -167,8 +260,8 @@
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
                             <li><a href="home">Home</a></li>
-                            <li class="active"><a>About</a></li>
-                            <li><a href="rooms">Rooms</a></li>
+                            <li class="about"><a>About</a></li>
+                            <li><a href="active">Rooms</a></li>
                             <li><a href="rooms">Banquet</a></li>
                             <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
