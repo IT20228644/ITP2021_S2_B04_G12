@@ -71,6 +71,10 @@ public interface RestaurantBO {
 
     List<ResTableReservationDTO> getCounterTableReservationByDate(Date date);
 
+    List<ResTableReservationDTO> getOnlineTableReservationByDate(Date date);
+
+
+
     boolean taketableRese(ResTableReservationDTO order);
 
     void confirmtableRese(ResTableReservationDTO orderDTO);

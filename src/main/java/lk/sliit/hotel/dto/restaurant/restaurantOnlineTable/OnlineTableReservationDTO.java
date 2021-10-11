@@ -34,6 +34,18 @@ public class OnlineTableReservationDTO {
         this.customer = customer;
     }
 
+    public OnlineTableReservationDTO(int onlineTableReservationId, Date reservedDate,
+                                     Date date, Date startTime, Date endTime, int noOfTables) {
+        this.onlineTableReservationId = onlineTableReservationId;
+        this.reservedDate = reservedDate;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.noOfTables = noOfTables;
+
+    }
+
+
     public OnlineTableReservationDTO() {
     }
 

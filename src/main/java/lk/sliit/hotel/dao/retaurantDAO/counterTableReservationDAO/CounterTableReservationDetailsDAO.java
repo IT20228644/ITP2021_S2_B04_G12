@@ -5,5 +5,6 @@ import lk.sliit.hotel.entity.restaurant.counterTableReservation.CounterTableRese
 import org.springframework.data.repository.CrudRepository;
 
 public interface CounterTableReservationDetailsDAO extends CrudRepository<CounterTableReservationDetails,Integer> {
+
     Iterable<CounterTableReservationDetails> findAllByCounterTableReservationEquals(CounterTableReservation item);
 }

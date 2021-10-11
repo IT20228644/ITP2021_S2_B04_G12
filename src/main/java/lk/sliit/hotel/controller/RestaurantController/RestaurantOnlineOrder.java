@@ -39,6 +39,7 @@ public class RestaurantOnlineOrder {
 
     @GetMapping("/restaurantHome")
     public String loadHome(){
+
         return "restaurantHome";
     }
 
