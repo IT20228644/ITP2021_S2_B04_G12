@@ -340,7 +340,7 @@ public class BanquetOnlineAdd {
         try {
             int count = banquetBO.checkAvailability(banquetAddDTO.getDate());
             int count6 = banquetBO.checkAvailability(banquetOnlineOrderDTO.getDate());
-            if (count < 2 || count6 <2) {
+            if (count < 2 || count6 < 2) {
                 if (banquetAddDTO.getHallId().equals("No 1")) {
                     int count1 = banquetBO.checkHallOneAvailability(banquetAddDTO.getDate());
                     int count4=banquetBO.checkHallOneAvailability2(banquetOnlineOrderDTO.getDate());
@@ -366,8 +366,8 @@ public class BanquetOnlineAdd {
 //                    }
                     if (banquetAddDTO.getHallId().equals("No 2")) {
                         int count2 = banquetBO.checkHallTwoAvailabilityCheck(banquetAddDTO.getDate());
-                        int count5=banquetBO.checkHallOneAvailability2(banquetOnlineOrderDTO.getDate());
-                        if (count2 < 1 || count5 < 1) {
+                        int count5 = banquetBO.checkHallTwoAvailabilityCheck2(banquetOnlineOrderDTO.getDate());
+                        if (count2 < 1 && count5 < 1) {
 //                           //banquetBO.saveBanquet(banquetAddDTO);
                           banquetBO.saveOnlineBanquet(banquetAddDTO);
                             request.setAttribute("successfulMsg", "added successfully");

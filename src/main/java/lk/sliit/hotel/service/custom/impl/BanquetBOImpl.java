@@ -88,12 +88,12 @@ public class BanquetBOImpl implements BanquetBO {
 
         java.util.Date todayDate = new java.util.Date();
         Calendar cal1 = Calendar.getInstance();
-//        Calendar cal1 = Calendar.getInstance();
-        cal1.add(Calendar.DATE, 4);
+        cal1.add(Calendar.DATE, -4);
         java.util.Date previousFourDays = cal1.getTime();
 
 
-        Iterable <BanquetOnlineOrder> banquetOnlineOrder = banquetOnlineOrderDAO.findLastOnlineBanquetOrdersByDateEquals(previousFourDays);
+
+        Iterable <BanquetOnlineOrder> banquetOnlineOrder = banquetOnlineOrderDAO.findBanquetOnlineOrderByOrderDateEquals(previousFourDays);
         List <BanquetAddDTO> confirmedOnlineBanquet= new ArrayList<>();
         for ( BanquetOnlineOrder a: banquetOnlineOrder){
             confirmedOnlineBanquet.add(new BanquetAddDTO(
@@ -389,8 +389,9 @@ public class BanquetBOImpl implements BanquetBO {
                 banquetOnlineCustomerDTO.getName(),
                 banquetOnlineCustomerDTO.getEmail(),
                 banquetOnlineCustomerDTO.getAddress(),
-                banquetOnlineCustomerDTO.getPhoneNo(),
-                banquetOnlineCustomerDTO.getPassword()
+//                banquetOnlineCustomerDTO.getPhoneNo(),
+                banquetOnlineCustomerDTO.getPassword(),
+                banquetOnlineCustomerDTO.getPhoneNo()
 
 
         ));

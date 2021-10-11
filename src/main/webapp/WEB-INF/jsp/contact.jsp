@@ -145,7 +145,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. </p>
+                                <p> 22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>
@@ -153,7 +153,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
