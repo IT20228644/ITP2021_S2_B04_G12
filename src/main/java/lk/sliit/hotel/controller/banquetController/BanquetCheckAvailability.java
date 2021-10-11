@@ -51,7 +51,7 @@ public class BanquetCheckAvailability {
         else if(count6 == 2){
             answer1 =":Date not Available";
         }
-        else if(count==1 && count6 == 1){
+        else if(count == 1 && count6 == 1){
             answer1=":Date not Available";
         }
         else{

@@ -74,7 +74,7 @@
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Banquet" href="homeBanquet"><span>Banquet</span></a></li>
                                     <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>

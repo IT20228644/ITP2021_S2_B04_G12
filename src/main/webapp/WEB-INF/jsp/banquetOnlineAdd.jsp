@@ -131,9 +131,14 @@
         /*//////////////////////////////////////////////////////////////*/
 
         .containerx {
-            display: flex;
+            display:flex;
+            background: url("/images/newHotel3.jpg");
+            padding-top: 20px;
+            padding-bottom: 50px;
+
 
         }
+
 
         .btnq {
             text-decoration: none;
@@ -169,168 +174,159 @@
             left: 100%;
         }
 
+        .text1 {
+            font-family: -apple-system;
+            padding-left: 150px;
+
+
+        }
+
+
+
     </style>
 
 </head>
 
 <body class="nav-md" style="cursor: pointer">
-<div class="container body">
-    <div class="main_container">
+<div class="container body center-margin">
+    <div class="main_container containerx">
 
 
-        <!-- Side header -->
-        <jsp:include page="sideHeader.jsp"/>
-        <!-- /Side header -->
+<%--        <!-- Side header -->--%>
+<%--        <jsp:include page="sideHeader.jsp"/>--%>
+<%--        <!-- /Side header -->--%>
 
-        <!-- Top header -->
-        <jsp:include page="topHeader.jsp"/>
-        <!-- /Top header -->
+<%--        <!-- Top header -->--%>
+<%--        <jsp:include page="topHeader.jsp"/>--%>
+<%--        <!-- /Top header -->--%>
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div  class="right_col col-8" role="main">
             <div class="page-title">
-                <div class="title_left">
-                    <h3>Add Banquet<h4>Welcome to Sapphire Marriott</h4>
-                    </h3>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                            <a href="/banquet">
-                                <button style=" border: 3px solid #4c2a18;  background-color: #8c6f60;
-                                    color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">
-                                    Back</i>
-                                </button>
-                            </a>
+                <div class="text1">
+                    <h3>Get in Touch with Our Wedding Specialist</h3>
+                    <div class="col-14 col-sm-14 col-md-14 col-lg-14 col-xl-14">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<%--                            <a href="/banquet">--%>
+<%--                                <button style=" border: 3px solid #4c2a18;  background-color: #8c6f60;--%>
+<%--                                    color: #c6d4d3;font-weight: bolder" type="button"  class="btnq2 btn"><i class="fa fa-reply">--%>
+<%--                                    Back</i>--%>
+<%--                                </button>--%>
+<%--                            </a>--%>
 
                         </div>
 
                     </div>
                 </div>
 
-                <%--Time--%>
-                <div class="title_right">
+<%--                &lt;%&ndash;Time&ndash;%&gt;--%>
+<%--                <div class="title">--%>
 
-                    <script>
+<%--                    <script>--%>
 
-                        function formatTime() {
-                            now = new Date();
-                            hour = now.getHours();
-                            min = now.getMinutes();
-                            sec = now.getSeconds();
+<%--                        function formatTime() {--%>
+<%--                            now = new Date();--%>
+<%--                            hour = now.getHours();--%>
+<%--                            min = now.getMinutes();--%>
+<%--                            sec = now.getSeconds();--%>
 
-                            if (document.clock.sivamtime[0].checked) {
-                                if (min <= 9) {
-                                    min = "0" + min;
-                                }
-                                if (sec <= 9) {
-                                    sec = "0" + sec;
-                                }
-                                if (hour > 12) {
-                                    hour = hour - 12;
-                                    add = " p.m.";
-                                } else {
-                                    hour = hour;
-                                    add = " a.m.";
-                                }
-                                if (hour == 12) {
-                                    add = " p.m.";
-                                }
-                                if (hour == 0) {
-                                    hour = "12";
-                                }
+<%--                            if (document.clock.sivamtime[0].checked) {--%>
+<%--                                if (min <= 9) {--%>
+<%--                                    min = "0" + min;--%>
+<%--                                }--%>
+<%--                                if (sec <= 9) {--%>
+<%--                                    sec = "0" + sec;--%>
+<%--                                }--%>
+<%--                                if (hour > 12) {--%>
+<%--                                    hour = hour - 12;--%>
+<%--                                    add = " p.m.";--%>
+<%--                                } else {--%>
+<%--                                    hour = hour;--%>
+<%--                                    add = " a.m.";--%>
+<%--                                }--%>
+<%--                                if (hour == 12) {--%>
+<%--                                    add = " p.m.";--%>
+<%--                                }--%>
+<%--                                if (hour == 0) {--%>
+<%--                                    hour = "12";--%>
+<%--                                }--%>
 
-                                document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;
-                            }
+<%--                                document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;--%>
+<%--                            }--%>
 
-                            if (document.clock.sivamtime[1].checked) {
-                                if (min <= 9) {
-                                    min = "0" + min;
-                                }
-                                if (sec <= 9) {
-                                    sec = "0" + sec;
-                                }
-                                if (hour < 10) {
-                                    hour = "0" + hour;
-                                }
-                                document.clock.sivam.value = hour + ':' + min + ':' + sec;
-                            }
+<%--                            if (document.clock.sivamtime[1].checked) {--%>
+<%--                                if (min <= 9) {--%>
+<%--                                    min = "0" + min;--%>
+<%--                                }--%>
+<%--                                if (sec <= 9) {--%>
+<%--                                    sec = "0" + sec;--%>
+<%--                                }--%>
+<%--                                if (hour < 10) {--%>
+<%--                                    hour = "0" + hour;--%>
+<%--                                }--%>
+<%--                                document.clock.sivam.value = hour + ':' + min + ':' + sec;--%>
+<%--                            }--%>
 
-                            setTimeout("formatTime()", 1000);
-                        }
+<%--                            setTimeout("formatTime()", 1000);--%>
+<%--                        }--%>
 
-                        window.onload = formatTime;
+<%--                        window.onload = formatTime;--%>
 
-                    </script>
-                    <form name="clock" style="float: right">
-                        <table class="clock" width="135">
-                            <tr>
-                                <td class="clock2">
-                                </td>
-                            </tr>
-                            <tr>
-                                <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">
-                                    <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"
-                                           class="clock2" type="text" name="sivam" size="12"><br>
-                                    <p><%=date%>
-                                    </p>
-                                </h6>
+<%--                    </script>--%>
+<%--                    <form name="clock" style="float: right">--%>
+<%--                        <table class="clock" width="100">--%>
+<%--                            <tr>--%>
+<%--                                <td class="clock2">--%>
+<%--                                </td>--%>
+<%--                            </tr>--%>
+<%--                            <tr>--%>
+<%--                                <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">--%>
+<%--                                    <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"--%>
+<%--                                           class="clock2" type="text" name="sivam" size="10"><br>--%>
+<%--                                    <p><%=date%>--%>
+<%--                                    </p>--%>
+<%--                                </h6>--%>
 
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="clock3" for="1"><input type="radio" style="display: none" id="1"
-                                                                         name="sivamtime" checked></label><br>
-                                    <label class="clock3" for="2"><input type="radio" style="display: none" id="2"
-                                                                         name="sivamtime"></label>
-                                </td>
-                            </tr>
-                        </table>
+<%--                            </tr>--%>
+<%--                            <tr>--%>
+<%--                                <td>--%>
+<%--                                    <label class="clock3" for="1"><input type="radio" style="display: none" id="1"--%>
+<%--                                                                         name="sivamtime" checked></label><br>--%>
+<%--                                    <label class="clock3" for="2"><input type="radio" style="display: none" id="2"--%>
+<%--                                                                         name="sivamtime"></label>--%>
+<%--                                </td>--%>
+<%--                            </tr>--%>
+<%--                        </table>--%>
 
-                    </form>
-                </div>
-            </div>
-            <%--/Time--%>
+<%--                    </form>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            &lt;%&ndash;/Time&ndash;%&gt;--%>
 
             <%--Input Feilds--%>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="col-12 col-sm-12 col-md-14 col-lg-14 col-xl-14">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <form method="POST"  action="saveOnlineBanquet" name="saveOnlineBanquet">
+
+                    <form method="POST" action="saveOnlineBanquet" name="saveOnlineBanquet">
+                        <br><br>
+                        <h6><i><u>Contact Detail</u></i></h6>
 
                         <div class="form-group">
 
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <br>
-                                <label>Online Id</label>
-                                <br>
-                                <input type="number" value="${topOnlineNo}" class="form-control"
+                                <input type="hidden" value="${topOnlineNo}" class="form-control"
                                                       required="required" name="onlineNo"
                                                       id="onlineNo" placeholder="Online No" readonly/></div>
 
 
                         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                             <br>
-                                <label for="onlineNo">Customer Id</label>
-                                <input type="number" value="${topBanquetCustomerId}" class="form-control"
+<%--                                <label for="onlineNo">Customer Id</label>--%>
+                                <input type="hidden" value="${topBanquetCustomerId}" class="form-control"
                                        required="required" name="customerId"
                                        id="customerId" placeholder="Customer Id" readonly/></div>
 
                         </div>
-
-                        <div class="form-group">
-
-
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                            <label for="onlineNo">Order Date</label>
-                            <input type="date" class="form-control"
-                                   required="required" name="orderDate"
-                                   id="orderDate" placeholder="Order Date"/></div>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
-                            <label for="onlineNo">Booking Date</label>
-                            <input type="date" class="form-control"
-                                   required="required" name="date"
-                                   id="date" placeholder="Date"/></div>
-
 
                         <div class="form-group">
 
@@ -354,14 +350,38 @@
                                 <label for="onlineNo">Email</label>
                                 <input type="email" class="form-control"
                                        required="required" name="email"
-                                       id="email" placeholder="Email"/></div>
+                                       id="email" placeholder="Email"/><br><br></div>
 
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"> <br>
                                 <label for="onlineNo">Mobile No</label>
                                 <input type="tel" class="form-control"
                                        pattern="[0-9]{10}" required name="contactNo"
-                                       id="contactNo" placeholder="Mobile No"/></div>
+                                       id="contactNo" placeholder="Mobile No"/> <br><br><br></div>
+
                         </div>
+
+                        <div class="title">
+
+                            <h6><u><i>Order Detail</i></u></h6></div>
+
+                        <div class="form-group">
+                            <br>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <label for="onlineNo">Order Date</label>
+                            <input type="date" class="form-control"
+                                   required="required" name="orderDate"
+                                   id="orderDate" placeholder="Order Date"/></div>
+<%--                        </div>--%>
+
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <label for="onlineNo">Booking Date</label>
+                            <input type="date" class="form-control"
+                                   required="required" name="date"
+                                   id="date" placeholder="Date"/></div>
+                    </div>
+
+
+
 
                         <div class="form-group">
 
@@ -412,85 +432,42 @@
 
                         </div>
 
-                        <button type='submit' class="btn btn-primary" style="width: 50%; top: 20px; position: relative" value="Register">
+<%--                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"> <br>--%>
+<%--                            <label>Aditional Request</label>--%>
+<%--                           <textarea id="aditional" name="aditionanal"--%>
+<%--                                     placeholder="Input your additional requirement.."></textarea>--%>
+<%--                </div>--%>
+                        <br>
+                        <label>
+                            <br><br>
+                            <input type="checkbox" id ="check" name="check" onclick="terms_changed(this)"> By ticking this box,
+                            I agree to receive Meetings & Events marketing materials,
+                            </label>
+
+
+                     <div style="padding-left: 180px">
+                         <br><br>
+                        <button type='submit' id="btnS" class="btn btn-default" style="background-color: rgba(189,175,122,0.89); width: 200px; top: 20px; position: relative" value="Register" disabled>
                             Submit
                         </button>
-                        <button type='reset' class="btn btn-outline-success" style="top: 20px; position: relative" value="">Reset</button>
+                        <button type='reset' class="btn btn-outline-success" style="width:150px; top: 20px; position: relative" value="">Reset</button>
+                     </div>
 
                     </form>
+                    <button>
+                        <a href="/banquetCheckAvailability">Checking Date</a></button>
                 </div>
-<%--                &lt;%&ndash;/Input Feilds&ndash;%&gt;--%>
-<%--                &lt;%&ndash;Table&ndash;%&gt;--%>
-<%--                <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">--%>
-<%--                    <div class="row">--%>
-<%--                        <div class="x_panel">--%>
-<%--                            <div class="x_title">--%>
-<%--                                <h2>Registered Customers--%>
-<%--                                    <small>Find customers</small>--%>
-<%--                                </h2>--%>
-<%--                                <ul class="nav navbar-right panel_toolbox">--%>
-<%--                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>--%>
-<%--                                    </li>--%>
-<%--                                    <li class="dropdown">--%>
-<%--                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"--%>
-<%--                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>--%>
-<%--                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">--%>
-<%--                                            <a class="dropdown-item" href="#">Settings 1</a>--%>
-<%--                                        </div>--%>
-<%--                                    </li>--%>
-<%--                                    <li><a class="close-link"><i class="fa fa-close"></i></a>--%>
-<%--                                    </li>--%>
-<%--                                </ul>--%>
-<%--                                <div class="clearfix"></div>--%>
-<%--                            </div>--%>
-<%--                            <div class="x_content">--%>
-<%--                                <div class="row">--%>
-<%--                                    <div class="col-sm-12">--%>
-<%--                                        <div class="card-box table-responsive">--%>
-<%--                                            <table id="datatable-buttons" class="table table-striped table-bordered">--%>
-<%--                                                <thead class="thead-light">--%>
-<%--                                                <tr>--%>
-<%--                                                    <th>Customer Id</th>--%>
-<%--                                                    <th>Name</th>--%>
-<%--                                                    <th>Address</th>--%>
-<%--                                                    <th>MobileNo</th>--%>
-<%--                                                    <th>Email</th>--%>
-
-
-<%--                                                </tr>--%>
-
-<%--                                                </thead>--%>
-<%--                                                <tbody>--%>
-<%--                                                <c:forEach items="${loadTable}" var="a">--%>
-<%--                                                    <tr>--%>
-<%--                                                        <td>${a.customerId}</td>--%>
-<%--                                                        <td>${a.name}</td>--%>
-<%--                                                        <td>${a.address}</td>--%>
-<%--                                                        <td>${a.contactNo}</td>--%>
-<%--                                                        <td>${a.email}</td>--%>
-<%--                                                    </tr>--%>
-<%--                                                </c:forEach>--%>
-<%--                                                </tbody>--%>
-<%--                                            </table>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                &lt;%&ndash;/Table&ndash;%&gt;--%>
-
-                <%--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////--%>
 
 
             </div>
         </div>
-        <!-- /page content -->
 
-        <!-- footer content -->
-        <jsp:include page="footer.jsp"/>
-        <!-- /footer content -->
+<%--        <!-- /page content -->--%>
+
+<%--        <!-- footer content -->--%>
+<%--        <jsp:include page="footer.jsp"/>--%>
+<%--        <!-- /footer content -->--%>
+        </div>
     </div>
 </div>
 
@@ -570,6 +547,20 @@
             dateController.currentDate = $(this).val();
         }
     });
+</script>
+
+<script>
+    function terms_changed(check){
+        //If the checkbox has been checked
+        if(check.checked){
+            //Set the disabled property to FALSE and enable the button.
+            document.getElementById("btnS").disabled = false;
+        } else{
+            //Otherwise, disable the submit button.
+            alert("Please checked the button.....")
+            document.getElementById("btnS").disabled = true;
+        }
+    }
 </script>
 
 

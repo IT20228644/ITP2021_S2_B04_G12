@@ -38,21 +38,23 @@ public class BanquetCancel {
 
         return mv;
     }
-    @GetMapping("Cancelbanquet")
-    public ModelAndView loginPage1(Model model){
-        ModelAndView mv = new ModelAndView("Cancelbanquet");
-        model.addAttribute(indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//    @GetMapping("Cancelbanquet")
+//    public ModelAndView loginPage1(Model model){
+//        ModelAndView mv = new ModelAndView("Cancelbanquet");
+//        model.addAttribute(indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//
+//        //Display confirmed banquet table
+//        List<BanquetAddDTO> list1 = banquetBO.findConfirmedBanquet();
+//        mv.addObject("loadTable1",list1);
+//
+//        //Display unconfirmed banquet table
+//        List<BanquetAddDTO> list2 = banquetBO.findUnconfirmedBanquet();
+//        mv.addObject("loadTable2",list2);
+//
+//        return mv;
+//    }
 
-        //Display confirmed banquet table
-        List<BanquetAddDTO> list1 = banquetBO.findConfirmedBanquet();
-        mv.addObject("loadTable1",list1);
 
-        //Display unconfirmed banquet table
-        List<BanquetAddDTO> list2 = banquetBO.findUnconfirmedBanquet();
-        mv.addObject("loadTable2",list2);
-
-        return mv;
-    }
     //update banquet status to cancel
     @RequestMapping("updateBanquetStatusToCancel")
     public String updateDeleteStatus(@RequestParam int orderId){
