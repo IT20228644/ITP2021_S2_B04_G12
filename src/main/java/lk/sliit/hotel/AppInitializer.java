@@ -110,7 +110,6 @@ public class AppInitializer {
 //}//End Class
 
 
-
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
