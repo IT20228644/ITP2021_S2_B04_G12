@@ -102,8 +102,8 @@
                 <a href="restaurantOnlineCustomer" class="nav-item nav-link" style="color:white;font-weight:900;">Login</a>
                 </button>
 
-                <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;">
-                <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
+                <a href="profile">  <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;"></a>
+             <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
 
 <%--                <nav>--%>
 <%--                    <ul id="top_nav">--%>

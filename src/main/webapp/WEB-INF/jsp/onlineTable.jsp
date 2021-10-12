@@ -106,10 +106,10 @@
             </div>
             <div class="col-lg-5">
                 <div class="booking-form">
-                    <form name="form1" id="ff" action="checkTimeForTable">
+                    <form name="form1" id="form1" action="checkTimeForTable">
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="date" placeholder="Booking Date" name="vDate" id="vDate" required class="form-control datetimepicker-input">
+                                <input type="date" placeholder="Booking Date" name="vDate" id="vDate" onchange="getDate()" required class="form-control datetimepicker-input">
                             </div>
                         </div>
                         <div class="control-group">
@@ -124,7 +124,7 @@
                             </div>
                         </div>
 
-                        <input  type="submit" name="Submit" value="Check" class="btn custom-btn">
+                        <input  type="submit" name="Submit" value="Check" onclick="getAll()" class="btn custom-btn">
 
                     </form>
                 </div>
@@ -209,5 +209,64 @@
 
 
 <script type="text/javascript"> Cufon.now(); </script>
+<%--<script>--%>
+<%--    var dateController = {--%>
+<%--        currentDate : null--%>
+<%--    }--%>
+
+<%--    $(document).on( "change", "#vDate",function( event, ui ) {--%>
+<%--        var now = new Date().getTime();--%>
+<%--        var selectedDate = new Date($(this).val());--%>
+
+<%--        if(selectedDate < now) {--%>
+<%--            $(this).val("");--%>
+<%--            alert("Invalid date... Please enter future date...");--%>
+
+<%--        } else {--%>
+<%--            dateController.currentDate = $(this).val();--%>
+<%--        }--%>
+<%--    });--%>
+<%--</script>--%>
+<script>
+function getDate() {
+    var givenDate = Date.parse(document.form1.vDate.value);
+    if (!givenDate.isNaN) {
+
+// set hours, minutes, seconds, milisecconds to zero for a comparison
+// on date only
+        givenDate = new Date(givenDate).setHours(0, 0, 0, 0);
+        var todaysDate = new Date().setHours(0, 0, 0, 0);
+
+        if (givenDate < todaysDate) {
+            alert("Please booking to current date or future date");
+        } else {
+            return;
+            // result.innerHTML = "Please choose a future date.";
+            // result.style.color = 'red';
+        }
+    }
+
+}
+</script>
+<script>
+    function getAll() {
+
+        if (vDate == "" || timeIn == "" || timeOut == "") {
+            alert("Please fill out all the fields");
+            return;
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

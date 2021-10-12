@@ -120,21 +120,24 @@
             <div class="wrapper">
                 <section>
                     <br>
-                    <h5>Please Select </h5>
-                    <div class="wrapper">
 
+                    <div class="wrapper">
+                        <h5 style="font-size: 30px;">Reservation</h5>
                         <form method="POST" action="saveOnlineTable" name="saveOnlineTable">
                             <input style="display: none" readonly required type="text" id="itemPay" name="orderData">
+                            Date:
                             <input  style="" readonly required="required" type="date" id="vDate" value="${reservedDate}" name="vDate">
+                            Time In:
                             <input readonly required ="required"type="time" id="timeIn" value="${timeIn}" name="vStatT">
+                            Time Out:
                             <input readonly required ="required" type="time" id="timeOut" value="${timeOut}" name="vEndT">
-                            <button type="submit" onclick="getValue()" class="col-1-1 button1x1" style="background: #cebbae; " id="submitButton">
+                            <button type="submit" onclick="getValue()" style="cursor: pointer;background:#cebbae;" class="col-1-1 button1x1"   id="submitButton">
                                 Submit
                             </button>
                         </form>
                         <br>
                         <table>
-
+                            <h5>Please Select a Table </h5>
                             <tbody id="reservationTable">
                             <c:forEach items="${loadAllTables}" var="e">
                                 <tr>
@@ -148,8 +151,9 @@
 
                                                 <h5 onclick="myFunction(${e.tableId})" ><span
                                                         id="selectedTableId"
-                                                        style="font-size: 20px;">${e.tableId} </span><a style="color: white;cursor: pointer;"
-                                                        class="button1x" >+</a></h5>
+                                                        style="font-size: 20px;"></span><a style="color: white;cursor: pointer;background:#cebbae;"
+                                                        class="button1x"  >${e.type}</a></h5>
+
                                             </div>
                                         </div>
                                     </div>
@@ -157,6 +161,7 @@
                             </c:forEach>
                             </tbody>
                         </table>
+
                     </div>
                 </section>
             </div>
@@ -266,11 +271,7 @@
     }
 
     function getValue() {
-
-        if (vDate == "" || timeIn == "" || timeOut == "") {
-            alert("Please Select Item In Table");
-            return;
-        }
+        alert("Reservation make successfully");
 
         var str, stre = "";
         var inputArray = []

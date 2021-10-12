@@ -21,6 +21,7 @@ import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDTO;
 import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDetailDTO;
 import lk.sliit.hotel.dto.restaurant.CounterTableReservation.CounterTableReservationDTO;
 import lk.sliit.hotel.dto.restaurant.CounterTableReservation.CounterTableReservationDetailsDTO;
+import lk.sliit.hotel.dto.restaurant.OnlineCustomerDTO;
 import lk.sliit.hotel.dto.restaurant.ResTableDTO;
 import lk.sliit.hotel.dto.restaurant.ResTableReservationDTO;
 import lk.sliit.hotel.dto.restaurant.RestaurantTableDTO;
@@ -29,6 +30,7 @@ import lk.sliit.hotel.dto.restaurant.restaurantOnlineOrder.RestaurantOnlineOrder
 import lk.sliit.hotel.dto.restaurant.restaurantOnlineTable.OnlineTableReservationDTO;
 import lk.sliit.hotel.dto.restaurant.restaurantOnlineTable.OnlineTableReservationDetailsDTO;
 import lk.sliit.hotel.entity.kitchen.FoodItem;
+import lk.sliit.hotel.entity.restaurant.OnlineCustomer;
 import lk.sliit.hotel.entity.restaurant.RestaurantTable;
 import lk.sliit.hotel.entity.restaurant.counterOrder.RestaurantCounterOrder;
 import lk.sliit.hotel.entity.restaurant.counterOrder.RestaurantCounterOrderDetail;
@@ -965,6 +967,32 @@ public class RestaurantBOImpl implements RestaurantBO {
         }
         return tableDTOList;
     }
+
+
+    //profile
+    //match with relevant customer
+    @Override
+    public OnlineTableReservationDTO findOne(int onlineCustomerId) {
+        OnlineTableReservation onlineCustomer = onlineTableReservationDAO.findOne(onlineCustomerId);
+        return new OnlineTableReservationDTO(
+                onlineCustomer.getOnlineTableReservationId(),
+                onlineCustomer.getDate(),
+                onlineCustomer.getStartTime(),
+                onlineCustomer.getEndTime()
+
+        );
+    }
+
+    @Override
+    public RestaurantOnlineOrderDTO findOrder(int onlineCustomerId) {
+        RestaurantOnlineOrder onlineCustomer = onlineOrderDAO.findOne(onlineCustomerId);
+        return new RestaurantOnlineOrderDTO(
+                onlineCustomer.getDate(),
+                onlineCustomer.getOrderDetails()
+
+        );
+    }
+
 }
 
 

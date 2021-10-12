@@ -11,6 +11,7 @@ public class  RestaurantOnlineOrderDetails {
     private RestaurantOnlineOrderDetailsPK restaurantOnlineOrderDetailsPK;
     private double quantity;
     private double unitePrice;
+
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "restaurantOnlineOrder", referencedColumnName = "orderId", insertable = false, updatable = false)
     private RestaurantOnlineOrder restaurantOnlineOrder;
@@ -38,6 +39,9 @@ public class  RestaurantOnlineOrderDetails {
 
     public RestaurantOnlineOrderDetails() {
     }
+
+
+
 
     public double getQuantity() {
         return quantity;
