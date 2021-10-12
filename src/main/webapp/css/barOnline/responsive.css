@@ -58,17 +58,19 @@
         width: 100%;
     }
     .navigation .navbar-collapse {
-        background: #fe0131;
+        background: #febf01;
         padding: 20px;
         margin-top: 46px;
         position: absolute;
         width: 100%;
-        margin-right: 20px;
+        margin-right: 0px;
+        margin-left: 10px;
         z-index: 999;
     }
     .navigation.navbar-dark .navbar-nav .nav-link {
-        padding: 10px 0;
-        color: #fff;
+        padding-left: 10px;
+        margin-left: 10px;
+        color: #ffffff;
     }
     .navigation.navbar-dark .navbar-toggler {
         border: inherit;
@@ -76,7 +78,7 @@
         padding-top: 6px;
     }
     .navigation.navbar-dark .navbar-toggler-icon {
-        background: url(../images/menu_icon.png);
+        background: url(../../images/barOnline/menu_icon.png);
         background-repeat: no-repeat;
     }
    #myCarousel .carousel-control-prev, 
@@ -136,7 +138,7 @@
         padding: 0px 19px 40px 20px;
     }
     .navigation.navbar-dark .navbar-toggler-icon {
-        background: url(../images/menu_icon.png);
+        background: url(../../images/barOnline/menu_icon.png);
         background-repeat: no-repeat;
     }
     #myCarousel .carousel-control-prev, 

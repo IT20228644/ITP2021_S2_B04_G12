@@ -392,6 +392,13 @@
     </section>
 
 
+    <!--back to top--->
+    <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
+        <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
+        <span>Top</span>
+    </a>
+
+
     <!---blog block--->
 
     <!--
@@ -508,11 +515,7 @@
         </div>
     </footer>
 
-    <!--back to top--->
-    <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
-        <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>
-        <span>Top</span>
-    </a>
+
 
 </div>
 </body>

@@ -26,10 +26,5 @@ public class OnlineBarOrders {
         model.addAttribute("barOnlineOrder", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
         return "barOnlineOrder";
     }
-//
-//    @GetMapping("/home")
-//    public String home(Model model) {
-//        model.addAttribute("home", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-//        return "home";
-//    }
+
 }
