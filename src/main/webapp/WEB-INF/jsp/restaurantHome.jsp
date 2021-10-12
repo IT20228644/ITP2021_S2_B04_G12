@@ -46,15 +46,15 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-<<<<<<< HEAD
+
                 <a href="restaurantHome" class="nav-item nav-link active">Welcome</a>
 <%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="feature.html" class="nav-item nav-link">Feature</a>
-=======
-                <a href="restaurantHome" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+
+<%--                <a href="restaurantHome" class="nav-item nav-link active">Home</a>--%>
+<%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="barOnline" class="nav-item nav-link">Bar</a>
->>>>>>> a3d99722cccb95ed97c61fcab44b4abec2d86cda
+
                 <a href="team.html" class="nav-item nav-link">Chef</a>
                 <a href="onlineOrder" class="nav-item nav-link">Menu</a>
                 <a href="onlineTable" class="nav-item nav-link">Booking</a>

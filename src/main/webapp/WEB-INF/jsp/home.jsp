@@ -84,7 +84,7 @@
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
                                     <li><a data-hover="Banquet" href="homeBanquet"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Restaurant" href="restaurantHome"><span>Restaurant</span></a></li>
 
 <%--                                    <li><a  data-hover="Home" class="active"><span>Home</span></a></li>--%>
 <%--                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>--%>

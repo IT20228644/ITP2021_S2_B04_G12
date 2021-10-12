@@ -22,13 +22,13 @@ public class AppInitializer {
         SpringApplication.run(AppInitializer.class,args);
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //<<<<<<< HEAD
 //=======
 
-=======
-<<<<<<< HEAD
->>>>>>> a3d99722cccb95ed97c61fcab44b4abec2d86cda
+//=======
+//<<<<<<< HEAD
+//>>>>>>> a3d99722cccb95ed97c61fcab44b4abec2d86cda
 //    String str="2020-05-11";
 //    Date date= Date.valueOf(str);
 //
@@ -115,12 +115,6 @@ public class AppInitializer {
 //   }
 //}//End Class
 
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> 1b6a324050fb6702c7379bd0897721392371e890
->>>>>>> a3d99722cccb95ed97c61fcab44b4abec2d86cda
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
@@ -147,16 +141,10 @@ public class AppInitializer {
             );
         };
     }
-<<<<<<< HEAD
-
-}//End Class
-=======
-<<<<<<< HEAD
 
 }//End Class
 
 
-=======
-}//End Class
->>>>>>> 1b6a324050fb6702c7379bd0897721392371e890
->>>>>>> a3d99722cccb95ed97c61fcab44b4abec2d86cda
+
+
+
