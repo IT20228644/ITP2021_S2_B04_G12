@@ -103,9 +103,21 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login">
+            <a data-toggle="tooltip" data-placement="top" title="Logout"  onclick="myFunction()">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
+            <script>
+                function myFunction() {
+                    var txt;
+                    var r = confirm("Are you sure you want to log out?");
+                    if (r == true) {
+                        window.location.href = "login";
+                    } else {
+                        txt = "You pressed Cancel!";
+                    }
+                    document.getElementById("demo").innerHTML = txt;
+                }
+            </script>
         </div>
         <!-- /menu footer buttons -->
     </div>

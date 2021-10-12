@@ -11,6 +11,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <html lang="en">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
@@ -55,7 +56,32 @@
             <input type="text" placeholder="Email" name="email" />
             <input type="password" placeholder="Password" name="password"/>
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button onclick="login()">Sign In</button>
+            <script>
+                function login()
+                {
+                    var uname = document.getElementById("email").value;
+                    var pwd = document.getElementById("pwd1").value;
+                    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                    if(uname =='')
+                    {
+                        alert("please enter user name.");
+                    }
+                    else if(pwd=='')
+                    {
+                        alert("enter the password");
+                    }
+                    else if(!filter.test(uname))
+                    {
+                        alert("Enter valid email id.");
+                    }
+                    else
+                    {
+                        alert('Thank You for Login & You are Redirecting to room details page');
+
+                    }
+                }
+            </script>
             <%
                 session.setAttribute("userId", "usffff");
             %>
@@ -71,7 +97,7 @@
             <div class="overlay-panel overlay-right">
                 <h1>Hello, Customer !</h1>
                 <p>Create your account & continue the booking process</p>
-                <button class="ghost" id="signUp">Sign Up</button>
+                <button onclick="signup()" class="ghost" id="signUp">Sign Up</button>
             </div>
         </div>
     </div>
