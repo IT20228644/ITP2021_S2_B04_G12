@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Burger King - Food Website Template</title>
+    <title>Hotel Sapphire Marriot</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
@@ -33,37 +33,35 @@
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Burger <span>King</span></a>
+<%--        <a href="index.html" class="navbar-brand">Burger <span>King</span></a>--%>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="restaurantHome" class="nav-item nav-link">Welcome</a>
+<%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="feature.html" class="nav-item nav-link">Feature</a>
                 <a href="team.html" class="nav-item nav-link">Chef</a>
-                <a href="menu.html" class="nav-item nav-link">Menu</a>
-                <a href="booking.html" class="nav-item nav-link active">Booking</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="single.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="onlineOrder" class="nav-item nav-link">Menu</a>
+                <a href="onlineTable" class="nav-item nav-link active">Booking</a>
+<%--                <div class="nav-item dropdown">--%>
+<%--                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>--%>
+<%--                    <div class="dropdown-menu">--%>
+<%--                        <a href="blog.html" class="dropdown-item">Blog Grid</a>--%>
+<%--                        <a href="single.html" class="dropdown-item">Blog Detail</a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <a href="contact.html" class="nav-item nav-link">Contact</a>--%>
+                <button style="background: #cebbae;border-radius: 25px;">
+                    <a href="restaurantOnlineCustomer" class="nav-item nav-link" style="color:white;font-weight:900;">Login</a>
+                </button>
 
-                <nav>
-                    <ul id="top_nav">
-                        <li><a href="#"><img src="../../onlineRestaurant/restaurant/images/icon_2.gif" alt=""></a></li>
-                        <li class="end"><a href="onlineCustomer"><i class="fa fa-user"
-                                                                    style="color: rgba(255,255,255,0.91); font-size:20px;">
-                            LogIn ${loggerId.name}
-                        </i></a></li>
-                    </ul>
-                </nav>
+                <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;">
+                <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
+
+
             </div>
         </div>
     </div>
@@ -108,10 +106,10 @@
             </div>
             <div class="col-lg-5">
                 <div class="booking-form">
-                    <form name="form1" id="ff" action="checkTimeForTable">
+                    <form name="form1" id="form1" action="checkTimeForTable">
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="date" placeholder="Booking Date" name="vDate" id="vDate" required class="form-control datetimepicker-input">
+                                <input type="date" placeholder="Booking Date" name="vDate" id="vDate" onchange="getDate()" required class="form-control datetimepicker-input">
                             </div>
                         </div>
                         <div class="control-group">
@@ -126,7 +124,7 @@
                             </div>
                         </div>
 
-                        <input  type="submit" name="Submit" value="Check" class="btn custom-btn">
+                        <input  type="submit" name="Submit" value="Check" onclick="getAll()" class="btn custom-btn">
 
                     </form>
                 </div>
@@ -211,5 +209,64 @@
 
 
 <script type="text/javascript"> Cufon.now(); </script>
+<%--<script>--%>
+<%--    var dateController = {--%>
+<%--        currentDate : null--%>
+<%--    }--%>
+
+<%--    $(document).on( "change", "#vDate",function( event, ui ) {--%>
+<%--        var now = new Date().getTime();--%>
+<%--        var selectedDate = new Date($(this).val());--%>
+
+<%--        if(selectedDate < now) {--%>
+<%--            $(this).val("");--%>
+<%--            alert("Invalid date... Please enter future date...");--%>
+
+<%--        } else {--%>
+<%--            dateController.currentDate = $(this).val();--%>
+<%--        }--%>
+<%--    });--%>
+<%--</script>--%>
+<script>
+function getDate() {
+    var givenDate = Date.parse(document.form1.vDate.value);
+    if (!givenDate.isNaN) {
+
+// set hours, minutes, seconds, milisecconds to zero for a comparison
+// on date only
+        givenDate = new Date(givenDate).setHours(0, 0, 0, 0);
+        var todaysDate = new Date().setHours(0, 0, 0, 0);
+
+        if (givenDate < todaysDate) {
+            alert("Please booking to current date or future date");
+        } else {
+            return;
+            // result.innerHTML = "Please choose a future date.";
+            // result.style.color = 'red';
+        }
+    }
+
+}
+</script>
+<script>
+    function getAll() {
+
+        if (vDate == "" || timeIn == "" || timeOut == "") {
+            alert("Please fill out all the fields");
+            return;
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

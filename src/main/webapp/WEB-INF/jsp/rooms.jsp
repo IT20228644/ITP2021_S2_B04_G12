@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
-    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
+    <title>Luxury Hotel in Negombo| Hotel Sapphire </title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
@@ -76,9 +76,9 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a data-hover="Home" href="home"><span>Home</span></a></li>
-                                    <li><a data-hover="About"  class="active"><span>About</span></a></li>
-                                    <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
+                                    <li><a  data-hover="Home" href="home"><span>Home</span></a></li>
+                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>
+                                    <li><a data-hover="Rooms"  class="active"><span>Rooms</span></a></li>
                                     <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
                                     <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
@@ -233,9 +233,9 @@
                             <li><a href="home">Home</a></li>
                             <li><a href="about">About</a></li>
                             <li class="active"><a>Rooms</a></li>
+                            <li><a href="rooms">Banquet</a></li>
+                            <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
-                            <li><a href="dinning">Dinning</a></li>
-                            <li> <a href="news">News</a></li>
                             <li> <a href="contact">Contact</a></li>
                         </ul>
                     </div>

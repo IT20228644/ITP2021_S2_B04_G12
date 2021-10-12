@@ -5,6 +5,7 @@ package lk.sliit.hotel.dto.restaurant.restaurantOnlineOrder;
 public class RestaurantOnlineOrderDetailsDTO {
     private String restaurantOnlineOrder;
     private int foodItem;
+
     private double quantity;
     private double unitePrice;
 
@@ -15,12 +16,16 @@ public class RestaurantOnlineOrderDetailsDTO {
         this.unitePrice = unitePrice;
     }
 
+
+
     public RestaurantOnlineOrderDetailsDTO() {
     }
 
     public String getRestaurantOnlineOrder() {
         return restaurantOnlineOrder;
     }
+
+
 
     public void setRestaurantOnlineOrder(String restaurantOnlineOrder) {
         this.restaurantOnlineOrder = restaurantOnlineOrder;

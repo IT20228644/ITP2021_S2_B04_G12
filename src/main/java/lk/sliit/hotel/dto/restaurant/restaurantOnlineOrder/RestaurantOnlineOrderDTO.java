@@ -41,6 +41,11 @@ public class RestaurantOnlineOrderDTO {
         this.orderDetails= orderDetails;
     }
 
+    public RestaurantOnlineOrderDTO(Date date,  List<RestaurantOnlineOrderDetails> orderDetails) {
+        this.date = date;
+        this.orderDetails = orderDetails;
+    }
+
     public String getOrderData() {
         return orderData;
     }

@@ -50,7 +50,7 @@ $("#btnAdd").click(function () {
 
     $("#tblOrder tr td:last-child div").off("click");
     $("#tblOrder tr td:last-child div").click(function () {
-        if (confirm("Are you sure whether you want to delete this Student?")) {
+        if (confirm("Are you sure whether you want to delete this Order?")) {
             $(this).parents("tr").fadeOut(1000, function () {
                 $(this).remove();
             });
@@ -106,6 +106,8 @@ function myCheck(selectId) {
 
 function getValue() {
 
+    alert("Your Order placed successfully");
+
     var list = [];
 
     var numberOfRows = $("#tblOrder tr").length;
@@ -135,6 +137,7 @@ function getValue() {
     }
 
     $("#itemPay").val(stre);
+
 
 }
 

@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: prabo
-  Date: 10/10/2021
-  Time: 8:50 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
-    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
+    <title>Luxury Hotel in Negombo| Hotel Sapphire </title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
@@ -79,8 +71,8 @@
                                     <li><a data-hover="Home" href="home"><span>Home</span></a></li>
                                     <li><a data-hover="About"  class="active"><span>About</span></a></li>
                                     <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
-                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
+                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -109,16 +101,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 about-left">
-                    <p>Sapphire<label> Marriott</label></p>
+                    <p>Sapphire  <label>Marriott</label></p>
                 </div>
                 <div class="col-md-7 about-right">
                     <h3>A new level of luxury hospitality in Sri Lanka</h3>
                     <p>Every great city deserves a truly great international hotel - a special place that reflects the importance and the beauty of its location with world-class luxury and the very finest service.</p>
                     <ul class="list-unstyled list-inline">
-                        <li>Sapphire Marriott, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
+                        <li>Hotel Sapphire, Negombo is delighted to welcome you to the enchanting Sri Lanka - a precious jewel in the Indian Ocean, with a glittering cultural heritage and a long, proud history.</li>
                         <li>The hotel benefits from a prime location by the sea that is in the bottom of the country and buzzing social hotspot. A personal tropical sanctuary that is perfect for escaping the city, it offers some of the finest, most modern accommodation in the country, with 500 luxurious guest rooms and suites, and 41 serviced apartments.</li>
                         <li>An exciting new dining and social scene has come to life around the hotel's outstanding restaurant and bar.</li>
-                        <span>Sapphire Marriott,  Negombo, looks forward to welcoming you soon.</span>
+                        <span>Hotel Sapphire, Negombo , looks forward to welcoming you soon.</span>
                     </ul>
                 </div>
             </div>
@@ -136,7 +128,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p> 22 Negombo - Giriulla Rd, Negombo </p>
+                                <p>22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>

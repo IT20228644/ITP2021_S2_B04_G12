@@ -12,7 +12,7 @@
     <title>Restaurant</title>
 
     <meta charset="utf-8">
-    <title>Burger King - Food Website Template</title>
+    <title>Hotel Sapphire Marriot</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
@@ -77,37 +77,43 @@
 <%--            <!-- content -->--%>
 <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Burger <span>King</span></a>
+<%--        <a href="index.html" class="navbar-brand">Sapphire <span>Marriot Restaurant</span></a>--%>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="restaurantHome" class="nav-item nav-link">Home</a>
+<%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="feature.html" class="nav-item nav-link">Feature</a>
                 <a href="team.html" class="nav-item nav-link">Chef</a>
-                <a href="menu" class="nav-item nav-link active">Menu</a>
-                <a href="booking.html" class="nav-item nav-link">Booking</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="single.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="onlineOrder" class="nav-item nav-link active">Menu</a>
+                <a href="onlineTable" class="nav-item nav-link">Booking</a>
+<%--                <div class="nav-item dropdown">--%>
+<%--                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>--%>
+<%--                    <div class="dropdown-menu">--%>
+<%--                        <a href="blog.html" class="dropdown-item">Blog Grid</a>--%>
+<%--                        <a href="single.html" class="dropdown-item">Blog Detail</a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <a href="contact.html" class="nav-item nav-link">Contact</a>--%>
+                <button style="background: #cebbae;border-radius: 25px;">
+                <a href="restaurantOnlineCustomer" class="nav-item nav-link" style="color:white;font-weight:900;">Login</a>
+                </button>
 
-                <nav>
-                    <ul id="top_nav">
-                        <li><a href="#"><img src="../../onlineRestaurant/restaurant/images/icon_2.gif" alt=""></a></li>
-                        <li class="end"><a href="onlineCustomernew"><i class="fa fa-user"
-                                                                       style="color: rgba(255,255,255,0.91); font-size:20px;">
-                            LogIn ${loggerId.name}
-                        </i></a></li>
-                    </ul>
-                </nav>
+                <a href="profile">  <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;"></a>
+             <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
+
+<%--                <nav>--%>
+<%--                    <ul id="top_nav">--%>
+<%--                        <li><a href="#"><img src="../../onlineRestaurant/restaurant/images/icon_2.gif" alt=""></a></li>--%>
+<%--                        <li class="end"><a href="onlineCustomernew"><i class="fa fa-user"--%>
+<%--                                                                       style="color: rgba(255,255,255,0.91); font-size:20px;">--%>
+<%--                            LogIn ${loggerId.name}--%>
+<%--                        </i></a></li>--%>
+<%--                    </ul>--%>
+<%--                </nav>--%>
             </div>
         </div>
     </div>
@@ -139,7 +145,7 @@
                     <p>
                         Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
                     </p>
-                    <a href="">View Menu</a>
+                    <a href="" style="color: #0b0b0b">View Menu</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -149,7 +155,7 @@
                     <p>
                         Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
                     </p>
-                    <a href="">View Menu</a>
+                    <a href="" style="color: #0b0b0b">View Menu</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -159,7 +165,7 @@
                     <p>
                         Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem.
                     </p>
-                    <a href="">View Menu</a>
+                    <a href="" style="color: #0b0b0b">View Menu</a>
                 </div>
             </div>
         </div>
@@ -206,7 +212,7 @@
                                             </div>
                                         </td>
                                         <td class="menu-text" >
-                                            <h3><span style="white-space:nowrap;">${e.typeitem}</span></h3>
+                                            <h3><span style="white-space:nowrap;">${e.menuname}</span></h3>
                                                </td>
                                         <td style="bottom: 0;
   position: absolute;white-space:nowrap;top:40px;left:100px;">
@@ -235,7 +241,7 @@
 
                         </div>
                         <div class="col-lg-5 d-none d-lg-block">
-                            <img src="../../online/img/menu-burger-img.jpg" alt="Image">
+                            <img src="../../online/img/bb.jpg" style="position: relative;left:50px;width:400px;" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -258,7 +264,7 @@
                                             </td>
 
                                             <td class="menu-text" >
-                                                <h3><span style="white-space:nowrap;">${e.typeitem}</span></h3>
+                                                <h3><span style="white-space:nowrap;">${e.menuname}</span></h3>
                                             </td>
 <%--                                            <p style="bottom: 0; position: absolute;white-space:nowrap;top:40px;left:115px;">${e.descrip}</p>--%>
                                             <td style="bottom: 0;
@@ -291,7 +297,7 @@
                             </table>
                         </div>
                         <div class="col-lg-5 d-none d-lg-block">
-                            <img src="../../online/img/menu-burger-img.jpg" alt="Image">
+                            <img src="../../online/img/lunch.jpg" style="position: relative;left:50px;width: 400px;" alt="Image">
                         </div>
                     </div>
                 </div>
@@ -303,10 +309,8 @@
                         <div class="col-lg-7 col-md-12">
 
                             <table id="dataTablesButton3">
-
                                 <c:forEach items="${loadAllFoods}" var="e">
                                     <c:if test="${e.menutype == 'dinner' }">
-
                                         <tr class="menu-item">
                                             <td>
                                                 <div class="menu-img">
@@ -314,7 +318,7 @@
                                                 </div>
                                             </td>
                                             <td class="menu-text" >
-                                                <h3><span style="white-space:nowrap;">${e.typeitem}</span></h3>
+                                                <h3><span style="white-space:nowrap;">${e.menuname}</span></h3>
                                             </td>
                                             <td style="bottom: 0;
   position: absolute;white-space:nowrap;top:40px;left:100px;">
@@ -359,7 +363,7 @@
                             </table>
                         </div>
                         <div class="col-lg-5 d-none d-lg-block">
-                            <img src="../../online/img/menu-burger-img.jpg" alt="Image">
+                            <img src="../../online/img/dinner.jpg" style="position: relative;left:50px;width: 400px; " alt="Image">
                         </div>
                     </div>
                 </div>
@@ -400,7 +404,7 @@
                                 <br>
                                 <button type='button' class="btn custom-btn"
                                         id="btnAdd"
-                                        value="Register">
+                                        value="Register" >
                                     Add
                                 </button>
                         </form>
@@ -431,9 +435,10 @@
         <input style="display: none" type="text" id="itemPay" name="orderData">
 
         <button type="submit" value="Register" id="demo"
-                 onclick="getValue()" style="margin-left: 30px;margin-top: 50px;"
-                class="col-1-1  btn btn-success button1x1 "> Pay <i class="fa fa-save"></i>
+                 onclick="getValue()" style="margin-left: 490px;margin-top: 170px;background: #cebbae;color:white;border:1px solid #cebbae;"
+                class="col-1-1  btn btn-success button1x1 "> Pay
         </button>
+
 
     </form>
 </div>
