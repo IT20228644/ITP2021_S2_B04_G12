@@ -46,7 +46,7 @@ public class BanquetOnlineCustomerAdd {
             }
             banquetBO.saveBanquetOnlineCustomer(banquetOnlineCustomerDTO);
         }
-        return "redirect:/banquetCustomerSignIn";
+        return "redirect:/banquetOnlineCustomerAdd";
     }
 
     @PostMapping("/banquetCustomerSignIn")
