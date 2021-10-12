@@ -58,37 +58,35 @@
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-light navbar-light">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Burger <span>King</span></a>
+<%--        <a href="index.html" class="navbar-brand">Burger <span>King</span></a>--%>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="restaurantHome" class="nav-item nav-link">Welcome</a>
+<%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="feature.html" class="nav-item nav-link">Feature</a>
                 <a href="team.html" class="nav-item nav-link">Chef</a>
-                <a href="menu.html" class="nav-item nav-link">Menu</a>
-                <a href="booking.html" class="nav-item nav-link active">Booking</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu">
-                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                        <a href="single.html" class="dropdown-item">Blog Detail</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="onlineOrder" class="nav-item nav-link">Menu</a>
+                <a href="onlineTable" class="nav-item nav-link active">Booking</a>
+<%--                <div class="nav-item dropdown">--%>
+<%--                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>--%>
+<%--                    <div class="dropdown-menu">--%>
+<%--                        <a href="blog.html" class="dropdown-item">Blog Grid</a>--%>
+<%--                        <a href="single.html" class="dropdown-item">Blog Detail</a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <a href="contact.html" class="nav-item nav-link">Contact</a>--%>
+                <button style="background: #cebbae;border-radius: 25px;">
+                    <a href="restaurantOnlineCustomer" class="nav-item nav-link" style="color:white;font-weight:900;">Login</a>
+                </button>
 
-                <nav>
-                    <ul id="top_nav">
-                        <li><a href="#"><img src="../../onlineRestaurant/restaurant/images/icon_2.gif" alt=""></a></li>
-                        <li class="end"><a href="onlineCustomer"><i class="fa fa-user"
-                                                                    style="color: rgba(255,255,255,0.91); font-size:20px;">
-                            LogIn ${loggerId.name}
-                        </i></a></li>
-                    </ul>
-                </nav>
+                <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;">
+                <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
+
+
             </div>
         </div>
     </div>
@@ -101,7 +99,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Book A Table</h2>
+                <h1 style="position: relative;left: 300px;
+    color: #cebbae;
+    font-size: 60px;
+    font-weight: 700;">Available Tables</h1>
             </div>
             <div class="col-12">
                 <a href="">Home</a>
@@ -118,7 +119,7 @@
         <article id="content2">
             <div class="wrapper">
                 <section>
-                    <h2>Available Tables</h2>
+                    <br>
                     <h5>Please Select </h5>
                     <div class="wrapper">
 
@@ -127,7 +128,7 @@
                             <input  style="" readonly required="required" type="date" id="vDate" value="${reservedDate}" name="vDate">
                             <input readonly required ="required"type="time" id="timeIn" value="${timeIn}" name="vStatT">
                             <input readonly required ="required" type="time" id="timeOut" value="${timeOut}" name="vEndT">
-                            <button type="submit" onclick="getValue()" class="col-1-1 button1x1" id="submitButton">
+                            <button type="submit" onclick="getValue()" class="col-1-1 button1x1" style="background: #cebbae; " id="submitButton">
                                 Submit
                             </button>
                         </form>

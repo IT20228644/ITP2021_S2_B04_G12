@@ -22,7 +22,7 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="../../css/customerLogin/style.css">
-    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
+    <title>Luxury Hotel in Negombo| Hotel Sapphire </title>
 </head>
 
 <body class="nav-md" style="cursor: pointer">

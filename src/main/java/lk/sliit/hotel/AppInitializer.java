@@ -110,7 +110,10 @@ public class AppInitializer {
 //}//End Class
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 179cb0fb68aef255e533c81cccb5692b8899b835
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
@@ -143,3 +146,8 @@ public class AppInitializer {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 179cb0fb68aef255e533c81cccb5692b8899b835
