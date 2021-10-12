@@ -241,7 +241,7 @@
                     <div class="containerx">
                         <a style=" font-family: Playfair Display, Georgia, Times New Roman, serif;
                              background-color: #a98e77; color: #ffffff;font-weight: bolder"
-                           href="banquetOnlineAdd" class="btnq"><h2
+                           href="home" class="btnq"><h2
                                 style="position: relative; letter-spacing: 1px;
                                      margin-top: 20px">Online Banquet</h2></a>
                     </div>

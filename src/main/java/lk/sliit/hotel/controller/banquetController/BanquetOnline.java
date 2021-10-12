@@ -102,10 +102,17 @@ public class BanquetOnline {
 
     }
 
-    @GetMapping("/banquetPackages")
+    @GetMapping("/banquetOnlinePackages")
     public String loginPage4(Model model){
         //  model.addAttribute("loggerName",indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-        return "onlineBanquetPackages";
+        return "banquetOnlinePackages";
+
+    }
+
+    @GetMapping("/banquetHalls")
+    public String loginPage5(Model model){
+        //  model.addAttribute("loggerName",indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        return "banquetHalls";
 
     }
 

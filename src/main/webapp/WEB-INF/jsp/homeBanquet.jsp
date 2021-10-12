@@ -30,21 +30,21 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Roxandrea</a>
+        <a class="navbar-brand" href="index.html">Sapphire Marriott</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
-        <div class="collapse navbar-collapse" id="ftco-nav" style="padding-left: 70px">
-            <ul class="navbar-nav ml-auto" style="background-color: rgba(45,55,47,0.34);alignment: left; background-size: 1500px">
-                <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="rooms.html" class="nav-link">Banquet Hall</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="onlineBanquetCheck" class="nav-link">Check Availability</a></li>
-                <li class="nav-item"><a href="banquetOnlineCustomerAdd" class="nav-link" >Log In</a></li>
+        <div class="col-md-12" id="ftco-nav" style="padding-left: 70px">
+            <ul class="navbar-nav ml-auto" style="background-color: rgba(22,24,22,0.34);alignment: left; background-size: 1500px;">
+<%--                <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>--%>
+                <li class="nav-item"><a href="banquetHalls" class="nav-link"><b>Banquet Hall</b></a></li>
+                <li class="nav-item"><a href="banquetOnlinePackages" class="nav-link"><b>Food Packages</b></a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link"><b>About</b></a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link"><b>Blog</b></a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link"><b>Contact</b></a></li>
+                <li class="nav-item"><a href="onlineBanquetCheck" class="nav-link"><b>Check Availability</b></a></li>
+                <li class="nav-item"><a href="banquetOnlineCustomerAdd" class="nav-link" ><b>Log In</b></a></li>
             </ul>
 
         </div>
@@ -54,49 +54,36 @@
     </div>
 </nav>
 <!-- END nav -->
-<div class="hero">
-    <div class="container-wrap d-flex justify-content-end align-items-end">
-        <a href="https://www.youtube.com/watch?v=ism1XqnZJEg" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-            <span class="ion-ios-play play"></span>
-        </a>
-    </div>
+
     <section class="home-slider owl-carousel">
-        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg2.jpg);">
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg5nwww.jpg);height: 750px ">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center">
+                    <div class="col-md-8 ftco-animate">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg6.jpg);height:750px">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center">
                     <div class="col-md-8 ftco-animate">
                         <div class="text mb-5 pb-5">
-                            <h1 class="mb-3">Roxandrea</h1>
-                            <h2>More than a hotel... an experience</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg3.jpg);">
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg7.jpg);height: 750px">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center">
                     <div class="col-md-8 ftco-animate">
                         <div class="text mb-5 pb-5">
-                            <h1 class="mb-3">Experience Epic Beauty</h1>
-                            <h2>Roxandrea Hotel &amp; Resort</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg4.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row no-gutters slider-text align-items-center">
-                    <div class="col-md-8 ftco-animate">
-                        <div class="text mb-5 pb-5">
-                            <h1 class="mb-3">Experience Epic Beauty</h1>
-                            <h2>Roxandrea Hotel &amp; Resort</h2>
                         </div>
                     </div>
                 </div>
@@ -106,81 +93,6 @@
 </div>
 
 <br><br>
-<section >
-    <div class="container">
-        <div class="row">
-            <div >
-<%--                <form action="#" class="booking-form">--%>
-<%--                    <div class="row">--%>
-<%--                        <div class="col-md d-flex py-md-4">--%>
-<%--                            <div class="form-group align-self-stretch d-flex align-items-end">--%>
-<%--                                <div class="wrap bg-white align-self-stretch py-3 px-4">--%>
-<%--                                    <label>Check-in Date</label>--%>
-<%--                                    <input type="text" class="form-control checkin_date" placeholder="Check-in date">--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md d-flex py-md-4">--%>
-<%--                            <div class="form-group align-self-stretch d-flex align-items-end">--%>
-<%--                                <div class="wrap bg-white align-self-stretch py-3 px-4">--%>
-<%--                                    <label >Check-out Date</label>--%>
-<%--                                    <input type="text" class="form-control checkout_date" placeholder="Check-out date">--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md d-flex py-md-4">--%>
-<%--                            <div class="form-group align-self-stretch d-flex align-items-end">--%>
-<%--                                <div class="wrap bg-white align-self-stretch py-3 px-4">--%>
-<%--                                    <label>Room</label>--%>
-<%--                                    <div class="form-field">--%>
-<%--                                        <div class="select-wrap">--%>
-<%--                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>--%>
-<%--                                            <select name="" class="form-control">--%>
-<%--                                                <option value="">Suite</option>--%>
-<%--                                                <option value="">Family Room</option>--%>
-<%--                                                <option value="">Deluxe Room</option>--%>
-<%--                                                <option value="">Classic Room</option>--%>
-<%--                                                <option value="">Superior Room</option>--%>
-<%--                                                <option value="">Luxury Room</option>--%>
-<%--                                            </select>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md d-flex py-md-4">--%>
-<%--                            <div class="form-group align-self-stretch d-flex align-items-end">--%>
-<%--                                <div class="wrap bg-white align-self-stretch py-3 px-4">--%>
-<%--                                    <label>Guests</label>--%>
-<%--                                    <div class="form-field">--%>
-<%--                                        <div class="select-wrap">--%>
-<%--                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>--%>
-<%--                                            <select name="" class="form-control">--%>
-<%--                                                <option value="">1 Adult</option>--%>
-<%--                                                <option value="">2 Adult</option>--%>
-<%--                                                <option value="">3 Adult</option>--%>
-<%--                                                <option value="">4 Adult</option>--%>
-<%--                                                <option value="">5 Adult</option>--%>
-<%--                                                <option value="">6 Adult</option>--%>
-<%--                                            </select>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md d-flex">--%>
-<%--                            <div class="form-group d-flex align-self-stretch">--%>
-<%--                                <a href="#" class="btn btn-black py-5 py-md-3 px-4 align-self-stretch d-block"><span>Check Availability <small>Best Price Guaranteed!</small></span></a>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-
 <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-wrap">
     <div class="container">
         <div class="row no-gutters">
@@ -306,7 +218,7 @@
         <div class="row no-gutters">
             <div class="col-lg-6">
                 <div class="room-wrap">
-                    <div class="img d-flex align-items-center" style="background-image: url(/onlineBanquet/images/bg_3.jpg);">
+                    <div class="img d-flex align-items-center" style="background-image: url(/onlineBanquet/images/nnn.jpg);">
                         <div class="text text-center px-4 py-4">
                             <h2>Welcome to <a href="index.html">Roxandrea</a> Hotel</h2>
                             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
@@ -316,13 +228,13 @@
             </div>
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex">
-                    <a href="#" class="img" style="background-image: url(/onlineBanquet/images/room-1.jpg);"></a>
+                    <a href="#" class="img" style="background-image: url(/onlineBanquet/images/hall6.jpg);"></a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 p-xl-5 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Suite Room</a></h3>
-                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="mb-0"><span class="price mr-1">$200.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms.html">Lotus Ballroom</a></h3>
+                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Hall Details <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>
@@ -330,26 +242,13 @@
 
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex">
-                    <a href="#" class="img order-md-last" style="background-image: url(/onlineBanquet/images/room-2.jpg);"></a>
-                    <div class="half right-arrow d-flex align-items-center">
+                    <a href="rooms-single.html" class="img" style="background-image: url(/onlineBanquet/images/hall1.jpg);"></a>
+                    <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 p-xl-5 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Family Room</a></h3>
-                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="room-wrap d-md-flex">
-                    <a href="#" class="img order-md-last" style="background-image: url(/onlineBanquet/images/room-3.jpg);"></a>
-                    <div class="half right-arrow d-flex align-items-center">
-                        <div class="text p-4 p-xl-5 text-center">
-                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Deluxe Room</a></h3>
-                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="mb-0"><span class="price mr-1">$250.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Spice Hall</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View Hall Details  <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>
@@ -357,26 +256,66 @@
 
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex">
-                    <a href="#" class="img" style="background-image: url(/onlineBanquet/images/room-4.jpg);"></a>
-                    <div class="half left-arrow d-flex align-items-center">
+                    <a href="#" class="img order-md-last" style="background-image: url(/onlineBanquet/images/lawan.jpg);"></a>
+                    <div class="half right-arrow d-flex align-items-center">
                         <div class="text p-4 p-xl-5 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Luxury Room</a></h3>
-                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="mb-0"><span class="price mr-1">$300.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Lawn</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View Hall Details <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="room-wrap d-md-flex">
-                    <a href="#" class="img" style="background-image: url(/onlineBanquet/images/room-6.jpg);"></a>
+                    <a href="#" class="img order-md-last" style="background-image: url(/onlineBanquet/images/hall3.jpg);"></a>
+                    <div class="half right-arrow d-flex align-items-center">
+                        <div class="text p-4 p-xl-5 text-center">
+                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                            <p class="mb-0"><span class="price mr-1">$500.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Deluxe Hall</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View hall Details <span class="icon-long-arrow-right"></span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="room-wrap d-md-flex">
+                    <a href="rooms-single.html" class="img" style="background-image: url(/onlineBanquet/images/hall4.jpg);"></a>
                     <div class="half left-arrow d-flex align-items-center">
                         <div class="text p-4 p-xl-5 text-center">
                             <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
-                            <p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-                            <h3 class="mb-3"><a href="rooms.html">Superior Room</a></h3>
-                            <p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
+                            <p class="mb-0"><span class="price mr-1">$550.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Luxury Hall</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View Hall Details  <span class="icon-long-arrow-right"></span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room-wrap d-md-flex">
+                    <a href="rooms-single.html" class="img" style="background-image: url(/onlineBanquet/images/hall5.jpg);"></a>
+                    <div class="half left-arrow d-flex align-items-center">
+                        <div class="text p-4 p-xl-5 text-center">
+                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                            <p class="mb-0"><span class="price mr-1">$600.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Marriott Ballroom</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View Hall Details <span class="icon-long-arrow-right"></span></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="room-wrap d-md-flex">
+                    <a href="rooms-single.html" class="img" style="background-image: url(/onlineBanquet/images/banquetHall1.jpg);"></a>
+                    <div class="half left-arrow d-flex align-items-center">
+                        <div class="text p-4 p-xl-5 text-center">
+                            <p class="star mb-0"><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span><span class="ion-ios-star"></span></p>
+                            <p class="mb-0"><span class="price mr-1">$700.00</span> <span class="per">8 hours</span></p>
+                            <h3 class="mb-3"><a href="rooms-single.html">Supper Hall</a></h3>
+                            <p class="pt-1"><a href="rooms-single.html" class="btn-custom px-3 py-2">View Hall Details <span class="icon-long-arrow-right"></span></a></p>
                         </div>
                     </div>
                 </div>

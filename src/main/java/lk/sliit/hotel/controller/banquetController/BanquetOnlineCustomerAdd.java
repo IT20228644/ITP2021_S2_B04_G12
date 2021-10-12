@@ -46,7 +46,7 @@ public class BanquetOnlineCustomerAdd {
             }
             banquetBO.saveBanquetOnlineCustomer(banquetOnlineCustomerDTO);
         }
-        return "redirect:/banquetOnlineCustomerAdd";
+        return "redirect:/banquetCustomerSignIn";
     }
 
     @PostMapping("/banquetCustomerSignIn")
@@ -55,7 +55,7 @@ public class BanquetOnlineCustomerAdd {
             BanquetOnlineCustomerDTO banquetOnlineCustomerDTO1 = banquetBO.findByUserNameAndPassword(banquetOnlineCustomerDTO.getEmail(), banquetOnlineCustomerDTO.getPassword());
             if (banquetOnlineCustomerDTO1 != null) {
                 request.getSession().setAttribute("RegNo", banquetOnlineCustomerDTO1.getRegNo());
-                return "redirect:/banquetOnlineAdd";
+                return "redirect:/banquetHalls";
             } else {
                 return "redirect:/banquetCustomerSignIn";
             }

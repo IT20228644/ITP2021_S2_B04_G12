@@ -477,6 +477,7 @@
                                         <tr>
 
                                             <th>Online NO</th>
+<%--                                            <th>Banquet Bill</th>--%>
                                             <th>Customer Name</th>
                                             <th>Order Date</th>
                                             <th>Booking Date</th>
@@ -491,6 +492,7 @@
                                         <c:forEach items="${confirmedOnlineBanquet}" var="e">
                                             <tr>
                                                 <td>${e.onlineNo}</td>
+<%--                                                <td>${e.banquetBillId}</td>--%>
                                                 <td>${e.name}</td>
                                                 <td>${e.date}</td>
                                                 <td>${e.orderDate}</td>
@@ -501,8 +503,10 @@
                                                 <td><a href="/updatePendingStatus?onlineNo=${e.onlineNo}">
                                                     <button value="" id="confirmBtn3" name="confirmBtn" class="btn btn-outline-success" style="font-size: 13px;">OnlinePending</button>
                                                 </a></td>
-                                                <td><a href="/deletePendingOnlineBanquet?onlineNo=${e.onlineNo}"><span
-                                                        class="glyphicon glyphicon-trash"></span></a></td>
+<%--                                                <td><a href="/deletePendingOnlineBanquet?onlineNo="${e.onlineNo}'"+'##'+${e.banquetBillId}""><span--%>
+<%--                                                        class="glyphicon glyphicon-trash"></span></a></td>--%>
+                                                <td><a href="/deletePendingOnlineBanquet?onlineNo=${e.onlineNo}+${e.banquetBillId}">
+                                                    <span class="glyphicon glyphicon-trash"></span></a></td>
                                             </tr>
                                         </c:forEach>
 

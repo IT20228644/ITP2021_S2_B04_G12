@@ -114,6 +114,8 @@ public interface BanquetBO extends SuperBO {
 
     void deletePendingOnlineBanquet1(int idNo);
 
+    void deletePendingOnlineBanquet2(int banquetBillNO2);
+
 //    void deletePendingOnlineBanquet1(int idNo);
 
 

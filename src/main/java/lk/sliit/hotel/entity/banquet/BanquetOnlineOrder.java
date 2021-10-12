@@ -26,7 +26,7 @@ public class BanquetOnlineOrder {
     @JoinColumn(name="menu",referencedColumnName = "menuId")
     Menu menu;
 
-    @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "banquetBill", referencedColumnName = "billId")
     BanquetBill banquetBill;
     String orderState;
