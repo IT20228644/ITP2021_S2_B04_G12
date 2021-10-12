@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: prabo
-  Date: 10/10/2021
-  Time: 8:52 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/reservation/icons/favicon.png"/>
-    <title>Luxury Hotel in Galle | Hotel Hareesha</title>
+    <title>Luxury Hotel in Negombo| Hotel Sapphire </title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/onlineRe1/bootstrap.min.css" rel="stylesheet">
@@ -79,19 +71,11 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-
-                                    <li><a data-hover="Home" href="home"><span>Home</span></a></li>
-                                    <li><a data-hover="About"  class="active"><span>About</span></a></li>
-                                    <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
-                                    <li><a data-hover="Banquet" href="homeBanquet"><span>Banquet</span></a></li>
+                                    <li><a  data-hover="Home" class="active"><span>Home</span></a></li>
+                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>
+                                    <li><a data-hover="Rooms"  href="rooms"><span>Rooms</span></a></li>
+                                    <li><a data-hover="Banquet" href="rooms"><span>Banquet</span></a></li>
                                     <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
-
-<%--                                    <li><a  data-hover="Home" class="active"><span>Home</span></a></li>--%>
-<%--                                    <li><a data-hover="About"  href="about"><span>About</span></a></li>--%>
-<%--                                    <li><a data-hover="Rooms"  href="rooms"><span>Rooms</span></a></li>--%>
-<%--                                    <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>--%>
-<%--                                    <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>--%>
-
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>
@@ -286,7 +270,7 @@
                     <div class="side-A">
                         <div class="product-desc-side">
                             <h3><a>luxury room</a></h3>
-                            <p>Offering striking views of the Indian Ocean, Beira Lake and the city beyond, our 500 guest rooms and suites, and 41 serviced apartments are tastefully furnished to complement the urban-oceanside location and are among the largest in Galle.</p>
+                            <p>Offering striking views of the Indian Ocean, Beira Lake and the city beyond, our 500 guest rooms and suites, and 41 serviced apartments are tastefully furnished to complement the urban-oceanside location and are among the largest in Negombo.</p>
                             <div class="links"><a href="rooms">Read more</a></div>
                         </div>
                     </div>
@@ -354,7 +338,7 @@
                         </div>
                         <div class="item">
                             <div class="blog-box">
-                                <p>Sapphire Marriott Holiday Resort is located in Yakkalamulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
+                                <p>Hareesha Holiday Resort is located in Giriulla which is about 25 kms from Galle Town. Yakkalamulla is a beautiful countryside located nearby Galle. This is a wonderful place to enjoy your holidays in Sri Lanka. If you are looking for a Nature Resort near by Galle this is the ideal place. Next to our comfortable hotel rooms we have cabanas in a tropical garden with a swimming pool. It is also a perfect place to celebrate your wedding day.</p>
                             </div>
                             <div class="blog-view-box">
                                 <div class="media">
@@ -370,7 +354,7 @@
                         </div>
                         <div class="item">
                             <div class="blog-box">
-                                <p>A great hotel just 40 minutes away from the Galle fort. The place is surrounded by a forest. Rooms are non-modern with clean bathrooms. It's a pretty quiet place being busy only in the tourist season. The food is clean, delicious and prepared in front of you if you rather visit the kitchen. The place is run with very friendly staff which would cater to any of your needs.</p>
+                                <p>A great hotel just 40 minutes away from the Sash fort. The place is surrounded by a forest. Rooms are non-modern with clean bathrooms. It's a pretty quiet place being busy only in the tourist season. The food is clean, delicious and prepared in front of you if you rather visit the kitchen. The place is run with very friendly staff which would cater to any of your needs.</p>
                             </div>
                             <div class="blog-view-box">
                                 <div class="media">
@@ -449,7 +433,7 @@
                         <ul class="list-unstyled footer-contact-list">
                             <li>
                                 <i class="fa fa-map-marker fa-lg"></i>
-                                <p>22 Negombo - Giriulla Rd, Negombo </p>
+                                <p> 22 Negombo - Giriulla Rd, Negombo </p>
                             </li>
                             <li>
                                 <i class="fa fa-phone fa-lg"></i>
@@ -457,7 +441,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o fa-lg"></i>
-                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com </a></p>
+                                <p><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com  </a></p>
                             </li>
                         </ul>
                         <div class="footer-social-icon">
@@ -479,10 +463,9 @@
                     <div class="footer-details">
                         <h4>explore</h4>
                         <ul class="list-unstyled footer-links">
-                            <li><a href="home">Home</a></li>
-                            <li class="active"><a>About</a></li>
+                            <li class="active"><a>Home</a></li>
+                            <li><a href="about">About</a></li>
                             <li><a href="rooms">Rooms</a></li>
-                            <li><a href="rooms">Banquet</a></li>
                             <li><a href="rooms">Restaurant</a></li>
                             <li><a href="gallery">Gallery</a></li>
                             <li> <a href="contact">Contact</a></li>
@@ -502,7 +485,7 @@
             </div>
 
             <div class="copyright">
-                &copy; 2020 All right reserved. Designed by <a href="" target="_blank">Team Reliance</a>
+                &copy; 2020 All right reserved. Designed by <a href="https://github.com/rivinduchamath/Hello-Hotel" target="_blank">Team Reliance</a>
             </div>
 
         </div>
