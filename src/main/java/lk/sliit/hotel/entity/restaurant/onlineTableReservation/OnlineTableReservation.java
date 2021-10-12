@@ -24,6 +24,7 @@ public class OnlineTableReservation {
     @Temporal(TemporalType.TIME)
     private Date endTime;
     private int noOfTables;
+    private String tableState;
     @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "onlineCustomerId", referencedColumnName = "onlineCustomerId", nullable = false)
     private OnlineCustomer customer;
@@ -50,6 +51,14 @@ public class OnlineTableReservation {
 
     public void setOnlineTableReservationId(int onlineTableReservationId) {
         this.onlineTableReservationId = onlineTableReservationId;
+    }
+
+    public String getTableState() {
+        return tableState;
+    }
+
+    public void setTableState(String tableState) {
+        this.tableState = tableState;
     }
 
     public Date getReservedDate() {

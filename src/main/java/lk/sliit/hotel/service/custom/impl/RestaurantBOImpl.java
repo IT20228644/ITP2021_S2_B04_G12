@@ -1,6 +1,7 @@
 package lk.sliit.hotel.service.custom.impl;
 
 import lk.sliit.hotel.controller.RestaurantController.TableUtil;
+import lk.sliit.hotel.controller.kitchenController.KitchenUtil;
 import lk.sliit.hotel.dao.inventoryDAO.InventoryDAO;
 import lk.sliit.hotel.dao.kitchenDAO.KitchenDAO;
 import lk.sliit.hotel.dao.retaurantDAO.OnlineCustomerDAO;
@@ -14,6 +15,8 @@ import lk.sliit.hotel.dao.retaurantDAO.onlineOrderDAO.RestaurantOnlineOrderDetai
 import lk.sliit.hotel.dao.retaurantDAO.onlineTableReservationDAO.OnlineTableReservationDAO;
 import lk.sliit.hotel.dao.retaurantDAO.onlineTableReservationDAO.OnlineTableReservationDetailsDAO;
 import lk.sliit.hotel.dto.kitchen.FoodItemDTO;
+import lk.sliit.hotel.dto.kitchen.RestaurantFoodItemDTO;
+import lk.sliit.hotel.dto.kitchen.RestaurantFoodOrderDTO;
 import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDTO;
 import lk.sliit.hotel.dto.restaurant.CounterOrder.RestaurantCounterOrderDetailDTO;
 import lk.sliit.hotel.dto.restaurant.CounterTableReservation.CounterTableReservationDTO;
@@ -295,36 +298,39 @@ public class RestaurantBOImpl implements RestaurantBO {
         restaurantTableDAO.delete(tableId);
     }
 
+
     //get booked tables for today
     @Override
     public List<CounterTableReservationDTO> getBookedTables() {
         java.util.Date date = new java.util.Date();
         List<CounterTableReservationDTO> list = new ArrayList<>();
-        //List<OnlineTableReservationDetails> list4 = new ArrayList<>();
+        List<OnlineTableReservationDetails> list4 = new ArrayList<>();
         List<CounterTableReservationDetails> list5 = new ArrayList<>();
-        //Iterable<OnlineTableReservation> onlineTableReservations = null;
+        Iterable<OnlineTableReservation> onlineTableReservations = null;
         Iterable<CounterTableReservation> counterTableReservations = null;
         try {
-//Find Online Booked Tables
-            //onlineTableReservations = onlineTableReservationDAO.findOnlineTableReservationByReservedDateEquals(date);
+
+            //Find Online Booked Tables
+            onlineTableReservations = onlineTableReservationDAO.findOnlineTableReservationByReservedDateEquals(date);
             //Find Counter Booked Tables
             counterTableReservations = counterTableReservationDAO.findCounterTableReservationByDateEquals(date);
         } catch (NullPointerException e) {
         }
 
         //Add data
-//        for (OnlineTableReservation d2 : onlineTableReservations) {
-//            list4 = d2.getOrderDetails();//Get data from Detail Table
-//            for (OnlineTableReservationDetails a : list4) {
-//
-//                list.add(new CounterTableReservationDTO(
-//                        d2.getOnlineTableReservationId(),
-//                        d2.getStartTime(),
-//                        d2.getEndTime(),
-//                        a.getTableId().getType()
-//                ));
-//            }
-//        }
+        for (OnlineTableReservation d2 : onlineTableReservations) {
+            list4 = d2.getOrderDetails();//Get data from Detail Table
+            for (OnlineTableReservationDetails a : list4) {
+
+                list.add(new CounterTableReservationDTO(
+                        d2.getOnlineTableReservationId(),
+                        d2.getStartTime(),
+                        d2.getEndTime(),
+                        a.getTableId().getType(),
+                        a.getTableId().getPlace()
+                ));
+            }
+        }
         for (CounterTableReservation d2 : counterTableReservations) {
             list5 = d2.getOrderDetails();//Get data from Detail Table
             for (CounterTableReservationDetails a : list5) {
@@ -347,29 +353,30 @@ public class RestaurantBOImpl implements RestaurantBO {
     @Override
     public List<RestaurantTableDTO> getAviTables(Date date, Date startTime, Date endTime) {
         //Find Book Table in online table reservation
-       // Iterable<OnlineTableReservation> all4 = onlineTableReservationDAO.getAllBetweenDates(endTime, startTime, date);
-//Find Book Table in counter table reservation
+        Iterable<OnlineTableReservation> all4 = onlineTableReservationDAO.getAllBetweenDates(endTime, startTime, date);
+       //Find Book Table in counter table reservation
         Iterable<CounterTableReservation> all5 = counterTableReservationDAO.getAllBetweenDates(endTime, startTime, date);
         //Find All Table
         Iterable<RestaurantTable> allTable = restaurantTableDAO.findAll();
+        Iterable<OnlineTableReservationDetails> al4;
         Iterable<CounterTableReservationDetails> al5;
         List<RestaurantTable> list = new ArrayList<>();
         List<RestaurantTable> list22 = new ArrayList<>();
         List<RestaurantTable> list2 = new ArrayList<>();
 
 
-//        for (RestaurantTable d : allTable) {//Find available tables by comparing in online reservation
-//            for (OnlineTableReservation d2 : all4) {
-//                al4 = d2.getOrderDetails();
-//                for (OnlineTableReservationDetails d3 : al4) {
-//                    if (d.getTableId() != d3.getTableId().getTableId()) {
-//                        if (!list.contains(d3.getTableId())) {
-//                            list.add(d3.getTableId());
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        for (RestaurantTable d : allTable) {//Find available tables by comparing in online reservation
+            for (OnlineTableReservation d2 : all4) {
+                al4 = d2.getOrderDetails();
+                for (OnlineTableReservationDetails d3 : al4) {
+                    if (d.getTableId() != d3.getTableId().getTableId()) {
+                        if (!list.contains(d3.getTableId())) {
+                            list.add(d3.getTableId());
+                        }
+                    }
+                }
+            }
+        }
         for (RestaurantTable d : allTable) {//Find available tables by comparing in counter reservation
             for (CounterTableReservation d2 : all5) {
                 al5 = d2.getOrderDetails();
@@ -459,6 +466,7 @@ public class RestaurantBOImpl implements RestaurantBO {
         List<ResTableDTO> tableDTOS;
         Iterable<CounterTableReservation> counterOrders;
         int index = 0;
+
         //get counter orders
         try {
             counterOrders = counterTableReservationDAO.findAll();
@@ -526,50 +534,197 @@ public class RestaurantBOImpl implements RestaurantBO {
         return returnList;
     }
 
+//    @Override
+//    public List<ResTableReservationDTO> getOnlineTableReservationByDate(Date date) {
+//
+//        List<ResTableReservationDTO> returnList = new ArrayList<>();
+//        List<ResTableDTO> tableDTOS;
+//        Iterable<OnlineTableReservation> onlineOrders;
+//        int index = 0;
+//        //get counter orders
+//        try {
+//            onlineOrders = onlineTableReservationDAO.findAll();
+//
+//            for (OnlineTableReservation item : onlineOrders) {
+//
+//                java.util.Date comp = item.getDate();
+//                if (date.getYear() == comp.getYear()
+//                        && date.getMonth() == comp.getMonth()
+//                        && date.getDate() == comp.getDate()) {
+//                    if (item.getTableState()== null
+//                            || item.getTableState().equals(TableUtil.processingState)) {
+//                        //set state and button
+//                        String button = TableUtil.processingState;
+//
+//                        if (index == 0) {
+//                            button = TableUtil.confirm;
+//                        }
+//                        if (item.getTableState() == null) {
+//                            item.setTableState(TableUtil.processingState);
+//                        }
+//
+//                        if (item.getTableState().equals(TableUtil.processingState)) {
+//                            button = TableUtil.confirm;
+//                        }
+//
+//
+//                        Iterable<OnlineTableReservationDetails> onlineOrderDetails = onlineTableReservationDetailsDAO.findAllByOnlineTableReservationEquals(item);
+//
+//                        //create table item list
+//                        tableDTOS = new ArrayList<>();
+//
+//                        for (OnlineTableReservationDetails detail : onlineOrderDetails) {
+//                            //set table items list
+//                            tableDTOS.add(new ResTableDTO(
+//                                    detail.getTableId().getTableId(),
+//                                    item.getOnlineTableReservationId(),
+//                                    detail.getQuantity(),
+//                                    detail.getUnitePrice()
+//                            ));
+//                        }
+//
+//                        //complete restaurant table reservations
+//                        returnList.add(new ResTableReservationDTO(
+//                                item.getOnlineTableReservationId(),
+//                                TableUtil.onlineType,
+//                                item.getTableState(),
+//                                button,
+//                                tableDTOS,
+//                                index
+//                        ));
+//
+//                        index++;
+//
+//                    }
+//
+//                }
+//
+//            }
+//        } catch (NullPointerException e) {
+//
+//        }
+//
+//        return returnList;
+//    }
+//
 
+    @Override
+    public List<ResTableReservationDTO> getOnlineTableReservationByDate(Date date) {
+
+
+        List<ResTableReservationDTO> returnList = new ArrayList<>();
+        List<ResTableDTO> tableDTOS;
+        Iterable<OnlineTableReservation> onlineOrders;
+        int index = 0;
+        //get counter orders
+        try {
+            onlineOrders = onlineTableReservationDAO.findAll();
+
+            for (OnlineTableReservation item : onlineOrders) {
+
+                java.util.Date comp = item.getDate();
+                if (date.getYear() == comp.getYear()
+                        && date.getMonth() == comp.getMonth()
+                        && date.getDate() == comp.getDate()) {
+                    if (item.getTableState() == null
+                            || item.getTableState().equals(TableUtil.pendingState)
+                            || item.getTableState().equals(TableUtil.processingState)) {
+
+                        //set state and button
+                        String button = TableUtil.pendingState;
+
+                        if (index == 0) {
+                            button = TableUtil.accept;
+                        }
+                        if (item.getTableState() == null) {
+                            item.setTableState(TableUtil.pendingState);
+                        }
+                        if (item.getTableState().equals(TableUtil.pendingState)) {
+                            button = TableUtil.accept;
+                        }
+                        if (item.getTableState().equals(TableUtil.processingState)) {
+                            button = TableUtil.confirm;
+                        }
+
+                        Iterable<OnlineTableReservationDetails> onlineOrderDetails = onlineTableReservationDetailsDAO.findAllByOnlineTableReservationEquals(item);
+
+                        //create table item list
+                        tableDTOS = new ArrayList<>();
+
+                        for (OnlineTableReservationDetails detail : onlineOrderDetails) {
+                            //set table items list
+                            tableDTOS.add(new ResTableDTO(
+                                    detail.getTableId().getTableId(),
+                                    item.getOnlineTableReservationId(),
+                                    detail.getQuantity(),
+                                    detail.getUnitePrice()
+                            ));
+                        }
+
+                        //complete restaurant table reservations
+                        returnList.add(new ResTableReservationDTO(
+                                item.getOnlineTableReservationId(),
+                                TableUtil.onlineType,
+                                item.getTableState(),
+                                button,
+                                tableDTOS,
+                                index
+                        ));
+
+                        index++;
+
+                    }
+
+                }
+
+            }
+        } catch (NullPointerException e) {
+
+        }
+
+        return returnList;
+    }
 
 
     //manage the table reservation state
     @Override
     public boolean taketableRese(ResTableReservationDTO order) {
         //check order type
-//        if (order.getType().equals(KitchenUtil.onlineType)) {
-//            RestaurantOnlineOrder onlineOrder = onlineOrderDAO.findOne(order.getOrderId());
-//
-//            //check state
-//            if (!onlineOrder.getOrderState().equals(KitchenUtil.canceledState)
-//                    || !onlineOrder.getOrderState().equals(KitchenUtil.finishedState)) {
-//                onlineOrder.setOrderState(KitchenUtil.processingState);
-//                onlineOrderDAO.save(onlineOrder);
-//                return true;
-//            }
-
-        if (order.getType().equals(TableUtil.counterType)) {
-            CounterTableReservation counterOrder = counterTableReservationDAO.findOne(order.getReseId());
+        if (order.getType().equals(TableUtil.onlineType)) {
+            OnlineTableReservation onlineOrder = onlineTableReservationDAO.findOne(order.getReseId());
 
             //check state
-            if (!counterOrder.getTableState().equals(TableUtil.canceledState)
-                    || !counterOrder.getTableState().equals(TableUtil.finishedState)) {
-                counterOrder.setTableState(TableUtil.processingState);
-                counterTableReservationDAO.save(counterOrder);
-
+            if (!onlineOrder.getTableState().equals(TableUtil.canceledState)
+                    || !onlineOrder.getTableState().equals(TableUtil.finishedState)) {
+                onlineOrder.setTableState(TableUtil.processingState);
+                onlineTableReservationDAO.save(onlineOrder);
                 return true;
             }
+        }else if (order.getType().equals(TableUtil.counterType)) {
+                CounterTableReservation counterOrder = counterTableReservationDAO.findOne(order.getReseId());
+
+                //check state
+                if (!counterOrder.getTableState().equals(TableUtil.canceledState)
+                        || !counterOrder.getTableState().equals(TableUtil.finishedState)) {
+                    counterOrder.setTableState(TableUtil.processingState);
+                    counterTableReservationDAO.save(counterOrder);
+
+                    return true;
+                }
+            }
+            return false;
         }
-        return false;
-    }
 
 
 
     //manage released state
     @Override
     public void confirmtableRese(ResTableReservationDTO orderDTO) {
-//        if (orderDTO.getType().equals(KitchenUtil.onlineType)) {
-//            RestaurantOnlineOrder onlineOrder = onlineOrderDAO.findOne(orderDTO.getOrderId());
-//            onlineOrder.setOrderState(KitchenUtil.finishedState);
-//            onlineOrderDAO.save(onlineOrder);
-
-        if (orderDTO.getType().equals(TableUtil.counterType)) {
+        if (orderDTO.getType().equals(TableUtil.onlineType)) {
+            OnlineTableReservation onlineOrder = onlineTableReservationDAO.findOne(orderDTO.getReseId());
+            onlineOrder.setTableState(TableUtil.finishedState);
+            onlineTableReservationDAO.save(onlineOrder);
+        }else if (orderDTO.getType().equals(TableUtil.counterType)) {
             CounterTableReservation counterOrder = counterTableReservationDAO.findOne(orderDTO.getReseId());
             counterOrder.setTableState(TableUtil.finishedState);
             counterTableReservationDAO.save(counterOrder);
@@ -581,10 +736,86 @@ public class RestaurantBOImpl implements RestaurantBO {
     //table report
     @Override
     public List<ResTableReservationDTO> findReportData(Date date) {
+
+        //load online finish tables
         List<ResTableReservationDTO> returnlist = new ArrayList<>();
         List<ResTableDTO> tableDTOS, selectedtableList;
         ResTableReservationDTO order;
 
+        try {
+            Iterable<OnlineTableReservation> onlineOrders = onlineTableReservationDAO.findAllByTableStateEquals(TableUtil.finishedState);
+            tableDTOS = new ArrayList<>();
+            selectedtableList = new ArrayList<>();
+
+            for (OnlineTableReservation item : onlineOrders) {
+
+                java.util.Date comp = item.getDate();
+                if (date.getYear() == comp.getYear()
+                        && date.getMonth() == comp.getMonth()
+                        && date.getDate() == comp.getDate()) {
+
+                    //load order details
+                    Iterable<OnlineTableReservationDetails> details = onlineTableReservationDetailsDAO.findAllByOnlineTableReservationEquals(item);
+                    for (OnlineTableReservationDetails detail : details) {
+
+                        tableDTOS.add(new ResTableDTO(
+                                detail.getTableId().getTableId(),
+                                item.getOnlineTableReservationId(),
+                                detail.getQuantity(),
+                                detail.getUnitePrice()
+                        ));
+
+                    }
+
+                }
+
+            }
+
+            //set food item list
+
+            if (!tableDTOS.isEmpty()){
+
+                while (!tableDTOS.isEmpty()){
+                    //select 1st item
+                    ResTableDTO selectedItem = tableDTOS.remove(0);
+                    List<ResTableDTO> remove = new ArrayList<>();
+
+                    //get total food item info
+                    if (!tableDTOS.isEmpty()){
+
+                        for (ResTableDTO resitem:tableDTOS){
+                            if (selectedItem.getTableId() == resitem.getTableId()){
+                                selectedItem.setQuantity(resitem.getQuantity() + selectedItem.getQuantity());
+                                remove.add(resitem);
+                            }
+                        }
+                    }
+
+
+                    //remove selected item from foodItemDTOS
+                    if (!remove.isEmpty())
+                        tableDTOS.removeAll(remove);
+
+                    selectedtableList.add(selectedItem);
+
+
+                }
+
+                //set total price
+                for (ResTableDTO tableitem:selectedtableList){
+                    tableitem.setTotalPrice(tableitem.getQuantity() * tableitem.getPrice());
+                }
+            }
+
+            order = new ResTableReservationDTO();
+            order.setTables(selectedtableList);
+            order.setType(TableUtil.onlineType);
+            returnlist.add(order);
+
+        }catch(NullPointerException e){
+
+        }
+//load counter
         try {
             Iterable<CounterTableReservation> coubterOrders = counterTableReservationDAO.findAllByTableStateEquals(TableUtil.finishedState);
             tableDTOS = new ArrayList<>();
@@ -651,9 +882,11 @@ public class RestaurantBOImpl implements RestaurantBO {
             returnlist.add(order);
 
 
-        }catch(NullPointerException e){
 
+        } catch (
+                NullPointerException e) {
         }
+
         return returnlist;
     }
     /*-----------------------------------online table---------------------------------------------*/

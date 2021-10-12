@@ -1,6 +1,8 @@
 package lk.sliit.hotel.controller.RestaurantController;
 
 import lk.sliit.hotel.controller.SuperController;
+import lk.sliit.hotel.controller.kitchenController.KitchenUtil;
+import lk.sliit.hotel.dto.kitchen.RestaurantFoodOrderDTO;
 import lk.sliit.hotel.dto.restaurant.CounterTableReservation.CounterTableReservationDTO;
 import lk.sliit.hotel.dto.restaurant.ResTableDTO;
 import lk.sliit.hotel.dto.restaurant.ResTableReservationDTO;
@@ -32,7 +34,7 @@ public class RestaurantTableController {
     @Autowired
     RestaurantBO restaurantBO;
 
-    String alertMsg=null;
+    String alertMsg = null;
 
     //get all tables
     @GetMapping("/restaurantTable")
@@ -102,8 +104,8 @@ public class RestaurantTableController {
     public String checkTimeForTable(@ModelAttribute CounterTableReservationDTO counterTableReservationDTO,
                                     Model model) {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-        Time a = Time.valueOf(counterTableReservationDTO.getvStatT()+":00");//convert time to Time type
-        Time a2 = Time.valueOf(counterTableReservationDTO.getvEndT()+":00");
+        Time a = Time.valueOf(counterTableReservationDTO.getvStatT() + ":00");//convert time to Time type
+        Time a2 = Time.valueOf(counterTableReservationDTO.getvEndT() + ":00");
         counterTableReservationDTO.setStartTime(a);//Time set to dto
         counterTableReservationDTO.setEndTime(a2);
         Date date = Date.valueOf(counterTableReservationDTO.getvDate());//Set Date
@@ -111,13 +113,13 @@ public class RestaurantTableController {
         model.addAttribute("reservedDate", (counterTableReservationDTO.getDate()));//Set Values to next Page
         model.addAttribute("timeIn", (counterTableReservationDTO.getStartTime()));
         model.addAttribute("timeOut", (counterTableReservationDTO.getEndTime()));
-        List<RestaurantTableDTO> p2 =restaurantBO.getAviTables(counterTableReservationDTO.getDate(),//Find available
-                counterTableReservationDTO.getStartTime(),counterTableReservationDTO.getEndTime());
+        List<RestaurantTableDTO> p2 = restaurantBO.getAviTables(counterTableReservationDTO.getDate(),//Find available
+                counterTableReservationDTO.getStartTime(), counterTableReservationDTO.getEndTime());
         model.addAttribute("loadAllTable", p2);
         return "counterTableDetails";
     }
 
-//save reservation
+    //save reservation
     @PostMapping("/saveCounterTable")
     public String saveOnlineTable(@ModelAttribute CounterTableReservationDTO onlineOrderDTO, HttpSession session) {
 
@@ -128,7 +130,8 @@ public class RestaurantTableController {
             onlineOrderDTO.setEndTime(a2);
             Date date = Date.valueOf(onlineOrderDTO.getvDate());
             onlineOrderDTO.setDate(date);
-        }catch (IllegalArgumentException s){}
+        } catch (IllegalArgumentException s) {
+        }
         try {
             //find highest Id
             CounterTableReservationDTO top = restaurantBO.findHighestCounterTableId();
@@ -155,22 +158,22 @@ public class RestaurantTableController {
 
     //create model to store reservation details
     public Model gettableModel(Model model) {
-        List<ResTableReservationDTO> counterOrders =restaurantBO.getCounterTableReservationByDate(new java.util.Date());
-        // List<ResTableReservationDTO> couterOrders = kitchenBO.getCounterRestaurantFoodOrdersByDate(new java.util.Date());
+        List<ResTableReservationDTO> counterOrders = restaurantBO.getCounterTableReservationByDate(new java.util.Date());
+        List<ResTableReservationDTO> onlineOrders = restaurantBO.getOnlineTableReservationByDate(new java.util.Date());
 
         //set order table data
-        //model.addAttribute("onlineOrders", onlineOrders);
-        // model.addAttribute("pendingOnline", onlineOrders.size());
-        model.addAttribute("counterOrders",counterOrders );
+        model.addAttribute("onlineOrders", onlineOrders);
+        model.addAttribute("pendingOnline", onlineOrders.size());
+        model.addAttribute("counterOrders", counterOrders);
         model.addAttribute("pendingCounter", counterOrders.size());
-        // model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
-//        if (onlineOrders.size() == 0 && couterOrders.size() == 0){
-//            alertMsg = "Pending restaurant order list is empty";
-//            model.addAttribute(KitchenUtil.alertMessageName, alertMsg);
-//            alertMsg = null;
-//        }
-//
+        if (onlineOrders.size() == 0 && counterOrders.size() == 0) {
+            alertMsg = "Pending restaurant order list is empty";
+            model.addAttribute(TableUtil.alertMessageName, alertMsg);
+            alertMsg = null;
+        }
+
         return model;
     }
 
@@ -178,7 +181,39 @@ public class RestaurantTableController {
     @PostMapping("/confirmTable")
     public String confirmOrder(Model model, @ModelAttribute ResTableReservationDTO orderDTO) {
 
-        // model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+
+        //check button
+        if (orderDTO.getButton().equals(TableUtil.accept)) {
+            //check state
+            if (orderDTO.getState().equals(TableUtil.pendingState)) {
+                //take order
+                if (!restaurantBO.taketableRese(orderDTO)) {
+                    alertMsg = "Reservation is already released";
+                }
+            }
+        } else if (orderDTO.getButton().equals(TableUtil.confirm)) {
+            restaurantBO.confirmtableRese(orderDTO);
+            alertMsg = "Reservation id: " + orderDTO.getReseId() + " Released";
+        }
+//        } else if (orderDTO.getButton().equals(TableUtil.pendingState)){
+//        restaurantBO.confirmtableRese(orderDTO);
+//            alertMsg = "Customer there";
+//        }
+
+        model = gettableModel(model);
+
+        if (alertMsg != null) {
+            model.addAttribute(TableUtil.alertMessageName, alertMsg);
+        }
+
+        return "restaurantTableManage";
+    }
+
+    @PostMapping("/confirmOnlineTable")
+    public String confirmOnlineOrder(Model model, @ModelAttribute ResTableReservationDTO orderDTO) {
+        alertMsg = null;
+        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
         //check button
         if (orderDTO.getButton().equals(TableUtil.accept)){
@@ -189,14 +224,14 @@ public class RestaurantTableController {
                     alertMsg = "Reservation is already released";
                 }
             }
-        } else if (orderDTO.getButton().equals(TableUtil.confirm)){
+        } else if (orderDTO.getButton().equals(TableUtil.confirm)) {
             restaurantBO.confirmtableRese(orderDTO);
-            alertMsg = "Reservation id: "+orderDTO.getReseId()+" Released";
-
-        } else if (!orderDTO.getButton().equals(TableUtil.confirm)
-                && !orderDTO.getButton().equals(TableUtil.accept)){
-            alertMsg = "Please select the first reservation.";
+            alertMsg = "Reservation id: " + orderDTO.getReseId() + " Released";
         }
+//        } else if (!orderDTO.getButton().equals(TableUtil.confirm)
+//                && !orderDTO.getButton().equals(TableUtil.accept)){
+//            alertMsg = "Please select the first order.";
+//        }
 
         model = gettableModel(model);
 
@@ -227,17 +262,17 @@ public class RestaurantTableController {
         double totalCountertableIncome = 0;
         double totalIncome = 0;
 
-        if (!allFinishedOrders.isEmpty()){
-            for (ResTableReservationDTO order: allFinishedOrders){
+        if (!allFinishedOrders.isEmpty()) {
+            for (ResTableReservationDTO order : allFinishedOrders) {
 
                 System.out.println("======================================================\n\n");
-                System.out.println(order.getType()+"\n");
-                for (ResTableDTO item: order.getTables()){
-                    System.out.println("ID: "+item.getTableId());
+                System.out.println(order.getType() + "\n");
+                for (ResTableDTO item : order.getTables()) {
+                    System.out.println("ID: " + item.getTableId());
                     //System.out.println("Name: "+item.getFoodName());
-                    System.out.println("Quantity: "+item.getQuantity());
-                    System.out.println("Price"+item.getPrice());
-                    System.out.println("Total price: "+item.getTotalPrice());
+                    System.out.println("Quantity: " + item.getQuantity());
+                    System.out.println("Price" + item.getPrice());
+                    System.out.println("Total price: " + item.getTotalPrice());
 
                 }
 
@@ -247,88 +282,86 @@ public class RestaurantTableController {
                 //////////////////////////////////////////////
 
 
-//                if (order.getType().equals(KitchenUtil.counterType)){
-//
-//                    onlineItems = order.getTables();
-//
-//                    //calc total item sold
-//                    if (!onlineItems.isEmpty()){
-//
-//                        for (RestaurantFoodItemDTO itemDTO : onlineItems){
-//                            totalOnlineItemsSold += itemDTO.getQuantity();
-//                            totalOnlineIncome += itemDTO.getTotalPrice();
-//                        }
-//
-//                        //set selling rates
-//                        for (RestaurantFoodItemDTO itemDTO : onlineItems){
-//                            itemDTO.setSellingRateOnline(Math.round(((itemDTO.getQuantity() / totalOnlineItemsSold) * 100)));
-//                        }
-//
-//                    }
-//
+                if (order.getType().equals(TableUtil.onlineType)) {
 
-                if (order.getType().equals(TableUtil.counterType)){
-
-                    counterItems = order.getTables();
+                    onlineItems = order.getTables();
 
                     //calc total item sold
-                    if (!counterItems.isEmpty()){
+                    if (!onlineItems.isEmpty()) {
 
-                        for (ResTableDTO itemDTO : counterItems){
-                            totalCountertableItemsSold += itemDTO.getQuantity();
-                            totalCountertableIncome += itemDTO.getTotalPrice();
+                        for (ResTableDTO itemDTO : onlineItems) {
+                            totalOnlinetableItemsSold += itemDTO.getQuantity();
+                            totalOnlinetableIncome += itemDTO.getTotalPrice();
                         }
 
                         //set selling rates
-                        for (ResTableDTO itemDTO : counterItems){
-                            itemDTO.setSellingRateCounter(Math.round((itemDTO.getQuantity() / totalCountertableItemsSold) * 100));
+                        for (ResTableDTO itemDTO : onlineItems) {
+                            itemDTO.setSellingRateOnline(Math.round((itemDTO.getQuantity() / totalOnlinetableItemsSold) * 100));
                         }
                     }
-                }
-            }
 
-            totalIncome = totalCountertableIncome + totalOnlinetableIncome;
-            totaltableItemsSold = totalCountertableItemsSold + totalOnlinetableItemsSold;
+                }else if (order.getType().equals(TableUtil.counterType)) {
 
-            if (!onlineItems.isEmpty()){
-                finalList.addAll(onlineItems);
+                        counterItems = order.getTables();
 
-                if (!counterItems.isEmpty()){
-                    for (ResTableDTO counterItem: counterItems){
-                        for (ResTableDTO list:finalList){
-                            if (counterItem.getTableId() == list.getTableId()){
-                                list.setSellingRateCounter(counterItem.getSellingRateCounter());
-                                list.setQuantity(list.getQuantity() + counterItem.getQuantity());
+                        //calc total item sold
+                        if (!counterItems.isEmpty()) {
+
+                            for (ResTableDTO itemDTO : counterItems) {
+                                totalCountertableItemsSold += itemDTO.getQuantity();
+                                totalCountertableIncome += itemDTO.getTotalPrice();
+                            }
+
+                            //set selling rates
+                            for (ResTableDTO itemDTO : counterItems) {
+                                itemDTO.setSellingRateCounter(Math.round((itemDTO.getQuantity() / totalCountertableItemsSold) * 100));
                             }
                         }
                     }
+                }
+
+                totalIncome = totalCountertableIncome + totalOnlinetableIncome;
+                totaltableItemsSold = totalCountertableItemsSold + totalOnlinetableItemsSold;
+
+                if (!onlineItems.isEmpty()) {
+                    finalList.addAll(onlineItems);
+
+                    if (!counterItems.isEmpty()) {
+                        for (ResTableDTO counterItem : counterItems) {
+                            for (ResTableDTO list : finalList) {
+                                if (counterItem.getTableId() == list.getTableId()) {
+                                    list.setSellingRateCounter(counterItem.getSellingRateCounter());
+                                    list.setQuantity(list.getQuantity() + counterItem.getQuantity());
+                                }
+                            }
+                        }
+                    } else {
+                        for (ResTableDTO itemDTO : finalList) {
+                            itemDTO.setSellingRateCounter(0);
+                        }
+                    }
                 } else {
-                    for (ResTableDTO itemDTO:finalList){
-                        itemDTO.setSellingRateCounter(0);
+                    finalList.addAll(counterItems);
+
+                    for (ResTableDTO itemDTO : finalList) {
+                        itemDTO.setSellingRateOnline(0);
                     }
                 }
-            } else {
-                finalList.addAll(counterItems);
 
-                for (ResTableDTO itemDTO:finalList){
-                    itemDTO.setSellingRateOnline(0);
-                }
             }
 
+
+            model.addAttribute("table", finalList);
+            model.addAttribute("totaltableItemsSold", totaltableItemsSold);
+            model.addAttribute("totaltableOnline", totalOnlinetableItemsSold);
+            model.addAttribute("totaltableCounter", totalCountertableItemsSold);
+            model.addAttribute("totalCountertableIncome", totalCountertableIncome);
+            model.addAttribute("totalOnlinetableIncome", totalOnlinetableIncome);
+            model.addAttribute("totalIncome", totalIncome);
+
+            return "restaurantTableResReport";
         }
 
 
-
-        model.addAttribute("table", finalList);
-        model.addAttribute("totaltableItemsSold",totaltableItemsSold);
-        model.addAttribute("totaltableOnline", totalOnlinetableItemsSold);
-        model.addAttribute("totaltableCounter", totalCountertableItemsSold);
-        model.addAttribute("totalCountertableIncome", totalCountertableIncome);
-        model.addAttribute("totalOnlinetableIncome", totalOnlinetableIncome);
-        model.addAttribute("totalIncome", totalIncome);
-
-        return "restaurantTableResReport";
     }
 
-
-}
