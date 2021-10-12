@@ -43,17 +43,17 @@ public class BanquetCheckAvailability {
 
         //Date availability check
         int count = banquetBO.checkAvailability(date);
-        int count6 = banquetBO.checkAvailability2(date);
+        //int count6 = banquetBO.checkAvailability2(date);
 
-        if(count == 2){
+//      if(count == 1 && count6 == 1){
+//            answer1=":Date not Available";
+//        }
+         if(count == 2){
             answer1 =":Date Not Available";
         }
-        else if(count6 == 2){
-            answer1 =":Date not Available";
-        }
-        else if(count == 1 && count6 == 1){
-            answer1=":Date not Available";
-        }
+//        else if(count6 == 2){
+//            answer1 =":Date not Available";
+//        }
         else{
             answer1=":Date  Available";
         }
@@ -84,6 +84,10 @@ public class BanquetCheckAvailability {
         int count4 = banquetBO.checkHallOneAvailability2(date);
         if(count1==1 || count4==1)
             answer2="Unavailable";
+        else if(count4 == 2)
+            answer2 = "Unavailable";
+        else if(count1 == 2)
+            answer2 = "Unavailable";
         else
             answer2 ="Available";
         model.addAttribute("answer2",answer2);
@@ -93,7 +97,11 @@ public class BanquetCheckAvailability {
         int count2 = banquetBO.checkHallTwoAvailabilityCheck(date);
         int count5 = banquetBO.checkHallTwoAvailabilityCheck2(date);
         if(count2 == 1 || count5==1 )
-            answer3 ="Unavailable";
+            answer3 = "Unavailable";
+        else if(count2 == 2)
+            answer3 = "Unavailable";
+        else if(count5 == 2)
+            answer3 = "Unavailable";
         else
             answer3 ="Available";
         model.addAttribute("answer3",answer3);

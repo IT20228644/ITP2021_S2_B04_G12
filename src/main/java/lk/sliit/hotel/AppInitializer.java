@@ -17,136 +17,11 @@ import java.util.List;
 @SpringBootApplication
 @EnableJpaRepositories
 @ServletComponentScan
-
-
 public class AppInitializer {
     public static void main(String[] args) {
         SpringApplication.run(AppInitializer.class,args);
     }
 
-<<<<<<< HEAD
-=======
-
-//    String str="2020-05-11";
-//    Date date= Date.valueOf(str);
-//
-//    @Bean //Add Demo System User To the System
-//    CommandLineRunner init2(EmployeeDAO manageDAO) {
-//        return args -> {
-//            List<String> names = Arrays.asList ( "1");
-//            names.forEach ( name -> manageDAO.save ( new Employee(
-
-//                            "ABC",
-//                            "0223123456",
-//                            "someOne@gmail.com",
-//                            "Colombo",
-//                            "Admin",
-//                            "1",
-//                            date,
-//                            "Female",
-//                            2112122,
-//                            date,
-//                            "https://res.cloudinary.com/dwdv5hhga/image/upload/v1600203476/oyt7fspuxa2crzakssl5.jpg",
-//                            new Department(1,"Manage")
-//                    )
-//                    )
-//            );
-//        };
-
-//}//End Class
-
-//=======
-//<<<<<<< HEAD
-//  String str="2020-05-11";
-//   Date date= Date.valueOf(str);
-//
-//    @Bean //Add Demo System User To the System
-//  CommandLineRunner init2(EmployeeDAO manageDAO) {
-//       return args -> {
-//           List<String> names = Arrays.asList ( "1");
-//           names.forEach ( name -> manageDAO.save ( new Employee(
-//                            1,
-//                         "ABC",
-//                          "0223123456",
-//                           "someOne@gmail.com",
-//                         "Colombo",
-//                           "Admin",
-//                           "1",
-//                           date,
-//                          "Female",
-//                          2112122,
-//                           date,
-//                         "https://res.cloudinary.com/dwdv5hhga/image/upload/v1600203476/oyt7fspuxa2crzakssl5.jpg",
-//                            new Department(1,"Manage")
-//                   )
-//                   )
-//            );
-//      };
-//   }
-//}//End Class
-//=======
-//    String str="2020-05-11";
-//    Date date= Date.valueOf(str);
-//
-//    @Bean //Add Demo System User To the System
-//    CommandLineRunner init2(EmployeeDAO manageDAO) {
-//        return args -> {
-//            List<String> names = Arrays.asList ( "1");
-//            names.forEach ( name -> manageDAO.save ( new Employee(
-//                                    1,
-//                                    "Sachini Perera",
-//                                    "0223123456",
-//                                    "someOne@gmail.com",
-//                                    "Colombo",
-//                                    "Admin",
-//                                    "1",
-//                                    date,
-//                                    "Female",
-//                                    2112122,
-//                                    date,
-//                                    "https://res.cloudinary.com/dwdv5hhga/image/upload/v1600203476/oyt7fspuxa2crzakssl5.jpg",
-//                                    new Department(1,"Manage")
-//                            )
-//                    )
-//            );
-//        };
-//    }
-//}
-//>>>>>>> decfd04a8d6784ac655059b84b73f1e59b05c07b
-//>>>>>>> ca3bfc914a0db726171bac8c191d1744123f03b1
-//=======
-//=======
-//<<<<<<< HEAD
-//  String str="2020-05-11";
-//   Date date= Date.valueOf(str);
-//
-//    @Bean //Add Demo System User To the System
-//  CommandLineRunner init2(EmployeeDAO manageDAO) {
-//       return args -> {
-//           List<String> names = Arrays.asList ( "1");
-//           names.forEach ( name -> manageDAO.save ( new Employee(
-//                            1,
-//                         "ABC",
-//                          "0223123456",
-//                           "someOne@gmail.com",
-//                         "Colombo",
-//                           "Admin",
-//                           "1",
-//                           date,
-//                          "Female",
-//                          2112122,
-//                           date,
-//                         "https://res.cloudinary.com/dwdv5hhga/image/upload/v1600203476/oyt7fspuxa2crzakssl5.jpg",
-//                            new Department(1,"Manage")
-//                   )
-//                   )
-//            );
-//      };
-//   }
-//}//End Class
-
-
->>>>>>> 53f1c70902c26563334cf69f3ab6c2f7b18bd4e1
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
@@ -173,17 +48,4 @@ public class AppInitializer {
             );
         };
     }
-<<<<<<< HEAD
 }//End Class
-=======
->>>>>>> 53f1c70902c26563334cf69f3ab6c2f7b18bd4e1
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 53f1c70902c26563334cf69f3ab6c2f7b18bd4e1

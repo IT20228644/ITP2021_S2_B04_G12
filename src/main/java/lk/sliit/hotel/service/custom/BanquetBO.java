@@ -88,6 +88,7 @@ public interface BanquetBO extends SuperBO {
     void updatePendingStatus(int orderId);
 
     void deletePendingOnlineBanquet(int onlineNo);
+//    void deletePendingOnlineBanquet(int idNo);
 
     void saveOnlineBanquet2(BanquetOnlineOrderDTO banquetOnlineOrderDTO);
 
@@ -106,6 +107,14 @@ public interface BanquetBO extends SuperBO {
     void saveBanquetOnlineCustomer(BanquetOnlineCustomerDTO banquetOnlineCustomerDTO);
 
     BanquetOnlineCustomerDTO findByUserNameAndPassword(String id, String password);
+
+    List<BanquetAddDTO> findAllBanquet2();
+
+    List<BanquetAddDTO> findAllPlaceOrderBanquet();
+
+    void deletePendingOnlineBanquet1(int idNo);
+
+//    void deletePendingOnlineBanquet1(int idNo);
 
 
 //    List<BanquetAddDTO> findLastWeekBanquets();

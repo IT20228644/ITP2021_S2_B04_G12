@@ -29,6 +29,9 @@ public class BanquetOrder {
     String submittedBy;
     String orderState;
 
+//    @Embedded
+//    BanquetOnlineOrder banquetOnlineOrder;
+
 
 //    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates, Date date, String submittedBy, BanquetCustomer one, Menu menuDAOOne, lk.sliit.hotel.controller.banquetController.BanquetBill banquetBillDAOOne) {
 //
@@ -67,6 +70,22 @@ public class BanquetOrder {
 
     public BanquetOrder(int orderId) {
         this.orderId=orderId;
+    }
+
+    public BanquetOrder(int orderId, String hallId, String orderState, int noOfPlates,
+                        Date date, String submittedBy, String orderState1, BanquetCustomer banquetCustomer,
+                        Menu menu, BanquetBill banquetBill) {
+        this.orderId = orderId;
+        this.hallId =hallId;
+        this.orderState = orderState;
+        this.noOfPlates = noOfPlates;
+        this.date = date;
+        this.submittedBy = submittedBy;
+        this.orderState = orderState1;
+        this.banquetCustomer = banquetCustomer;
+        this.menu = menu;
+        this.banquetBill = banquetBill;
+
     }
 
     public int getOrderId() {
@@ -151,6 +170,6 @@ public class BanquetOrder {
 
     public BanquetCustomer getCustomer() {
         return banquetCustomer;
-
     }
+
 }

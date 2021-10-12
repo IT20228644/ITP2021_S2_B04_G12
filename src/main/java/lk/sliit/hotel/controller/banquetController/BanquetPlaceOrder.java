@@ -26,7 +26,7 @@ public class BanquetPlaceOrder {
         ModelAndView mv = new ModelAndView("banquetPlaceOrders");
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
 
-        List<BanquetAddDTO> list = banquetBO.findAllBanquet();
+        List<BanquetAddDTO> list = banquetBO.findAllPlaceOrderBanquet();
         mv.addObject("loadBanquetAllTable",list);
 
         return mv;

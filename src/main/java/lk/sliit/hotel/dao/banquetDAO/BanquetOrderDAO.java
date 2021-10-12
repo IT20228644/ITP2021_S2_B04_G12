@@ -46,4 +46,6 @@ public interface BanquetOrderDAO extends CrudRepository<BanquetOrder, Integer> {
     Iterable<BanquetOrder> findLastBanquetOrdersByDateBetween(java.util.Date afterWeek, java.util.Date todayDate);
 
     BanquetOrder findBanquetOrderByBanquetBillEquals(BanquetBill banquetBill);
+
+    Iterable<BanquetOrder> findAllBySubmittedByEquals(String submittedBy);
 }

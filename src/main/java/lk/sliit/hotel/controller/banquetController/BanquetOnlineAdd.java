@@ -29,14 +29,14 @@ public class BanquetOnlineAdd {
     public ModelAndView loginPage (Model model){
         ModelAndView mv = new ModelAndView("banquetOnlineAdd"); //display banquetAdd page
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-
-//        try{
-//            BanquetOrderDTO banquetOrderDTO = banquetBO.findTopBanquetId();
-//            int topBanquet= (banquetOrderDTO.getOrderId())+1;
-//            model.addAttribute("topBanquetId",topBanquet);
-//        }catch (NullPointerException e){
-//            model.addAttribute("topBanquetId",1);
-//        }
+//<add>
+        try{
+            BanquetOrderDTO banquetOrderDTO = banquetBO.findTopBanquetId();
+            int topBanquet= (banquetOrderDTO.getOrderId())+1;
+            model.addAttribute("topBanquetId",topBanquet);
+        }catch (NullPointerException e){
+            model.addAttribute("topBanquetId",1);
+        }
 
         try{
             BanquetCustomerDTO banquetCustomerDTO = banquetBO.findTopCustomerId();

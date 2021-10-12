@@ -35,19 +35,22 @@
             <span class="oi oi-menu"></span> Menu
         </button>
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="ftco-nav" style="padding-left: 70px">
+            <ul class="navbar-nav ml-auto" style="background-color: rgba(45,55,47,0.34);alignment: left; background-size: 1500px">
                 <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="rooms.html" class="nav-link">Banquet Hall</a></li>
                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="onlineBanquetCheck" class="nav-link">Check Availability</a></li>
+                <li class="nav-item"><a href="banquetOnlineCustomerAdd" class="nav-link" >Log In</a></li>
             </ul>
+
         </div>
     </div>
     <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-        <div class="text-right"><a href=banquetOnlineCustomerAdd > <button type="button" class="book-now-btn">Log In</button></a></div>
+<%--        <div class="text-right"><a href=banquetOnlineCustomerAdd > <button type="button" class="book-now-btn">Log In</button></a></div>--%>
     </div>
 </nav>
 <!-- END nav -->
@@ -58,7 +61,7 @@
         </a>
     </div>
     <section class="home-slider owl-carousel">
-        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg_1.jpg);">
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg2.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center">
@@ -72,7 +75,21 @@
             </div>
         </div>
 
-        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg_2.jpg);">
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg3.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center">
+                    <div class="col-md-8 ftco-animate">
+                        <div class="text mb-5 pb-5">
+                            <h1 class="mb-3">Experience Epic Beauty</h1>
+                            <h2>Roxandrea Hotel &amp; Resort</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-item" style="background-image:url(/onlineBanquet/images/bg4.jpg);">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center">
@@ -88,6 +105,7 @@
     </section>
 </div>
 
+<br><br>
 <section >
     <div class="container">
         <div class="row">

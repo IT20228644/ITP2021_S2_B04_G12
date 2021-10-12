@@ -9,7 +9,7 @@ import java.sql.Date;
 public class BanquetOnlineOrder {
     @Id
     int onlineNo;
-  //  int orderId;
+//    int orderId;
 //   @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
 //   @JoinColumn(name = "orderId", referencedColumnName = "orderId")
 //   BanquetOrder orderId;
@@ -90,6 +90,22 @@ public class BanquetOnlineOrder {
         this.banquetCustomer = banquetCustomer;
         this.menu =menu;
     }
+
+//    <add>
+//    public BanquetOnlineOrder(int orderId, int onlineNo, Date date, String hallId,
+//                              int noOfPlates, Date orderDate, String orderState, BanquetBill banquetBill,
+//                              BanquetCustomer banquetCustomer, Menu menu) {
+//        this.orderId = orderId;
+//        this.onlineNo =onlineNo;
+//       this.date = date;
+//       this.hallId = hallId;
+//        this.noOfPlates = noOfPlates;
+//        this.orderDate = orderDate;
+//       this.orderState = orderState;
+//       this.banquetBill = banquetBill;
+//       this.banquetCustomer = banquetCustomer;
+//        this.menu = menu;
+//    }
 
 
 //
