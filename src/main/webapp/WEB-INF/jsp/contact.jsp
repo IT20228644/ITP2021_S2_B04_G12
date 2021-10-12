@@ -110,9 +110,9 @@
             <div class="col-md-6 contact-left-block">
                 <h3><span>Contact </span>Us</h3>
                 <p class="text-left">We are here to help and answer any question you might have. We look forward to hearing from you.</p>
-                <p class="text-right"> Imduwa Road, Yakkalamulla, Galle, Sri Lanka. <i class="fa fa-map-marker fa-lg"></i></p>
+                <p class="text-right"> Giriulla Rd, 22 Negombo , Negombo, Sri Lanka. <i class="fa fa-map-marker fa-lg"></i></p>
                 <p class="text-right"><a href="tel:+94-76-673-7320"> +94-76-6737320 <i class="fa fa-phone fa-lg"></i></a></p>
-                <p class="text-right"><a href="mailto:mailspringitp@gmail.com"> mailspringitp@gmail.com <i class="fa fa-envelope"></i></a></p>
+                <p class="text-right"><a href="mailto:mailspringitp@gmail.com"> sapphiremarriott@gmail.com <i class="fa fa-envelope"></i></a></p>
             </div>
             <div class="col-md-6 contact-form">
                 <h3>Send a <span>Message</span></h3>

@@ -32,11 +32,11 @@ public class ReservationController {
         model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
         return "activityReports";
     }
-    @GetMapping("/banquetDelete")
-    public String reportPage1(Model model) {
-        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
-        return "cancelBanquet";
-    }
+//    @GetMapping("/cancelBanquet")
+//    public String reportPage1(Model model) {
+//        model.addAttribute("loggerName", indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+//        return "cancelBanquet";
+//    }
 
 
 }

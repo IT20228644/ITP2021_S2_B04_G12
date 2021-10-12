@@ -341,17 +341,17 @@
                                     var filter = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
                                     var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-                                    if (email=='')
-                                    {
-                                        window.alert(
-                                            "Please enter a valid e-mail address.");
-                                        return false;
-                                    }
+                                    // if (email=='')
+                                    // {
+                                    //     window.alert(
+                                    //         "Please enter a valid e-mail address.");
+                                    //     return false;
+                                    // }
                                         // else if(!filter.test(email))
                                         // {
                                         //     alert("Enter valid email id.");
                                     // }
-                                    else if (!re.test(phone))
+                                     if (!re.test(phone))
                                     {
                                         window.alert(
                                             "Please enter 10 digit telephone number.");
@@ -419,7 +419,7 @@
                                                     <td>${a.address}</td>
                                                     <td>${a.contactNumber}</td>
                                                     <td>${a.email}</td>
-                                                    <td><a href="deleteCustomer/${a.customerId}">
+                                                    <td><a href="deleteCustomer/${a.customerId}" onclick="return confirm('Are you sure you want to delete?')">
                                                         <i class="fa fa-trash"></i>
                                                     </a></td>
                                                 </tr>
