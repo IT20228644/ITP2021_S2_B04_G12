@@ -19,11 +19,8 @@
 </head>
 
 <body class="nav-md" style="cursor: pointer">
-
-
-
-    <!-- Sign up form -->
-    <small style="font-weight: bolder"><a href="onlineDashboard"> << Back to Home</a> </small>
+<!-- Sign up form -->
+<%--    <small style="font-weight: bolder"><a href="onlineDashboard"> << Back to Home</a> </small>--%>
      <h2> Online Registration Form</h2>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
@@ -32,7 +29,10 @@
                     <span>or use your email for registration</span>
                     <input required type="text" placeholder="Name" name="name" />
                     <input required type="email" placeholder="Email" name="email" />
-                    <input required type="number" placeholder="Mobile" name="contact"/>
+<%--                    <input required="" oninvalid="this.setCustomValidity('Please Enter valid phone no')"--%>
+<%--                            type="text" placeholder="Mobile" name="contact" pattern="[0-9]{9}"/>--%>
+                    <input required=""
+                           type="text" placeholder="Mobile" name="contact" pattern="[0-9]{10}"/>
                     <input required type="text" placeholder="User Name" name="userName" />
                     <input  required type="password" placeholder="Password"  />
                     <input required type="password" placeholder="Re-type Password" name="password"/>

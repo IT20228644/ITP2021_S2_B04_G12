@@ -43,7 +43,16 @@ public class RestaurantOnlineOrder {
         return "restaurantHome";
     }
 
+    @GetMapping("/features")
+    public String loadfeatures(){
 
+        return "features";
+    }
+    @GetMapping("/chef")
+    public String loadChef(){
+
+        return "chef";
+    }
 
     @GetMapping("/onlineOrder")//Load Online Order Page
     public String loadForm_validationSaveMode(Model model, HttpSession session, HttpServletRequest request) {
