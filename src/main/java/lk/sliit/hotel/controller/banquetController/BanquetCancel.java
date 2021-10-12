@@ -70,4 +70,14 @@ public class BanquetCancel {
     }
 
 
+    //Delete banquet
+    @RequestMapping("deletePendingOnlineBanquet1")
+    public String deletePendingOnlineBanquet(@RequestParam int idNo) {
+//        banquetBO.deletePendingOnlineBanquet(onlineNo);
+        banquetBO.deletePendingOnlineBanquet1(idNo);
+        return "redirect:/banquetDelete";
+    }
+
+
+
 }

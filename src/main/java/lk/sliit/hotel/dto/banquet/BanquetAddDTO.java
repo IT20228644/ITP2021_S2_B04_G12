@@ -230,6 +230,20 @@ public class BanquetAddDTO {
         this.orderState = orderState;
     }
 
+    public BanquetAddDTO(int billId, Date date, String name, String address, String hallId,
+                         int menuId, int noOfPlates, double advancePayment, double total, String orderState) {
+        this.banquetBillId = billId;
+        this.date = date;
+        this.name = name;
+        this.address = address;
+        this.hallId = hallId;
+        this.menuId = menuId;
+        this.noOfPlates = noOfPlates;
+        this.advanceFee = advancePayment;
+        this.total = total;
+        this.orderState = orderState;
+    }
+
 //    public BanquetAddDTO(int onlineNo, int billId, Date orderDate, Date date,
 //                         String name, String contactNo, String hallId, int menuId, int noOfPlates, double advancePayment, double total, String orderState) {
 //

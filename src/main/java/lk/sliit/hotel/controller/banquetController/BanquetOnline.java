@@ -54,17 +54,17 @@ public class BanquetOnline {
 
         //Date availability check
         int count = banquetBO.checkAvailability(date);
-        int count6 = banquetBO.checkAvailability2(date);
+      //  int count6 = banquetBO.checkAvailability2(date);
 
         if(count == 2){
             answer1 =":Date Not Available";
         }
-        else if(count6 == 2){
-            answer1 =":Date not Available";
-        }
-        else if(count == 1 && count6 == 1){
-            answer1=":Date not Available";
-        }
+//        else if(count6 == 2){
+//            answer1 =":Date not Available";
+//        }
+//        else if(count == 1 && count6 == 1){
+//            answer1=":Date not Available";
+//        }
         else{
             answer1=":Date  Available";
         }
@@ -92,6 +92,20 @@ public class BanquetOnline {
 
         return "onlineBanquetCheck";
 
+
+    }
+
+    @GetMapping("/banquetGallery")
+    public String loginPage3(Model model){
+        //  model.addAttribute("loggerName",indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        return "homeBanquet";
+
+    }
+
+    @GetMapping("/banquetPackages")
+    public String loginPage4(Model model){
+        //  model.addAttribute("loggerName",indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
+        return "onlineBanquetPackages";
 
     }
 

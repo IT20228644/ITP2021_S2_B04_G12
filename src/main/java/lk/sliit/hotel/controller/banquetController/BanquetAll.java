@@ -32,6 +32,9 @@ public class BanquetAll {
         List<BanquetAddDTO> list = banquetBO.findAllBanquet();
         mv.addObject("loadBanquetAllTable",list);
 
+        List<BanquetAddDTO> list2 = banquetBO.findAllBanquet2();
+        mv.addObject("loadBanquetAllTable",list2);
+
         return mv;
     }
 

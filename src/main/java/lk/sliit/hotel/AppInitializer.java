@@ -17,13 +17,12 @@ import java.util.List;
 @SpringBootApplication
 @EnableJpaRepositories
 @ServletComponentScan
-
-
 public class AppInitializer {
     public static void main(String[] args) {
         SpringApplication.run(AppInitializer.class,args);
     }
 
+<<<<<<< HEAD
 //    String str="2020-05-11";
 //    Date date= Date.valueOf(str);
 //
@@ -111,6 +110,8 @@ public class AppInitializer {
 //}//End Class
 
 
+=======
+>>>>>>> 1b6a324050fb6702c7379bd0897721392371e890
     String str="2020-05-11";
     Date date= Date.valueOf(str);
 
@@ -137,7 +138,11 @@ public class AppInitializer {
             );
         };
     }
+<<<<<<< HEAD
 
 }//End Class
 
 
+=======
+}//End Class
+>>>>>>> 1b6a324050fb6702c7379bd0897721392371e890
