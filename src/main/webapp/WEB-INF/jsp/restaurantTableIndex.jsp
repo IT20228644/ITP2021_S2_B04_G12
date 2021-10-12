@@ -246,23 +246,23 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
 
-                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
+                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-6">
                         <a href="restaurantTableReservation">
                             <button type="button" class="btnq">+ new Table Reservation</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
+                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-6">
                         <a href="restaurantTable">
                             <button type="button" class="btnq">+ new Restaurant Table</button>
                         </a>
                     </div>
 
-                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">
-                        <a href="tableManage">
-                            <button type="button" class="btnq">Table Manage</button>
-                        </a>
-                    </div>
+<%--                    <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4">--%>
+<%--                        <a href="tableManage">--%>
+<%--                            <button type="button" class="btnq">Table Manage</button>--%>
+<%--                        </a>--%>
+<%--                    </div>--%>
 
 
 

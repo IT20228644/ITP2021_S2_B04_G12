@@ -86,8 +86,8 @@
             <div class="navbar-nav ml-auto">
                 <a href="restaurantHome" class="nav-item nav-link">Home</a>
 <%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
-                <a href="feature.html" class="nav-item nav-link">Feature</a>
-                <a href="team.html" class="nav-item nav-link">Chef</a>
+                <a href="features" class="nav-item nav-link">Feature</a>
+                <a href="chef" class="nav-item nav-link">Chef</a>
                 <a href="onlineOrder" class="nav-item nav-link active">Menu</a>
                 <a href="onlineTable" class="nav-item nav-link">Booking</a>
 <%--                <div class="nav-item dropdown">--%>
@@ -102,7 +102,7 @@
                 <a href="restaurantOnlineCustomer" class="nav-item nav-link" style="color:white;font-weight:900;">Login</a>
                 </button>
 
-                <a href="profile">  <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;"></a>
+                 <img src="../../online/img/proo.png" alt="" style="width: 20px;height: 20px;margin-left:10px;">
              <p style="color: white;font-weight: bold; margin-right: 30px;">${loggerId.name}</p>
 
 <%--                <nav>--%>

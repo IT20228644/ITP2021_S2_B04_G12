@@ -285,7 +285,7 @@ public class ReservationBOImpl implements ReservationBO {
                 reservationDTO.getReservationId(),
                 "OTC",
                 reservationDTO.getDate(),
-                3,
+                1,
                 customerDAO.findOne(reservationDTO.getCustomer())
         ));
 

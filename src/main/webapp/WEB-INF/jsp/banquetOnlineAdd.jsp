@@ -378,10 +378,7 @@
                      </div>
 
                     </form>
-                    <button>
-                        <a href="/banquetCheckAvailability">Checking Date</a></button>
                 </div>
-
 
             </div>
         </div>

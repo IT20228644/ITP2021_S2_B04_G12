@@ -69,10 +69,16 @@ public class BanquetController {
         return "redirect:/banquet";
     }
 
-    //Delete banquet
+    //Delete online banquet oders
     @RequestMapping("deletePendingOnlineBanquet")
-    public String deletePendingOnlineBanquet(@RequestParam int onlineNo) {
-        banquetBO.deletePendingOnlineBanquet(onlineNo);
+    public String deletePendingOnlineBanquet(@RequestParam String onlineNo) {
+//        System.out.println("qw"+onlineNo+"qw");
+
+        String[] parts = onlineNo.split(" ");
+        int onlineNo2 = Integer.parseInt(parts[0]);
+         int banquetBillNO2 = Integer.parseInt(parts[1]);;
+        banquetBO.deletePendingOnlineBanquet(onlineNo2);
+        banquetBO.deletePendingOnlineBanquet2(banquetBillNO2);
 //        banquetBO.deletePendingOnlineBanquet(idNo);
         return "redirect:/banquet";
     }

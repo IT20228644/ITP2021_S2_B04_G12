@@ -53,8 +53,8 @@
             <h1>Sign in</h1>
             <span>or use your account</span>
 
-            <input type="text" placeholder="Email" name="email" />
-            <input type="password" placeholder="Password" name="password"/>
+            <input type="text" placeholder="Email" name="email" id="email"/>
+            <input type="password" placeholder="Password" name="password" id="pwd1"/>
             <a href="#">Forgot your password?</a>
             <button onclick="login()">Sign In</button>
             <script>
@@ -65,7 +65,7 @@
                     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
                     if(uname =='')
                     {
-                        alert("please enter user name.");
+                        alert("please enter email.");
                     }
                     else if(pwd=='')
                     {

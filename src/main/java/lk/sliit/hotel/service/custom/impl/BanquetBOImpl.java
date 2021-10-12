@@ -653,6 +653,12 @@ public class BanquetBOImpl implements BanquetBO {
     }
 
     @Override
+    public void deletePendingOnlineBanquet2(int banquetBillNO2) {
+        banquetOrderDAO.delete(banquetBillNO2);
+        banquetBillDAO.delete(banquetBillNO2);
+    }
+
+    @Override
     public List<BanquetAddDTO> findOnlineBanquet() {
         Iterable<BanquetOnlineOrder> all = banquetOnlineOrderDAO.findAll();
         List<BanquetAddDTO> onlineList = new ArrayList<>();

@@ -49,13 +49,13 @@
 
                 <a href="restaurantHome" class="nav-item nav-link active">Welcome</a>
 <%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
-                <a href="feature.html" class="nav-item nav-link">Feature</a>
+                <a href="features" class="nav-item nav-link">Feature</a>
 
 <%--                <a href="restaurantHome" class="nav-item nav-link active">Home</a>--%>
 <%--                <a href="about.html" class="nav-item nav-link">About</a>--%>
                 <a href="barOnline" class="nav-item nav-link">Bar</a>
 
-                <a href="team.html" class="nav-item nav-link">Chef</a>
+                <a href="chef" class="nav-item nav-link">Chef</a>
                 <a href="onlineOrder" class="nav-item nav-link">Menu</a>
                 <a href="onlineTable" class="nav-item nav-link">Booking</a>
 <%--                <div class="nav-item dropdown">--%>

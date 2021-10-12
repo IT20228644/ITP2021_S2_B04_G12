@@ -23,7 +23,7 @@ public class BanquetCancel {
     @Autowired
     BanquetBO banquetBO;
 
-    @GetMapping("banquetDelete")
+    @GetMapping("banquetDelete2")
     public ModelAndView loginPage(Model model){
         ModelAndView mv = new ModelAndView("banquetCancel");
         model.addAttribute(indexLoginBO.getEmployeeByIdNo(SuperController.idNo));
@@ -66,7 +66,7 @@ public class BanquetCancel {
     @RequestMapping("deleteBanquet")
     public String deleteBanquet(@RequestParam int idNo) {
         banquetBO.deleteBanquet(idNo);
-        return "redirect:/banquetDelete";
+        return "redirect:/banquetDelete2";
     }
 
 
@@ -75,7 +75,7 @@ public class BanquetCancel {
     public String deletePendingOnlineBanquet(@RequestParam int idNo) {
 //        banquetBO.deletePendingOnlineBanquet(onlineNo);
         banquetBO.deletePendingOnlineBanquet1(idNo);
-        return "redirect:/banquetDelete";
+        return "redirect:/banquetDelete2";
     }
 
 

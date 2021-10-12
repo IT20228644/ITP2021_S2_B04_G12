@@ -1,5 +1,6 @@
 package lk.sliit.hotel.controller.RestaurantController;
 
+import com.sun.xml.internal.ws.developer.ValidationErrorHandler;
 import lk.sliit.hotel.dto.restaurant.OnlineCustomerDTO;
 import lk.sliit.hotel.service.custom.OnlineCustomerBO;
 import lk.sliit.hotel.service.custom.RestaurantBO;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.swing.*;
 
 @Controller
 public class restaurantOnlineCustomer {
@@ -22,21 +24,23 @@ public class restaurantOnlineCustomer {
     @Autowired
     RestaurantBO restaurantBO;
 
+    String alertMsg=null;
+
     @GetMapping("/restaurantOnlineCustomer")
     public String loadCusSignUpLogin(){
         return "onlineCustomernewnew";
     }
 
-    @GetMapping("/profile")
-    public String loadprofile(HttpSession session,Model model){
-        int onlineCustomerId = Integer.parseInt(session.getAttribute("userId").toString());
-        model.addAttribute("loggerId", onlineCustomerBO.findOne(onlineCustomerId));
-        model.addAttribute("resDetail", restaurantBO.findOne(onlineCustomerId));
-        model.addAttribute("orderDetail", restaurantBO.findOrder(onlineCustomerId));
-
-
-        return "profile";
-    }
+//    @GetMapping("/profile")
+//    public String loadprofile(HttpSession session,Model model){
+//        int onlineCustomerId = Integer.parseInt(session.getAttribute("userId").toString());
+//        model.addAttribute("loggerId", onlineCustomerBO.findOne(onlineCustomerId));
+//        model.addAttribute("resDetail", restaurantBO.findOne(onlineCustomerId));
+//        model.addAttribute("orderDetail", restaurantBO.findOrder(onlineCustomerId));
+//
+//
+//        return "profile";
+//    }
 
     @PostMapping("/onlineCustomerSave")
     public String onlineCustomerSave(@ModelAttribute OnlineCustomerDTO onlineCustomerDTO){
@@ -54,7 +58,7 @@ public class restaurantOnlineCustomer {
 
     //customer sign in
     @PostMapping("/onlineSignIn")
-    public String onlineTableDetails(@ModelAttribute OnlineCustomerDTO onlineCustomer, HttpServletRequest request) {
+    public String onlineTableDetails(@ModelAttribute OnlineCustomerDTO onlineCustomer, HttpServletRequest request,Model model) {
         try {
             //Check validations
             OnlineCustomerDTO onlineCustomerDTO = onlineCustomerBO.findByUserNameAndPassword(onlineCustomer.getUserName(), onlineCustomer.getPassword());
@@ -63,7 +67,9 @@ public class restaurantOnlineCustomer {
                 request.getSession().setAttribute("userId", onlineCustomerDTO.getOnlineCustomerId());
                 return "redirect:/restaurantHome";
             } else {//If User name And Password is not match
+                alertMsg = "Reservation id Released";
                 return "redirect:/restaurantOnlineCustomer";
+
             }
         } catch (NullPointerException e) {
             return "redirect:/restaurantOnlineCustomer";
