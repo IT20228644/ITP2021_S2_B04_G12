@@ -48,7 +48,7 @@
             <div class="navbar-nav ml-auto">
                 <a href="restaurantHome" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="feature.html" class="nav-item nav-link">Feature</a>
+                <a href="barOnline" class="nav-item nav-link">Bar</a>
                 <a href="team.html" class="nav-item nav-link">Chef</a>
                 <a href="menu" class="nav-item nav-link">Menu</a>
                 <a href="onlineTable" class="nav-item nav-link">Booking</a>
