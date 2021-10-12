@@ -200,6 +200,7 @@
 <%--        <jsp:include page="topHeader.jsp"/>--%>
 <%--        <!-- /Top header -->--%>
 
+
         <!-- page content -->
         <div  class="right_col col-8" role="main">
             <div class="page-title">
@@ -219,89 +220,6 @@
                     </div>
                 </div>
 
-<%--                &lt;%&ndash;Time&ndash;%&gt;--%>
-<%--                <div class="title">--%>
-
-<%--                    <script>--%>
-
-<%--                        function formatTime() {--%>
-<%--                            now = new Date();--%>
-<%--                            hour = now.getHours();--%>
-<%--                            min = now.getMinutes();--%>
-<%--                            sec = now.getSeconds();--%>
-
-<%--                            if (document.clock.sivamtime[0].checked) {--%>
-<%--                                if (min <= 9) {--%>
-<%--                                    min = "0" + min;--%>
-<%--                                }--%>
-<%--                                if (sec <= 9) {--%>
-<%--                                    sec = "0" + sec;--%>
-<%--                                }--%>
-<%--                                if (hour > 12) {--%>
-<%--                                    hour = hour - 12;--%>
-<%--                                    add = " p.m.";--%>
-<%--                                } else {--%>
-<%--                                    hour = hour;--%>
-<%--                                    add = " a.m.";--%>
-<%--                                }--%>
-<%--                                if (hour == 12) {--%>
-<%--                                    add = " p.m.";--%>
-<%--                                }--%>
-<%--                                if (hour == 0) {--%>
-<%--                                    hour = "12";--%>
-<%--                                }--%>
-
-<%--                                document.clock.sivam.value = ((hour <= 9) ? "0" + hour : hour) + ":" + min + ":" + sec + add;--%>
-<%--                            }--%>
-
-<%--                            if (document.clock.sivamtime[1].checked) {--%>
-<%--                                if (min <= 9) {--%>
-<%--                                    min = "0" + min;--%>
-<%--                                }--%>
-<%--                                if (sec <= 9) {--%>
-<%--                                    sec = "0" + sec;--%>
-<%--                                }--%>
-<%--                                if (hour < 10) {--%>
-<%--                                    hour = "0" + hour;--%>
-<%--                                }--%>
-<%--                                document.clock.sivam.value = hour + ':' + min + ':' + sec;--%>
-<%--                            }--%>
-
-<%--                            setTimeout("formatTime()", 1000);--%>
-<%--                        }--%>
-
-<%--                        window.onload = formatTime;--%>
-
-<%--                    </script>--%>
-<%--                    <form name="clock" style="float: right">--%>
-<%--                        <table class="clock" width="100">--%>
-<%--                            <tr>--%>
-<%--                                <td class="clock2">--%>
-<%--                                </td>--%>
-<%--                            </tr>--%>
-<%--                            <tr>--%>
-<%--                                <h6 style="color:#73879C; float:right;border: none;background-color: #f6f6f6">--%>
-<%--                                    <input style="color:#73879C; float:right;border: none;background-color: #f6f6f6"--%>
-<%--                                           class="clock2" type="text" name="sivam" size="10"><br>--%>
-<%--                                    <p><%=date%>--%>
-<%--                                    </p>--%>
-<%--                                </h6>--%>
-
-<%--                            </tr>--%>
-<%--                            <tr>--%>
-<%--                                <td>--%>
-<%--                                    <label class="clock3" for="1"><input type="radio" style="display: none" id="1"--%>
-<%--                                                                         name="sivamtime" checked></label><br>--%>
-<%--                                    <label class="clock3" for="2"><input type="radio" style="display: none" id="2"--%>
-<%--                                                                         name="sivamtime"></label>--%>
-<%--                                </td>--%>
-<%--                            </tr>--%>
-<%--                        </table>--%>
-
-<%--                    </form>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            &lt;%&ndash;/Time&ndash;%&gt;--%>
 
             <%--Input Feilds--%>
             <div class="col-12 col-sm-12 col-md-14 col-lg-14 col-xl-14">
@@ -313,20 +231,26 @@
 
                         <div class="form-group">
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
                                 <input type="hidden" value="${topOnlineNo}" class="form-control"
                                                       required="required" name="onlineNo"
                                                       id="onlineNo" placeholder="Online No" readonly/></div>
+<%--<new add></new>--%>
 
-
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
                             <br>
 <%--                                <label for="onlineNo">Customer Id</label>--%>
                                 <input type="hidden" value="${topBanquetCustomerId}" class="form-control"
                                        required="required" name="customerId"
                                        id="customerId" placeholder="Customer Id" readonly/></div>
 
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                                <input type="hidden" value="${topBanquetId}" class="form-control"
+                                       required="required" name="orderId"
+                                       id="orderId" placeholder="Order Id" readonly/></div>
+
                         </div>
+
 
                         <div class="form-group">
 
@@ -367,7 +291,7 @@
                         <div class="form-group">
                             <br>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <label for="onlineNo">Order Date</label>
+                            <label for="onlineNo">Today Date</label>
                             <input type="date" class="form-control"
                                    required="required" name="orderDate"
                                    id="orderDate" placeholder="Order Date"/></div>

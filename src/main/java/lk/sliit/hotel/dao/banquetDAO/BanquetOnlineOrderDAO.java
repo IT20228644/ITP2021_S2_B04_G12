@@ -34,9 +34,15 @@ public interface BanquetOnlineOrderDAO extends CrudRepository<BanquetOnlineOrder
 
     int countBanquetOrderByDateEqualsAndHallIdEquals(java.sql.Date date, String hallNo);
 
-    int countBanquetOrderByDateEquals(java.sql.Date date);
+  int countBanquetOrderByDateEquals(java.sql.Date date);
+   //   int countBanquetOnlineOrderByDateEquals(java.sql.Date date);
+    int countBanquetOnlineOrderByDateEquals(java.sql.Date date);
 
     Iterable<BanquetOnlineOrder> findLastOnlineBanquetOrdersByDateBefore(Date previousFourDays);
+
+    Iterable<BanquetOnlineOrder> findAllByOrderStateEquals(String statusConfirmed);
+
+    int countBanquetOnlineOrderByDateEqualsAndHallIdEquals(java.sql.Date date, String hallNo);
 
 //    Iterable<BanquetOnlineOrder> findLastOnlineBanquetOrdersByDateBefore(Date todayDate);
 }
