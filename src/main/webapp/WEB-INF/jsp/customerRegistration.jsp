@@ -327,13 +327,46 @@
                             </div>
 
 
-                            <button type='submit' class="btn btn-primary"
+                            <button type='submit' class="btn btn-primary" onclick="RegisterValidation()"
                                     style="width: 50%; top: 20px; position: relative" value="Register">
                                 Add/Update
                             </button>
                             <button type='reset' class="btn btn-outline-success" style="top: 20px; position: relative"
                                     value="">Reset
                             </button>
+                            <script>
+                                function RegisterValidation() {
+                                    var email = document.getElementById("email").value;
+                                    var phone = document.getElementById("contactNumber").value;
+                                    var filter = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+                                    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+                                    if (email=='')
+                                    {
+                                        window.alert(
+                                            "Please enter a valid e-mail address.");
+                                        return false;
+                                    }
+                                        // else if(!filter.test(email))
+                                        // {
+                                        //     alert("Enter valid email id.");
+                                    // }
+                                    else if (!re.test(phone))
+                                    {
+                                        window.alert(
+                                            "Please enter 10 digit telephone number.");
+                                        phone.focus();
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        alert('Registration successfully!!!');
+
+                                    }
+
+                                    return true;
+                                }
+                            </script>
                         </div>
                     </form>
                 </div>

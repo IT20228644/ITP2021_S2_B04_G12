@@ -474,7 +474,7 @@
     }
 
     function getValue() {
-
+        alert ("Confirm order");
         /*  if (vDate == "" || timeIn == "" || timeOut == "") {
               alert("Please Select Room In Table");
               return;
