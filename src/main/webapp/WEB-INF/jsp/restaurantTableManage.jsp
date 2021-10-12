@@ -154,7 +154,6 @@
                                                                 <input type="hidden" name="state" value="${item.state}">
                                                                 <input type="hidden" name="button" value="${item.button}">
 
-
                                                                 <button type="submit" class="large-btn btn btn-dark"
                                                                         style="height: 50px; background-color: silver; color: black">
                                                                         ${item.button}
@@ -173,90 +172,71 @@
                         </div>
                     </div>
                 </div>
-                <%--                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">--%>
-                <%--                    <div class="row">--%>
-                <%--                        <div class="x_panel">--%>
-                <%--                            <div class="x_title">--%>
-                <%--                                <h2>Restaurant Food Order List<b>(Online)</b><br>--%>
-                <%--                                    <small>Total pending orders: ${pendingOnline}</small></h2>--%>
-                <%--                                <ul class="nav navbar-right panel_toolbox">--%>
-                <%--                                    <li><a class="collapse-link"></a>--%>
-                <%--                                    </li>--%>
-                <%--                                    <li class="dropdown">--%>
-                <%--                                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"--%>
-                <%--                                           href="#"--%>
-                <%--                                           role="button"><i class="fa fa-wrench"></i></a>--%>
-                <%--                                    </li>--%>
-                <%--                                </ul>--%>
-                <%--                                <div class="clearfix"></div>--%>
-                <%--                            </div>--%>
-                <%--                            <div class="x_content">--%>
-                <%--                                <div class="row">--%>
-                <%--                                    <div class="col-sm-12">--%>
-                <%--                                        <div class="card-box table-responsive">--%>
-                <%--                                            <table class="table table-striped table-bordered"--%>
-                <%--                                                   id="datatable-buttons3"--%>
-                <%--                                                   style="text-align: center">--%>
-                <%--                                                <thead class="thead-light">--%>
-                <%--                                                <tr>--%>
-                <%--                                                    <th>OrderId: </th>--%>
-                <%--                                                    <th>--%>
-                <%--                                                        <table>--%>
-                <%--                                                            <tr>--%>
-                <%--                                                                <th>Food Item</th>--%>
-                <%--                                                                <th>Quantity</th>--%>
-                <%--                                                            </tr>--%>
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                    <div class="row">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>Restaurant Table Reservation List<b>(Online)</b><br>
+                                                    <small>Total reserved tables: ${pendingOnline}</small></h2>
+                                                <ul class="nav navbar-right panel_toolbox">
+                                                    <li><a class="collapse-link"></a>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown"
+                                                           href="#"
+                                                           role="button"><i class="fa fa-wrench"></i></a>
+                                                    </li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="card-box table-responsive">
+                                                            <table class="table table-striped table-bordered"
+                                                                   id="datatable-buttons3"
+                                                                   style="text-align: center">
+                                                                <thead class="thead-light">
+                                                              <tr>
+                                                                  <th>Reserved Id </th>
+                                                                  <th>Type</th>
+                                                                  <th>State</th>
+                                                                  <th></th>
 
-                <%--                                                        </table>--%>
-                <%--                                                    </th>--%>
-                <%--                                                    <th>State</th>--%>
-                <%--                                                    <th></th>--%>
-                <%--                                                </tr>--%>
+                                                              </tr>
 
-                <%--                                                </thead>--%>
-                <%--                                                <tbody>--%>
-                <%--                                                <c:forEach items="${onlineOrders}" var="item">--%>
-                <%--                                                    <tr>--%>
-                <%--                                                        <td>${item.orderId}</td>--%>
-                <%--                                                        <td>--%>
-                <%--                                                            <table>--%>
-                <%--                                                                <c:forEach items="${item.foodItems}" var="item2">--%>
-                <%--                                                                    <tr>--%>
-                <%--                                                                        <td>${item2.foodName}</td>--%>
-                <%--                                                                        <td>${item2.quantity}</td>--%>
-                <%--                                                                    </tr>--%>
-                <%--                                                                </c:forEach>--%>
+                                                                </thead>
+                                                                <tbody>
+                                                                <c:forEach items="${onlineOrders}" var="item">
+                                                                    <tr>
+                                                                        <td>${item.reseId}</td>
+                                                                        <td>${item.type}</td>
+                                                                        <td>${item.state}</td>
+                                                                        <td>
+                                                                            <form action="confirmOnlineTable" method="post">
+                                                                                <input type="hidden" name="reseId"
+                                                                                       value="${item.reseId}">
+                                                                                <input type="hidden" name="type" value="${item.type}">
+                                                                                <input type="hidden" name="state" value="${item.state}">
+                                                                                <input type="hidden" name="button" value="${item.button}">
+                                                                                <button type="submit" class="large-btn btn btn-dark"
+                                                                                        style="height: 50px; background-color: silver; color: black">
+                                                                                        ${item.button}
+                                                                                </button>
+                                                                            </form>
+                                                                        </td>
+                                                                    </tr>
+                                                                </c:forEach>
 
-                <%--                                                            </table>--%>
-                <%--                                                        </td>--%>
-
-                <%--                                                        <td>${item.state}</td>--%>
-                <%--                                                        <td>--%>
-                <%--                                                            <form action="confirmOrder" method="post">--%>
-                <%--                                                                <input type="hidden" name="orderId" value="${item.orderId}">--%>
-                <%--                                                                <input type="hidden" name="type" value="${item.type}">--%>
-                <%--                                                                <input type="hidden" name="state" value="${item.state}">--%>
-                <%--                                                                <input type="hidden" name="button" value="${item.button}">--%>
-
-
-                <%--                                                                <button type="submit" class="large-btn btn btn-dark"--%>
-                <%--                                                                        style="height: 50px; background-color: silver; color: black">--%>
-                <%--                                                                        ${item.button}--%>
-                <%--                                                                </button>--%>
-                <%--                                                            </form>--%>
-                <%--                                                        </td>--%>
-                <%--                                                    </tr>--%>
-                <%--                                                </c:forEach>--%>
-
-                <%--                                                </tbody>--%>
-                <%--                                            </table>--%>
-                <%--                                        </div>--%>
-                <%--                                    </div>--%>
-                <%--                                </div>--%>
-                <%--                            </div>--%>
-                <%--                        </div>--%>
-                <%--                    </div>--%>
-                <%--                </div>--%>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
             </div>
 
         </div>

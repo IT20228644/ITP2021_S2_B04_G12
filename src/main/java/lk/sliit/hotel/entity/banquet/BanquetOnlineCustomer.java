@@ -29,16 +29,26 @@ public class BanquetOnlineCustomer {
 
     }
 
-    public BanquetOnlineCustomer(int regNo, String name, String email, String address, String phoneNo,
-                                 String password) {
+    public BanquetOnlineCustomer(int regNo, String name, String email, String address,
+                                 String password, String phoneNo) {
         this.regNo = regNo;
         this.name = name;
-        this.email =email;
+        this.email = email;
         this.address = address;
+        this.password = password;
         this.phoneNo = phoneNo;
-        this.password  = password;
-
     }
+
+//    public BanquetOnlineCustomer(int regNo, String name, String email, String address, String phoneNo,
+//                                 String password) {
+//        this.regNo = regNo;
+//        this.name = name;
+//        this.email =email;
+//        this.address = address;
+//        this.phoneNo = phoneNo;
+//        this.password  = password;
+//
+//    }
 
     public int getRegNo() {
         return regNo;

@@ -1,6 +1,7 @@
 package lk.sliit.hotel.dao.retaurantDAO.onlineTableReservationDAO;
 
 
+import lk.sliit.hotel.entity.restaurant.counterTableReservation.CounterTableReservation;
 import lk.sliit.hotel.entity.restaurant.onlineTableReservation.OnlineTableReservation;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -19,9 +20,8 @@ public interface OnlineTableReservationDAO extends CrudRepository<OnlineTableRes
 
     Iterable<OnlineTableReservation> findOnlineTableReservationByReservedDateEquals(Date date);
 
-
+    Iterable<OnlineTableReservation> findAllByTableStateEquals(String State);
 
     Iterable<OnlineTableReservation> findAllByReservedDateBetween(Date todaydate, Date dt);
-
 
 }

@@ -41,7 +41,7 @@
             <input required type="text" placeholder="Name" name="name" />
             <input required type="email" placeholder="Email" name="email" />
             <input required type="text" placeholder="Address" name="address" />
-            <input required type="tel" pattern="[0-9]{10}" placeholder="Mobile" name="contactNumber"/>
+            <input required type="tel" pattern="[0-9]{10}" placeholder="Mobile" name="phoneNo"/>
             <input required type="password" placeholder="Password" id="pwd" name = "password1"/>
              <span id = "message" style="color:red"> </span>
             <input required type="password" placeholder="Re-type Password" id = "pwd11" name="password"/>

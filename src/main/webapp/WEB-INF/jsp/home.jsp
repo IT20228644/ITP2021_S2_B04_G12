@@ -79,11 +79,19 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
+<<<<<<< HEAD
+                                    <li><a data-hover="Home" href="home"><span>Home</span></a></li>
+                                    <li><a data-hover="About"  class="active"><span>About</span></a></li>
+                                    <li><a data-hover="Rooms" href="rooms"><span>Rooms</span></a></li>
+                                    <li><a data-hover="Banquet" href="homeBanquet"><span>Banquet</span></a></li>
+                                    <li><a data-hover="Restaurant" href="rooms"><span>Restaurant</span></a></li>
+=======
                                     <li><a  data-hover="Home" class="active"><span>Home</span></a></li>
                                     <li><a data-hover="About"  href="about"><span>About</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Rooms</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Banquet</span></a></li>
                                     <li><a data-hover="Rooms"  href="rooms"><span>Restaurant</span></a></li>
+>>>>>>> 53f1c70902c26563334cf69f3ab6c2f7b18bd4e1
                                     <li><a data-hover="Gallery"  href="gallery"><span>Gallery</span></a></li>
                                     <li><a data-hover="Contact Us" href="contact"><span>contact Us</span></a></li>
                                 </ul>

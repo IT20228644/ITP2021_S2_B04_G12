@@ -101,7 +101,7 @@
                 <div class="page-title">
                     <div class="title_left">
                         <h3>Restaurant Manage
-                            <small>Welcome To Hotel Hareesha</small>
+                            <small>Welcome To Hotel Sapphire Marriot</small>
                         </h3>
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -291,7 +291,7 @@
                                         <div class="card-box table-responsive">
                                             <table style="text-align: center"
                                                    class="table table-striped jambo_table bulk_action table-bordered">
-                                                <thead class="thead-dark">
+                                                <thead class="thead-light">
                                                 <tr>
                                                     <th>OrderId</th>
                                                     <th>CustomerId</th>
